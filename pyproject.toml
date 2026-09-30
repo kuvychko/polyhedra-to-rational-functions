@@ -34,6 +34,7 @@ module-name = "polyhedral_functions"
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
+markers = ["slow: rebuilds a full relief mesh (deselect with -m \"not slow\")"]
 
 [tool.ruff]
 line-length = 100

@@ -10,3 +10,4 @@ dependency versions, display settings, outputs, and conclusion.
 
 | ID | question | status |
 |---|---|---|
+| [R0-baseline](R0-baseline/README.md) | what do the existing Klein-invariant ornaments compute, and do they reproduce here? | reference, complete |

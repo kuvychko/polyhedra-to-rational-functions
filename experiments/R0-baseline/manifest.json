@@ -1,0 +1,313 @@
+{
+  "tetrahedral-dual": {
+    "slug": "tetrahedral-dual",
+    "name": "Tetrahedral Dual",
+    "resolution": 250,
+    "pre_scale": 1.0,
+    "pole_order": 1,
+    "normalization_constant": 1.0,
+    "depth": 0.2,
+    "contrast": {
+      "boost": 4.0,
+      "weight": 0.6
+    },
+    "sharpness": 2.0,
+    "scaling": "log_mixture",
+    "scaling_params": {
+      "scale": 2.0,
+      "boost": 4.0,
+      "weight": 0.6,
+      "r_min": 0.2,
+      "r_max": 1.0
+    },
+    "sizes": {
+      "80": {
+        "label": "small",
+        "extent_mm": 80.0,
+        "dimensions_mm": [
+          64.04,
+          64.04,
+          64.04
+        ],
+        "min_radius_mm": 11.38,
+        "max_radius_mm": 48.93,
+        "volume_cm3": 133.1,
+        "surface_area_cm2": 152.6,
+        "file_mb": 5.94
+      },
+      "130": {
+        "label": "large",
+        "extent_mm": 130.0,
+        "dimensions_mm": [
+          104.07,
+          104.07,
+          104.07
+        ],
+        "min_radius_mm": 18.49,
+        "max_radius_mm": 79.51,
+        "volume_cm3": 571.0,
+        "surface_area_cm2": 402.9,
+        "file_mb": 5.94
+      }
+    },
+    "n_points": 62250,
+    "n_triangles": 62495,
+    "n_boundary_edges": 0,
+    "n_non_manifold_edges": 0
+  },
+  "octahedral-crown": {
+    "slug": "octahedral-crown",
+    "name": "Octahedral Crown",
+    "resolution": 300,
+    "pre_scale": 1.0,
+    "pole_order": 2,
+    "normalization_constant": 0.062428,
+    "depth": 0.2,
+    "contrast": null,
+    "sharpness": 4.0,
+    "scaling": "logarithmic",
+    "scaling_params": {
+      "base": 54.5982,
+      "r_min": 0.2,
+      "r_max": 1.0
+    },
+    "sizes": {
+      "80": {
+        "label": "small",
+        "extent_mm": 80.0,
+        "dimensions_mm": [
+          79.7,
+          80.0,
+          78.92
+        ],
+        "min_radius_mm": 16.48,
+        "max_radius_mm": 40.55,
+        "volume_cm3": 77.5,
+        "surface_area_cm2": 98.5,
+        "file_mb": 8.55
+      },
+      "130": {
+        "label": "large",
+        "extent_mm": 130.0,
+        "dimensions_mm": [
+          129.51,
+          130.0,
+          128.24
+        ],
+        "min_radius_mm": 26.78,
+        "max_radius_mm": 65.9,
+        "volume_cm3": 332.5,
+        "surface_area_cm2": 260.0,
+        "file_mb": 8.55
+      }
+    },
+    "n_points": 89700,
+    "n_triangles": 89995,
+    "n_boundary_edges": 0,
+    "n_non_manifold_edges": 0
+  },
+  "cube-octahedron-dual": {
+    "slug": "cube-octahedron-dual",
+    "name": "Cube-Octahedron Dual",
+    "resolution": 300,
+    "pre_scale": 1.0,
+    "pole_order": 3,
+    "normalization_constant": 183.252797,
+    "depth": 0.2,
+    "contrast": null,
+    "sharpness": 6.0,
+    "scaling": "logarithmic",
+    "scaling_params": {
+      "base": 403.4288,
+      "r_min": 0.2,
+      "r_max": 1.0
+    },
+    "sizes": {
+      "80": {
+        "label": "small",
+        "extent_mm": 80.0,
+        "dimensions_mm": [
+          46.46,
+          46.85,
+          46.68
+        ],
+        "min_radius_mm": 10.2,
+        "max_radius_mm": 40.34,
+        "volume_cm3": 78.1,
+        "surface_area_cm2": 104.8,
+        "file_mb": 8.55
+      },
+      "130": {
+        "label": "large",
+        "extent_mm": 130.0,
+        "dimensions_mm": [
+          75.5,
+          76.14,
+          75.85
+        ],
+        "min_radius_mm": 16.57,
+        "max_radius_mm": 65.55,
+        "volume_cm3": 335.0,
+        "surface_area_cm2": 276.6,
+        "file_mb": 8.55
+      }
+    },
+    "n_points": 89700,
+    "n_triangles": 89995,
+    "n_boundary_edges": 0,
+    "n_non_manifold_edges": 0
+  },
+  "icosahedral-crown": {
+    "slug": "icosahedral-crown",
+    "name": "Icosahedral Crown",
+    "resolution": 400,
+    "pre_scale": 1.0,
+    "pole_order": 5,
+    "normalization_constant": 0.000163,
+    "depth": 0.2,
+    "contrast": null,
+    "sharpness": 6.0,
+    "scaling": "logarithmic",
+    "scaling_params": {
+      "base": 403.4288,
+      "r_min": 0.2,
+      "r_max": 1.0
+    },
+    "sizes": {
+      "80": {
+        "label": "small",
+        "extent_mm": 80.0,
+        "dimensions_mm": [
+          71.38,
+          68.22,
+          78.32
+        ],
+        "min_radius_mm": 13.21,
+        "max_radius_mm": 40.36,
+        "volume_cm3": 63.9,
+        "surface_area_cm2": 108.4,
+        "file_mb": 15.22
+      },
+      "130": {
+        "label": "large",
+        "extent_mm": 130.0,
+        "dimensions_mm": [
+          115.99,
+          110.86,
+          127.27
+        ],
+        "min_radius_mm": 21.47,
+        "max_radius_mm": 65.58,
+        "volume_cm3": 274.3,
+        "surface_area_cm2": 286.2,
+        "file_mb": 15.22
+      }
+    },
+    "n_points": 159600,
+    "n_triangles": 159995,
+    "n_boundary_edges": 0,
+    "n_non_manifold_edges": 0
+  },
+  "dodecahedron-icosahedron-dual": {
+    "slug": "dodecahedron-icosahedron-dual",
+    "name": "Dodecahedron-Icosahedron Dual",
+    "resolution": 400,
+    "pre_scale": 1.0,
+    "pole_order": 3,
+    "normalization_constant": 4589.796036,
+    "depth": 0.2,
+    "contrast": null,
+    "sharpness": 6.0,
+    "scaling": "logarithmic",
+    "scaling_params": {
+      "base": 403.4288,
+      "r_min": 0.2,
+      "r_max": 1.0
+    },
+    "sizes": {
+      "80": {
+        "label": "small",
+        "extent_mm": 80.0,
+        "dimensions_mm": [
+          76.36,
+          73.28,
+          64.91
+        ],
+        "min_radius_mm": 9.23,
+        "max_radius_mm": 40.99,
+        "volume_cm3": 74.3,
+        "surface_area_cm2": 121.2,
+        "file_mb": 15.22
+      },
+      "130": {
+        "label": "large",
+        "extent_mm": 130.0,
+        "dimensions_mm": [
+          124.09,
+          119.07,
+          105.48
+        ],
+        "min_radius_mm": 14.99,
+        "max_radius_mm": 66.61,
+        "volume_cm3": 318.8,
+        "surface_area_cm2": 320.0,
+        "file_mb": 15.22
+      }
+    },
+    "n_points": 159600,
+    "n_triangles": 159995,
+    "n_boundary_edges": 0,
+    "n_non_manifold_edges": 0
+  },
+  "icosidodecahedral-star": {
+    "slug": "icosidodecahedral-star",
+    "name": "Icosidodecahedral Star",
+    "resolution": 400,
+    "pre_scale": 1.0,
+    "pole_order": 2,
+    "normalization_constant": 1.340334,
+    "depth": 0.2,
+    "contrast": null,
+    "sharpness": 4.0,
+    "scaling": "logarithmic",
+    "scaling_params": {
+      "base": 54.5982,
+      "r_min": 0.2,
+      "r_max": 1.0
+    },
+    "sizes": {
+      "80": {
+        "label": "small",
+        "extent_mm": 80.0,
+        "dimensions_mm": [
+          74.56,
+          78.52,
+          68.26
+        ],
+        "min_radius_mm": 9.37,
+        "max_radius_mm": 41.09,
+        "volume_cm3": 81.7,
+        "surface_area_cm2": 136.9,
+        "file_mb": 15.22
+      },
+      "130": {
+        "label": "large",
+        "extent_mm": 130.0,
+        "dimensions_mm": [
+          121.16,
+          127.59,
+          110.92
+        ],
+        "min_radius_mm": 15.22,
+        "max_radius_mm": 66.77,
+        "volume_cm3": 350.4,
+        "surface_area_cm2": 361.5,
+        "file_mb": 15.22
+      }
+    },
+    "n_points": 159600,
+    "n_triangles": 159995,
+    "n_boundary_edges": 0,
+    "n_non_manifold_edges": 0
+  }
+}

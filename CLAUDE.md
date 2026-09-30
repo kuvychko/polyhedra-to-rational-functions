@@ -71,7 +71,7 @@ Python package `polyhedral_functions` under `src/`. Layout and responsibilities 
 - Geometry, recipes, divisors, evaluation and normalization must **not** import plotting,
   rendering or site code. Renderers consume the same mathematical result.
 - Reusable logic lives in `src/`; notebooks explore and interpret only.
-- The frozen baseline (when added) lives in `src/polyhedral_functions/baseline/` and is not
+- The frozen baseline (R0) lives in `src/polyhedral_functions/baseline/` and is not
   edited except to fix imports; new work goes in new modules and compares against it.
 - Configuration is JSON/YAML under `configs/`; no databases or services.
 
@@ -89,7 +89,8 @@ Python package `polyhedral_functions` under `src/`. Layout and responsibilities 
 
 ```bash
 uv sync                                         # environment from uv.lock
-uv run pytest                                   # tests
+uv run pytest                                   # tests (includes the baseline checks)
+uv run pytest -m "not slow"                     # skip full mesh rebuilds
 uv run ruff check . && uv run ruff format --check .
 ```
 
