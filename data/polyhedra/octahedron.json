@@ -1,0 +1,35 @@
+{
+ "id": "octahedron",
+ "name": "octahedron",
+ "construction": "polyhedral_functions.fixtures.octahedron",
+ "description": "Regular octahedron, circumradius 1, with vertices on the coordinate axes.",
+ "summary": {
+  "V": 6,
+  "E": 12,
+  "F": 8,
+  "valences": {
+   "4": 6
+  },
+  "face_sizes": {
+   "3": 8
+  }
+ },
+ "vertices": [
+  [-1.0, -0.0, -0.0],
+  [-0.0, -1.0, -0.0],
+  [-0.0, -0.0, -1.0],
+  [0.0, 0.0, 1.0],
+  [0.0, 1.0, 0.0],
+  [1.0, 0.0, 0.0]
+ ],
+ "faces": [
+  [3, 0, 1],
+  [1, 0, 2],
+  [4, 0, 3],
+  [2, 0, 4],
+  [5, 1, 2],
+  [3, 1, 5],
+  [5, 2, 4],
+  [4, 3, 5]
+ ]
+}

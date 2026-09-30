@@ -15,10 +15,12 @@ The full research program, scope and exit criteria are in [`PROGRAM.md`](PROGRAM
 ## Status
 
 **Phase 1: investigation, pre-release.** The existing Klein-invariant ornaments are
-preserved and reproduced as baseline R0 ([audit](notes/2026-09-30-baseline-audit.md)). Next:
-the geometry contract, then a comparison of the uniform (R1) and incidence-based (R2) recipes.
-The audit shows that on Platonic solids the two recipes coincide with each other and with the
-baseline "dual" pieces, so they can only be told apart on less regular inputs. A public narrative
+preserved and reproduced as baseline R0 ([audit](notes/2026-09-30-baseline-audit.md)). The
+geometry contract and an eight-solid corpus are in place ([notes](notes/2026-09-30-geometry-contract.md)).
+Next: divisors and stable evaluation, then a comparison of the uniform (R1), incidence-based (R2)
+and edge-incidence (R4) recipes. The audit shows that on Platonic solids R1 and R2 coincide
+with each other and with the baseline "dual" pieces, and R4 reproduces the baseline crowns and
+star, so the recipes can only be told apart on less regular inputs. A public narrative
 and exhibition site will follow in Phase 2.
 
 ## Quick start

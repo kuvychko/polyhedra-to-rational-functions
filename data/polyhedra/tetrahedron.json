@@ -1,0 +1,29 @@
+{
+ "id": "tetrahedron",
+ "name": "tetrahedron",
+ "construction": "polyhedral_functions.fixtures.tetrahedron",
+ "description": "Regular tetrahedron, circumradius 1: the zeros of complexplorer's ``tetrahedral_vertex``.",
+ "summary": {
+  "V": 4,
+  "E": 6,
+  "F": 4,
+  "valences": {
+   "3": 4
+  },
+  "face_sizes": {
+   "3": 4
+  }
+ },
+ "vertices": [
+  [-0.5773502691896258, -0.5773502691896258, -0.5773502691896258],
+  [-0.5773502691896258, 0.5773502691896258, 0.5773502691896258],
+  [0.5773502691896258, -0.5773502691896258, 0.5773502691896258],
+  [0.5773502691896258, 0.5773502691896258, -0.5773502691896258]
+ ],
+ "faces": [
+  [3, 0, 1],
+  [1, 0, 2],
+  [2, 0, 3],
+  [3, 1, 2]
+ ]
+}
