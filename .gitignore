@@ -1,0 +1,56 @@
+# Byte-compiled / optimized files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Distribution / packaging
+dist/
+build/
+*.egg-info/
+*.egg
+.ipynb_checkpoints/
+.venv/
+venv/
+env/
+
+# uv: the lock file IS committed (reproducible environment, PROGRAM.md §10)
+.python-version
+
+# Tooling caches
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.coverage
+htmlcov/
+.hypothesis/
+
+# IDE / OS
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Logs and temporary files
+*.log
+*.tmp
+
+# Regenerable or large outputs: never committed (see CLAUDE.md, "Public from day one")
+out/
+*.stl
+*.3mf
+*.gcode
+*.obj
+*.ply
+*.mp4
+*.webm
+frames/
+
+# Built documentation site (Phase 2)
+/site/
+
+# Local Claude Code settings
+.claude/settings.local.json

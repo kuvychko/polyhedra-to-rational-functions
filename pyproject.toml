@@ -1,0 +1,43 @@
+[project]
+name = "polyhedra-to-rational-functions"
+version = "0.0.1"
+description = "Recipes that turn convex polyhedra into rational functions on the Riemann sphere"
+readme = "README.md"
+authors = [{ name = "Igor Kuvychko", email = "igor.kuvychko@gmail.com" }]
+license = "MIT"
+license-files = ["LICENSE", "LICENSE-media"]
+requires-python = ">=3.12"
+dependencies = [
+    "numpy>=1.26",
+    "scipy>=1.11",
+    "matplotlib>=3.8",
+    "pyvista>=0.47",
+    # Exact pin: the baseline ornaments and every run record depend on this revision's
+    # relief transfer, normalization defaults and polyhedral forms. Upgrading is a
+    # deliberate commit with a note on what changed.
+    "complexplorer==3.1.0",
+]
+
+[dependency-groups]
+dev = [
+    "pytest>=8",
+    # Pinned to a minor, as in complexplorer: 0.16 began formatting Markdown code blocks.
+    "ruff>=0.16.7,<0.17",
+]
+
+[build-system]
+requires = ["uv_build>=0.8,<0.13"]
+build-backend = "uv_build"
+
+[tool.uv.build-backend]
+module-name = "polyhedral_functions"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "B", "UP", "NPY"]
