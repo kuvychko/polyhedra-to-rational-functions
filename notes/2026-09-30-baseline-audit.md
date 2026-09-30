@@ -120,6 +120,11 @@ north pole with rings at `z = ±1/√5` on the sphere. The cube's vertices are `
    icosidodecahedral-star place features at **edge midpoints**, which neither R1 nor R2 uses.
    They are a third family (vertex–edge or face–edge). `PROGRAM.md` §7 says to add point sets
    only to answer a specific question, so for now they stay as R0 references, not candidates.
+
+   *Update (same day):* the owner decided to explore this family deliberately. It is now
+   recipe **R4** (`PROGRAM.md` §7, decision 0002). The vertex–edge recipe reproduces all three
+   pieces: octahedral crown = octahedron (4:2 → 2:1), icosahedral crown = icosahedron (5:2),
+   star = dodecahedron (3:2), equivalently face–edge on the icosahedron **[D]**.
 4. **Unverified symmetry claims [U].** The source's checks cover rotations only. The following
    are claimed but never checked:
    - "full O_h / I_h including mirror planes";

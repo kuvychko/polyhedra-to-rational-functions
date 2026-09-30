@@ -1,6 +1,6 @@
 # Polyhedra as Complex Functions: Research Program and Repository Specification
 
-Version: 2.1 — 2026-09-30
+Version: 2.2 — 2026-09-30
 
 Status: Program specification. The repository is developed in the open and kept public-ready from its first commit: nothing committed should need scrubbing before release. This document does not itself authorize changing repository visibility, deploying the site, or publishing other existing work; each of those remains an explicit owner action.
 
@@ -133,9 +133,22 @@ As a bounded follow-up, seek lower positive integer multiplicities constant on e
 
 Do not use fractional multiplicities while claiming a globally single-valued rational function. A real-valued potential or multivalued function would be a different construction and must be labeled separately.
 
+### R4. Edge-incidence recipes
+
+Added in v2.2 (decision 0002) because the baseline audit showed that the existing crown and star pieces are a construction worth studying deliberately. They generalize R2 from the vertex–face pair to the other pairs of cells in the face lattice, with multiplicities given by incidence counts:
+
+- **Vertex–edge:** order `valence(v)` at each vertex and order 2 at each edge point. Both totals are `2E`.
+- **Face–edge:** order `sides(f)` at each face's dual direction and order 2 at each edge point. Both totals are `2E`.
+
+Divide by the common gcd as in R2. Polar duality exchanges vertices and faces and maps edges to edges, so the vertex–edge recipe of a polyhedron should be the face–edge recipe of its polar dual. On Platonic inputs these recipes should reproduce the baseline octahedral crown, icosahedral crown and icosidodecahedral star. Both statements are derived by hand and still to be verified.
+
+Edge point placement is its own question. Compare the foot of the perpendicular from the origin to the edge line with the projected edge midpoint. The foot is self-dual under polarity: an edge and its dual edge share its direction. For a canonical polyhedron it is the midsphere tangency point.
+
+Variants that use all three point sets (for example, vertices and faces against edges) are recorded as an open question, not a candidate to implement.
+
 ### Point-placement experiments
 
-Compare polar-dual directions with projected face centroids using the same weights. Add other point sets only to answer a specific unresolved question. Do not start with an exhaustive product of all possible options.
+Compare polar-dual directions with projected face centroids using the same weights, and, for R4, edge tangency points with projected edge midpoints. Add other point sets only to answer a specific unresolved question. Do not start with an exhaustive product of all possible options.
 
 ## 8. Rational-function representation and normalization
 
@@ -178,7 +191,7 @@ Record coordinate sources, construction steps, and geometry checks. Origami phot
 ### Sequence
 
 1. Reproduce the existing baseline and audit its formula.
-2. Implement R1 and R2 with polar-dual point placement.
+2. Implement R1, R2 and R4 with polar-dual (and edge-tangency) point placement.
 3. Check balancing, duality, rotation behavior, and numerical evaluation before judging aesthetics.
 4. Generate a standardized comparison atlas across the small corpus.
 5. Compare point placement while holding weights and display settings fixed.
@@ -276,7 +289,7 @@ The narrative must remain readable independently of the sculpture gallery. Reade
 
 - [ ] Existing source audited and baseline preserved.
 - [ ] Geometry/face-incidence contract implemented and verified on fixtures.
-- [ ] R1 and R2 compared across the core corpus; additional candidates justified by findings.
+- [ ] R1, R2 and R4 compared across the core corpus; additional candidates justified by findings.
 - [ ] Balancing, infinity, normalization, rotation, duality, and cancellation handled explicitly.
 - [ ] At least one irregular case and one controlled deformation investigated.
 - [ ] Mathematical properties distinguished from rendering choices and numerical evidence.
