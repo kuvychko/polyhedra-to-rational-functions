@@ -1,0 +1,14 @@
+{
+ "id": "E003-deformation",
+ "question": "Under fixed-combinatorics deformation, do the recipes change continuously, how do the R1/R2 and placement separations evolve, and when does polar/foot placement stop putting a cell's feature over the cell?",
+ "hypothesis": "With combinatorics fixed, every recipe is continuous (orders fixed, points move continuously). R1~R2 separation is set by combinatorics, so it stays roughly constant; placement separation grows with distortion. For the sheared box, polar and foot placement leave their face and edges exactly at |sigma| = 1, while centroid and midpoint never do.",
+ "changed_factor": "the deformation parameter, one family at a time (pyramid apex height h; box shear sigma)",
+ "families": {
+  "hexagonal_pyramid": {"parameters": [0.15, 0.25, 0.4, 0.6, 0.8, 1.0, 1.3, 1.7, 2.2, 3.0, 4.0], "reference": 1.0, "label": "apex height h", "illustrate": [0.25, 1.0, 3.0]},
+  "sheared_box": {"parameters": [0.0, 0.25, 0.5, 0.75, 0.9, 1.0, 1.1, 1.25, 1.5, 2.0, 2.5], "reference": 0.0, "label": "shear sigma", "illustrate": [0.0, 0.9, 1.5]}
+ },
+ "recipes": ["R1", "R2", "R4ve"],
+ "comparison_samples": 20000,
+ "comparison_exclusion": 0.05,
+ "display": {"window": 450}
+}

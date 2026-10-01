@@ -1,0 +1,17 @@
+{
+ "id": "E002-transitions",
+ "question": "Which recipes change continuously when the combinatorics change, i.e. when a small face or short edge shrinks to nothing?",
+ "hypothesis": "No recipe is continuous under every transition. In the limit, vertex truncation of a valence-q vertex adds +3q in new vertices and -2q in new edges, so R4ve is continuous under truncation; by polarity R4fe is continuous under raising a flat pyramid on a face. R1, R2 and flag jump under all three transitions, and R4ve jumps under an edge bevel.",
+ "changed_factor": "the transition parameter s, one family at a time (recipes compared side by side)",
+ "families": ["truncated_corner_cube", "bevelled_edge_cube", "raised_face_cube"],
+ "parameters": [0.3, 0.1, 0.03, 0.01, 0.003, 0.001, 0.0001],
+ "recipes": ["R1", "R2", "R4ve", "R4fe", "flag"],
+ "comparison_samples": 20000,
+ "comparison_exclusion": 0.05,
+ "limit_parameter": 1e-6,
+ "limit_cluster_tol": 1e-3,
+ "near_pair_radius": 0.5,
+ "illustration_parameter": 0.3,
+ "illustration_recipe": "R4ve",
+ "display": {"window": 500}
+}

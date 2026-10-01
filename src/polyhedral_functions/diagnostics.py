@@ -183,3 +183,46 @@ def rotation_report(recipe: Recipe, poly: Polyhedron, rotation, n: int = DEFAULT
         "divisors_equal": turned.same_as(original.rotated(R)),
         "max_log_modulus_residual": float(np.max(np.abs(residual[finite]))),
     }
+
+
+def face_cone_margin(poly: Polyhedron, directions: np.ndarray) -> np.ndarray:
+    """For each face ``j``, how far ``directions[j]`` lies inside the cone over face ``j``.
+
+    The cone is the set of rays from the origin through the face. The margin is the smallest
+    ``u . n_k`` over the cone's side planes, where ``n_k`` is the unit normal of the plane through
+    the origin and the face edge ``(v_k, v_{k+1})``. It is positive inside, negative outside, and
+    about the angular distance to the nearest side when small.
+    """
+    margins = np.empty(poly.n_faces)
+    for j, face in enumerate(poly.faces):
+        v = poly.vertices[list(face)]
+        sides = np.cross(v, np.roll(v, -1, axis=0))
+        sides /= np.linalg.norm(sides, axis=1, keepdims=True)
+        margins[j] = (sides @ directions[j]).min()
+    return margins
+
+
+def placement_report(poly: Polyhedron) -> dict:
+    """Does each placement put a cell's point over the cell itself?
+
+    - **Faces:** a polar direction (foot of the perpendicular) can fall outside its face's cone
+      on an irregular solid. A centroid direction never can.
+    - **Edges:** a foot can fall outside the segment (parameter ``t`` outside [0, 1]). A
+      midpoint never can.
+
+    A point outside its own cell is an interpretability failure: the feature no longer sits over
+    the face or edge it stands for.
+    """
+    polar = face_cone_margin(poly, poly.face_directions())
+    centroid = face_cone_margin(poly, poly.face_centroid_directions())
+    _, t = poly.edge_feet()
+    outside_edges = (t < 0) | (t > 1)
+    return {
+        "faces_polar_outside": int((polar < 0).sum()),
+        "faces_polar_min_margin": float(polar.min()),
+        "faces_centroid_outside": int((centroid < 0).sum()),
+        "edges_foot_outside": int(outside_edges.sum()),
+        "edges_foot_worst_t": float(t[np.argmax(np.abs(t - 0.5))]),
+        "n_faces": poly.n_faces,
+        "n_edges": poly.n_edges,
+    }

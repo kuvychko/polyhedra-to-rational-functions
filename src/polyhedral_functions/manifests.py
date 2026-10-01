@@ -130,3 +130,36 @@ def _jsonable(value):
     if isinstance(value, Path):
         return value.as_posix()
     raise TypeError(f"not JSON-serializable: {type(value).__name__}")
+
+
+PUBLISHED_IMAGE_WIDTH = 1400
+
+
+def publish_evidence(manifest: dict, files: list[Path], experiment_id: str) -> Path:
+    """Copy a run's evidence to ``experiments/<id>/`` for committing.
+
+    Images are downscaled to `PUBLISHED_IMAGE_WIDTH` and saved as JPEG, since the lossless
+    originals stay in ``out/``. Other files are copied as they are. The manifest is written
+    last, with a ``published`` list of what was copied and its hashes.
+    """
+    from PIL import Image
+
+    dest = REPO_ROOT / "experiments" / experiment_id
+    dest.mkdir(parents=True, exist_ok=True)
+    published = []
+    for src in files:
+        src = Path(src)
+        if src.suffix.lower() == ".png":
+            image = Image.open(src).convert("RGB")
+            if image.width > PUBLISHED_IMAGE_WIDTH:
+                height = round(image.height * PUBLISHED_IMAGE_WIDTH / image.width)
+                image = image.resize((PUBLISHED_IMAGE_WIDTH, height), Image.LANCZOS)
+            target = dest / src.with_suffix(".jpg").name
+            image.save(target, quality=88, optimize=True)
+        else:
+            target = dest / src.name
+            target.write_bytes(src.read_bytes())
+        published.append({**output_entry(target), "source": relative(src)})
+    manifest["published"] = published
+    write_json(dest / "manifest.json", manifest)
+    return dest

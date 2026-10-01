@@ -1,0 +1,19 @@
+{
+ "id": "E004-display",
+ "question": "How much of the visible difference between recipes is created by the relief display, rather than the functions?",
+ "hypothesis": "Under a fixed sharpness, R1 (high local orders) renders blunter than R2 and the reliefs differ substantially; an order-tuned or degree-compressed display removes most of the R1/R2 difference (their per-degree fields correlate >= 0.98 on the DI), while R2/R4ve stays different under every display.",
+ "changed_factor": "the radial display mapping (recipe and function fixed)",
+ "fixtures": ["cube", "deltoidal-icositetrahedron", "triakis-tetrahedron", "hexagonal-pyramid", "irregular-9"],
+ "recipes": ["R1", "R2", "R4ve"],
+ "pairs": [["R1", "R2"], ["R2", "R4ve"]],
+ "displays": {
+  "fixed": {"rule": "constant", "value": 4.0},
+  "order-tuned": {"rule": "2 x max |order|", "factor": 2.0},
+  "degree-compressed": {"rule": "degree / 6 (cube R2 unchanged from fixed)", "per_degree": 0.16666666666666666}
+ },
+ "depth": 0.2,
+ "samples": 20000,
+ "render_fixtures": ["deltoidal-icositetrahedron", "irregular-9"],
+ "views": {"deltoidal-icositetrahedron": [1.0, 1.0, 1.0], "irregular-9": [2.2, 2.2, 1.6]},
+ "display": {"relief_resolution": 160, "window": 450}
+}

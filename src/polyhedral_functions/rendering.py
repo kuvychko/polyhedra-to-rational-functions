@@ -247,3 +247,11 @@ def show_image(ax, path: Path, title: str | None = None) -> None:
     ax.set_axis_off()
     if title:
         ax.set_title(title, fontsize=7)
+
+
+def relief_radius(log_modulus, sharpness: float, depth: float) -> np.ndarray:
+    """The relief's radius for a given ``log|f|``, under complexplorer's ``logarithmic`` transfer:
+    ``r = depth + (1 - depth) logistic(log|f| / sharpness)``. ``tests`` checks it against the
+    library's mesh, so display variants can be compared numerically without meshing."""
+    x = np.clip(np.asarray(log_modulus, dtype=float) / sharpness, -700, 700)
+    return depth + (1.0 - depth) / (1.0 + np.exp(-x))
