@@ -18,8 +18,9 @@ The full research program, scope and exit criteria are in [`PROGRAM.md`](PROGRAM
 preserved and reproduced as baseline R0 ([audit](notes/2026-09-30-baseline-audit.md)). The
 geometry contract and an eleven-solid corpus are in place ([notes](notes/2026-09-30-geometry-contract.md)).
 Divisors, stable evaluation and an exact normalization are in place, and the baseline pieces are
-confirmed to be instances of the recipes. Next: a comparison of the uniform (R1), incidence-based (R2)
-and edge-incidence (R4) recipes. Early findings ([notes](notes/2026-10-01-recipe-separation.md)):
+confirmed to be instances of the recipes. Recipes R1, R2 and the edge-incidence family R4, with
+diagnostics for local orders, duality, symmetry and rotation, are implemented and checked across
+the corpus ([notes](notes/2026-10-01-recipes-and-diagnostics.md)). Next: the comparison atlas. Early findings ([notes](notes/2026-10-01-recipe-separation.md)):
 once the degree is divided out, R1 and R2 differ only by valence weighting, and R2 and the two R4
 variants form a single multiplicative family, `f_R2 = f_R4ve / f_R4fe`. A public narrative
 and exhibition site will follow in Phase 2.

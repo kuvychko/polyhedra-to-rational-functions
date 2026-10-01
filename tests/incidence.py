@@ -1,4 +1,4 @@
-"""Incidence divisors written out for tests, until ``recipes.py`` (M4) provides them.
+"""Incidence divisors written out independently of ``recipes.py``, as a cross-check on it.
 
 Unreduced orders throughout: valence at vertices, number of sides at faces, 2 at edges.
 Placement is polar face directions and edge feet.

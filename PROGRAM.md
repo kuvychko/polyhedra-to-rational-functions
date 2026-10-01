@@ -1,6 +1,6 @@
 # Polyhedra as Complex Functions: Research Program and Repository Specification
 
-Version: 2.3 — 2026-10-01
+Version: 2.4 — 2026-10-01
 
 Status: Program specification. The repository is developed in the open and kept public-ready from its first commit: nothing committed should need scrubbing before release. This document does not itself authorize changing repository visibility, deploying the site, or publishing other existing work; each of those remains an explicit owner action.
 
@@ -140,7 +140,7 @@ Added in v2.2 (decision 0002) because the baseline audit showed that the existin
 - **Vertex–edge:** order `valence(v)` at each vertex and order 2 at each edge point. Both totals are `2E`.
 - **Face–edge:** order `sides(f)` at each face's dual direction and order 2 at each edge point. Both totals are `2E`.
 
-Divide by the common gcd as in R2. Polar duality exchanges vertices and faces and maps edges to edges, so the vertex–edge recipe of a polyhedron should be the face–edge recipe of its polar dual. On Platonic inputs these recipes should reproduce the baseline octahedral crown, icosahedral crown and icosidodecahedral star. Both statements are derived by hand and still to be verified.
+Divide by the common gcd as in R2. Polar duality exchanges vertices and faces and maps edges to edges, so the vertex–edge recipe of a polyhedron is the face–edge recipe of its polar dual. R4 therefore satisfies a variant-swap duality rather than the reciprocal one in §5. On Platonic inputs these recipes reproduce the baseline octahedral crown, icosahedral crown and icosidodecahedral star. Both statements are verified by tests (decision 0004 and the M3/M4 notes).
 
 Edge point placement is its own question. Compare the foot of the perpendicular from the origin to the edge line with the projected edge midpoint. The foot is self-dual under polarity: an edge and its dual edge share its direction. For a canonical polyhedron it is the midsphere tangency point.
 

@@ -362,6 +362,63 @@ class Polyhedron:
         """
         return Polyhedron.from_faces(vertices, self.faces, self.name, self.tol)
 
+    # --- symmetry ---------------------------------------------------------------------
+
+    def symmetry_group(self) -> list[np.ndarray]:
+        """All orthogonal maps fixing the origin that carry the polyhedron onto itself.
+
+        These are the rotations and reflections (proper and improper elements) **about the
+        origin**, which is the group a recipe can preserve. An off-centre origin reduces it.
+        Found by mapping one frame of three independent vertices onto every compatible frame,
+        then keeping the maps that are orthogonal and permute the faces.
+        """
+        V = self.vertices
+        tol = self.tol * max(self.scale, 1e-300) * 1e3
+        norms = np.linalg.norm(V, axis=1)
+        dist = np.linalg.norm(V[:, None, :] - V[None, :, :], axis=-1)
+        valence = self.valences
+
+        i0 = 0
+        i1 = next(j for a, b in self.edges for j in (a, b) if i0 in (a, b) and j != i0)
+        i2 = next(
+            k
+            for k in range(len(V))
+            if abs(np.linalg.det(V[[i0, i1, k]])) > 1e-6 * max(self.scale, 1e-300) ** 3
+        )
+        frame_inv = np.linalg.inv(V[[i0, i1, i2]].T)
+        faces = {frozenset(f) for f in self.faces}
+
+        def compatible(j: int, i: int) -> bool:
+            return abs(norms[j] - norms[i]) <= tol and valence[j] == valence[i]
+
+        group: list[np.ndarray] = []
+        for j0 in range(len(V)):
+            if not compatible(j0, i0):
+                continue
+            for j1 in range(len(V)):
+                if not compatible(j1, i1) or abs(dist[j0, j1] - dist[i0, i1]) > tol:
+                    continue
+                for j2 in range(len(V)):
+                    if (
+                        not compatible(j2, i2)
+                        or abs(dist[j0, j2] - dist[i0, i2]) > tol
+                        or abs(dist[j1, j2] - dist[i1, i2]) > tol
+                    ):
+                        continue
+                    M = V[[j0, j1, j2]].T @ frame_inv
+                    if not np.allclose(M @ M.T, np.eye(3), atol=1e-9):
+                        continue
+                    image = V @ M.T
+                    d = np.linalg.norm(image[:, None, :] - V[None, :, :], axis=-1)
+                    perm = d.argmin(axis=1)
+                    if d[np.arange(len(V)), perm].max() > tol or len(set(perm.tolist())) != len(V):
+                        continue
+                    if {frozenset(perm[list(f)].tolist()) for f in self.faces} != faces:
+                        continue
+                    if not any(np.allclose(M, g, atol=1e-9) for g in group):
+                        group.append(M)
+        return group
+
     # --- point sets on the sphere -----------------------------------------------------
 
     def vertex_directions(self) -> np.ndarray:

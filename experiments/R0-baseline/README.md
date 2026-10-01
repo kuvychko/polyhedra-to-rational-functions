@@ -25,3 +25,14 @@ All six pieces reproduce: settings and normalization constants match the manifes
 cube-octahedron-dual mesh matches its recorded triangle count, volume and radii. See the
 audit for findings, including the 0.55% normalization sampling error on cube-octahedron-dual
 and the fact that the three "dual" pieces are exactly recipes R1/R2 on Platonic inputs.
+
+## Correction to the source
+
+The source README describes `tetrahedral-dual` as chiral ("no mirror plane fixes it") and
+says its cut halves are not congruent. Both claims are false:
+
+- The relief has the tetrahedron's six mirror planes.
+- For the suggested cut, a half-turn symmetry swaps the two halves, so one file printed twice
+  makes the piece.
+
+See `tests/test_diagnostics.py::test_tetrahedral_dual_is_not_chiral` and the M4 note.
