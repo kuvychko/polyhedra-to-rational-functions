@@ -60,3 +60,10 @@ def test_offscreen_renders(tmp_path):
         render_relief(d, tmp_path / "s.png", (1, 1, 1), settings, "sphere"),
     ):
         assert path.stat().st_size > 1000
+
+
+def test_order_tuned_display_sets_tip_exponent_one_half():
+    d = apply(R2, fixtures.load("deltoidal-icositetrahedron")).divisor
+    tuned = DisplaySettings().tuned_for(d)
+    assert tuned.sharpness == 8.0  # max order 4
+    assert DisplaySettings().sharpness == 4.0  # the controlled view is unchanged

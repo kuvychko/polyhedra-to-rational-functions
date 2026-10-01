@@ -1,0 +1,211 @@
+# Polyhedra as complex functions: an exploration
+
+*Draft, 2026-10-01. Phase 1 complete; to be revised for Phase 2.*
+
+Claims are labelled **[E]** established background, **[D]** derived here, **[N]** numerical
+observation, **[C]** conjecture, **[P]** design preference. Every numerical claim points to a
+reproducible experiment in `experiments/`.
+
+## 1. The question
+
+A convex polyhedron is a finite, rigid object: points, edges, flat faces. A rational function on
+the Riemann sphere is also determined by finitely many points: its zeros and poles, with integer
+multiplicities, fix it up to a constant factor **[E]**. That suggests a translation. Place zeros
+and poles according to the polyhedron, and study the function that results.
+
+The function can be seen in two ways. Its phase colors the sphere (domain coloring). Its modulus
+can push the sphere radially in and out, giving a relief: poles become spikes, zeros become pits.
+That relief can be printed. Six such objects existed before this project started, built from
+Klein's classical invariants of the Platonic groups.
+
+The question is not whether this can be done, but how to do it well. Which recipe keeps the
+polyhedron recognizable? What does each recipe cost? Where does each one fail?
+
+## 2. The construction space
+
+A recipe has two parts **[P]**:
+
+- **placement:** which points on the sphere stand for which cells of the polyhedron;
+- **multiplicities:** which integer order each point gets.
+
+**Placement.** The natural points are:
+
+- the directions of the vertices;
+- the directions of the polar dual's vertices, i.e. the face normals;
+- the projected face centroids;
+- for edges, either the foot of the perpendicular from the origin or the projected midpoint.
+
+**Duality.** Polar duality with respect to the unit sphere exchanges vertices and faces and maps
+edges to edges **[E]**. The face normals and the edge feet are the two choices that commute with
+it **[D]**.
+
+**Normalization.** The constant in front of `f` matters for a relief, because it sets "sea
+level". Using chordal distance on the unit sphere, a balanced divisor determines the modulus
+exactly: `log|f| = Σ mᵢ log χ(x, aᵢ)` **[D]**. That modulus is:
+
+- self-dual: the negated divisor gives `1/|f|`;
+- rotation-covariant;
+- of geometric mean 1 over the sphere, since the mean of `log χ(x, a)` is `log 2 − 1/2` for
+  every `a`.
+
+The existing ornaments had fixed the constant by sampling that geometric mean; this formula
+reproduces their normalization exactly **[N]**, to 1e-8.
+
+**Information lost.** The radial projection discards distances. A cube and a stretched box with
+the same face normals give the same face points. No recipe here claims to reconstruct the solid.
+
+## 3. The first obstacle: balance
+
+A rational function has as many zeros as poles, counted with multiplicity, including at infinity
+**[E]**. Zeros at the 8 cube vertices and poles at the 6 face directions don't balance with equal
+orders. Two simple fixes:
+
+- **R1, uniform:** order `F` at every vertex and `V` at every face, divided by the gcd.
+- **R2, incidence:** order = valence at each vertex and = number of sides at each face. Both sides
+  total `2E`, because each count goes through edge incidences **[E]**.
+
+On the cube, both give `V⁴/F³`-type degree-24 functions. They are exactly the existing
+"cube–octahedron dual" ornament, up to which side is called zeros **[N]**.
+
+## 4. Competing recipes
+
+R2 counts vertex–face incidences. The existing crown and star ornaments suggested counting
+**vertex–edge** and **face–edge** incidences instead: order = valence or sides, and 2 at each edge
+point. That is **R4** (R4ve, R4fe). The three are linked by an exact identity:
+
+`f_R2 = C · f_R4ve / f_R4fe` **[D, confirmed N on all 11 solids]**
+
+So the incidence recipes form a two-parameter family `f_ve^a · f_fe^b`, with R2 at `(1, −1)`.
+The "flag" recipe `(1, 1)`, vertices and faces against edges, is another member. Polarity maps
+`(a, b)` on a solid to `(b, a)` on its dual **[D]**. Consequences:
+
+- R1 and R2 give the reciprocal function on the dual;
+- R4ve and R4fe swap;
+- the flag recipe gives the *same* function for a solid and its dual, so it cannot tell them apart.
+
+All six existing ornaments turned out to be recipe outputs **[N]**: R1 = R2 on the tetrahedron,
+octahedron and icosahedron, and R4ve on the octahedron, icosahedron and dodecahedron.
+
+## 5. Experiments that changed our view
+
+**The Platonic solids cannot decide anything.** Every candidate coincides on them **[D]**:
+
+- R1 = R2, because all valences are equal and all faces are the same size;
+- face centroids sit on the face normals, and edge midpoints on the feet.
+
+The corpus therefore had to grow with members chosen for what they separate:
+
+- a hexagonal pyramid, for valence spread;
+- a triakis tetrahedron, symmetric but with separated edge placements;
+- two irregular solids.
+
+The deltoidal icositetrahedron, the obvious next example, barely separates the placements:
+0.9° on every kite **[N]**.
+
+**R1 and R2 are nearly the same shape.** Divided by its degree, each is the potential of "vertex
+points minus face points", weighted uniformly for R1 and by incidence for R2 **[D]**. They
+correlate at 0.96–0.99 on most solids. Only strong valence spread separates them (0.83 on the
+pyramid) **[N]** (E001). The real differences are degree, which R2 makes up to 3.25× smaller, and
+phase readability.
+
+**The display had been exaggerating.** Under one fixed relief sharpness, high-order R1 renders as
+rounded lobes and R2 as spikes. Tuning sharpness to each recipe's highest order removes most of
+that: the deltoidal icositetrahedron's relief correlation rises from 0.950 to 0.991 **[N]**
+(E004). Phase cannot be tuned away. R1 winds about three times as often, and its coloring becomes
+hard to read.
+
+**R4 is genuinely different.** Its correlation with R2 is 0.55–0.92, whatever the display **[N]**
+(E001, E004). On irregular solids it places zeros and poles very close together at short edges
+**[N]**. That first looked like a defect.
+
+## 6. Symmetry and deformation
+
+**Symmetry.** Every recipe, in every placement, preserves the full symmetry group of every solid,
+mirrors included **[N]** (E001, 55 of 55 runs). The constructions are equivariant, so symmetry
+cannot choose between them. It did correct a claim, though: the existing "tetrahedral dual" piece
+was described as chiral, and it is not. It has the tetrahedron's six mirror planes, and its cut
+halves are congruent **[N]**.
+
+**Continuous deformation.** With combinatorics fixed, every recipe changes continuously **[N]**
+(E003). Two results went against expectation:
+
+- How far apart R1 and R2 look depends on geometry, not only on combinatorics (0.96 to 0.57
+  along the pyramid family).
+- Polar placement can put a face's pole **outside the face it represents**. On a sheared box this
+  happens exactly at shear 1, together with edge feet leaving their edges **[D, N]**. Centroids
+  never leave their faces, but they break duality.
+
+**Combinatorial transitions.** When a small face or a short edge shrinks to nothing, most recipes
+jump: the limit differs from the recipe on the limiting solid by a fixed divisor **[D, N]**
+(E002). For R2 at a cut cube corner, that divisor is `+3` at the corner and `−1` on each
+neighbouring face.
+
+The exception is R4. R4ve is continuous as a corner is truncated away: three new valence-3
+vertices (`+9`) and three new edges (`−6`) collapse to the old corner's `+3` **[D]**. Dually, R4fe
+is continuous as a raised face flattens. Both converge as the square of the feature size **[N]**.
+R4's near zero–pole pairs are exactly this mechanism at work: small cells about to collapse.
+
+No member of the incidence family is continuous under an edge bevel, where the R4ve and R4fe
+jumps are not proportional **[D, N]**. One caveat: a recipe's degree can jump while its function
+converges, so degree is not a continuous measure **[N]**.
+
+## 7. The selected recipe
+
+**Default: R2, with polar placement** (decision 0005) **[P]**:
+
+- vertex directions with order = valence, face normals with order = number of sides;
+- reduce by the gcd;
+- normalize by the chordal formula.
+
+**Assumptions.** A convex solid with the origin strictly inside and genuine polygonal faces.
+
+**Strengths.**
+
+- exact reciprocal duality;
+- full symmetry;
+- a degree never above R1's except on the hexagonal pyramid;
+- no near zero–pole pairs.
+
+**Limitations.**
+
+- it jumps at every combinatorial transition;
+- on strongly oblique solids a pole can leave its face.
+
+**Alternative: R4** **[P]**. It is the only recipe with transition continuity, it reproduces the
+crowns and the star, and its field is genuinely different. Its cost is tight zero–pole pairs on
+irregular inputs.
+
+**Worked example.** R2 on the octahedron is the existing cube–octahedron dual `V⁴/F³`: degree 24,
+with the exact constant `C = 729/4` in its classical chart form. R2 on the cube gives its
+reciprocal, by duality. Reproduce it with
+`apply(R2, fixtures.load("octahedron"))` and compare with `experiments/R0-baseline/`.
+
+## 8. From analysis to object
+
+The relief maps `log|f|` through a logistic: `r = r_min + (1 − r_min) · logistic(log|f| / k)`.
+The tip exponent near a feature of order `μ` is `μ / k` **[E/D]**. That makes `k` a display
+choice, separate from the function. The baseline's rule `k = 2 · max order` gives every recipe
+the same tip shape.
+
+**Done.** Meshing, closing and sizing (tip-to-tip extent) are inherited from the baseline and
+complexplorer 3.1. The baseline's reference mesh rebuilds exactly.
+
+**Not done yet.** No new recipe has been printed. Phase 2 has to check R4's near pairs at
+printable sizes, and choose the exhibition pieces.
+
+## 9. Open questions
+
+- Is any natural recipe continuous under all three transitions?
+- How should phase be compared across rotations? It is a chart convention.
+- Is `f` itself (not just `|f|`) invariant under the symmetry group, and when?
+- Should an edge foot that falls off its edge fall back to the midpoint, at the cost of duality?
+- Prior work. No literature review has been done, so nothing here claims novelty.
+
+## Reproduce
+
+```bash
+uv sync
+uv run pytest                                  # every derived and numerical claim above
+uv run python scripts/make_atlas.py            # E001
+uv run python scripts/e002_transitions.py      # E002, and likewise e003, e004
+```

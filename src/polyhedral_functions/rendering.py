@@ -16,7 +16,7 @@ Nothing in the mathematical modules imports this one.
 
 from __future__ import annotations
 
-from dataclasses import asdict, dataclass
+from dataclasses import asdict, dataclass, replace
 from pathlib import Path
 
 import complexplorer as cp
@@ -56,6 +56,16 @@ class DisplaySettings:
 
     def config(self) -> dict:
         return asdict(self)
+
+    def tuned_for(self, divisor: Divisor, factor: float = 2.0) -> DisplaySettings:
+        """The **order-tuned** display (decision 0005): ``sharpness = factor x max |order|``.
+
+        Every recipe then has the same tip exponent ``1/factor`` at its highest-order feature,
+        which is the baseline ornaments' rule without its cap. E004 showed that this removes most
+        of the purely visual difference between recipes of very different local order. Label
+        views made this way as tuned; the fixed-sharpness settings remain the controlled view.
+        """
+        return replace(self, sharpness=factor * int(np.abs(divisor.orders).max()))
 
 
 def phase_cmap(settings: DisplaySettings):
