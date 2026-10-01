@@ -23,7 +23,7 @@ sheets.
 
 Display settings are fixed across the whole atlas (a fixed-display comparison). The metrics and
 the manifest go next to the sheets. With ``--publish``, the manifest, the metrics and downscaled
-sheets are copied to ``experiments/<id>/`` for committing. Full-size tiles stay in ``out/``.
+sheets (JPEG) are copied to ``experiments/<id>/`` for committing. Full-size tiles stay in ``out/``.
 """
 
 from __future__ import annotations
@@ -266,8 +266,9 @@ def publish(manifest: dict, out: Path, config: dict) -> None:
         if image.width > PUBLISHED_WIDTH:
             scale = PUBLISHED_WIDTH / image.width
             image = image.resize((PUBLISHED_WIDTH, round(image.height * scale)), Image.LANCZOS)
-        target = dest / "sheets" / src.name
-        image.save(target, optimize=True)
+        # JPEG keeps the committed evidence small; the lossless sheets stay in out/.
+        target = dest / "sheets" / src.with_suffix(".jpg").name
+        image.save(target, quality=88, optimize=True)
         published.append({**output_entry(target), "downscaled_from": entry["path"]})
     manifest["published"] = published
     (dest / "metrics.csv").write_bytes((out / "metrics.csv").read_bytes())
