@@ -1,0 +1,51 @@
+{
+ "id": "E001-atlas",
+ "question": "Across the corpus, how do the candidate recipes differ: in degree, in duality and symmetry behaviour, and in the shape of their magnitude fields?",
+ "hypothesis": "From the M3/M4 screens: R1 and R2 differ in shape only where valences or face sizes vary strongly (hexagonal pyramid), R4 differs from R2 everywhere, and placement matters only on the irregular solids and the pyramid.",
+ "changed_factor": "recipe (recipe sheets); placement with multiplicities fixed (placement panels)",
+ "fixtures": [
+  "tetrahedron",
+  "cube",
+  "octahedron",
+  "icosahedron",
+  "dodecahedron",
+  "rhombicuboctahedron",
+  "deltoidal-icositetrahedron",
+  "triakis-tetrahedron",
+  "hexagonal-pyramid",
+  "irregular-9",
+  "irregular-mixed"
+ ],
+ "recipes": ["R1", "R2", "R4ve", "R4fe", "flag"],
+ "reference_recipe": "R2",
+ "placement_variants": [
+  {"recipe": "R2", "face": "centroid", "edge": "foot"},
+  {"recipe": "R4ve", "face": "polar", "edge": "midpoint"}
+ ],
+ "near_pair_radius": 0.1,
+ "comparison_samples": 20000,
+ "comparison_exclusion": 0.05,
+ "display": {
+  "relief_resolution": 160,
+  "depth": 0.2,
+  "sharpness": 4.0,
+  "phase_sectors": 12,
+  "plane_half_width": 2.5,
+  "plane_resolution": 300,
+  "map_resolution": 180,
+  "map_limit": 0.75,
+  "window": 600
+ },
+ "views": {
+  "default": [2.2, 2.2, 1.6],
+  "tetrahedron": [1.0, 1.0, 1.0],
+  "cube": [1.0, 1.0, 1.0],
+  "octahedron": [1.0, 1.0, 1.0],
+  "rhombicuboctahedron": [1.0, 1.0, 1.0],
+  "deltoidal-icositetrahedron": [1.0, 1.0, 1.0],
+  "triakis-tetrahedron": [1.0, 1.0, 1.0],
+  "icosahedron": [0.6, 0.0, 2.4],
+  "dodecahedron": [0.6, 0.0, 2.4]
+ },
+ "sheet_dpi": 110
+}
