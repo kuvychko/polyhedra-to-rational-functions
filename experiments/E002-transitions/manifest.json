@@ -1,0 +1,2000 @@
+{
+ "experiment": {
+  "id": "E002-transitions",
+  "question": "Which recipes change continuously when the combinatorics change, i.e. when a small face or short edge shrinks to nothing?",
+  "hypothesis": "No recipe is continuous under every transition. In the limit, vertex truncation of a valence-q vertex adds +3q in new vertices and -2q in new edges, so R4ve is continuous under truncation; by polarity R4fe is continuous under raising a flat pyramid on a face. R1, R2 and flag jump under all three transitions, and R4ve jumps under an edge bevel.",
+  "changed_factor": "the transition parameter s, one family at a time (recipes compared side by side)"
+ },
+ "started": "2026-10-01T14:00:21Z",
+ "config": {
+  "id": "E002-transitions",
+  "question": "Which recipes change continuously when the combinatorics change, i.e. when a small face or short edge shrinks to nothing?",
+  "hypothesis": "No recipe is continuous under every transition. In the limit, vertex truncation of a valence-q vertex adds +3q in new vertices and -2q in new edges, so R4ve is continuous under truncation; by polarity R4fe is continuous under raising a flat pyramid on a face. R1, R2 and flag jump under all three transitions, and R4ve jumps under an edge bevel.",
+  "changed_factor": "the transition parameter s, one family at a time (recipes compared side by side)",
+  "families": [
+   "truncated_corner_cube",
+   "bevelled_edge_cube",
+   "raised_face_cube"
+  ],
+  "parameters": [
+   0.3,
+   0.1,
+   0.03,
+   0.01,
+   0.003,
+   0.001,
+   0.0001
+  ],
+  "recipes": [
+   "R1",
+   "R2",
+   "R4ve",
+   "R4fe",
+   "flag"
+  ],
+  "comparison_samples": 20000,
+  "comparison_exclusion": 0.05,
+  "limit_parameter": 1e-06,
+  "limit_cluster_tol": 0.001,
+  "near_pair_radius": 0.5,
+  "illustration_parameter": 0.3,
+  "illustration_recipe": "R4ve",
+  "display": {
+   "window": 500
+  }
+ },
+ "code": {
+  "commit": "7c929c7a5cd93347e73f846c6143771f4f3a539c",
+  "dirty": false,
+  "changed_paths": []
+ },
+ "environment": {
+  "python": "3.13.5",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "packages": {
+   "polyhedra-to-rational-functions": "0.0.1",
+   "complexplorer": "3.1.0",
+   "numpy": "2.5.3",
+   "scipy": "1.18.1",
+   "matplotlib": "3.11.2",
+   "pyvista": "0.49.0",
+   "vtk": "9.7.1"
+  }
+ },
+ "conventions": {
+  "chart": "complexplorer stereographic: z = 0 south pole, z = inf north pole",
+  "normalization": "chordal (decision 0003): log|f| = sum m log chi; geometric mean 1",
+  "phase": "chart phase with C > 0",
+  "evaluation": "log-domain, factored (evaluation.py)"
+ },
+ "runs": [
+  {
+   "family": "truncated_corner_cube",
+   "recipe": "R1",
+   "s": 0.3,
+   "unreduced_degree": 70,
+   "reduced_degree": 70,
+   "cube_reduced_degree": 24,
+   "rms_residual": 2.0909891058879615,
+   "max_residual": 12.075264166791126,
+   "min_zero_pole_distance": 0.15570266595525523
+  },
+  {
+   "family": "truncated_corner_cube",
+   "recipe": "R1",
+   "s": 0.1,
+   "unreduced_degree": 70,
+   "reduced_degree": 70,
+   "cube_reduced_degree": 24,
+   "rms_residual": 2.217551348878502,
+   "max_residual": 12.739263479871624,
+   "min_zero_pole_distance": 0.04872256229876599
+  },
+  {
+   "family": "truncated_corner_cube",
+   "recipe": "R1",
+   "s": 0.03,
+   "unreduced_degree": 70,
+   "reduced_degree": 70,
+   "cube_reduced_degree": 24,
+   "rms_residual": 2.2534058386769744,
+   "max_residual": 14.10585305057867,
+   "min_zero_pole_distance": 0.014283892495415468
+  },
+  {
+   "family": "truncated_corner_cube",
+   "recipe": "R1",
+   "s": 0.01,
+   "unreduced_degree": 70,
+   "reduced_degree": 70,
+   "cube_reduced_degree": 24,
+   "rms_residual": 2.2605948504041913,
+   "max_residual": 14.982376176625454,
+   "min_zero_pole_distance": 0.004729771566787518
+  },
+  {
+   "family": "truncated_corner_cube",
+   "recipe": "R1",
+   "s": 0.003,
+   "unreduced_degree": 70,
+   "reduced_degree": 70,
+   "cube_reduced_degree": 24,
+   "rms_residual": 2.265471418387623,
+   "max_residual": 15.007275178260118,
+   "min_zero_pole_distance": 0.0014156281277175502
+  },
+  {
+   "family": "truncated_corner_cube",
+   "recipe": "R1",
+   "s": 0.001,
+   "unreduced_degree": 70,
+   "reduced_degree": 70,
+   "cube_reduced_degree": 24,
+   "rms_residual": 2.2654714378732073,
+   "max_residual": 15.007230819549159,
+   "min_zero_pole_distance": 0.000471561668703966
+  },
+  {
+   "family": "truncated_corner_cube",
+   "recipe": "R1",
+   "s": 0.0001,
+   "unreduced_degree": 70,
+   "reduced_degree": 70,
+   "cube_reduced_degree": 24,
+   "rms_residual": 2.2654714385605432,
+   "max_residual": 15.007228720084344,
+   "min_zero_pole_distance": 4.714202344087556e-05
+  },
+  {
+   "family": "truncated_corner_cube",
+   "recipe": "R2",
+   "s": 0.3,
+   "unreduced_degree": 30,
+   "reduced_degree": 30,
+   "cube_reduced_degree": 24,
+   "rms_residual": 0.877628803592916,
+   "max_residual": 6.118431970756079,
+   "min_zero_pole_distance": 0.15570266595525523
+  },
+  {
+   "family": "truncated_corner_cube",
+   "recipe": "R2",
+   "s": 0.1,
+   "unreduced_degree": 30,
+   "reduced_degree": 30,
+   "cube_reduced_degree": 24,
+   "rms_residual": 0.9651304865159088,
+   "max_residual": 7.035344982307453,
+   "min_zero_pole_distance": 0.04872256229876599
+  },
+  {
+   "family": "truncated_corner_cube",
+   "recipe": "R2",
+   "s": 0.03,
+   "unreduced_degree": 30,
+   "reduced_degree": 30,
+   "cube_reduced_degree": 24,
+   "rms_residual": 0.9910064265749117,
+   "max_residual": 8.015696631364097,
+   "min_zero_pole_distance": 0.014283892495415468
+  },
+  {
+   "family": "truncated_corner_cube",
+   "recipe": "R2",
+   "s": 0.01,
+   "unreduced_degree": 30,
+   "reduced_degree": 30,
+   "cube_reduced_degree": 24,
+   "rms_residual": 0.9963429867561404,
+   "max_residual": 8.53025396181008,
+   "min_zero_pole_distance": 0.004729771566787518
+  },
+  {
+   "family": "truncated_corner_cube",
+   "recipe": "R2",
+   "s": 0.003,
+   "unreduced_degree": 30,
+   "reduced_degree": 30,
+   "cube_reduced_degree": 24,
+   "rms_residual": 0.9999586184112428,
+   "max_residual": 8.544300116366664,
+   "min_zero_pole_distance": 0.0014156281277175502
+  },
+  {
+   "family": "truncated_corner_cube",
+   "recipe": "R2",
+   "s": 0.001,
+   "unreduced_degree": 30,
+   "reduced_degree": 30,
+   "cube_reduced_degree": 24,
+   "rms_residual": 0.999958629636703,
+   "max_residual": 8.544281105490537,
+   "min_zero_pole_distance": 0.000471561668703966
+  },
+  {
+   "family": "truncated_corner_cube",
+   "recipe": "R2",
+   "s": 0.0001,
+   "unreduced_degree": 30,
+   "reduced_degree": 30,
+   "cube_reduced_degree": 24,
+   "rms_residual": 0.9999586300448682,
+   "max_residual": 8.544280205719904,
+   "min_zero_pole_distance": 4.714202344087556e-05
+  },
+  {
+   "family": "truncated_corner_cube",
+   "recipe": "R4ve",
+   "s": 0.3,
+   "unreduced_degree": 30,
+   "reduced_degree": 30,
+   "cube_reduced_degree": 24,
+   "rms_residual": 0.19275429618308842,
+   "max_residual": 6.6234666659473955,
+   "min_zero_pole_distance": 0.13473933102323885
+  },
+  {
+   "family": "truncated_corner_cube",
+   "recipe": "R4ve",
+   "s": 0.1,
+   "unreduced_degree": 30,
+   "reduced_degree": 30,
+   "cube_reduced_degree": 24,
+   "rms_residual": 0.014218794169671251,
+   "max_residual": 0.768476638543655,
+   "min_zero_pole_distance": 0.04219184359083058
+  },
+  {
+   "family": "truncated_corner_cube",
+   "recipe": "R4ve",
+   "s": 0.03,
+   "unreduced_degree": 30,
+   "reduced_degree": 30,
+   "cube_reduced_degree": 24,
+   "rms_residual": 0.0006682750554764795,
+   "max_residual": 0.032975027544154045,
+   "min_zero_pole_distance": 0.012370134888119826
+  },
+  {
+   "family": "truncated_corner_cube",
+   "recipe": "R4ve",
+   "s": 0.01,
+   "unreduced_degree": 30,
+   "reduced_degree": 30,
+   "cube_reduced_degree": 24,
+   "rms_residual": 3.716542740559582e-05,
+   "max_residual": 0.002217036959203611,
+   "min_zero_pole_distance": 0.004096099467384154
+  },
+  {
+   "family": "truncated_corner_cube",
+   "recipe": "R4ve",
+   "s": 0.003,
+   "unreduced_degree": 30,
+   "reduced_degree": 30,
+   "cube_reduced_degree": 24,
+   "rms_residual": 2.087125896110471e-06,
+   "max_residual": 5.814419256910952e-05,
+   "min_zero_pole_distance": 0.0012259698441385808
+  },
+  {
+   "family": "truncated_corner_cube",
+   "recipe": "R4ve",
+   "s": 0.001,
+   "unreduced_degree": 30,
+   "reduced_degree": 30,
+   "cube_reduced_degree": 24,
+   "rms_residual": 2.1112032915258973e-07,
+   "max_residual": 2.0921421572950294e-06,
+   "min_zero_pole_distance": 0.0004083843817107218
+  },
+  {
+   "family": "truncated_corner_cube",
+   "recipe": "R4ve",
+   "s": 0.0001,
+   "unreduced_degree": 30,
+   "reduced_degree": 30,
+   "cube_reduced_degree": 24,
+   "rms_residual": 2.083680548214085e-09,
+   "max_residual": 3.96544752589989e-09,
+   "min_zero_pole_distance": 4.082618988276439e-05
+  },
+  {
+   "family": "truncated_corner_cube",
+   "recipe": "R4fe",
+   "s": 0.3,
+   "unreduced_degree": 30,
+   "reduced_degree": 30,
+   "cube_reduced_degree": 12,
+   "rms_residual": 0.9468802407858411,
+   "max_residual": 6.4410905691288916,
+   "min_zero_pole_distance": 0.07838627278956006
+  },
+  {
+   "family": "truncated_corner_cube",
+   "recipe": "R4fe",
+   "s": 0.1,
+   "unreduced_degree": 30,
+   "reduced_degree": 30,
+   "cube_reduced_degree": 12,
+   "rms_residual": 0.9842446086075474,
+   "max_residual": 7.8416484939110624,
+   "min_zero_pole_distance": 0.024377558380457815
+  },
+  {
+   "family": "truncated_corner_cube",
+   "recipe": "R4fe",
+   "s": 0.03,
+   "unreduced_degree": 30,
+   "reduced_degree": 30,
+   "cube_reduced_degree": 12,
+   "rms_residual": 0.9942419317086577,
+   "max_residual": 8.47758713311352,
+   "min_zero_pole_distance": 0.007142356102867235
+  },
+  {
+   "family": "truncated_corner_cube",
+   "recipe": "R4fe",
+   "s": 0.01,
+   "unreduced_degree": 30,
+   "reduced_degree": 30,
+   "cube_reduced_degree": 12,
+   "rms_residual": 0.9996444450470033,
+   "max_residual": 8.544229502133474,
+   "min_zero_pole_distance": 0.002364900662817811
+  },
+  {
+   "family": "truncated_corner_cube",
+   "recipe": "R4fe",
+   "s": 0.003,
+   "unreduced_degree": 30,
+   "reduced_degree": 30,
+   "cube_reduced_degree": 12,
+   "rms_residual": 0.9996444146457213,
+   "max_residual": 8.544279106669284,
+   "min_zero_pole_distance": 0.0007078144628013538
+  },
+  {
+   "family": "truncated_corner_cube",
+   "recipe": "R4fe",
+   "s": 0.001,
+   "unreduced_degree": 30,
+   "reduced_degree": 30,
+   "cube_reduced_degree": 12,
+   "rms_residual": 0.9996444142114398,
+   "max_residual": 8.544280189865605,
+   "min_zero_pole_distance": 0.0002357808490981748
+  },
+  {
+   "family": "truncated_corner_cube",
+   "recipe": "R4fe",
+   "s": 0.0001,
+   "unreduced_degree": 30,
+   "reduced_degree": 30,
+   "cube_reduced_degree": 12,
+   "rms_residual": 0.9996444142402978,
+   "max_residual": 8.544280202929912,
+   "min_zero_pole_distance": 2.3571011735152406e-05
+  },
+  {
+   "family": "truncated_corner_cube",
+   "recipe": "flag",
+   "s": 0.3,
+   "unreduced_degree": 60,
+   "reduced_degree": 60,
+   "cube_reduced_degree": 48,
+   "rms_residual": 1.0060194120357209,
+   "max_residual": 12.380688614507836,
+   "min_zero_pole_distance": 0.07838627278956006
+  },
+  {
+   "family": "truncated_corner_cube",
+   "recipe": "flag",
+   "s": 0.1,
+   "unreduced_degree": 60,
+   "reduced_degree": 60,
+   "cube_reduced_degree": 48,
+   "rms_residual": 0.9669595356270106,
+   "max_residual": 8.350878163884943,
+   "min_zero_pole_distance": 0.024377558380457815
+  },
+  {
+   "family": "truncated_corner_cube",
+   "recipe": "flag",
+   "s": 0.03,
+   "unreduced_degree": 60,
+   "reduced_degree": 60,
+   "cube_reduced_degree": 48,
+   "rms_residual": 0.9928104699079566,
+   "max_residual": 8.0816466864524,
+   "min_zero_pole_distance": 0.007142356102867235
+  },
+  {
+   "family": "truncated_corner_cube",
+   "recipe": "flag",
+   "s": 0.01,
+   "unreduced_degree": 60,
+   "reduced_degree": 60,
+   "cube_reduced_degree": 48,
+   "rms_residual": 0.9981790198534566,
+   "max_residual": 8.534688035728484,
+   "min_zero_pole_distance": 0.002364900662817811
+  },
+  {
+   "family": "truncated_corner_cube",
+   "recipe": "flag",
+   "s": 0.003,
+   "unreduced_degree": 60,
+   "reduced_degree": 60,
+   "cube_reduced_degree": 48,
+   "rms_residual": 1.001813552197868,
+   "max_residual": 8.544258096971905,
+   "min_zero_pole_distance": 0.0007078144628013538
+  },
+  {
+   "family": "truncated_corner_cube",
+   "recipe": "flag",
+   "s": 0.001,
+   "unreduced_degree": 60,
+   "reduced_degree": 60,
+   "cube_reduced_degree": 48,
+   "rms_residual": 1.0018135380013566,
+   "max_residual": 8.544279274240672,
+   "min_zero_pole_distance": 0.0002357808490981748
+  },
+  {
+   "family": "truncated_corner_cube",
+   "recipe": "flag",
+   "s": 0.0001,
+   "unreduced_degree": 60,
+   "reduced_degree": 60,
+   "cube_reduced_degree": 48,
+   "rms_residual": 1.0018135374055246,
+   "max_residual": 8.544280200139927,
+   "min_zero_pole_distance": 2.3571011735152406e-05
+  },
+  {
+   "family": "bevelled_edge_cube",
+   "recipe": "R1",
+   "s": 0.3,
+   "unreduced_degree": 70,
+   "reduced_degree": 70,
+   "cube_reduced_degree": 24,
+   "rms_residual": 3.154146280877342,
+   "max_residual": 24.456093110379157,
+   "min_zero_pole_distance": NaN
+  },
+  {
+   "family": "bevelled_edge_cube",
+   "recipe": "R1",
+   "s": 0.1,
+   "unreduced_degree": 70,
+   "reduced_degree": 70,
+   "cube_reduced_degree": 24,
+   "rms_residual": 2.8336392952701464,
+   "max_residual": 21.883035657313172,
+   "min_zero_pole_distance": NaN
+  },
+  {
+   "family": "bevelled_edge_cube",
+   "recipe": "R1",
+   "s": 0.03,
+   "unreduced_degree": 70,
+   "reduced_degree": 70,
+   "cube_reduced_degree": 24,
+   "rms_residual": 2.7724513920251566,
+   "max_residual": 21.091591562946448,
+   "min_zero_pole_distance": NaN
+  },
+  {
+   "family": "bevelled_edge_cube",
+   "recipe": "R1",
+   "s": 0.01,
+   "unreduced_degree": 70,
+   "reduced_degree": 70,
+   "cube_reduced_degree": 24,
+   "rms_residual": 2.7563163362295304,
+   "max_residual": 20.877047640620617,
+   "min_zero_pole_distance": NaN
+  },
+  {
+   "family": "bevelled_edge_cube",
+   "recipe": "R1",
+   "s": 0.003,
+   "unreduced_degree": 70,
+   "reduced_degree": 70,
+   "cube_reduced_degree": 24,
+   "rms_residual": 2.7593367316708743,
+   "max_residual": 20.803203404461485,
+   "min_zero_pole_distance": NaN
+  },
+  {
+   "family": "bevelled_edge_cube",
+   "recipe": "R1",
+   "s": 0.001,
+   "unreduced_degree": 70,
+   "reduced_degree": 70,
+   "cube_reduced_degree": 24,
+   "rms_residual": 2.7568152417156893,
+   "max_residual": 20.782224464483136,
+   "min_zero_pole_distance": NaN
+  },
+  {
+   "family": "bevelled_edge_cube",
+   "recipe": "R1",
+   "s": 0.0001,
+   "unreduced_degree": 70,
+   "reduced_degree": 70,
+   "cube_reduced_degree": 24,
+   "rms_residual": 2.7587812209730425,
+   "max_residual": 20.77280129094934,
+   "min_zero_pole_distance": NaN
+  },
+  {
+   "family": "bevelled_edge_cube",
+   "recipe": "R2",
+   "s": 0.3,
+   "unreduced_degree": 30,
+   "reduced_degree": 30,
+   "cube_reduced_degree": 24,
+   "rms_residual": 1.1192757564737172,
+   "max_residual": 9.438315350904478,
+   "min_zero_pole_distance": NaN
+  },
+  {
+   "family": "bevelled_edge_cube",
+   "recipe": "R2",
+   "s": 0.1,
+   "unreduced_degree": 30,
+   "reduced_degree": 30,
+   "cube_reduced_degree": 24,
+   "rms_residual": 1.0222385374714738,
+   "max_residual": 8.335576442447628,
+   "min_zero_pole_distance": NaN
+  },
+  {
+   "family": "bevelled_edge_cube",
+   "recipe": "R2",
+   "s": 0.03,
+   "unreduced_degree": 30,
+   "reduced_degree": 30,
+   "cube_reduced_degree": 24,
+   "rms_residual": 1.0141778968026662,
+   "max_residual": 7.996386116290462,
+   "min_zero_pole_distance": NaN
+  },
+  {
+   "family": "bevelled_edge_cube",
+   "recipe": "R2",
+   "s": 0.01,
+   "unreduced_degree": 30,
+   "reduced_degree": 30,
+   "cube_reduced_degree": 24,
+   "rms_residual": 1.0128071404625385,
+   "max_residual": 7.904438721007961,
+   "min_zero_pole_distance": NaN
+  },
+  {
+   "family": "bevelled_edge_cube",
+   "recipe": "R2",
+   "s": 0.003,
+   "unreduced_degree": 30,
+   "reduced_degree": 30,
+   "cube_reduced_degree": 24,
+   "rms_residual": 1.0158696112885035,
+   "max_residual": 7.872791191225478,
+   "min_zero_pole_distance": NaN
+  },
+  {
+   "family": "bevelled_edge_cube",
+   "recipe": "R2",
+   "s": 0.001,
+   "unreduced_degree": 30,
+   "reduced_degree": 30,
+   "cube_reduced_degree": 24,
+   "rms_residual": 1.0153843587484197,
+   "max_residual": 7.8638002169490155,
+   "min_zero_pole_distance": NaN
+  },
+  {
+   "family": "bevelled_edge_cube",
+   "recipe": "R2",
+   "s": 0.0001,
+   "unreduced_degree": 30,
+   "reduced_degree": 30,
+   "cube_reduced_degree": 24,
+   "rms_residual": 1.0164096807961156,
+   "max_residual": 7.859761714005441,
+   "min_zero_pole_distance": NaN
+  },
+  {
+   "family": "bevelled_edge_cube",
+   "recipe": "R4ve",
+   "s": 0.3,
+   "unreduced_degree": 30,
+   "reduced_degree": 30,
+   "cube_reduced_degree": 24,
+   "rms_residual": 0.7146143860619044,
+   "max_residual": 4.878664655323368,
+   "min_zero_pole_distance": 0.1347393310232388
+  },
+  {
+   "family": "bevelled_edge_cube",
+   "recipe": "R4ve",
+   "s": 0.1,
+   "unreduced_degree": 30,
+   "reduced_degree": 30,
+   "cube_reduced_degree": 24,
+   "rms_residual": 0.524948632890106,
+   "max_residual": 4.295237508080959,
+   "min_zero_pole_distance": 0.04219184359083073
+  },
+  {
+   "family": "bevelled_edge_cube",
+   "recipe": "R4ve",
+   "s": 0.03,
+   "unreduced_degree": 30,
+   "reduced_degree": 30,
+   "cube_reduced_degree": 24,
+   "rms_residual": 0.4803829555754813,
+   "max_residual": 4.736089191909155,
+   "min_zero_pole_distance": 0.012370134888119907
+  },
+  {
+   "family": "bevelled_edge_cube",
+   "recipe": "R4ve",
+   "s": 0.01,
+   "unreduced_degree": 30,
+   "reduced_degree": 30,
+   "cube_reduced_degree": 24,
+   "rms_residual": 0.46743811465922447,
+   "max_residual": 4.795482561411697,
+   "min_zero_pole_distance": 0.004096099467384076
+  },
+  {
+   "family": "bevelled_edge_cube",
+   "recipe": "R4ve",
+   "s": 0.003,
+   "unreduced_degree": 30,
+   "reduced_degree": 30,
+   "cube_reduced_degree": 24,
+   "rms_residual": 0.462851326699034,
+   "max_residual": 4.7882081005792365,
+   "min_zero_pole_distance": 0.001225969844138502
+  },
+  {
+   "family": "bevelled_edge_cube",
+   "recipe": "R4ve",
+   "s": 0.001,
+   "unreduced_degree": 30,
+   "reduced_degree": 30,
+   "cube_reduced_degree": 24,
+   "rms_residual": 0.4613525560542244,
+   "max_residual": 4.783424182506286,
+   "min_zero_pole_distance": 0.0004083843817106433
+  },
+  {
+   "family": "bevelled_edge_cube",
+   "recipe": "R4ve",
+   "s": 0.0001,
+   "unreduced_degree": 30,
+   "reduced_degree": 30,
+   "cube_reduced_degree": 24,
+   "rms_residual": 0.4608728148706798,
+   "max_residual": 4.780881298361045,
+   "min_zero_pole_distance": 4.082618988229336e-05
+  },
+  {
+   "family": "bevelled_edge_cube",
+   "recipe": "R4fe",
+   "s": 0.3,
+   "unreduced_degree": 30,
+   "reduced_degree": 30,
+   "cube_reduced_degree": 12,
+   "rms_residual": 0.8334325609050612,
+   "max_residual": 8.31799203651674,
+   "min_zero_pole_distance": 0.17445022890247625
+  },
+  {
+   "family": "bevelled_edge_cube",
+   "recipe": "R4fe",
+   "s": 0.1,
+   "unreduced_degree": 30,
+   "reduced_degree": 30,
+   "cube_reduced_degree": 12,
+   "rms_residual": 0.813821046585023,
+   "max_residual": 5.188535521496218,
+   "min_zero_pole_distance": 0.05257700386081914
+  },
+  {
+   "family": "bevelled_edge_cube",
+   "recipe": "R4fe",
+   "s": 0.03,
+   "unreduced_degree": 30,
+   "reduced_degree": 30,
+   "cube_reduced_degree": 12,
+   "rms_residual": 0.8219939797508656,
+   "max_residual": 5.208769227938867,
+   "min_zero_pole_distance": 0.015227102263835902
+  },
+  {
+   "family": "bevelled_edge_cube",
+   "recipe": "R4fe",
+   "s": 0.01,
+   "unreduced_degree": 30,
+   "reduced_degree": 30,
+   "cube_reduced_degree": 12,
+   "rms_residual": 0.8248830053236517,
+   "max_residual": 5.127922785933479,
+   "min_zero_pole_distance": 0.0050250780436987
+  },
+  {
+   "family": "bevelled_edge_cube",
+   "recipe": "R4fe",
+   "s": 0.003,
+   "unreduced_degree": 30,
+   "reduced_degree": 30,
+   "cube_reduced_degree": 12,
+   "rms_residual": 0.8257062421229749,
+   "max_residual": 5.220111264141474,
+   "min_zero_pole_distance": 0.0015022521087343394
+  },
+  {
+   "family": "bevelled_edge_cube",
+   "recipe": "R4fe",
+   "s": 0.001,
+   "unreduced_degree": 30,
+   "reduced_degree": 30,
+   "cube_reduced_degree": 12,
+   "rms_residual": 0.8267412206077327,
+   "max_residual": 5.218749973522778,
+   "min_zero_pole_distance": 0.000500250078089147
+  },
+  {
+   "family": "bevelled_edge_cube",
+   "recipe": "R4fe",
+   "s": 0.0001,
+   "unreduced_degree": 30,
+   "reduced_degree": 30,
+   "cube_reduced_degree": 12,
+   "rms_residual": 0.826839113317985,
+   "max_residual": 5.2142614373492675,
+   "min_zero_pole_distance": 5.000249952278004e-05
+  },
+  {
+   "family": "bevelled_edge_cube",
+   "recipe": "flag",
+   "s": 0.3,
+   "unreduced_degree": 60,
+   "reduced_degree": 60,
+   "cube_reduced_degree": 48,
+   "rms_residual": 1.05892836146705,
+   "max_residual": 8.268520679663354,
+   "min_zero_pole_distance": 0.1347393310232388
+  },
+  {
+   "family": "bevelled_edge_cube",
+   "recipe": "flag",
+   "s": 0.1,
+   "unreduced_degree": 60,
+   "reduced_degree": 60,
+   "cube_reduced_degree": 48,
+   "rms_residual": 0.8979999763843981,
+   "max_residual": 4.8921287770100905,
+   "min_zero_pole_distance": 0.04219184359083073
+  },
+  {
+   "family": "bevelled_edge_cube",
+   "recipe": "flag",
+   "s": 0.03,
+   "unreduced_degree": 60,
+   "reduced_degree": 60,
+   "cube_reduced_degree": 48,
+   "rms_residual": 0.8781778416243122,
+   "max_residual": 3.7384510428558064,
+   "min_zero_pole_distance": 0.012370134888119907
+  },
+  {
+   "family": "bevelled_edge_cube",
+   "recipe": "flag",
+   "s": 0.01,
+   "unreduced_degree": 60,
+   "reduced_degree": 60,
+   "cube_reduced_degree": 48,
+   "rms_residual": 0.8732113169177039,
+   "max_residual": 3.4622896351844874,
+   "min_zero_pole_distance": 0.004096099467384076
+  },
+  {
+   "family": "bevelled_edge_cube",
+   "recipe": "flag",
+   "s": 0.003,
+   "unreduced_degree": 60,
+   "reduced_degree": 60,
+   "cube_reduced_degree": 48,
+   "rms_residual": 0.8722106375521378,
+   "max_residual": 3.3850418763780867,
+   "min_zero_pole_distance": 0.001225969844138502
+  },
+  {
+   "family": "bevelled_edge_cube",
+   "recipe": "flag",
+   "s": 0.001,
+   "unreduced_degree": 60,
+   "reduced_degree": 60,
+   "cube_reduced_degree": 48,
+   "rms_residual": 0.8716067186376801,
+   "max_residual": 3.365438113736727,
+   "min_zero_pole_distance": 0.0004083843817106433
+  },
+  {
+   "family": "bevelled_edge_cube",
+   "recipe": "flag",
+   "s": 0.0001,
+   "unreduced_degree": 60,
+   "reduced_degree": 60,
+   "cube_reduced_degree": 48,
+   "rms_residual": 0.8716302661281942,
+   "max_residual": 3.35700812188714,
+   "min_zero_pole_distance": 4.082618988229336e-05
+  },
+  {
+   "family": "raised_face_cube",
+   "recipe": "R1",
+   "s": 0.3,
+   "unreduced_degree": 81,
+   "reduced_degree": 9,
+   "cube_reduced_degree": 24,
+   "rms_residual": 7.835482936858959,
+   "max_residual": 30.962349742014077,
+   "min_zero_pole_distance": 0.2904262893708096
+  },
+  {
+   "family": "raised_face_cube",
+   "recipe": "R1",
+   "s": 0.1,
+   "unreduced_degree": 81,
+   "reduced_degree": 9,
+   "cube_reduced_degree": 24,
+   "rms_residual": 8.718462892427677,
+   "max_residual": 42.685491323109225,
+   "min_zero_pole_distance": 0.09962740376031962
+  },
+  {
+   "family": "raised_face_cube",
+   "recipe": "R1",
+   "s": 0.03,
+   "unreduced_degree": 81,
+   "reduced_degree": 9,
+   "cube_reduced_degree": 24,
+   "rms_residual": 8.964195825826845,
+   "max_residual": 54.05122719498342,
+   "min_zero_pole_distance": 0.029989880881165356
+  },
+  {
+   "family": "raised_face_cube",
+   "recipe": "R1",
+   "s": 0.01,
+   "unreduced_degree": 81,
+   "reduced_degree": 9,
+   "cube_reduced_degree": 24,
+   "rms_residual": 9.047712434171407,
+   "max_residual": 57.51951942560374,
+   "min_zero_pole_distance": 0.009999625024216934
+  },
+  {
+   "family": "raised_face_cube",
+   "recipe": "R1",
+   "s": 0.003,
+   "unreduced_degree": 81,
+   "reduced_degree": 9,
+   "cube_reduced_degree": 24,
+   "rms_residual": 9.075805916971,
+   "max_residual": 59.30766955136936,
+   "min_zero_pole_distance": 0.002999989875058743
+  },
+  {
+   "family": "raised_face_cube",
+   "recipe": "R1",
+   "s": 0.001,
+   "unreduced_degree": 81,
+   "reduced_degree": 9,
+   "cube_reduced_degree": 24,
+   "rms_residual": 9.085576824226736,
+   "max_residual": 59.98689248214977,
+   "min_zero_pole_distance": 0.000999999625000132
+  },
+  {
+   "family": "raised_face_cube",
+   "recipe": "R1",
+   "s": 0.0001,
+   "unreduced_degree": 81,
+   "reduced_degree": 9,
+   "cube_reduced_degree": 24,
+   "rms_residual": 9.085576824254712,
+   "max_residual": 59.98688889245582,
+   "min_zero_pole_distance": 9.999999962498899e-05
+  },
+  {
+   "family": "raised_face_cube",
+   "recipe": "R2",
+   "s": 0.3,
+   "unreduced_degree": 32,
+   "reduced_degree": 32,
+   "cube_reduced_degree": 24,
+   "rms_residual": 0.9831857902245139,
+   "max_residual": 9.15665101768879,
+   "min_zero_pole_distance": 0.2904262893708096
+  },
+  {
+   "family": "raised_face_cube",
+   "recipe": "R2",
+   "s": 0.1,
+   "unreduced_degree": 32,
+   "reduced_degree": 32,
+   "cube_reduced_degree": 24,
+   "rms_residual": 1.20743848959043,
+   "max_residual": 7.8603559700166326,
+   "min_zero_pole_distance": 0.09962740376031962
+  },
+  {
+   "family": "raised_face_cube",
+   "recipe": "R2",
+   "s": 0.03,
+   "unreduced_degree": 32,
+   "reduced_degree": 32,
+   "cube_reduced_degree": 24,
+   "rms_residual": 1.279082545168015,
+   "max_residual": 10.20892627456686,
+   "min_zero_pole_distance": 0.029989880881165356
+  },
+  {
+   "family": "raised_face_cube",
+   "recipe": "R2",
+   "s": 0.01,
+   "unreduced_degree": 32,
+   "reduced_degree": 32,
+   "cube_reduced_degree": 24,
+   "rms_residual": 1.3004191371251723,
+   "max_residual": 10.97206344794261,
+   "min_zero_pole_distance": 0.009999625024216934
+  },
+  {
+   "family": "raised_face_cube",
+   "recipe": "R2",
+   "s": 0.003,
+   "unreduced_degree": 32,
+   "reduced_degree": 32,
+   "cube_reduced_degree": 24,
+   "rms_residual": 1.3076277915030312,
+   "max_residual": 11.348543934579698,
+   "min_zero_pole_distance": 0.002999989875058743
+  },
+  {
+   "family": "raised_face_cube",
+   "recipe": "R2",
+   "s": 0.001,
+   "unreduced_degree": 32,
+   "reduced_degree": 32,
+   "cube_reduced_degree": 24,
+   "rms_residual": 1.3101407870001025,
+   "max_residual": 11.491524663346546,
+   "min_zero_pole_distance": 0.000999999625000132
+  },
+  {
+   "family": "raised_face_cube",
+   "recipe": "R2",
+   "s": 0.0001,
+   "unreduced_degree": 32,
+   "reduced_degree": 32,
+   "cube_reduced_degree": 24,
+   "rms_residual": 1.3101407868914607,
+   "max_residual": 11.4915234667819,
+   "min_zero_pole_distance": 9.999999962498899e-05
+  },
+  {
+   "family": "raised_face_cube",
+   "recipe": "R4ve",
+   "s": 0.3,
+   "unreduced_degree": 32,
+   "reduced_degree": 32,
+   "cube_reduced_degree": 24,
+   "rms_residual": 1.096402481403892,
+   "max_residual": 6.125177320643807,
+   "min_zero_pole_distance": 0.20865293628877124
+  },
+  {
+   "family": "raised_face_cube",
+   "recipe": "R4ve",
+   "s": 0.1,
+   "unreduced_degree": 32,
+   "reduced_degree": 32,
+   "cube_reduced_degree": 24,
+   "rms_residual": 1.235742267591506,
+   "max_residual": 8.899057284611759,
+   "min_zero_pole_distance": 0.07057852212064367
+  },
+  {
+   "family": "raised_face_cube",
+   "recipe": "R4ve",
+   "s": 0.03,
+   "unreduced_degree": 32,
+   "reduced_degree": 32,
+   "cube_reduced_degree": 24,
+   "rms_residual": 1.2871872308885457,
+   "max_residual": 10.367293248876146,
+   "min_zero_pole_distance": 0.021209624747522086
+  },
+  {
+   "family": "raised_face_cube",
+   "recipe": "R4ve",
+   "s": 0.01,
+   "unreduced_degree": 32,
+   "reduced_degree": 32,
+   "cube_reduced_degree": 24,
+   "rms_residual": 1.3048937676270964,
+   "max_residual": 11.08982395705586,
+   "min_zero_pole_distance": 0.007070935233624936
+  },
+  {
+   "family": "raised_face_cube",
+   "recipe": "R4ve",
+   "s": 0.003,
+   "unreduced_degree": 32,
+   "reduced_degree": 32,
+   "cube_reduced_degree": 24,
+   "rms_residual": 1.3097647552483223,
+   "max_residual": 11.348515844996419,
+   "min_zero_pole_distance": 0.002121316763841891
+  },
+  {
+   "family": "raised_face_cube",
+   "recipe": "R4ve",
+   "s": 0.001,
+   "unreduced_degree": 32,
+   "reduced_degree": 32,
+   "cube_reduced_degree": 24,
+   "rms_residual": 1.3122852471903097,
+   "max_residual": 11.491523999887825,
+   "min_zero_pole_distance": 0.000707106648604166
+  },
+  {
+   "family": "raised_face_cube",
+   "recipe": "R4ve",
+   "s": 0.0001,
+   "unreduced_degree": 32,
+   "reduced_degree": 32,
+   "cube_reduced_degree": 24,
+   "rms_residual": 1.3122852473870965,
+   "max_residual": 11.491523456815553,
+   "min_zero_pole_distance": 7.07106779860254e-05
+  },
+  {
+   "family": "raised_face_cube",
+   "recipe": "R4fe",
+   "s": 0.3,
+   "unreduced_degree": 32,
+   "reduced_degree": 32,
+   "cube_reduced_degree": 12,
+   "rms_residual": 0.6169675326288722,
+   "max_residual": 9.534814733886932,
+   "min_zero_pole_distance": 0.204253601043926
+  },
+  {
+   "family": "raised_face_cube",
+   "recipe": "R4fe",
+   "s": 0.1,
+   "unreduced_degree": 32,
+   "reduced_degree": 32,
+   "cube_reduced_degree": 12,
+   "rms_residual": 0.03453207775373636,
+   "max_residual": 1.1600679338534023,
+   "min_zero_pole_distance": 0.0704033885006318
+  },
+  {
+   "family": "raised_face_cube",
+   "recipe": "R4fe",
+   "s": 0.03,
+   "unreduced_degree": 32,
+   "reduced_degree": 32,
+   "cube_reduced_degree": 12,
+   "rms_residual": 0.001705851685911576,
+   "max_residual": 0.09825647597574427,
+   "min_zero_pole_distance": 0.02120485580081213
+  },
+  {
+   "family": "raised_face_cube",
+   "recipe": "R4fe",
+   "s": 0.01,
+   "unreduced_degree": 32,
+   "reduced_degree": 32,
+   "cube_reduced_degree": 12,
+   "rms_residual": 0.00010438132376812216,
+   "max_residual": 0.0014062602025548543,
+   "min_zero_pole_distance": 0.007070758473501244
+  },
+  {
+   "family": "raised_face_cube",
+   "recipe": "R4fe",
+   "s": 0.003,
+   "unreduced_degree": 32,
+   "reduced_degree": 32,
+   "cube_reduced_degree": 12,
+   "rms_residual": 9.005353100713537e-06,
+   "max_residual": 2.8089583278045893e-05,
+   "min_zero_pole_distance": 0.0021213119909113884
+  },
+  {
+   "family": "raised_face_cube",
+   "recipe": "R4fe",
+   "s": 0.001,
+   "unreduced_degree": 32,
+   "reduced_degree": 32,
+   "cube_reduced_degree": 12,
+   "rms_residual": 9.999988066351346e-07,
+   "max_residual": 1.235676194255575e-06,
+   "min_zero_pole_distance": 0.0007071064718274613
+  },
+  {
+   "family": "raised_face_cube",
+   "recipe": "R4fe",
+   "s": 0.0001,
+   "unreduced_degree": 32,
+   "reduced_degree": 32,
+   "cube_reduced_degree": 12,
+   "rms_residual": 9.999999011945123e-09,
+   "max_residual": 1.0023569529948873e-08,
+   "min_zero_pole_distance": 7.071067780928775e-05
+  },
+  {
+   "family": "raised_face_cube",
+   "recipe": "flag",
+   "s": 0.3,
+   "unreduced_degree": 64,
+   "reduced_degree": 64,
+   "cube_reduced_degree": 48,
+   "rms_residual": 1.458789201478804,
+   "max_residual": 11.450749413650325,
+   "min_zero_pole_distance": 0.204253601043926
+  },
+  {
+   "family": "raised_face_cube",
+   "recipe": "flag",
+   "s": 0.1,
+   "unreduced_degree": 64,
+   "reduced_degree": 64,
+   "cube_reduced_degree": 48,
+   "rms_residual": 1.2024065421580932,
+   "max_residual": 9.41830568715163,
+   "min_zero_pole_distance": 0.0704033885006318
+  },
+  {
+   "family": "raised_face_cube",
+   "recipe": "flag",
+   "s": 0.03,
+   "unreduced_degree": 64,
+   "reduced_degree": 64,
+   "cube_reduced_degree": 48,
+   "rms_residual": 1.2812004608270269,
+   "max_residual": 10.254384868270918,
+   "min_zero_pole_distance": 0.02120485580081213
+  },
+  {
+   "family": "raised_face_cube",
+   "recipe": "flag",
+   "s": 0.01,
+   "unreduced_degree": 64,
+   "reduced_degree": 64,
+   "cube_reduced_degree": 48,
+   "rms_residual": 1.304493436515794,
+   "max_residual": 10.972308545391492,
+   "min_zero_pole_distance": 0.007070758473501244
+  },
+  {
+   "family": "raised_face_cube",
+   "recipe": "flag",
+   "s": 0.003,
+   "unreduced_degree": 64,
+   "reduced_degree": 64,
+   "cube_reduced_degree": 48,
+   "rms_residual": 1.3117361904924885,
+   "max_residual": 11.348487755413135,
+   "min_zero_pole_distance": 0.0021213119909113884
+  },
+  {
+   "family": "raised_face_cube",
+   "recipe": "flag",
+   "s": 0.001,
+   "unreduced_degree": 64,
+   "reduced_degree": 64,
+   "cube_reduced_degree": 48,
+   "rms_residual": 1.314261245980849,
+   "max_residual": 11.491523336429108,
+   "min_zero_pole_distance": 0.0007071064718274613
+  },
+  {
+   "family": "raised_face_cube",
+   "recipe": "flag",
+   "s": 0.0001,
+   "unreduced_degree": 64,
+   "reduced_degree": 64,
+   "cube_reduced_degree": 48,
+   "rms_residual": 1.3142612462013243,
+   "max_residual": 11.491523446849211,
+   "min_zero_pole_distance": 7.071067780928775e-05
+  }
+ ],
+ "outputs": [
+  {
+   "path": "out/E002-transitions/convergence.csv",
+   "sha256": "54cc3b2d1d3b7681fff686e07c44c20ad0768a917891ea18ed48b8731ac4741e",
+   "bytes": 6858
+  },
+  {
+   "path": "out/E002-transitions/jumps.json",
+   "sha256": "01e371709c1f6c6d910049b3d322cbbbdeb50666ee43b54ca1ab1aed0081bcbc",
+   "bytes": 7907
+  },
+  {
+   "path": "out/E002-transitions/transitions.png",
+   "sha256": "30193c2ea7d680def02123c56be22ca11d22d0c5db738b07c4598387936fc5f6",
+   "bytes": 169448
+  }
+ ],
+ "config_file": {
+  "path": "configs/experiments/E002-transitions.json",
+  "sha256": "3bd2e803d3e7bab76cbf5d067012c04e2bfcbe71bb934c1841b1055ae43c35ca"
+ },
+ "jumps": {
+  "truncated_corner_cube": {
+   "R1": [
+    {
+     "direction": [
+      -0.5774,
+      -0.5774,
+      -0.5774
+     ],
+     "order": 1
+    },
+    {
+     "direction": [
+      -0.5774,
+      -0.5774,
+      0.5774
+     ],
+     "order": 1
+    },
+    {
+     "direction": [
+      -0.5774,
+      0.5774,
+      -0.5774
+     ],
+     "order": 1
+    },
+    {
+     "direction": [
+      -0.5774,
+      0.5774,
+      0.5774
+     ],
+     "order": 1
+    },
+    {
+     "direction": [
+      0.5773,
+      0.5774,
+      0.5774
+     ],
+     "order": 5
+    },
+    {
+     "direction": [
+      0.5774,
+      -0.5774,
+      -0.5774
+     ],
+     "order": 1
+    },
+    {
+     "direction": [
+      0.5774,
+      -0.5774,
+      0.5774
+     ],
+     "order": 1
+    },
+    {
+     "direction": [
+      0.5774,
+      0.5774,
+      -0.5774
+     ],
+     "order": 1
+    },
+    {
+     "direction": [
+      -1.0,
+      0.0,
+      0.0
+     ],
+     "order": -2
+    },
+    {
+     "direction": [
+      0.0,
+      0.0,
+      -1.0
+     ],
+     "order": -2
+    },
+    {
+     "direction": [
+      0.0,
+      -1.0,
+      0.0
+     ],
+     "order": -2
+    },
+    {
+     "direction": [
+      0.0,
+      0.0,
+      1.0
+     ],
+     "order": -2
+    },
+    {
+     "direction": [
+      0.0,
+      1.0,
+      0.0
+     ],
+     "order": -2
+    },
+    {
+     "direction": [
+      1.0,
+      0.0,
+      0.0
+     ],
+     "order": -2
+    }
+   ],
+   "R2": [
+    {
+     "direction": [
+      0.5773,
+      0.5774,
+      0.5774
+     ],
+     "order": 3
+    },
+    {
+     "direction": [
+      0.0,
+      0.0,
+      1.0
+     ],
+     "order": -1
+    },
+    {
+     "direction": [
+      0.0,
+      1.0,
+      0.0
+     ],
+     "order": -1
+    },
+    {
+     "direction": [
+      1.0,
+      0.0,
+      0.0
+     ],
+     "order": -1
+    }
+   ],
+   "R4ve": [],
+   "R4fe": [
+    {
+     "direction": [
+      0.0,
+      0.0,
+      1.0
+     ],
+     "order": 1
+    },
+    {
+     "direction": [
+      0.0,
+      1.0,
+      0.0
+     ],
+     "order": 1
+    },
+    {
+     "direction": [
+      0.5774,
+      0.5774,
+      0.5774
+     ],
+     "order": -3
+    },
+    {
+     "direction": [
+      1.0,
+      0.0,
+      0.0
+     ],
+     "order": 1
+    }
+   ],
+   "flag": [
+    {
+     "direction": [
+      0.0,
+      0.0,
+      1.0
+     ],
+     "order": 1
+    },
+    {
+     "direction": [
+      0.0,
+      1.0,
+      0.0
+     ],
+     "order": 1
+    },
+    {
+     "direction": [
+      1.0,
+      0.0,
+      0.0
+     ],
+     "order": 1
+    },
+    {
+     "direction": [
+      0.5774,
+      0.5774,
+      0.5774
+     ],
+     "order": -3
+    }
+   ]
+  },
+  "bevelled_edge_cube": {
+   "R1": [
+    {
+     "direction": [
+      -0.5774,
+      -0.5774,
+      -0.5774
+     ],
+     "order": 1
+    },
+    {
+     "direction": [
+      -0.5774,
+      -0.5774,
+      0.5774
+     ],
+     "order": 1
+    },
+    {
+     "direction": [
+      -0.5774,
+      0.5774,
+      -0.5774
+     ],
+     "order": 1
+    },
+    {
+     "direction": [
+      -0.5774,
+      0.5774,
+      0.5774
+     ],
+     "order": 1
+    },
+    {
+     "direction": [
+      0.5773,
+      0.5774,
+      -0.5774
+     ],
+     "order": 8
+    },
+    {
+     "direction": [
+      0.5773,
+      0.5774,
+      0.5774
+     ],
+     "order": 8
+    },
+    {
+     "direction": [
+      0.5774,
+      -0.5774,
+      -0.5774
+     ],
+     "order": 1
+    },
+    {
+     "direction": [
+      0.5774,
+      -0.5774,
+      0.5774
+     ],
+     "order": 1
+    },
+    {
+     "direction": [
+      -1.0,
+      0.0,
+      0.0
+     ],
+     "order": -2
+    },
+    {
+     "direction": [
+      0.0,
+      0.0,
+      -1.0
+     ],
+     "order": -2
+    },
+    {
+     "direction": [
+      0.0,
+      -1.0,
+      0.0
+     ],
+     "order": -2
+    },
+    {
+     "direction": [
+      0.0,
+      0.0,
+      1.0
+     ],
+     "order": -2
+    },
+    {
+     "direction": [
+      0.0,
+      1.0,
+      0.0
+     ],
+     "order": -2
+    },
+    {
+     "direction": [
+      0.7071,
+      0.7071,
+      0.0
+     ],
+     "order": -10
+    },
+    {
+     "direction": [
+      1.0,
+      0.0,
+      0.0
+     ],
+     "order": -2
+    }
+   ],
+   "R2": [
+    {
+     "direction": [
+      0.5773,
+      0.5774,
+      -0.5774
+     ],
+     "order": 3
+    },
+    {
+     "direction": [
+      0.5773,
+      0.5774,
+      0.5774
+     ],
+     "order": 3
+    },
+    {
+     "direction": [
+      0.0,
+      0.0,
+      -1.0
+     ],
+     "order": -1
+    },
+    {
+     "direction": [
+      0.0,
+      0.0,
+      1.0
+     ],
+     "order": -1
+    },
+    {
+     "direction": [
+      0.7071,
+      0.7071,
+      0.0
+     ],
+     "order": -4
+    }
+   ],
+   "R4ve": [
+    {
+     "direction": [
+      0.5773,
+      0.5774,
+      -0.5774
+     ],
+     "order": 1
+    },
+    {
+     "direction": [
+      0.5773,
+      0.5774,
+      0.5774
+     ],
+     "order": 1
+    },
+    {
+     "direction": [
+      0.7071,
+      0.7071,
+      0.0
+     ],
+     "order": -2
+    }
+   ],
+   "R4fe": [
+    {
+     "direction": [
+      0.0,
+      0.0,
+      -1.0
+     ],
+     "order": 1
+    },
+    {
+     "direction": [
+      0.0,
+      0.0,
+      1.0
+     ],
+     "order": 1
+    },
+    {
+     "direction": [
+      0.5774,
+      0.5774,
+      -0.5774
+     ],
+     "order": -2
+    },
+    {
+     "direction": [
+      0.5774,
+      0.5774,
+      0.5774
+     ],
+     "order": -2
+    },
+    {
+     "direction": [
+      0.7071,
+      0.7071,
+      0.0
+     ],
+     "order": 2
+    }
+   ],
+   "flag": [
+    {
+     "direction": [
+      0.5773,
+      0.5774,
+      -0.5774
+     ],
+     "order": -1
+    },
+    {
+     "direction": [
+      0.5773,
+      0.5774,
+      0.5774
+     ],
+     "order": -1
+    },
+    {
+     "direction": [
+      0.0,
+      0.0,
+      -1.0
+     ],
+     "order": 1
+    },
+    {
+     "direction": [
+      0.0,
+      0.0,
+      1.0
+     ],
+     "order": 1
+    }
+   ]
+  },
+  "raised_face_cube": {
+   "R1": [
+    {
+     "direction": [
+      -0.5774,
+      -0.5774,
+      -0.5774
+     ],
+     "order": 3
+    },
+    {
+     "direction": [
+      -0.5774,
+      -0.5774,
+      0.5774
+     ],
+     "order": 3
+    },
+    {
+     "direction": [
+      -0.5774,
+      0.5774,
+      -0.5774
+     ],
+     "order": 3
+    },
+    {
+     "direction": [
+      -0.5774,
+      0.5774,
+      0.5774
+     ],
+     "order": 3
+    },
+    {
+     "direction": [
+      0.5774,
+      -0.5774,
+      -0.5774
+     ],
+     "order": 3
+    },
+    {
+     "direction": [
+      0.5774,
+      -0.5774,
+      0.5774
+     ],
+     "order": 3
+    },
+    {
+     "direction": [
+      0.5774,
+      0.5774,
+      -0.5774
+     ],
+     "order": 3
+    },
+    {
+     "direction": [
+      0.5774,
+      0.5774,
+      0.5774
+     ],
+     "order": 3
+    },
+    {
+     "direction": [
+      0.0,
+      0.0,
+      1.0
+     ],
+     "order": -19
+    },
+    {
+     "direction": [
+      -1.0,
+      0.0,
+      0.0
+     ],
+     "order": -1
+    },
+    {
+     "direction": [
+      0.0,
+      0.0,
+      -1.0
+     ],
+     "order": -1
+    },
+    {
+     "direction": [
+      0.0,
+      -1.0,
+      0.0
+     ],
+     "order": -1
+    },
+    {
+     "direction": [
+      0.0,
+      1.0,
+      0.0
+     ],
+     "order": -1
+    },
+    {
+     "direction": [
+      1.0,
+      0.0,
+      0.0
+     ],
+     "order": -1
+    }
+   ],
+   "R2": [
+    {
+     "direction": [
+      -0.5774,
+      -0.5774,
+      0.5774
+     ],
+     "order": 1
+    },
+    {
+     "direction": [
+      -0.5774,
+      0.5774,
+      0.5774
+     ],
+     "order": 1
+    },
+    {
+     "direction": [
+      0.5774,
+      -0.5774,
+      0.5774
+     ],
+     "order": 1
+    },
+    {
+     "direction": [
+      0.5774,
+      0.5774,
+      0.5774
+     ],
+     "order": 1
+    },
+    {
+     "direction": [
+      0.0,
+      0.0,
+      1.0
+     ],
+     "order": -4
+    }
+   ],
+   "R4ve": [
+    {
+     "direction": [
+      -0.5774,
+      -0.5774,
+      0.5774
+     ],
+     "order": 1
+    },
+    {
+     "direction": [
+      -0.5774,
+      0.5774,
+      0.5774
+     ],
+     "order": 1
+    },
+    {
+     "direction": [
+      0.5774,
+      -0.5774,
+      0.5774
+     ],
+     "order": 1
+    },
+    {
+     "direction": [
+      0.5774,
+      0.5774,
+      0.5774
+     ],
+     "order": 1
+    },
+    {
+     "direction": [
+      0.0,
+      0.0,
+      1.0
+     ],
+     "order": -4
+    }
+   ],
+   "R4fe": [],
+   "flag": [
+    {
+     "direction": [
+      -0.5774,
+      -0.5774,
+      0.5774
+     ],
+     "order": 1
+    },
+    {
+     "direction": [
+      -0.5774,
+      0.5774,
+      0.5774
+     ],
+     "order": 1
+    },
+    {
+     "direction": [
+      0.5774,
+      -0.5774,
+      0.5774
+     ],
+     "order": 1
+    },
+    {
+     "direction": [
+      0.5774,
+      0.5774,
+      0.5774
+     ],
+     "order": 1
+    },
+    {
+     "direction": [
+      0.0,
+      0.0,
+      1.0
+     ],
+     "order": -4
+    }
+   ]
+  }
+ },
+ "published": [
+  {
+   "path": "experiments/E002-transitions/convergence.csv",
+   "sha256": "54cc3b2d1d3b7681fff686e07c44c20ad0768a917891ea18ed48b8731ac4741e",
+   "bytes": 6858,
+   "source": "out/E002-transitions/convergence.csv"
+  },
+  {
+   "path": "experiments/E002-transitions/jumps.json",
+   "sha256": "01e371709c1f6c6d910049b3d322cbbbdeb50666ee43b54ca1ab1aed0081bcbc",
+   "bytes": 7907,
+   "source": "out/E002-transitions/jumps.json"
+  },
+  {
+   "path": "experiments/E002-transitions/transitions.jpg",
+   "sha256": "7309434cd5190ad90f7ab9d8243b99ae1a06dc8bd27bb0e2b7014ff71c414847",
+   "bytes": 119559,
+   "source": "out/E002-transitions/transitions.png"
+  }
+ ]
+}
