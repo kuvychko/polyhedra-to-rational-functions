@@ -12,3 +12,6 @@ dependency versions, display settings, outputs, and conclusion.
 |---|---|---|
 | [R0-baseline](R0-baseline/README.md) | what do the existing Klein-invariant ornaments compute, and do they reproduce here? | reference, complete |
 | [E001-atlas](E001-atlas/README.md) | how do R1, R2, R4 and flag differ across the corpus (degree, duality, symmetry, field shape)? | complete |
+| [E002-transitions](E002-transitions/README.md) | which recipes are continuous when a small face or short edge vanishes? | complete |
+| [E003-deformation](E003-deformation/README.md) | how do recipes and placements behave under fixed-combinatorics deformation; when does a feature leave its cell? | complete |
+| [E004-display](E004-display/README.md) | how much of the visible difference between recipes is the display? | complete |

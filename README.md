@@ -20,9 +20,11 @@ geometry contract and an eleven-solid corpus are in place ([notes](notes/2026-09
 Divisors, stable evaluation and an exact normalization are in place, and the baseline pieces are
 confirmed to be instances of the recipes. Recipes R1, R2 and the edge-incidence family R4, with
 diagnostics for local orders, duality, symmetry and rotation, are implemented and checked across
-the corpus ([notes](notes/2026-10-01-recipes-and-diagnostics.md)). The first comparison atlas
-([E001](experiments/E001-atlas/README.md)) covers 11 solids × 5 recipes. Next: controlled experiments
-on deformation, combinatorial transitions and display. Early findings ([notes](notes/2026-10-01-recipe-separation.md)):
+the corpus ([notes](notes/2026-10-01-recipes-and-diagnostics.md)). The comparison atlas
+([E001](experiments/E001-atlas/README.md)) and controlled experiments on combinatorial transitions
+([E002](experiments/E002-transitions/README.md)), deformation and placement
+([E003](experiments/E003-deformation/README.md)) and display ([E004](experiments/E004-display/README.md))
+are complete. Next: the Phase 1 decision record. Early findings ([notes](notes/2026-10-01-recipe-separation.md)):
 once the degree is divided out, R1 and R2 differ only by valence weighting, and R2 and the two R4
 variants form a single multiplicative family, `f_R2 = f_R4ve / f_R4fe`. A public narrative
 and exhibition site will follow in Phase 2.
