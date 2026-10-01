@@ -50,6 +50,10 @@ means flipping visibility; there is no scrub step. So:
   separate candidate point set. Use the same origin for a polyhedron and its dual.
 - **Faces stay polygonal**: render-only triangulation must never change valences, face sizes or
   multiplicities.
+- **Default normalization** (decision 0003): `log|f| = Σ m log χ`, with χ the chordal
+  distance. It is self-dual, rotation-covariant, of geometric mean 1, and never sampled. Phase
+  is the chart's, with `C > 0`. Never fit constants by sampling; use sphere quadrature only to
+  check.
 - **Keep independent knobs independent**: magnitude normalization, phase convention, display
   compression (e.g. `|f|^(1/d)`) and radial transfer function are separately configured and
   separately recorded. A display mapping is not a change of recipe.

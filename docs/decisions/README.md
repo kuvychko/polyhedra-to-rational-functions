@@ -8,3 +8,4 @@ an earlier one instead.
 |---|---|---|
 | [0001](0001-public-ready-conventions.md) | Public-ready repository conventions | 2026-09-30 |
 | [0002](0002-edge-incidence-recipes.md) | Explore edge-incidence recipes (R4) deliberately | 2026-09-30 |
+| [0003](0003-chordal-normalization.md) | Chordal normalization and chart phase as the defaults | 2026-10-01 |

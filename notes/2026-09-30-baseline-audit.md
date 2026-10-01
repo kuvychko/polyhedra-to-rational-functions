@@ -154,3 +154,9 @@ north pole with rings at `z = ±1/√5` on the sphere. The cube's vertices are `
   - "Klein duals" as a name for the pieces;
   - the reflection-symmetry and chirality claims (finding 4);
   - the claim that the renders match the printed objects (no photos yet).
+
+## Addendum (2026-10-01)
+
+Findings 2 and 3, the chordal-normalization sketch in §2, and the R4 identities are now
+verified by tests. See `notes/2026-10-01-divisors-and-evaluation.md`. Finding 4 (reflections)
+is still open.
