@@ -1,0 +1,541 @@
+{
+ "experiment": {
+  "id": "E004-display",
+  "question": "How much of the visible difference between recipes is created by the relief display, rather than the functions?",
+  "hypothesis": "Under a fixed sharpness, R1 (high local orders) renders blunter than R2 and the reliefs differ substantially; an order-tuned or degree-compressed display removes most of the R1/R2 difference (their per-degree fields correlate >= 0.98 on the DI), while R2/R4ve stays different under every display.",
+  "changed_factor": "the radial display mapping (recipe and function fixed)"
+ },
+ "started": "2026-10-01T14:01:17Z",
+ "config": {
+  "id": "E004-display",
+  "question": "How much of the visible difference between recipes is created by the relief display, rather than the functions?",
+  "hypothesis": "Under a fixed sharpness, R1 (high local orders) renders blunter than R2 and the reliefs differ substantially; an order-tuned or degree-compressed display removes most of the R1/R2 difference (their per-degree fields correlate >= 0.98 on the DI), while R2/R4ve stays different under every display.",
+  "changed_factor": "the radial display mapping (recipe and function fixed)",
+  "fixtures": [
+   "cube",
+   "deltoidal-icositetrahedron",
+   "triakis-tetrahedron",
+   "hexagonal-pyramid",
+   "irregular-9"
+  ],
+  "recipes": [
+   "R1",
+   "R2",
+   "R4ve"
+  ],
+  "pairs": [
+   [
+    "R1",
+    "R2"
+   ],
+   [
+    "R2",
+    "R4ve"
+   ]
+  ],
+  "displays": {
+   "fixed": {
+    "rule": "constant",
+    "value": 4.0
+   },
+   "order-tuned": {
+    "rule": "2 x max |order|",
+    "factor": 2.0
+   },
+   "degree-compressed": {
+    "rule": "degree / 6 (cube R2 unchanged from fixed)",
+    "per_degree": 0.16666666666666666
+   }
+  },
+  "depth": 0.2,
+  "samples": 20000,
+  "render_fixtures": [
+   "deltoidal-icositetrahedron",
+   "irregular-9"
+  ],
+  "views": {
+   "deltoidal-icositetrahedron": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "irregular-9": [
+    2.2,
+    2.2,
+    1.6
+   ]
+  },
+  "display": {
+   "relief_resolution": 160,
+   "window": 450
+  }
+ },
+ "code": {
+  "commit": "628428018df2d09eef3b7c646a847d277cf2c79e",
+  "dirty": false,
+  "changed_paths": []
+ },
+ "environment": {
+  "python": "3.13.5",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "packages": {
+   "polyhedra-to-rational-functions": "0.0.1",
+   "complexplorer": "3.1.0",
+   "numpy": "2.5.3",
+   "scipy": "1.18.1",
+   "matplotlib": "3.11.2",
+   "pyvista": "0.49.0",
+   "vtk": "9.7.1"
+  }
+ },
+ "conventions": {
+  "chart": "complexplorer stereographic: z = 0 south pole, z = inf north pole",
+  "normalization": "chordal (decision 0003): log|f| = sum m log chi; geometric mean 1",
+  "phase": "chart phase with C > 0",
+  "evaluation": "log-domain, factored (evaluation.py)"
+ },
+ "runs": [
+  {
+   "fixture": "cube",
+   "display": "fixed",
+   "pair": "R1~R2",
+   "correlation": 1.0,
+   "rms_radius_difference": 0.0,
+   "sharpness_R1": 4.0,
+   "sharpness_R2": 4.0,
+   "tip_exponent_R1": 1.0,
+   "tip_exponent_R2": 1.0,
+   "radius_spread_R1": 0.10680924644224297,
+   "radius_spread_R2": 0.10680924644224297
+  },
+  {
+   "fixture": "cube",
+   "display": "fixed",
+   "pair": "R2~R4ve",
+   "correlation": 0.5437996690544497,
+   "rms_radius_difference": 0.09019320088173685,
+   "sharpness_R2": 4.0,
+   "sharpness_R4ve": 4.0,
+   "tip_exponent_R2": 1.0,
+   "tip_exponent_R4ve": 0.75,
+   "radius_spread_R2": 0.10680924644224297,
+   "radius_spread_R4ve": 0.06779701339245757
+  },
+  {
+   "fixture": "cube",
+   "display": "order-tuned",
+   "pair": "R1~R2",
+   "correlation": 0.9999999999999999,
+   "rms_radius_difference": 0.0,
+   "sharpness_R1": 8.0,
+   "sharpness_R2": 8.0,
+   "tip_exponent_R1": 0.5,
+   "tip_exponent_R2": 0.5,
+   "radius_spread_R1": 0.05863446685048209,
+   "radius_spread_R2": 0.05863446685048209
+  },
+  {
+   "fixture": "cube",
+   "display": "order-tuned",
+   "pair": "R2~R4ve",
+   "correlation": 0.5417349990485948,
+   "rms_radius_difference": 0.051620365233223726,
+   "sharpness_R2": 8.0,
+   "sharpness_R4ve": 6.0,
+   "tip_exponent_R2": 0.5,
+   "tip_exponent_R4ve": 0.5,
+   "radius_spread_R2": 0.05863446685048209,
+   "radius_spread_R4ve": 0.047104795493628775
+  },
+  {
+   "fixture": "cube",
+   "display": "degree-compressed",
+   "pair": "R1~R2",
+   "correlation": 1.0,
+   "rms_radius_difference": 0.0,
+   "sharpness_R1": 4.0,
+   "sharpness_R2": 4.0,
+   "tip_exponent_R1": 1.0,
+   "tip_exponent_R2": 1.0,
+   "radius_spread_R1": 0.10680924644224297,
+   "radius_spread_R2": 0.10680924644224297
+  },
+  {
+   "fixture": "cube",
+   "display": "degree-compressed",
+   "pair": "R2~R4ve",
+   "correlation": 0.5437996690544497,
+   "rms_radius_difference": 0.09019320088173685,
+   "sharpness_R2": 4.0,
+   "sharpness_R4ve": 4.0,
+   "tip_exponent_R2": 1.0,
+   "tip_exponent_R4ve": 0.75,
+   "radius_spread_R2": 0.10680924644224297,
+   "radius_spread_R4ve": 0.06779701339245757
+  },
+  {
+   "fixture": "deltoidal-icositetrahedron",
+   "display": "fixed",
+   "pair": "R1~R2",
+   "correlation": 0.9496517710003126,
+   "rms_radius_difference": 0.13028716497254042,
+   "sharpness_R1": 4.0,
+   "sharpness_R2": 4.0,
+   "tip_exponent_R1": 3.25,
+   "tip_exponent_R2": 1.0,
+   "radius_spread_R1": 0.233836341584586,
+   "radius_spread_R2": 0.11435438606517409
+  },
+  {
+   "fixture": "deltoidal-icositetrahedron",
+   "display": "fixed",
+   "pair": "R2~R4ve",
+   "correlation": 0.6779286710822267,
+   "rms_radius_difference": 0.08432728282571432,
+   "sharpness_R2": 4.0,
+   "sharpness_R4ve": 4.0,
+   "tip_exponent_R2": 1.0,
+   "tip_exponent_R4ve": 1.0,
+   "radius_spread_R2": 0.11435438606517409,
+   "radius_spread_R4ve": 0.0837216826635248
+  },
+  {
+   "fixture": "deltoidal-icositetrahedron",
+   "display": "order-tuned",
+   "pair": "R1~R2",
+   "correlation": 0.9908252036339326,
+   "rms_radius_difference": 0.00858052087879595,
+   "sharpness_R1": 26.0,
+   "sharpness_R2": 8.0,
+   "tip_exponent_R1": 0.5,
+   "tip_exponent_R2": 0.5,
+   "radius_spread_R1": 0.0629334611279743,
+   "radius_spread_R2": 0.06348826707106738
+  },
+  {
+   "fixture": "deltoidal-icositetrahedron",
+   "display": "order-tuned",
+   "pair": "R2~R4ve",
+   "correlation": 0.6785952499313309,
+   "rms_radius_difference": 0.04669213636130384,
+   "sharpness_R2": 8.0,
+   "sharpness_R4ve": 8.0,
+   "tip_exponent_R2": 0.5,
+   "tip_exponent_R4ve": 0.5,
+   "radius_spread_R2": 0.06348826707106738,
+   "radius_spread_R4ve": 0.045400756484887596
+  },
+  {
+   "fixture": "deltoidal-icositetrahedron",
+   "display": "degree-compressed",
+   "pair": "R1~R2",
+   "correlation": 0.990685743317535,
+   "rms_radius_difference": 0.004479525710929784,
+   "sharpness_R1": 52.0,
+   "sharpness_R2": 16.0,
+   "tip_exponent_R1": 0.25,
+   "tip_exponent_R2": 0.25,
+   "radius_spread_R1": 0.03255064089375444,
+   "radius_spread_R2": 0.032895773195101397
+  },
+  {
+   "fixture": "deltoidal-icositetrahedron",
+   "display": "degree-compressed",
+   "pair": "R2~R4ve",
+   "correlation": 0.6788740741050445,
+   "rms_radius_difference": 0.024174498765534416,
+   "sharpness_R2": 16.0,
+   "sharpness_R4ve": 16.0,
+   "tip_exponent_R2": 0.25,
+   "tip_exponent_R4ve": 0.25,
+   "radius_spread_R2": 0.032895773195101397,
+   "radius_spread_R4ve": 0.023328752243455382
+  },
+  {
+   "fixture": "triakis-tetrahedron",
+   "display": "fixed",
+   "pair": "R1~R2",
+   "correlation": 0.9548626272071569,
+   "rms_radius_difference": 0.036543702256648096,
+   "sharpness_R1": 4.0,
+   "sharpness_R2": 4.0,
+   "tip_exponent_R1": 0.75,
+   "tip_exponent_R2": 0.5,
+   "radius_spread_R1": 0.08298809768675314,
+   "radius_spread_R2": 0.05227274833698193
+  },
+  {
+   "fixture": "triakis-tetrahedron",
+   "display": "fixed",
+   "pair": "R2~R4ve",
+   "correlation": 0.8856105571710696,
+   "rms_radius_difference": 0.084213533156112,
+   "sharpness_R2": 4.0,
+   "sharpness_R4ve": 4.0,
+   "tip_exponent_R2": 0.5,
+   "tip_exponent_R4ve": 1.5,
+   "radius_spread_R2": 0.05227274833698193,
+   "radius_spread_R4ve": 0.1266263273406952
+  },
+  {
+   "fixture": "triakis-tetrahedron",
+   "display": "order-tuned",
+   "pair": "R1~R2",
+   "correlation": 0.9563314174358462,
+   "rms_radius_difference": 0.017078992798216987,
+   "sharpness_R1": 6.0,
+   "sharpness_R2": 4.0,
+   "tip_exponent_R1": 0.5,
+   "tip_exponent_R2": 0.5,
+   "radius_spread_R1": 0.05762271241641002,
+   "radius_spread_R2": 0.05227274833698193
+  },
+  {
+   "fixture": "triakis-tetrahedron",
+   "display": "order-tuned",
+   "pair": "R2~R4ve",
+   "correlation": 0.8995032563281551,
+   "rms_radius_difference": 0.023024989694661872,
+   "sharpness_R2": 4.0,
+   "sharpness_R4ve": 12.0,
+   "tip_exponent_R2": 0.5,
+   "tip_exponent_R4ve": 0.5,
+   "radius_spread_R2": 0.05227274833698193,
+   "radius_spread_R4ve": 0.04994150801241264
+  },
+  {
+   "fixture": "triakis-tetrahedron",
+   "display": "degree-compressed",
+   "pair": "R1~R2",
+   "correlation": 0.9571197289430069,
+   "rms_radius_difference": 0.029415103388138044,
+   "sharpness_R1": 4.0,
+   "sharpness_R2": 2.0,
+   "tip_exponent_R1": 0.75,
+   "tip_exponent_R2": 1.0,
+   "radius_spread_R1": 0.08298809768675314,
+   "radius_spread_R2": 0.09632433595875682
+  },
+  {
+   "fixture": "triakis-tetrahedron",
+   "display": "degree-compressed",
+   "pair": "R2~R4ve",
+   "correlation": 0.8952340639836304,
+   "rms_radius_difference": 0.043326465804020727,
+   "sharpness_R2": 2.0,
+   "sharpness_R4ve": 6.0,
+   "tip_exponent_R2": 1.0,
+   "tip_exponent_R4ve": 1.0,
+   "radius_spread_R2": 0.09632433595875682,
+   "radius_spread_R4ve": 0.09211707391048694
+  },
+  {
+   "fixture": "hexagonal-pyramid",
+   "display": "fixed",
+   "pair": "R1~R2",
+   "correlation": 0.8365856089025581,
+   "rms_radius_difference": 0.04403986962910516,
+   "sharpness_R1": 4.0,
+   "sharpness_R2": 4.0,
+   "tip_exponent_R1": 0.25,
+   "tip_exponent_R2": 0.5,
+   "radius_spread_R1": 0.07933105843994026,
+   "radius_spread_R2": 0.05924799542624177
+  },
+  {
+   "fixture": "hexagonal-pyramid",
+   "display": "fixed",
+   "pair": "R2~R4ve",
+   "correlation": 0.7431269816979403,
+   "rms_radius_difference": 0.07325791028916905,
+   "sharpness_R2": 4.0,
+   "sharpness_R4ve": 4.0,
+   "tip_exponent_R2": 0.5,
+   "tip_exponent_R4ve": 1.5,
+   "radius_spread_R2": 0.05924799542624177,
+   "radius_spread_R4ve": 0.1056194182480297
+  },
+  {
+   "fixture": "hexagonal-pyramid",
+   "display": "order-tuned",
+   "pair": "R1~R2",
+   "correlation": 0.8290370456578812,
+   "rms_radius_difference": 0.10532298525781524,
+   "sharpness_R1": 2.0,
+   "sharpness_R2": 4.0,
+   "tip_exponent_R1": 0.5,
+   "tip_exponent_R2": 0.5,
+   "radius_spread_R1": 0.14908709141738624,
+   "radius_spread_R2": 0.05924799542624177
+  },
+  {
+   "fixture": "hexagonal-pyramid",
+   "display": "order-tuned",
+   "pair": "R2~R4ve",
+   "correlation": 0.7399076975844782,
+   "rms_radius_difference": 0.04019307129819663,
+   "sharpness_R2": 4.0,
+   "sharpness_R4ve": 12.0,
+   "tip_exponent_R2": 0.5,
+   "tip_exponent_R4ve": 0.5,
+   "radius_spread_R2": 0.05924799542624177,
+   "radius_spread_R4ve": 0.0386502875114721
+  },
+  {
+   "fixture": "hexagonal-pyramid",
+   "display": "degree-compressed",
+   "pair": "R1~R2",
+   "correlation": 0.8347311011172132,
+   "rms_radius_difference": 0.12786669251286606,
+   "sharpness_R1": 1.1666666666666665,
+   "sharpness_R2": 1.3333333333333333,
+   "tip_exponent_R1": 0.8571428571428572,
+   "tip_exponent_R2": 1.5,
+   "radius_spread_R1": 0.22509742666420002,
+   "radius_spread_R2": 0.15672974945716878
+  },
+  {
+   "fixture": "hexagonal-pyramid",
+   "display": "degree-compressed",
+   "pair": "R2~R4ve",
+   "correlation": 0.7496398582879303,
+   "rms_radius_difference": 0.10443065004155389,
+   "sharpness_R2": 1.3333333333333333,
+   "sharpness_R4ve": 4.0,
+   "tip_exponent_R2": 1.5,
+   "tip_exponent_R4ve": 1.5,
+   "radius_spread_R2": 0.15672974945716878,
+   "radius_spread_R4ve": 0.1056194182480297
+  },
+  {
+   "fixture": "irregular-9",
+   "display": "fixed",
+   "pair": "R1~R2",
+   "correlation": 0.9587606594041387,
+   "rms_radius_difference": 0.14183850344134355,
+   "sharpness_R1": 4.0,
+   "sharpness_R2": 4.0,
+   "tip_exponent_R1": 3.5,
+   "tip_exponent_R2": 1.5,
+   "radius_spread_R1": 0.30393734731212285,
+   "radius_spread_R2": 0.17890421514408947
+  },
+  {
+   "fixture": "irregular-9",
+   "display": "fixed",
+   "pair": "R2~R4ve",
+   "correlation": 0.7590506378187237,
+   "rms_radius_difference": 0.124351183460269,
+   "sharpness_R2": 4.0,
+   "sharpness_R4ve": 4.0,
+   "tip_exponent_R2": 1.5,
+   "tip_exponent_R4ve": 0.75,
+   "radius_spread_R2": 0.17890421514408947,
+   "radius_spread_R4ve": 0.09225202482613888
+  },
+  {
+   "fixture": "irregular-9",
+   "display": "order-tuned",
+   "pair": "R1~R2",
+   "correlation": 0.9837031273247094,
+   "rms_radius_difference": 0.02314340221817958,
+   "sharpness_R1": 28.0,
+   "sharpness_R2": 12.0,
+   "tip_exponent_R1": 0.5,
+   "tip_exponent_R2": 0.5,
+   "radius_spread_R1": 0.08941310543973874,
+   "radius_spread_R2": 0.07130855011989462
+  },
+  {
+   "fixture": "irregular-9",
+   "display": "order-tuned",
+   "pair": "R2~R4ve",
+   "correlation": 0.7460065404251989,
+   "rms_radius_difference": 0.04876117497338394,
+   "sharpness_R2": 12.0,
+   "sharpness_R4ve": 6.0,
+   "tip_exponent_R2": 0.5,
+   "tip_exponent_R4ve": 0.5,
+   "radius_spread_R2": 0.07130855011989462,
+   "radius_spread_R4ve": 0.06426365257684129
+  },
+  {
+   "fixture": "irregular-9",
+   "display": "degree-compressed",
+   "pair": "R1~R2",
+   "correlation": 0.9847369823055288,
+   "rms_radius_difference": 0.020186059601103673,
+   "sharpness_R1": 21.0,
+   "sharpness_R2": 7.0,
+   "tip_exponent_R1": 0.6666666666666666,
+   "tip_exponent_R2": 0.8571428571428571,
+   "radius_spread_R1": 0.11517265735732635,
+   "radius_spread_R2": 0.11577823285184104
+  },
+  {
+   "fixture": "irregular-9",
+   "display": "degree-compressed",
+   "pair": "R2~R4ve",
+   "correlation": 0.7482739432996555,
+   "rms_radius_difference": 0.0828110683980076,
+   "sharpness_R2": 7.0,
+   "sharpness_R4ve": 7.0,
+   "tip_exponent_R2": 0.8571428571428571,
+   "tip_exponent_R4ve": 0.42857142857142855,
+   "radius_spread_R2": 0.11577823285184104,
+   "radius_spread_R4ve": 0.05567718821482554
+  }
+ ],
+ "outputs": [
+  {
+   "path": "out/E004-display/display.csv",
+   "sha256": "7cf7e7277edfe24af1e44cb589fa2d1e242a50f5258a8c356bcdc51a3a68f591",
+   "bytes": 2598
+  },
+  {
+   "path": "out/E004-display/display.png",
+   "sha256": "ca4cbc22db131477f2db0956f80c1b0eec22968a9fed86d921ee399e85ca87b1",
+   "bytes": 40018
+  },
+  {
+   "path": "out/E004-display/reliefs-deltoidal-icositetrahedron.png",
+   "sha256": "447654f6e1ea2fb5deb991e625abcb38d055fd6c05a7e1e7656ef947f4c62c7e",
+   "bytes": 260690
+  },
+  {
+   "path": "out/E004-display/reliefs-irregular-9.png",
+   "sha256": "d6cf6ae7c8630e1df6bff74735de2eb471604b8d330f79459c77d7a614c27bf6",
+   "bytes": 179679
+  }
+ ],
+ "config_file": {
+  "path": "configs/experiments/E004-display.json",
+  "sha256": "bcc91eacda22d7b0ff6e70db38f7b1d4f4f1fd3e276c399f20462010f531fff5"
+ },
+ "published": [
+  {
+   "path": "experiments/E004-display/display.csv",
+   "sha256": "7cf7e7277edfe24af1e44cb589fa2d1e242a50f5258a8c356bcdc51a3a68f591",
+   "bytes": 2598,
+   "source": "out/E004-display/display.csv"
+  },
+  {
+   "path": "experiments/E004-display/display.jpg",
+   "sha256": "e3cc2c4b6a30b923d623d7b6afb45ab2312d15c88154ae3538851c5782bc486d",
+   "bytes": 64698,
+   "source": "out/E004-display/display.png"
+  },
+  {
+   "path": "experiments/E004-display/reliefs-deltoidal-icositetrahedron.jpg",
+   "sha256": "42e94484a07df3311a5137872df395786e150d0c97f5178c297dc8e953882de7",
+   "bytes": 72236,
+   "source": "out/E004-display/reliefs-deltoidal-icositetrahedron.png"
+  },
+  {
+   "path": "experiments/E004-display/reliefs-irregular-9.jpg",
+   "sha256": "578c74da967df81de3d3de6e59c78d6d3fba11e5397370c912cf3613104df1bf",
+   "bytes": 55272,
+   "source": "out/E004-display/reliefs-irregular-9.png"
+  }
+ ]
+}
