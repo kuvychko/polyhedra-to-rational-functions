@@ -15,7 +15,7 @@
   - views per fixture.
 
   This is a fixed-display comparison: no view is tuned per recipe.
-- **Status:** complete. Run from clean commit `19151e8` (`manifest.json` → `code`).
+- **Status:** complete. Run from clean commit `28645f0` (`manifest.json` → `code`).
 - **Reproduce:** `uv run python scripts/make_atlas.py --publish`. It takes about three minutes.
   Full-resolution sheets and tiles go to `out/E001-atlas/`.
 
