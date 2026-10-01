@@ -1,0 +1,42 @@
+{
+ "id": "triakis-tetrahedron",
+ "name": "triakis tetrahedron",
+ "construction": "polyhedral_functions.fixtures.triakis_tetrahedron",
+ "description": "Canonical triakis tetrahedron, midradius 1: the truncated tetrahedron's polar dual. Four vertices of valence 6, along the tetrahedron fixture's vertices, and four of valence 3, with full tetrahedral symmetry. It keeps the symmetry while separating R1 from R2.",
+ "summary": {
+  "V": 8,
+  "E": 18,
+  "F": 12,
+  "valences": {
+   "3": 4,
+   "6": 4
+  },
+  "face_sizes": {
+   "3": 12
+  }
+ },
+ "vertices": [
+  [-1.0, -1.0, -1.0],
+  [-1.0, 1.0, 1.0],
+  [-0.6000000000000001, -0.6000000000000001, 0.6000000000000001],
+  [-0.6000000000000001, 0.6000000000000001, -0.6000000000000001],
+  [0.6000000000000001, -0.6000000000000001, -0.6000000000000001],
+  [0.6000000000000001, 0.6000000000000001, 0.6000000000000001],
+  [1.0, -1.0, 1.0],
+  [1.0, 1.0, -1.0]
+ ],
+ "faces": [
+  [3, 0, 1],
+  [1, 0, 2],
+  [7, 0, 3],
+  [6, 0, 4],
+  [2, 0, 6],
+  [4, 0, 7],
+  [6, 1, 2],
+  [7, 1, 5],
+  [5, 1, 6],
+  [3, 1, 7],
+  [6, 4, 7],
+  [7, 5, 6]
+ ]
+}

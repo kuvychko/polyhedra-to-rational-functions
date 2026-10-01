@@ -15,8 +15,13 @@ checks that every stored file still matches its construction and passes the geom
 | `rhombicuboctahedron` | 24 | 48 | 26 | permutations of `(±1, ±1, ±(1+√2))` | midradius 1 |
 | `deltoidal-icositetrahedron` | 26 | 48 | 24 | polar dual of the rhombicuboctahedron (canonical) | midradius 1 |
 | `irregular-9` | 14 | 21 | 9 | nine hand-chosen half-spaces, no symmetry, faces of 3–6 sides | smallest face distance 0.7 |
+| `hexagonal-pyramid` | 7 | 12 | 7 | apex at the north pole, base at `z = −1/3` | circumradius 1 |
+| `triakis-tetrahedron` | 8 | 18 | 12 | polar dual of the truncated tetrahedron (canonical) | midradius 1 |
+| `irregular-mixed` | 9 | 18 | 11 | hull of an irregular pentagon below an irregular quadrilateral | smallest face distance 0.555 |
 
-All are centred at the origin except `irregular-9`, whose origin is just an interior point.
+All are centred at the origin except the two irregular solids and the pyramid, whose origin is
+just an interior point (for the pyramid, its circumcentre). Each member was chosen for what it
+separates. See `notes/2026-10-01-recipe-separation.md`.
 The Platonic solids share the orientation of the baseline Klein forms, so recipe divisors can be
 compared with R0 directly.
 

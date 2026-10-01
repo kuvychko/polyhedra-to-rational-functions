@@ -1,6 +1,6 @@
 # Polyhedra as Complex Functions: Research Program and Repository Specification
 
-Version: 2.2 — 2026-09-30
+Version: 2.3 — 2026-10-01
 
 Status: Program specification. The repository is developed in the open and kept public-ready from its first commit: nothing committed should need scrubbing before release. This document does not itself authorize changing repository visibility, deploying the site, or publishing other existing work; each of those remains an explicit owner action.
 
@@ -112,7 +112,7 @@ Before cancellations, degree is `lcm(V,F)`. This is a simple baseline with poten
 
 Put a zero at each vertex with order equal to its valence. Put a pole at each dual vertex with order equal to the number of sides of the associated primal face.
 
-Both totals are `2E`, by counting edge endpoints and face-edge incidences. Divide every multiplicity by their common integer gcd when possible. This preserves integrality and reduces the degree.
+Both totals are `2E`, by counting edge endpoints and face-edge incidences. Divide every multiplicity by their common integer gcd when possible. This preserves integrality and reduces the degree. It does not always make R2 cheaper than R1: on a hexagonal pyramid R1 has degree 7 and R2 degree 8. After dividing by the degree, R1 and R2 differ only by valence and face-size weighting, so their divisors coincide exactly on combinatorially Platonic inputs (`notes/2026-10-01-recipe-separation.md`).
 
 This proposed recipe connects local combinatorics to local function behavior and naturally exchanges weights under polar duality. It is a candidate to investigate, not an established optimal method or a claim of novelty.
 
@@ -144,7 +144,7 @@ Divide by the common gcd as in R2. Polar duality exchanges vertices and faces an
 
 Edge point placement is its own question. Compare the foot of the perpendicular from the origin to the edge line with the projected edge midpoint. The foot is self-dual under polarity: an edge and its dual edge share its direction. For a canonical polyhedron it is the midsphere tangency point.
 
-Variants that use all three point sets (for example, vertices and faces against edges) are recorded as an open question, not a candidate to implement.
+With unreduced incidence orders and shared placements, `D_R2 = D_R4ve − D_R4fe`, so R2 and the two R4 variants span a two-parameter family `f_ve^a · f_fe^b`. This is derived and confirmed numerically in `notes/2026-10-01-recipe-separation.md`. Variants that use all three point sets (vertices and faces against edges) are the member `a = b = 1`. Implement the family once rather than as separate recipes.
 
 ### Point-placement experiments
 
@@ -182,7 +182,8 @@ Keep magnitude normalization, phase convention, degree-based display compression
 - Cube/octahedron pair.
 - Icosahedron/dodecahedron pair.
 - Deltoidal icositetrahedron and its polar dual.
-- One irregular convex example with a well-defined interior origin.
+- Irregular convex examples with a well-defined interior origin: one simple polyhedron, and one with both valences and face sizes mixed.
+- Members chosen to separate the candidates: a hexagonal pyramid (valence spread, which separates R1 from R2) and a triakis tetrahedron (symmetric, but with separated edge placements).
 - A fixed-combinatorics deformation of a symmetric example.
 - A separately labeled combinatorial-transition case.
 

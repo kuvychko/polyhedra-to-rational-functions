@@ -7,12 +7,13 @@ transcribed, so no third-party coordinate data is involved.
 
 Conventions:
 
-- **Origin.** Every fixture is centred by construction, except ``irregular-9``, whose origin
-  is simply a point strictly inside it. Nothing is recentered on load.
+- **Origin.** Every fixture is centred by construction, except the two irregular ones and the
+  pyramid: their origin is an interior point (for the pyramid, the circumcentre). Nothing is
+  recentered on load.
 - **Scale.** Platonic solids have circumradius 1, so their vertex directions are their
   vertices. The rhombicuboctahedron has midradius 1, so its polar dual, the deltoidal
   icositetrahedron, also has midradius 1 and is the canonical one: both are tangent to the
-  unit sphere at shared edge points.
+  unit sphere at shared edge points. The triakis tetrahedron is canonical in the same way.
 - **Orientation.** The Platonic solids use the orientation of complexplorer 3.1's Klein forms,
   which is also the baseline's (R0). The tetrahedron's vertices are the roots of
   ``tetrahedral_vertex``, the octahedron has a vertex at each pole, and the icosahedron has a
@@ -134,6 +135,70 @@ def irregular_9() -> Polyhedron:
     return Polyhedron.from_points(_sorted_points(corners), "irregular-9")
 
 
+def hexagonal_pyramid() -> Polyhedron:
+    """Regular hexagonal pyramid inscribed in the unit sphere: apex at the north pole, base at
+    ``z = -1/3`` with radius ``2 sqrt(2) / 3``.
+
+    One vertex of valence 6 among six of valence 3, and one hexagon among six triangles. That
+    spread is what separates R1 from R2. Its polar dual is again a hexagonal pyramid, inverted.
+    """
+    turn = 2 * np.pi * np.arange(6) / 6
+    radius = 2 * np.sqrt(2) / 3
+    base = np.stack([radius * np.cos(turn), radius * np.sin(turn), np.full(6, -1 / 3)], axis=1)
+    return Polyhedron.from_points(
+        _sorted_points(np.vstack([[[0, 0, 1]], base])), "hexagonal pyramid"
+    )
+
+
+def truncated_tetrahedron() -> Polyhedron:
+    """Truncated tetrahedron, midradius 1: permutations of ``(3, 1, 1)`` with an even number of
+    minus signs, scaled. Used only to build `triakis_tetrahedron`; it is not a fixture itself.
+    """
+    pts = {
+        tuple(s * x for s, x in zip(signs, perm, strict=True))
+        for signs in itertools.product([1, -1], repeat=3)
+        if np.prod(signs) > 0
+        for perm in set(itertools.permutations([3.0, 1.0, 1.0]))
+    }
+    # Every edge midpoint of the unscaled solid has norm 3: (2, 2, 1) between (3, 1, 1) and
+    # (1, 3, 1) on a triangle, (3, 0, 0) between (3, 1, 1) and (3, -1, -1) between hexagons.
+    pts = np.array(sorted(pts)) / 3.0
+    return Polyhedron.from_points(_sorted_points(pts), "truncated tetrahedron")
+
+
+def triakis_tetrahedron() -> Polyhedron:
+    """Canonical triakis tetrahedron, midradius 1: the truncated tetrahedron's polar dual.
+
+    Four vertices of valence 6, along the tetrahedron fixture's vertices, and four of valence
+    3, with full tetrahedral symmetry. It keeps the symmetry while separating R1 from R2.
+    """
+    dual = truncated_tetrahedron().polar_dual()
+    return Polyhedron.from_points(_sorted_points(dual.vertices), "triakis tetrahedron")
+
+
+# An irregular pentagon (z = -0.6) below an irregular quadrilateral (z = 0.7). The hull joins
+# them with nine triangles, which gives mixed valences (3, 4, 5) and mixed face sizes (3, 4, 5).
+IRREGULAR_MIXED_BASE = [
+    (1.0, 0.1, -0.6),
+    (0.35, 0.95, -0.6),
+    (-0.8, 0.7, -0.6),
+    (-0.9, -0.45, -0.6),
+    (0.2, -1.05, -0.6),
+]
+IRREGULAR_MIXED_TOP = [(0.45, 0.25, 0.7), (-0.15, 0.55, 0.7), (-0.55, -0.1, 0.7), (0.1, -0.5, 0.7)]
+
+
+def irregular_mixed() -> Polyhedron:
+    """An asymmetric solid that is neither simple nor simplicial: the hull of the points in
+    `IRREGULAR_MIXED_BASE` and `IRREGULAR_MIXED_TOP`.
+
+    Unlike irregular-9, whose vertices all have valence 3, both its valences and its face sizes
+    vary, so neither side of the R2 divisor is uniform. Smallest face distance 0.555.
+    """
+    pts = np.array(IRREGULAR_MIXED_BASE + IRREGULAR_MIXED_TOP, dtype=float)
+    return Polyhedron.from_points(_sorted_points(pts), "irregular-mixed")
+
+
 CONSTRUCTIONS: dict[str, Callable[[], Polyhedron]] = {
     "tetrahedron": tetrahedron,
     "cube": cube,
@@ -143,6 +208,9 @@ CONSTRUCTIONS: dict[str, Callable[[], Polyhedron]] = {
     "rhombicuboctahedron": rhombicuboctahedron,
     "deltoidal-icositetrahedron": deltoidal_icositetrahedron,
     "irregular-9": irregular_9,
+    "hexagonal-pyramid": hexagonal_pyramid,
+    "triakis-tetrahedron": triakis_tetrahedron,
+    "irregular-mixed": irregular_mixed,
 }
 
 

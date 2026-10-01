@@ -20,6 +20,9 @@ EXPECTED = {
     "rhombicuboctahedron": (24, 48, 26, {4: 24}, {3: 8, 4: 18}),
     "deltoidal-icositetrahedron": (26, 48, 24, {3: 8, 4: 18}, {4: 24}),
     "irregular-9": (14, 21, 9, {3: 14}, {3: 1, 4: 3, 5: 3, 6: 2}),
+    "hexagonal-pyramid": (7, 12, 7, {3: 6, 6: 1}, {3: 6, 6: 1}),
+    "triakis-tetrahedron": (8, 18, 12, {3: 4, 6: 4}, {3: 12}),
+    "irregular-mixed": (9, 18, 11, {3: 1, 4: 7, 5: 1}, {3: 9, 4: 1, 5: 1}),
 }
 
 
@@ -117,3 +120,23 @@ def test_irregular_origin_and_edge_feet():
     assert poly.face_planes[1].min() == pytest.approx(0.7)
     _, t = poly.edge_feet()
     assert int(np.sum((t < 0) | (t > 1))) == 2
+
+
+def test_hexagonal_pyramid_is_combinatorially_self_dual():
+    pyramid = fixtures.load("hexagonal-pyramid")
+    assert pyramid.polar_dual().summary() == pyramid.summary()
+
+
+def test_triakis_tetrahedron_is_canonical_and_aligned_with_the_tetrahedron():
+    triakis = fixtures.load("triakis-tetrahedron")
+    feet, t = triakis.edge_feet()
+    assert np.allclose(np.linalg.norm(feet, axis=1), 1.0)
+    assert np.all((t > 0) & (t < 1))
+    apexes = triakis.vertex_directions()[triakis.valences == 6]
+    assert same_point_set(apexes, fixtures.load("tetrahedron").vertex_directions())
+
+
+def test_irregular_mixed_is_neither_simple_nor_simplicial():
+    poly = fixtures.load("irregular-mixed")
+    assert len(set(poly.valences)) > 1 and len(set(poly.face_sizes)) > 1
+    assert poly.face_planes[1].min() == pytest.approx(0.555, abs=1e-3)

@@ -1,0 +1,37 @@
+{
+ "id": "hexagonal-pyramid",
+ "name": "hexagonal pyramid",
+ "construction": "polyhedral_functions.fixtures.hexagonal_pyramid",
+ "description": "Regular hexagonal pyramid inscribed in the unit sphere: apex at the north pole, base at ``z = -1/3`` with radius ``2 sqrt(2) / 3``. One vertex of valence 6 among six of valence 3, and one hexagon among six triangles. That spread is what separates R1 from R2. Its polar dual is again a hexagonal pyramid, inverted.",
+ "summary": {
+  "V": 7,
+  "E": 12,
+  "F": 7,
+  "valences": {
+   "3": 6,
+   "6": 1
+  },
+  "face_sizes": {
+   "3": 6,
+   "6": 1
+  }
+ },
+ "vertices": [
+  [-0.9428090415820635, 1.154608074980658e-16, -0.3333333333333333],
+  [-0.4714045207910322, -0.8164965809277259, -0.3333333333333333],
+  [-0.4714045207910315, 0.8164965809277261, -0.3333333333333333],
+  [0.0, 0.0, 1.0],
+  [0.47140452079103184, -0.816496580927726, -0.3333333333333333],
+  [0.47140452079103184, 0.816496580927726, -0.3333333333333333],
+  [0.9428090415820635, 0.0, -0.3333333333333333]
+ ],
+ "faces": [
+  [3, 0, 1],
+  [4, 1, 0, 2, 5, 6],
+  [2, 0, 3],
+  [3, 1, 4],
+  [5, 2, 3],
+  [6, 3, 4],
+  [5, 3, 6]
+ ]
+}
