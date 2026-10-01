@@ -1,6 +1,6 @@
 # Polyhedra as Complex Functions: Research Program and Repository Specification
 
-Version: 2.4 — 2026-10-01
+Version: 2.5 — 2026-10-01
 
 Status: Program specification. The repository is developed in the open and kept public-ready from its first commit: nothing committed should need scrubbing before release. This document does not itself authorize changing repository visibility, deploying the site, or publishing other existing work; each of those remains an explicit owner action.
 
@@ -288,16 +288,16 @@ The narrative must remain readable independently of the sculpture gallery. Reade
 
 ## 13. Phase 1 exit criteria
 
-- [ ] Existing source audited and baseline preserved.
-- [ ] Geometry/face-incidence contract implemented and verified on fixtures.
-- [ ] R1, R2 and R4 compared across the core corpus; additional candidates justified by findings.
-- [ ] Balancing, infinity, normalization, rotation, duality, and cancellation handled explicitly.
-- [ ] At least one irregular case and one controlled deformation investigated.
-- [ ] Mathematical properties distinguished from rendering choices and numerical evidence.
-- [ ] Comparison atlas and compact run records reproducible from a clean checkout.
-- [ ] Default recipe and optional alternative selected, or a clear limitation explains why selection is premature.
-- [ ] Decision record includes tradeoffs, failure cases, and unresolved questions.
-- [ ] Exploration narrative draft exists separately from presentation material.
+- [x] Existing source audited and baseline preserved. (`notes/2026-09-30-baseline-audit.md`, `src/polyhedral_functions/baseline/`, `experiments/R0-baseline/`)
+- [x] Geometry/face-incidence contract implemented and verified on fixtures. (`geometry.py`, 11 fixtures, `tests/test_geometry.py`)
+- [x] R1, R2 and R4 compared across the core corpus; additional candidates justified by findings. (E001; the flag recipe follows from the incidence lattice; R3 not needed, decision 0005)
+- [x] Balancing, infinity, normalization, rotation, duality, and cancellation handled explicitly. (`divisors.py`, `evaluation.py`, decisions 0003 and 0004)
+- [x] At least one irregular case and one controlled deformation investigated. (irregular-9, irregular-mixed; E002 transitions, E003 deformation)
+- [x] Mathematical properties distinguished from rendering choices and numerical evidence. (E004; claim labels in notes and the narrative)
+- [x] Comparison atlas and compact run records reproducible from a clean checkout. (verified 2026-10-01 at `1bb6fa1`: fresh clone, `uv sync --locked`, 462 tests pass, E001 metrics and E002 jump divisors reproduce identically)
+- [x] Default recipe and optional alternative selected, or a clear limitation explains why selection is premature. (decision 0005: R2, with R4 as the alternative)
+- [x] Decision record includes tradeoffs, failure cases, and unresolved questions. (decision 0005)
+- [x] Exploration narrative draft exists separately from presentation material. (`docs/research/narrative.md`)
 
 Stop expanding the candidate space once these questions are sufficiently answered. A limited, well-supported recipe is a valid result.
 
