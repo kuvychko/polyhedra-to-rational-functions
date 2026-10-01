@@ -84,7 +84,8 @@ Python package `polyhedral_functions` under `src/`. Layout and responsibilities 
 - Every experiment has a stable ID, a question or hypothesis, and **one** controlled factor.
 - Keep fixed-display comparisons separate from individually tuned views, and label the latter.
 - Run manifests record what `PROGRAM.md` §11 lists, including code commit and dirty-tree status,
-  and a snapshot of the configuration used.
+  and a snapshot of the configuration used (`manifests.py`). Commit code *before* a run that will
+  be published, so the manifest records a clean tree; then commit the published evidence.
 - Checks before aesthetics: balance, local orders, rotation and duality residuals, numerical
   behavior near singularities and `∞`.
 - Negative results and dead ends are recorded in `notes/` (dated files), not deleted.
@@ -96,6 +97,7 @@ uv sync                                         # environment from uv.lock
 uv run pytest                                   # tests (includes the baseline checks)
 uv run pytest -m "not slow"                     # skip full mesh rebuilds
 uv run python scripts/make_fixtures.py          # rewrite data/polyhedra/ after changing a construction
+uv run python scripts/make_atlas.py --publish   # E001 atlas -> out/E001-atlas/, evidence -> experiments/
 uv run ruff check . && uv run ruff format --check .
 ```
 

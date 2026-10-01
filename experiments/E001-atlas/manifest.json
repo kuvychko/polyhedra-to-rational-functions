@@ -1,0 +1,4423 @@
+{
+ "experiment": {
+  "id": "E001-atlas",
+  "question": "Across the corpus, how do the candidate recipes differ: in degree, in duality and symmetry behaviour, and in the shape of their magnitude fields?",
+  "hypothesis": "From the M3/M4 screens: R1 and R2 differ in shape only where valences or face sizes vary strongly (hexagonal pyramid), R4 differs from R2 everywhere, and placement matters only on the irregular solids and the pyramid.",
+  "changed_factor": "recipe (recipe sheets); placement with multiplicities fixed (placement panels)"
+ },
+ "started": "2026-10-01T13:44:24Z",
+ "config": {
+  "id": "E001-atlas",
+  "question": "Across the corpus, how do the candidate recipes differ: in degree, in duality and symmetry behaviour, and in the shape of their magnitude fields?",
+  "hypothesis": "From the M3/M4 screens: R1 and R2 differ in shape only where valences or face sizes vary strongly (hexagonal pyramid), R4 differs from R2 everywhere, and placement matters only on the irregular solids and the pyramid.",
+  "changed_factor": "recipe (recipe sheets); placement with multiplicities fixed (placement panels)",
+  "fixtures": [
+   "tetrahedron",
+   "cube",
+   "octahedron",
+   "icosahedron",
+   "dodecahedron",
+   "rhombicuboctahedron",
+   "deltoidal-icositetrahedron",
+   "triakis-tetrahedron",
+   "hexagonal-pyramid",
+   "irregular-9",
+   "irregular-mixed"
+  ],
+  "recipes": [
+   "R1",
+   "R2",
+   "R4ve",
+   "R4fe",
+   "flag"
+  ],
+  "reference_recipe": "R2",
+  "placement_variants": [
+   {
+    "recipe": "R2",
+    "face": "centroid",
+    "edge": "foot"
+   },
+   {
+    "recipe": "R4ve",
+    "face": "polar",
+    "edge": "midpoint"
+   }
+  ],
+  "near_pair_radius": 0.1,
+  "comparison_samples": 20000,
+  "comparison_exclusion": 0.05,
+  "display": {
+   "relief_resolution": 160,
+   "depth": 0.2,
+   "sharpness": 4.0,
+   "phase_sectors": 12,
+   "plane_half_width": 2.5,
+   "plane_resolution": 300,
+   "map_resolution": 180,
+   "map_limit": 0.75,
+   "window": 600
+  },
+  "views": {
+   "default": [
+    2.2,
+    2.2,
+    1.6
+   ],
+   "tetrahedron": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "cube": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "octahedron": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "rhombicuboctahedron": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "deltoidal-icositetrahedron": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "triakis-tetrahedron": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "icosahedron": [
+    0.6,
+    0.0,
+    2.4
+   ],
+   "dodecahedron": [
+    0.6,
+    0.0,
+    2.4
+   ]
+  },
+  "sheet_dpi": 110
+ },
+ "code": {
+  "commit": "28645f0ba3281b3e601343befe916ec1799b7e99",
+  "dirty": false,
+  "changed_paths": []
+ },
+ "environment": {
+  "python": "3.13.5",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "packages": {
+   "polyhedra-to-rational-functions": "0.0.1",
+   "complexplorer": "3.1.0",
+   "numpy": "2.5.3",
+   "scipy": "1.18.1",
+   "matplotlib": "3.11.2",
+   "pyvista": "0.49.0",
+   "vtk": "9.7.1"
+  }
+ },
+ "conventions": {
+  "chart": "complexplorer stereographic: z = 0 south pole, z = inf north pole",
+  "normalization": "chordal (decision 0003): log|f| = sum m log chi; geometric mean 1",
+  "phase": "chart phase with C > 0",
+  "evaluation": "log-domain, factored (evaluation.py)"
+ },
+ "runs": [
+  {
+   "fixture": "tetrahedron",
+   "recipe": {
+    "name": "R1",
+    "kind": "uniform",
+    "a": 1,
+    "b": -1,
+    "sign": 1,
+    "face_placement": "polar",
+    "edge_placement": "foot",
+    "version": 1
+   },
+   "polyhedron": "tetrahedron",
+   "divisor": {
+    "n_zeros": 4,
+    "n_poles": 4,
+    "degree": 4,
+    "balanced": true,
+    "zero_orders": [
+     1
+    ],
+    "pole_orders": [
+     1
+    ]
+   },
+   "gcd": 4,
+   "unreduced_degree": 16,
+   "n_cancellations": 0,
+   "winding_ok": true,
+   "duality": {
+    "divisors_equal": true,
+    "max_log_modulus_residual": 1.5543122344752192e-15,
+    "exclusion_radius": 0.05,
+    "max_phase_residual": 2.220446049250313e-15
+   },
+   "symmetry": {
+    "group_order": 24,
+    "preserved_proper": 12,
+    "preserved_improper": 12,
+    "inverted_proper": 0,
+    "inverted_improper": 0,
+    "preserved": 24
+   },
+   "vs_reference": {
+    "correlation": 1.0,
+    "rms_difference": 0.0,
+    "max_abs_difference": 0.0,
+    "per_degree": true,
+    "samples": 20000,
+    "exclusion_radius": 0.05,
+    "excluded_fraction": 0.005349999999999966
+   },
+   "near_pairs": 0
+  },
+  {
+   "fixture": "tetrahedron",
+   "recipe": {
+    "name": "R2",
+    "kind": "incidence",
+    "a": 1,
+    "b": -1,
+    "sign": 1,
+    "face_placement": "polar",
+    "edge_placement": "foot",
+    "version": 1
+   },
+   "polyhedron": "tetrahedron",
+   "divisor": {
+    "n_zeros": 4,
+    "n_poles": 4,
+    "degree": 4,
+    "balanced": true,
+    "zero_orders": [
+     1
+    ],
+    "pole_orders": [
+     1
+    ]
+   },
+   "gcd": 3,
+   "unreduced_degree": 12,
+   "n_cancellations": 0,
+   "winding_ok": true,
+   "duality": {
+    "divisors_equal": true,
+    "max_log_modulus_residual": 1.5543122344752192e-15,
+    "exclusion_radius": 0.05,
+    "max_phase_residual": 2.220446049250313e-15
+   },
+   "symmetry": {
+    "group_order": 24,
+    "preserved_proper": 12,
+    "preserved_improper": 12,
+    "inverted_proper": 0,
+    "inverted_improper": 0,
+    "preserved": 24
+   },
+   "vs_reference": null,
+   "near_pairs": 0
+  },
+  {
+   "fixture": "tetrahedron",
+   "recipe": {
+    "name": "R4ve",
+    "kind": "incidence",
+    "a": 1,
+    "b": 0,
+    "sign": 1,
+    "face_placement": "polar",
+    "edge_placement": "foot",
+    "version": 1
+   },
+   "polyhedron": "tetrahedron",
+   "divisor": {
+    "n_zeros": 4,
+    "n_poles": 6,
+    "degree": 12,
+    "balanced": true,
+    "zero_orders": [
+     3
+    ],
+    "pole_orders": [
+     2
+    ]
+   },
+   "gcd": 1,
+   "unreduced_degree": 12,
+   "n_cancellations": 0,
+   "winding_ok": true,
+   "duality": {
+    "divisors_equal": true,
+    "max_log_modulus_residual": 2.6645352591003757e-15,
+    "exclusion_radius": 0.05
+   },
+   "symmetry": {
+    "group_order": 24,
+    "preserved_proper": 12,
+    "preserved_improper": 12,
+    "inverted_proper": 0,
+    "inverted_improper": 0,
+    "preserved": 24
+   },
+   "vs_reference": {
+    "correlation": 0.6593096570173761,
+    "rms_difference": 0.12552764877748848,
+    "max_abs_difference": 0.6183940975253214,
+    "per_degree": true,
+    "samples": 20000,
+    "exclusion_radius": 0.05,
+    "excluded_fraction": 0.009299999999999975
+   },
+   "near_pairs": 0
+  },
+  {
+   "fixture": "tetrahedron",
+   "recipe": {
+    "name": "R4fe",
+    "kind": "incidence",
+    "a": 0,
+    "b": 1,
+    "sign": 1,
+    "face_placement": "polar",
+    "edge_placement": "foot",
+    "version": 1
+   },
+   "polyhedron": "tetrahedron",
+   "divisor": {
+    "n_zeros": 4,
+    "n_poles": 6,
+    "degree": 12,
+    "balanced": true,
+    "zero_orders": [
+     3
+    ],
+    "pole_orders": [
+     2
+    ]
+   },
+   "gcd": 1,
+   "unreduced_degree": 12,
+   "n_cancellations": 0,
+   "winding_ok": true,
+   "duality": {
+    "divisors_equal": true,
+    "max_log_modulus_residual": 4.440892098500626e-15,
+    "exclusion_radius": 0.05
+   },
+   "symmetry": {
+    "group_order": 24,
+    "preserved_proper": 12,
+    "preserved_improper": 12,
+    "inverted_proper": 0,
+    "inverted_improper": 0,
+    "preserved": 24
+   },
+   "vs_reference": {
+    "correlation": -0.6587575323451765,
+    "rms_difference": 0.2655600232330531,
+    "max_abs_difference": 1.2727807871157233,
+    "per_degree": true,
+    "samples": 20000,
+    "exclusion_radius": 0.05,
+    "excluded_fraction": 0.009299999999999975
+   },
+   "near_pairs": 0
+  },
+  {
+   "fixture": "tetrahedron",
+   "recipe": {
+    "name": "flag",
+    "kind": "incidence",
+    "a": 1,
+    "b": 1,
+    "sign": 1,
+    "face_placement": "polar",
+    "edge_placement": "foot",
+    "version": 1
+   },
+   "polyhedron": "tetrahedron",
+   "divisor": {
+    "n_zeros": 8,
+    "n_poles": 6,
+    "degree": 24,
+    "balanced": true,
+    "zero_orders": [
+     3
+    ],
+    "pole_orders": [
+     4
+    ]
+   },
+   "gcd": 1,
+   "unreduced_degree": 24,
+   "n_cancellations": 0,
+   "winding_ok": true,
+   "duality": {
+    "divisors_equal": true,
+    "max_log_modulus_residual": 5.329070518200751e-15,
+    "exclusion_radius": 0.05
+   },
+   "symmetry": {
+    "group_order": 24,
+    "preserved_proper": 12,
+    "preserved_improper": 12,
+    "inverted_proper": 0,
+    "inverted_improper": 0,
+    "preserved": 24
+   },
+   "vs_reference": {
+    "correlation": 0.0006488690385074785,
+    "rms_difference": 0.19050329615531372,
+    "max_abs_difference": 0.9455874423205222,
+    "per_degree": true,
+    "samples": 20000,
+    "exclusion_radius": 0.05,
+    "excluded_fraction": 0.009299999999999975
+   },
+   "near_pairs": 0
+  },
+  {
+   "fixture": "cube",
+   "recipe": {
+    "name": "R1",
+    "kind": "uniform",
+    "a": 1,
+    "b": -1,
+    "sign": 1,
+    "face_placement": "polar",
+    "edge_placement": "foot",
+    "version": 1
+   },
+   "polyhedron": "cube",
+   "divisor": {
+    "n_zeros": 8,
+    "n_poles": 6,
+    "degree": 24,
+    "balanced": true,
+    "zero_orders": [
+     3
+    ],
+    "pole_orders": [
+     4
+    ]
+   },
+   "gcd": 2,
+   "unreduced_degree": 48,
+   "n_cancellations": 0,
+   "winding_ok": true,
+   "duality": {
+    "divisors_equal": true,
+    "max_log_modulus_residual": 7.105427357601002e-15,
+    "exclusion_radius": 0.05,
+    "max_phase_residual": 1.4210854715202004e-14
+   },
+   "symmetry": {
+    "group_order": 48,
+    "preserved_proper": 24,
+    "preserved_improper": 24,
+    "inverted_proper": 0,
+    "inverted_improper": 0,
+    "preserved": 48
+   },
+   "vs_reference": {
+    "correlation": 1.0,
+    "rms_difference": 0.0,
+    "max_abs_difference": 0.0,
+    "per_degree": true,
+    "samples": 20000,
+    "exclusion_radius": 0.05,
+    "excluded_fraction": 0.009299999999999975
+   },
+   "near_pairs": 0
+  },
+  {
+   "fixture": "cube",
+   "recipe": {
+    "name": "R2",
+    "kind": "incidence",
+    "a": 1,
+    "b": -1,
+    "sign": 1,
+    "face_placement": "polar",
+    "edge_placement": "foot",
+    "version": 1
+   },
+   "polyhedron": "cube",
+   "divisor": {
+    "n_zeros": 8,
+    "n_poles": 6,
+    "degree": 24,
+    "balanced": true,
+    "zero_orders": [
+     3
+    ],
+    "pole_orders": [
+     4
+    ]
+   },
+   "gcd": 1,
+   "unreduced_degree": 24,
+   "n_cancellations": 0,
+   "winding_ok": true,
+   "duality": {
+    "divisors_equal": true,
+    "max_log_modulus_residual": 7.105427357601002e-15,
+    "exclusion_radius": 0.05,
+    "max_phase_residual": 1.4210854715202004e-14
+   },
+   "symmetry": {
+    "group_order": 48,
+    "preserved_proper": 24,
+    "preserved_improper": 24,
+    "inverted_proper": 0,
+    "inverted_improper": 0,
+    "preserved": 48
+   },
+   "vs_reference": null,
+   "near_pairs": 0
+  },
+  {
+   "fixture": "cube",
+   "recipe": {
+    "name": "R4ve",
+    "kind": "incidence",
+    "a": 1,
+    "b": 0,
+    "sign": 1,
+    "face_placement": "polar",
+    "edge_placement": "foot",
+    "version": 1
+   },
+   "polyhedron": "cube",
+   "divisor": {
+    "n_zeros": 8,
+    "n_poles": 12,
+    "degree": 24,
+    "balanced": true,
+    "zero_orders": [
+     3
+    ],
+    "pole_orders": [
+     2
+    ]
+   },
+   "gcd": 1,
+   "unreduced_degree": 24,
+   "n_cancellations": 0,
+   "winding_ok": true,
+   "duality": {
+    "divisors_equal": true,
+    "max_log_modulus_residual": 1.7763568394002505e-15,
+    "exclusion_radius": 0.05
+   },
+   "symmetry": {
+    "group_order": 48,
+    "preserved_proper": 24,
+    "preserved_improper": 24,
+    "inverted_proper": 0,
+    "inverted_improper": 0,
+    "preserved": 48
+   },
+   "vs_reference": {
+    "correlation": 0.5492189687784864,
+    "rms_difference": 0.07925331412452506,
+    "max_abs_difference": 0.38027196065403973,
+    "per_degree": true,
+    "samples": 20000,
+    "exclusion_radius": 0.05,
+    "excluded_fraction": 0.017199999999999993
+   },
+   "near_pairs": 0
+  },
+  {
+   "fixture": "cube",
+   "recipe": {
+    "name": "R4fe",
+    "kind": "incidence",
+    "a": 0,
+    "b": 1,
+    "sign": 1,
+    "face_placement": "polar",
+    "edge_placement": "foot",
+    "version": 1
+   },
+   "polyhedron": "cube",
+   "divisor": {
+    "n_zeros": 6,
+    "n_poles": 12,
+    "degree": 12,
+    "balanced": true,
+    "zero_orders": [
+     2
+    ],
+    "pole_orders": [
+     1
+    ]
+   },
+   "gcd": 2,
+   "unreduced_degree": 24,
+   "n_cancellations": 0,
+   "winding_ok": true,
+   "duality": {
+    "divisors_equal": true,
+    "max_log_modulus_residual": 7.993605777301127e-15,
+    "exclusion_radius": 0.05
+   },
+   "symmetry": {
+    "group_order": 48,
+    "preserved_proper": 24,
+    "preserved_improper": 24,
+    "inverted_proper": 0,
+    "inverted_improper": 0,
+    "preserved": 48
+   },
+   "vs_reference": {
+    "correlation": -0.8199909451982063,
+    "rms_difference": 0.1661014424950851,
+    "max_abs_difference": 0.7747030422050905,
+    "per_degree": true,
+    "samples": 20000,
+    "exclusion_radius": 0.05,
+    "excluded_fraction": 0.017199999999999993
+   },
+   "near_pairs": 0
+  },
+  {
+   "fixture": "cube",
+   "recipe": {
+    "name": "flag",
+    "kind": "incidence",
+    "a": 1,
+    "b": 1,
+    "sign": 1,
+    "face_placement": "polar",
+    "edge_placement": "foot",
+    "version": 1
+   },
+   "polyhedron": "cube",
+   "divisor": {
+    "n_zeros": 14,
+    "n_poles": 12,
+    "degree": 48,
+    "balanced": true,
+    "zero_orders": [
+     3,
+     4
+    ],
+    "pole_orders": [
+     4
+    ]
+   },
+   "gcd": 1,
+   "unreduced_degree": 48,
+   "n_cancellations": 0,
+   "winding_ok": true,
+   "duality": {
+    "divisors_equal": true,
+    "max_log_modulus_residual": 9.769962616701378e-15,
+    "exclusion_radius": 0.05
+   },
+   "symmetry": {
+    "group_order": 48,
+    "preserved_proper": 24,
+    "preserved_improper": 24,
+    "inverted_proper": 0,
+    "inverted_improper": 0,
+    "preserved": 48
+   },
+   "vs_reference": {
+    "correlation": -0.36148092632097717,
+    "rms_difference": 0.1211966401211834,
+    "max_abs_difference": 0.5774875014295651,
+    "per_degree": true,
+    "samples": 20000,
+    "exclusion_radius": 0.05,
+    "excluded_fraction": 0.017199999999999993
+   },
+   "near_pairs": 0
+  },
+  {
+   "fixture": "octahedron",
+   "recipe": {
+    "name": "R1",
+    "kind": "uniform",
+    "a": 1,
+    "b": -1,
+    "sign": 1,
+    "face_placement": "polar",
+    "edge_placement": "foot",
+    "version": 1
+   },
+   "polyhedron": "octahedron",
+   "divisor": {
+    "n_zeros": 6,
+    "n_poles": 8,
+    "degree": 24,
+    "balanced": true,
+    "zero_orders": [
+     4
+    ],
+    "pole_orders": [
+     3
+    ]
+   },
+   "gcd": 2,
+   "unreduced_degree": 48,
+   "n_cancellations": 0,
+   "winding_ok": true,
+   "duality": {
+    "divisors_equal": true,
+    "max_log_modulus_residual": 8.881784197001252e-15,
+    "exclusion_radius": 0.05,
+    "max_phase_residual": 1.426636586643326e-14
+   },
+   "symmetry": {
+    "group_order": 48,
+    "preserved_proper": 24,
+    "preserved_improper": 24,
+    "inverted_proper": 0,
+    "inverted_improper": 0,
+    "preserved": 48
+   },
+   "vs_reference": {
+    "correlation": 1.0,
+    "rms_difference": 0.0,
+    "max_abs_difference": 0.0,
+    "per_degree": true,
+    "samples": 20000,
+    "exclusion_radius": 0.05,
+    "excluded_fraction": 0.009299999999999975
+   },
+   "near_pairs": 0
+  },
+  {
+   "fixture": "octahedron",
+   "recipe": {
+    "name": "R2",
+    "kind": "incidence",
+    "a": 1,
+    "b": -1,
+    "sign": 1,
+    "face_placement": "polar",
+    "edge_placement": "foot",
+    "version": 1
+   },
+   "polyhedron": "octahedron",
+   "divisor": {
+    "n_zeros": 6,
+    "n_poles": 8,
+    "degree": 24,
+    "balanced": true,
+    "zero_orders": [
+     4
+    ],
+    "pole_orders": [
+     3
+    ]
+   },
+   "gcd": 1,
+   "unreduced_degree": 24,
+   "n_cancellations": 0,
+   "winding_ok": true,
+   "duality": {
+    "divisors_equal": true,
+    "max_log_modulus_residual": 8.881784197001252e-15,
+    "exclusion_radius": 0.05,
+    "max_phase_residual": 1.426636586643326e-14
+   },
+   "symmetry": {
+    "group_order": 48,
+    "preserved_proper": 24,
+    "preserved_improper": 24,
+    "inverted_proper": 0,
+    "inverted_improper": 0,
+    "preserved": 48
+   },
+   "vs_reference": null,
+   "near_pairs": 0
+  },
+  {
+   "fixture": "octahedron",
+   "recipe": {
+    "name": "R4ve",
+    "kind": "incidence",
+    "a": 1,
+    "b": 0,
+    "sign": 1,
+    "face_placement": "polar",
+    "edge_placement": "foot",
+    "version": 1
+   },
+   "polyhedron": "octahedron",
+   "divisor": {
+    "n_zeros": 6,
+    "n_poles": 12,
+    "degree": 12,
+    "balanced": true,
+    "zero_orders": [
+     2
+    ],
+    "pole_orders": [
+     1
+    ]
+   },
+   "gcd": 2,
+   "unreduced_degree": 24,
+   "n_cancellations": 0,
+   "winding_ok": true,
+   "duality": {
+    "divisors_equal": true,
+    "max_log_modulus_residual": 1.0658141036401503e-14,
+    "exclusion_radius": 0.05
+   },
+   "symmetry": {
+    "group_order": 48,
+    "preserved_proper": 24,
+    "preserved_improper": 24,
+    "inverted_proper": 0,
+    "inverted_improper": 0,
+    "preserved": 48
+   },
+   "vs_reference": {
+    "correlation": 0.819990945198206,
+    "rms_difference": 0.05428249977533186,
+    "max_abs_difference": 0.25861223674026945,
+    "per_degree": true,
+    "samples": 20000,
+    "exclusion_radius": 0.05,
+    "excluded_fraction": 0.017199999999999993
+   },
+   "near_pairs": 0
+  },
+  {
+   "fixture": "octahedron",
+   "recipe": {
+    "name": "R4fe",
+    "kind": "incidence",
+    "a": 0,
+    "b": 1,
+    "sign": 1,
+    "face_placement": "polar",
+    "edge_placement": "foot",
+    "version": 1
+   },
+   "polyhedron": "octahedron",
+   "divisor": {
+    "n_zeros": 8,
+    "n_poles": 12,
+    "degree": 24,
+    "balanced": true,
+    "zero_orders": [
+     3
+    ],
+    "pole_orders": [
+     2
+    ]
+   },
+   "gcd": 1,
+   "unreduced_degree": 24,
+   "n_cancellations": 0,
+   "winding_ok": true,
+   "duality": {
+    "divisors_equal": true,
+    "max_log_modulus_residual": 3.3306690738754696e-15,
+    "exclusion_radius": 0.05
+   },
+   "symmetry": {
+    "group_order": 48,
+    "preserved_proper": 24,
+    "preserved_improper": 24,
+    "inverted_proper": 0,
+    "inverted_improper": 0,
+    "preserved": 48
+   },
+   "vs_reference": {
+    "correlation": -0.5492189687784863,
+    "rms_difference": 0.13261295240421594,
+    "max_abs_difference": 0.5532428221064654,
+    "per_degree": true,
+    "samples": 20000,
+    "exclusion_radius": 0.05,
+    "excluded_fraction": 0.017199999999999993
+   },
+   "near_pairs": 0
+  },
+  {
+   "fixture": "octahedron",
+   "recipe": {
+    "name": "flag",
+    "kind": "incidence",
+    "a": 1,
+    "b": 1,
+    "sign": 1,
+    "face_placement": "polar",
+    "edge_placement": "foot",
+    "version": 1
+   },
+   "polyhedron": "octahedron",
+   "divisor": {
+    "n_zeros": 14,
+    "n_poles": 12,
+    "degree": 48,
+    "balanced": true,
+    "zero_orders": [
+     3,
+     4
+    ],
+    "pole_orders": [
+     4
+    ]
+   },
+   "gcd": 1,
+   "unreduced_degree": 48,
+   "n_cancellations": 0,
+   "winding_ok": true,
+   "duality": {
+    "divisors_equal": true,
+    "max_log_modulus_residual": 1.6209256159527285e-14,
+    "exclusion_radius": 0.05
+   },
+   "symmetry": {
+    "group_order": 48,
+    "preserved_proper": 24,
+    "preserved_improper": 24,
+    "inverted_proper": 0,
+    "inverted_improper": 0,
+    "preserved": 48
+   },
+   "vs_reference": {
+    "correlation": 0.36148092632097717,
+    "rms_difference": 0.08955238433978273,
+    "max_abs_difference": 0.4059275294233674,
+    "per_degree": true,
+    "samples": 20000,
+    "exclusion_radius": 0.05,
+    "excluded_fraction": 0.017199999999999993
+   },
+   "near_pairs": 0
+  },
+  {
+   "fixture": "icosahedron",
+   "recipe": {
+    "name": "R1",
+    "kind": "uniform",
+    "a": 1,
+    "b": -1,
+    "sign": 1,
+    "face_placement": "polar",
+    "edge_placement": "foot",
+    "version": 1
+   },
+   "polyhedron": "icosahedron",
+   "divisor": {
+    "n_zeros": 12,
+    "n_poles": 20,
+    "degree": 60,
+    "balanced": true,
+    "zero_orders": [
+     5
+    ],
+    "pole_orders": [
+     3
+    ]
+   },
+   "gcd": 4,
+   "unreduced_degree": 240,
+   "n_cancellations": 0,
+   "winding_ok": true,
+   "duality": {
+    "divisors_equal": true,
+    "max_log_modulus_residual": 1.9539925233402755e-14,
+    "exclusion_radius": 0.05,
+    "max_phase_residual": 3.907985046680551e-14
+   },
+   "symmetry": {
+    "group_order": 120,
+    "preserved_proper": 60,
+    "preserved_improper": 60,
+    "inverted_proper": 0,
+    "inverted_improper": 0,
+    "preserved": 120
+   },
+   "vs_reference": {
+    "correlation": 1.0,
+    "rms_difference": 0.0,
+    "max_abs_difference": 0.0,
+    "per_degree": true,
+    "samples": 20000,
+    "exclusion_radius": 0.05,
+    "excluded_fraction": 0.019950000000000023
+   },
+   "near_pairs": 0
+  },
+  {
+   "fixture": "icosahedron",
+   "recipe": {
+    "name": "R2",
+    "kind": "incidence",
+    "a": 1,
+    "b": -1,
+    "sign": 1,
+    "face_placement": "polar",
+    "edge_placement": "foot",
+    "version": 1
+   },
+   "polyhedron": "icosahedron",
+   "divisor": {
+    "n_zeros": 12,
+    "n_poles": 20,
+    "degree": 60,
+    "balanced": true,
+    "zero_orders": [
+     5
+    ],
+    "pole_orders": [
+     3
+    ]
+   },
+   "gcd": 1,
+   "unreduced_degree": 60,
+   "n_cancellations": 0,
+   "winding_ok": true,
+   "duality": {
+    "divisors_equal": true,
+    "max_log_modulus_residual": 1.9539925233402755e-14,
+    "exclusion_radius": 0.05,
+    "max_phase_residual": 3.907985046680551e-14
+   },
+   "symmetry": {
+    "group_order": 120,
+    "preserved_proper": 60,
+    "preserved_improper": 60,
+    "inverted_proper": 0,
+    "inverted_improper": 0,
+    "preserved": 120
+   },
+   "vs_reference": null,
+   "near_pairs": 0
+  },
+  {
+   "fixture": "icosahedron",
+   "recipe": {
+    "name": "R4ve",
+    "kind": "incidence",
+    "a": 1,
+    "b": 0,
+    "sign": 1,
+    "face_placement": "polar",
+    "edge_placement": "foot",
+    "version": 1
+   },
+   "polyhedron": "icosahedron",
+   "divisor": {
+    "n_zeros": 12,
+    "n_poles": 30,
+    "degree": 60,
+    "balanced": true,
+    "zero_orders": [
+     5
+    ],
+    "pole_orders": [
+     2
+    ]
+   },
+   "gcd": 1,
+   "unreduced_degree": 60,
+   "n_cancellations": 0,
+   "winding_ok": true,
+   "duality": {
+    "divisors_equal": true,
+    "max_log_modulus_residual": 1.7319479184152442e-14,
+    "exclusion_radius": 0.05
+   },
+   "symmetry": {
+    "group_order": 120,
+    "preserved_proper": 60,
+    "preserved_improper": 60,
+    "inverted_proper": 0,
+    "inverted_improper": 0,
+    "preserved": 120
+   },
+   "vs_reference": {
+    "correlation": 0.9020245401700144,
+    "rms_difference": 0.018199013745916322,
+    "max_abs_difference": 0.07774580390309872,
+    "per_degree": true,
+    "samples": 20000,
+    "exclusion_radius": 0.05,
+    "excluded_fraction": 0.038250000000000006
+   },
+   "near_pairs": 0
+  },
+  {
+   "fixture": "icosahedron",
+   "recipe": {
+    "name": "R4fe",
+    "kind": "incidence",
+    "a": 0,
+    "b": 1,
+    "sign": 1,
+    "face_placement": "polar",
+    "edge_placement": "foot",
+    "version": 1
+   },
+   "polyhedron": "icosahedron",
+   "divisor": {
+    "n_zeros": 20,
+    "n_poles": 30,
+    "degree": 60,
+    "balanced": true,
+    "zero_orders": [
+     3
+    ],
+    "pole_orders": [
+     2
+    ]
+   },
+   "gcd": 1,
+   "unreduced_degree": 60,
+   "n_cancellations": 0,
+   "winding_ok": true,
+   "duality": {
+    "divisors_equal": true,
+    "max_log_modulus_residual": 2.3092638912203256e-14,
+    "exclusion_radius": 0.05
+   },
+   "symmetry": {
+    "group_order": 120,
+    "preserved_proper": 60,
+    "preserved_improper": 60,
+    "inverted_proper": 0,
+    "inverted_improper": 0,
+    "preserved": 120
+   },
+   "vs_reference": {
+    "correlation": -0.48034796371028016,
+    "rms_difference": 0.05328439476746506,
+    "max_abs_difference": 0.1765376520051004,
+    "per_degree": true,
+    "samples": 20000,
+    "exclusion_radius": 0.05,
+    "excluded_fraction": 0.038250000000000006
+   },
+   "near_pairs": 0
+  },
+  {
+   "fixture": "icosahedron",
+   "recipe": {
+    "name": "flag",
+    "kind": "incidence",
+    "a": 1,
+    "b": 1,
+    "sign": 1,
+    "face_placement": "polar",
+    "edge_placement": "foot",
+    "version": 1
+   },
+   "polyhedron": "icosahedron",
+   "divisor": {
+    "n_zeros": 32,
+    "n_poles": 30,
+    "degree": 120,
+    "balanced": true,
+    "zero_orders": [
+     3,
+     5
+    ],
+    "pole_orders": [
+     4
+    ]
+   },
+   "gcd": 1,
+   "unreduced_degree": 120,
+   "n_cancellations": 0,
+   "winding_ok": true,
+   "duality": {
+    "divisors_equal": true,
+    "max_log_modulus_residual": 3.9968028886505635e-14,
+    "exclusion_radius": 0.05
+   },
+   "symmetry": {
+    "group_order": 120,
+    "preserved_proper": 60,
+    "preserved_improper": 60,
+    "inverted_proper": 0,
+    "inverted_improper": 0,
+    "preserved": 120
+   },
+   "vs_reference": {
+    "correlation": 0.6105598838627982,
+    "rms_difference": 0.033796598158708786,
+    "max_abs_difference": 0.12714172795409961,
+    "per_degree": true,
+    "samples": 20000,
+    "exclusion_radius": 0.05,
+    "excluded_fraction": 0.038250000000000006
+   },
+   "near_pairs": 0
+  },
+  {
+   "fixture": "dodecahedron",
+   "recipe": {
+    "name": "R1",
+    "kind": "uniform",
+    "a": 1,
+    "b": -1,
+    "sign": 1,
+    "face_placement": "polar",
+    "edge_placement": "foot",
+    "version": 1
+   },
+   "polyhedron": "dodecahedron",
+   "divisor": {
+    "n_zeros": 20,
+    "n_poles": 12,
+    "degree": 60,
+    "balanced": true,
+    "zero_orders": [
+     3
+    ],
+    "pole_orders": [
+     5
+    ]
+   },
+   "gcd": 4,
+   "unreduced_degree": 240,
+   "n_cancellations": 0,
+   "winding_ok": true,
+   "duality": {
+    "divisors_equal": true,
+    "max_log_modulus_residual": 1.4210854715202004e-14,
+    "exclusion_radius": 0.05,
+    "max_phase_residual": 3.197442310920451e-14
+   },
+   "symmetry": {
+    "group_order": 120,
+    "preserved_proper": 60,
+    "preserved_improper": 60,
+    "inverted_proper": 0,
+    "inverted_improper": 0,
+    "preserved": 120
+   },
+   "vs_reference": {
+    "correlation": 1.0,
+    "rms_difference": 0.0,
+    "max_abs_difference": 0.0,
+    "per_degree": true,
+    "samples": 20000,
+    "exclusion_radius": 0.05,
+    "excluded_fraction": 0.019950000000000023
+   },
+   "near_pairs": 0
+  },
+  {
+   "fixture": "dodecahedron",
+   "recipe": {
+    "name": "R2",
+    "kind": "incidence",
+    "a": 1,
+    "b": -1,
+    "sign": 1,
+    "face_placement": "polar",
+    "edge_placement": "foot",
+    "version": 1
+   },
+   "polyhedron": "dodecahedron",
+   "divisor": {
+    "n_zeros": 20,
+    "n_poles": 12,
+    "degree": 60,
+    "balanced": true,
+    "zero_orders": [
+     3
+    ],
+    "pole_orders": [
+     5
+    ]
+   },
+   "gcd": 1,
+   "unreduced_degree": 60,
+   "n_cancellations": 0,
+   "winding_ok": true,
+   "duality": {
+    "divisors_equal": true,
+    "max_log_modulus_residual": 1.4210854715202004e-14,
+    "exclusion_radius": 0.05,
+    "max_phase_residual": 3.197442310920451e-14
+   },
+   "symmetry": {
+    "group_order": 120,
+    "preserved_proper": 60,
+    "preserved_improper": 60,
+    "inverted_proper": 0,
+    "inverted_improper": 0,
+    "preserved": 120
+   },
+   "vs_reference": null,
+   "near_pairs": 0
+  },
+  {
+   "fixture": "dodecahedron",
+   "recipe": {
+    "name": "R4ve",
+    "kind": "incidence",
+    "a": 1,
+    "b": 0,
+    "sign": 1,
+    "face_placement": "polar",
+    "edge_placement": "foot",
+    "version": 1
+   },
+   "polyhedron": "dodecahedron",
+   "divisor": {
+    "n_zeros": 20,
+    "n_poles": 30,
+    "degree": 60,
+    "balanced": true,
+    "zero_orders": [
+     3
+    ],
+    "pole_orders": [
+     2
+    ]
+   },
+   "gcd": 1,
+   "unreduced_degree": 60,
+   "n_cancellations": 0,
+   "winding_ok": true,
+   "duality": {
+    "divisors_equal": true,
+    "max_log_modulus_residual": 1.2434497875801753e-14,
+    "exclusion_radius": 0.05
+   },
+   "symmetry": {
+    "group_order": 120,
+    "preserved_proper": 60,
+    "preserved_improper": 60,
+    "inverted_proper": 0,
+    "inverted_improper": 0,
+    "preserved": 120
+   },
+   "vs_reference": {
+    "correlation": 0.4803479637102804,
+    "rms_difference": 0.03697599773284798,
+    "max_abs_difference": 0.16173255249398394,
+    "per_degree": true,
+    "samples": 20000,
+    "exclusion_radius": 0.05,
+    "excluded_fraction": 0.038250000000000006
+   },
+   "near_pairs": 0
+  },
+  {
+   "fixture": "dodecahedron",
+   "recipe": {
+    "name": "R4fe",
+    "kind": "incidence",
+    "a": 0,
+    "b": 1,
+    "sign": 1,
+    "face_placement": "polar",
+    "edge_placement": "foot",
+    "version": 1
+   },
+   "polyhedron": "dodecahedron",
+   "divisor": {
+    "n_zeros": 12,
+    "n_poles": 30,
+    "degree": 60,
+    "balanced": true,
+    "zero_orders": [
+     5
+    ],
+    "pole_orders": [
+     2
+    ]
+   },
+   "gcd": 1,
+   "unreduced_degree": 60,
+   "n_cancellations": 0,
+   "winding_ok": true,
+   "duality": {
+    "divisors_equal": true,
+    "max_log_modulus_residual": 1.4654943925052066e-14,
+    "exclusion_radius": 0.05
+   },
+   "symmetry": {
+    "group_order": 120,
+    "preserved_proper": 60,
+    "preserved_improper": 60,
+    "inverted_proper": 0,
+    "inverted_improper": 0,
+    "preserved": 120
+   },
+   "vs_reference": {
+    "correlation": -0.9020245401700147,
+    "rms_difference": 0.07711865952401947,
+    "max_abs_difference": 0.3283257100454706,
+    "per_degree": true,
+    "samples": 20000,
+    "exclusion_radius": 0.05,
+    "excluded_fraction": 0.038250000000000006
+   },
+   "near_pairs": 0
+  },
+  {
+   "fixture": "dodecahedron",
+   "recipe": {
+    "name": "flag",
+    "kind": "incidence",
+    "a": 1,
+    "b": 1,
+    "sign": 1,
+    "face_placement": "polar",
+    "edge_placement": "foot",
+    "version": 1
+   },
+   "polyhedron": "dodecahedron",
+   "divisor": {
+    "n_zeros": 32,
+    "n_poles": 30,
+    "degree": 120,
+    "balanced": true,
+    "zero_orders": [
+     3,
+     5
+    ],
+    "pole_orders": [
+     4
+    ]
+   },
+   "gcd": 1,
+   "unreduced_degree": 120,
+   "n_cancellations": 0,
+   "winding_ok": true,
+   "duality": {
+    "divisors_equal": true,
+    "max_log_modulus_residual": 2.6645352591003757e-14,
+    "exclusion_radius": 0.05
+   },
+   "symmetry": {
+    "group_order": 120,
+    "preserved_proper": 60,
+    "preserved_improper": 60,
+    "inverted_proper": 0,
+    "inverted_improper": 0,
+    "preserved": 120
+   },
+   "vs_reference": {
+    "correlation": -0.6105598838627982,
+    "rms_difference": 0.05669436181078585,
+    "max_abs_difference": 0.2450291312697273,
+    "per_degree": true,
+    "samples": 20000,
+    "exclusion_radius": 0.05,
+    "excluded_fraction": 0.038250000000000006
+   },
+   "near_pairs": 0
+  },
+  {
+   "fixture": "rhombicuboctahedron",
+   "recipe": {
+    "name": "R1",
+    "kind": "uniform",
+    "a": 1,
+    "b": -1,
+    "sign": 1,
+    "face_placement": "polar",
+    "edge_placement": "foot",
+    "version": 1
+   },
+   "polyhedron": "rhombicuboctahedron",
+   "divisor": {
+    "n_zeros": 24,
+    "n_poles": 26,
+    "degree": 312,
+    "balanced": true,
+    "zero_orders": [
+     13
+    ],
+    "pole_orders": [
+     12
+    ]
+   },
+   "gcd": 2,
+   "unreduced_degree": 624,
+   "n_cancellations": 0,
+   "winding_ok": true,
+   "duality": {
+    "divisors_equal": true,
+    "max_log_modulus_residual": 6.572520305780927e-14,
+    "exclusion_radius": 0.05,
+    "max_phase_residual": 1.7053025658242404e-13
+   },
+   "symmetry": {
+    "group_order": 48,
+    "preserved_proper": 24,
+    "preserved_improper": 24,
+    "inverted_proper": 0,
+    "inverted_improper": 0,
+    "preserved": 48
+   },
+   "vs_reference": {
+    "correlation": 0.9885888058367488,
+    "rms_difference": 0.003470773386207429,
+    "max_abs_difference": 0.01561259728551409,
+    "per_degree": true,
+    "samples": 20000,
+    "exclusion_radius": 0.05,
+    "excluded_fraction": 0.03269999999999995
+   },
+   "near_pairs": 0
+  },
+  {
+   "fixture": "rhombicuboctahedron",
+   "recipe": {
+    "name": "R2",
+    "kind": "incidence",
+    "a": 1,
+    "b": -1,
+    "sign": 1,
+    "face_placement": "polar",
+    "edge_placement": "foot",
+    "version": 1
+   },
+   "polyhedron": "rhombicuboctahedron",
+   "divisor": {
+    "n_zeros": 24,
+    "n_poles": 26,
+    "degree": 96,
+    "balanced": true,
+    "zero_orders": [
+     4
+    ],
+    "pole_orders": [
+     3,
+     4
+    ]
+   },
+   "gcd": 1,
+   "unreduced_degree": 96,
+   "n_cancellations": 0,
+   "winding_ok": true,
+   "duality": {
+    "divisors_equal": true,
+    "max_log_modulus_residual": 1.865174681370263e-14,
+    "exclusion_radius": 0.05,
+    "max_phase_residual": 5.684341886080802e-14
+   },
+   "symmetry": {
+    "group_order": 48,
+    "preserved_proper": 24,
+    "preserved_improper": 24,
+    "inverted_proper": 0,
+    "inverted_improper": 0,
+    "preserved": 48
+   },
+   "vs_reference": null,
+   "near_pairs": 0
+  },
+  {
+   "fixture": "rhombicuboctahedron",
+   "recipe": {
+    "name": "R4ve",
+    "kind": "incidence",
+    "a": 1,
+    "b": 0,
+    "sign": 1,
+    "face_placement": "polar",
+    "edge_placement": "foot",
+    "version": 1
+   },
+   "polyhedron": "rhombicuboctahedron",
+   "divisor": {
+    "n_zeros": 24,
+    "n_poles": 48,
+    "degree": 48,
+    "balanced": true,
+    "zero_orders": [
+     2
+    ],
+    "pole_orders": [
+     1
+    ]
+   },
+   "gcd": 2,
+   "unreduced_degree": 96,
+   "n_cancellations": 0,
+   "winding_ok": true,
+   "duality": {
+    "divisors_equal": true,
+    "max_log_modulus_residual": 2.1316282072803006e-14,
+    "exclusion_radius": 0.05
+   },
+   "symmetry": {
+    "group_order": 48,
+    "preserved_proper": 24,
+    "preserved_improper": 24,
+    "inverted_proper": 0,
+    "inverted_improper": 0,
+    "preserved": 48
+   },
+   "vs_reference": {
+    "correlation": 0.7396545266101654,
+    "rms_difference": 0.01577709002593355,
+    "max_abs_difference": 0.06869437370535685,
+    "per_degree": true,
+    "samples": 20000,
+    "exclusion_radius": 0.05,
+    "excluded_fraction": 0.06325000000000003
+   },
+   "near_pairs": 0
+  },
+  {
+   "fixture": "rhombicuboctahedron",
+   "recipe": {
+    "name": "R4fe",
+    "kind": "incidence",
+    "a": 0,
+    "b": 1,
+    "sign": 1,
+    "face_placement": "polar",
+    "edge_placement": "foot",
+    "version": 1
+   },
+   "polyhedron": "rhombicuboctahedron",
+   "divisor": {
+    "n_zeros": 26,
+    "n_poles": 48,
+    "degree": 96,
+    "balanced": true,
+    "zero_orders": [
+     3,
+     4
+    ],
+    "pole_orders": [
+     2
+    ]
+   },
+   "gcd": 1,
+   "unreduced_degree": 96,
+   "n_cancellations": 0,
+   "winding_ok": true,
+   "duality": {
+    "divisors_equal": true,
+    "max_log_modulus_residual": 1.1546319456101628e-14,
+    "exclusion_radius": 0.05
+   },
+   "symmetry": {
+    "group_order": 48,
+    "preserved_proper": 24,
+    "preserved_improper": 24,
+    "inverted_proper": 0,
+    "inverted_improper": 0,
+    "preserved": 48
+   },
+   "vs_reference": {
+    "correlation": -0.7196479940588636,
+    "rms_difference": 0.03643367737301769,
+    "max_abs_difference": 0.14329427202544634,
+    "per_degree": true,
+    "samples": 20000,
+    "exclusion_radius": 0.05,
+    "excluded_fraction": 0.06325000000000003
+   },
+   "near_pairs": 0
+  },
+  {
+   "fixture": "rhombicuboctahedron",
+   "recipe": {
+    "name": "flag",
+    "kind": "incidence",
+    "a": 1,
+    "b": 1,
+    "sign": 1,
+    "face_placement": "polar",
+    "edge_placement": "foot",
+    "version": 1
+   },
+   "polyhedron": "rhombicuboctahedron",
+   "divisor": {
+    "n_zeros": 50,
+    "n_poles": 48,
+    "degree": 192,
+    "balanced": true,
+    "zero_orders": [
+     3,
+     4
+    ],
+    "pole_orders": [
+     4
+    ]
+   },
+   "gcd": 1,
+   "unreduced_degree": 192,
+   "n_cancellations": 0,
+   "winding_ok": true,
+   "duality": {
+    "divisors_equal": true,
+    "max_log_modulus_residual": 4.618527782440651e-14,
+    "exclusion_radius": 0.05
+   },
+   "symmetry": {
+    "group_order": 48,
+    "preserved_proper": 24,
+    "preserved_improper": 24,
+    "inverted_proper": 0,
+    "inverted_improper": 0,
+    "preserved": 48
+   },
+   "vs_reference": {
+    "correlation": 0.031290750781676896,
+    "rms_difference": 0.02552148010283985,
+    "max_abs_difference": 0.10599432286540154,
+    "per_degree": true,
+    "samples": 20000,
+    "exclusion_radius": 0.05,
+    "excluded_fraction": 0.06325000000000003
+   },
+   "near_pairs": 0
+  },
+  {
+   "fixture": "deltoidal-icositetrahedron",
+   "recipe": {
+    "name": "R1",
+    "kind": "uniform",
+    "a": 1,
+    "b": -1,
+    "sign": 1,
+    "face_placement": "polar",
+    "edge_placement": "foot",
+    "version": 1
+   },
+   "polyhedron": "deltoidal icositetrahedron",
+   "divisor": {
+    "n_zeros": 26,
+    "n_poles": 24,
+    "degree": 312,
+    "balanced": true,
+    "zero_orders": [
+     12
+    ],
+    "pole_orders": [
+     13
+    ]
+   },
+   "gcd": 2,
+   "unreduced_degree": 624,
+   "n_cancellations": 0,
+   "winding_ok": true,
+   "duality": {
+    "divisors_equal": true,
+    "max_log_modulus_residual": 8.526512829121202e-14,
+    "exclusion_radius": 0.05,
+    "max_phase_residual": 1.8474111129762605e-13
+   },
+   "symmetry": {
+    "group_order": 48,
+    "preserved_proper": 24,
+    "preserved_improper": 24,
+    "inverted_proper": 0,
+    "inverted_improper": 0,
+    "preserved": 48
+   },
+   "vs_reference": {
+    "correlation": 0.9885888058367488,
+    "rms_difference": 0.0034707733862074292,
+    "max_abs_difference": 0.015612597285514132,
+    "per_degree": true,
+    "samples": 20000,
+    "exclusion_radius": 0.05,
+    "excluded_fraction": 0.03269999999999995
+   },
+   "near_pairs": 0
+  },
+  {
+   "fixture": "deltoidal-icositetrahedron",
+   "recipe": {
+    "name": "R2",
+    "kind": "incidence",
+    "a": 1,
+    "b": -1,
+    "sign": 1,
+    "face_placement": "polar",
+    "edge_placement": "foot",
+    "version": 1
+   },
+   "polyhedron": "deltoidal icositetrahedron",
+   "divisor": {
+    "n_zeros": 26,
+    "n_poles": 24,
+    "degree": 96,
+    "balanced": true,
+    "zero_orders": [
+     3,
+     4
+    ],
+    "pole_orders": [
+     4
+    ]
+   },
+   "gcd": 1,
+   "unreduced_degree": 96,
+   "n_cancellations": 0,
+   "winding_ok": true,
+   "duality": {
+    "divisors_equal": true,
+    "max_log_modulus_residual": 2.4868995751603507e-14,
+    "exclusion_radius": 0.05,
+    "max_phase_residual": 5.684341886080802e-14
+   },
+   "symmetry": {
+    "group_order": 48,
+    "preserved_proper": 24,
+    "preserved_improper": 24,
+    "inverted_proper": 0,
+    "inverted_improper": 0,
+    "preserved": 48
+   },
+   "vs_reference": null,
+   "near_pairs": 0
+  },
+  {
+   "fixture": "deltoidal-icositetrahedron",
+   "recipe": {
+    "name": "R4ve",
+    "kind": "incidence",
+    "a": 1,
+    "b": 0,
+    "sign": 1,
+    "face_placement": "polar",
+    "edge_placement": "foot",
+    "version": 1
+   },
+   "polyhedron": "deltoidal icositetrahedron",
+   "divisor": {
+    "n_zeros": 26,
+    "n_poles": 48,
+    "degree": 96,
+    "balanced": true,
+    "zero_orders": [
+     3,
+     4
+    ],
+    "pole_orders": [
+     2
+    ]
+   },
+   "gcd": 1,
+   "unreduced_degree": 96,
+   "n_cancellations": 0,
+   "winding_ok": true,
+   "duality": {
+    "divisors_equal": true,
+    "max_log_modulus_residual": 1.0658141036401503e-14,
+    "exclusion_radius": 0.05
+   },
+   "symmetry": {
+    "group_order": 48,
+    "preserved_proper": 24,
+    "preserved_improper": 24,
+    "inverted_proper": 0,
+    "inverted_improper": 0,
+    "preserved": 48
+   },
+   "vs_reference": {
+    "correlation": 0.7196479940588638,
+    "rms_difference": 0.016277910976679202,
+    "max_abs_difference": 0.06418601908867433,
+    "per_degree": true,
+    "samples": 20000,
+    "exclusion_radius": 0.05,
+    "excluded_fraction": 0.06325000000000003
+   },
+   "near_pairs": 0
+  },
+  {
+   "fixture": "deltoidal-icositetrahedron",
+   "recipe": {
+    "name": "R4fe",
+    "kind": "incidence",
+    "a": 0,
+    "b": 1,
+    "sign": 1,
+    "face_placement": "polar",
+    "edge_placement": "foot",
+    "version": 1
+   },
+   "polyhedron": "deltoidal icositetrahedron",
+   "divisor": {
+    "n_zeros": 24,
+    "n_poles": 48,
+    "degree": 48,
+    "balanced": true,
+    "zero_orders": [
+     2
+    ],
+    "pole_orders": [
+     1
+    ]
+   },
+   "gcd": 2,
+   "unreduced_degree": 96,
+   "n_cancellations": 0,
+   "winding_ok": true,
+   "duality": {
+    "divisors_equal": true,
+    "max_log_modulus_residual": 2.6645352591003757e-14,
+    "exclusion_radius": 0.05
+   },
+   "symmetry": {
+    "group_order": 48,
+    "preserved_proper": 24,
+    "preserved_improper": 24,
+    "inverted_proper": 0,
+    "inverted_improper": 0,
+    "preserved": 48
+   },
+   "vs_reference": {
+    "correlation": -0.7396545266101658,
+    "rms_difference": 0.0370887354213646,
+    "max_abs_difference": 0.1352143036242523,
+    "per_degree": true,
+    "samples": 20000,
+    "exclusion_radius": 0.05,
+    "excluded_fraction": 0.06325000000000003
+   },
+   "near_pairs": 0
+  },
+  {
+   "fixture": "deltoidal-icositetrahedron",
+   "recipe": {
+    "name": "flag",
+    "kind": "incidence",
+    "a": 1,
+    "b": 1,
+    "sign": 1,
+    "face_placement": "polar",
+    "edge_placement": "foot",
+    "version": 1
+   },
+   "polyhedron": "deltoidal icositetrahedron",
+   "divisor": {
+    "n_zeros": 50,
+    "n_poles": 48,
+    "degree": 192,
+    "balanced": true,
+    "zero_orders": [
+     3,
+     4
+    ],
+    "pole_orders": [
+     4
+    ]
+   },
+   "gcd": 1,
+   "unreduced_degree": 192,
+   "n_cancellations": 0,
+   "winding_ok": true,
+   "duality": {
+    "divisors_equal": true,
+    "max_log_modulus_residual": 4.263256414560601e-14,
+    "exclusion_radius": 0.05
+   },
+   "symmetry": {
+    "group_order": 48,
+    "preserved_proper": 24,
+    "preserved_improper": 24,
+    "inverted_proper": 0,
+    "inverted_improper": 0,
+    "preserved": 48
+   },
+   "vs_reference": {
+    "correlation": -0.031290750781676986,
+    "rms_difference": 0.02614294510563439,
+    "max_abs_difference": 0.09970016135646335,
+    "per_degree": true,
+    "samples": 20000,
+    "exclusion_radius": 0.05,
+    "excluded_fraction": 0.06325000000000003
+   },
+   "near_pairs": 0
+  },
+  {
+   "fixture": "triakis-tetrahedron",
+   "recipe": {
+    "name": "R1",
+    "kind": "uniform",
+    "a": 1,
+    "b": -1,
+    "sign": 1,
+    "face_placement": "polar",
+    "edge_placement": "foot",
+    "version": 1
+   },
+   "polyhedron": "triakis tetrahedron",
+   "divisor": {
+    "n_zeros": 8,
+    "n_poles": 12,
+    "degree": 24,
+    "balanced": true,
+    "zero_orders": [
+     3
+    ],
+    "pole_orders": [
+     2
+    ]
+   },
+   "gcd": 4,
+   "unreduced_degree": 96,
+   "n_cancellations": 0,
+   "winding_ok": true,
+   "duality": {
+    "divisors_equal": true,
+    "max_log_modulus_residual": 2.4868995751603507e-14,
+    "exclusion_radius": 0.05,
+    "max_phase_residual": 3.2085445411667024e-14
+   },
+   "symmetry": {
+    "group_order": 24,
+    "preserved_proper": 12,
+    "preserved_improper": 12,
+    "inverted_proper": 0,
+    "inverted_improper": 0,
+    "preserved": 24
+   },
+   "vs_reference": {
+    "correlation": 0.9556826745643403,
+    "rms_difference": 0.027606748206312016,
+    "max_abs_difference": 0.11018726813499519,
+    "per_degree": true,
+    "samples": 20000,
+    "exclusion_radius": 0.05,
+    "excluded_fraction": 0.013149999999999995
+   },
+   "near_pairs": 0
+  },
+  {
+   "fixture": "triakis-tetrahedron",
+   "recipe": {
+    "name": "R2",
+    "kind": "incidence",
+    "a": 1,
+    "b": -1,
+    "sign": 1,
+    "face_placement": "polar",
+    "edge_placement": "foot",
+    "version": 1
+   },
+   "polyhedron": "triakis tetrahedron",
+   "divisor": {
+    "n_zeros": 8,
+    "n_poles": 12,
+    "degree": 12,
+    "balanced": true,
+    "zero_orders": [
+     1,
+     2
+    ],
+    "pole_orders": [
+     1
+    ]
+   },
+   "gcd": 3,
+   "unreduced_degree": 36,
+   "n_cancellations": 0,
+   "winding_ok": true,
+   "duality": {
+    "divisors_equal": true,
+    "max_log_modulus_residual": 8.881784197001252e-15,
+    "exclusion_radius": 0.05,
+    "max_phase_residual": 1.1546319456101628e-14
+   },
+   "symmetry": {
+    "group_order": 24,
+    "preserved_proper": 12,
+    "preserved_improper": 12,
+    "inverted_proper": 0,
+    "inverted_improper": 0,
+    "preserved": 24
+   },
+   "vs_reference": null,
+   "near_pairs": 0
+  },
+  {
+   "fixture": "triakis-tetrahedron",
+   "recipe": {
+    "name": "R4ve",
+    "kind": "incidence",
+    "a": 1,
+    "b": 0,
+    "sign": 1,
+    "face_placement": "polar",
+    "edge_placement": "foot",
+    "version": 1
+   },
+   "polyhedron": "triakis tetrahedron",
+   "divisor": {
+    "n_zeros": 8,
+    "n_poles": 18,
+    "degree": 36,
+    "balanced": true,
+    "zero_orders": [
+     3,
+     6
+    ],
+    "pole_orders": [
+     2
+    ]
+   },
+   "gcd": 1,
+   "unreduced_degree": 36,
+   "n_cancellations": 0,
+   "winding_ok": true,
+   "duality": {
+    "divisors_equal": true,
+    "max_log_modulus_residual": 1.199040866595169e-14,
+    "exclusion_radius": 0.05
+   },
+   "symmetry": {
+    "group_order": 24,
+    "preserved_proper": 12,
+    "preserved_improper": 12,
+    "inverted_proper": 0,
+    "inverted_improper": 0,
+    "preserved": 24
+   },
+   "vs_reference": {
+    "correlation": 0.9215234806798344,
+    "rms_difference": 0.03313430543558132,
+    "max_abs_difference": 0.14441308125906063,
+    "per_degree": true,
+    "samples": 20000,
+    "exclusion_radius": 0.05,
+    "excluded_fraction": 0.024599999999999955
+   },
+   "near_pairs": 0
+  },
+  {
+   "fixture": "triakis-tetrahedron",
+   "recipe": {
+    "name": "R4fe",
+    "kind": "incidence",
+    "a": 0,
+    "b": 1,
+    "sign": 1,
+    "face_placement": "polar",
+    "edge_placement": "foot",
+    "version": 1
+   },
+   "polyhedron": "triakis tetrahedron",
+   "divisor": {
+    "n_zeros": 12,
+    "n_poles": 18,
+    "degree": 36,
+    "balanced": true,
+    "zero_orders": [
+     3
+    ],
+    "pole_orders": [
+     2
+    ]
+   },
+   "gcd": 1,
+   "unreduced_degree": 36,
+   "n_cancellations": 0,
+   "winding_ok": true,
+   "duality": {
+    "divisors_equal": true,
+    "max_log_modulus_residual": 2.4868995751603507e-14,
+    "exclusion_radius": 0.05
+   },
+   "symmetry": {
+    "group_order": 24,
+    "preserved_proper": 12,
+    "preserved_improper": 12,
+    "inverted_proper": 0,
+    "inverted_improper": 0,
+    "preserved": 24
+   },
+   "vs_reference": {
+    "correlation": -0.29229449694466075,
+    "rms_difference": 0.09973269742054928,
+    "max_abs_difference": 0.41851515592669186,
+    "per_degree": true,
+    "samples": 20000,
+    "exclusion_radius": 0.05,
+    "excluded_fraction": 0.024599999999999955
+   },
+   "near_pairs": 0
+  },
+  {
+   "fixture": "triakis-tetrahedron",
+   "recipe": {
+    "name": "flag",
+    "kind": "incidence",
+    "a": 1,
+    "b": 1,
+    "sign": 1,
+    "face_placement": "polar",
+    "edge_placement": "foot",
+    "version": 1
+   },
+   "polyhedron": "triakis tetrahedron",
+   "divisor": {
+    "n_zeros": 20,
+    "n_poles": 18,
+    "degree": 72,
+    "balanced": true,
+    "zero_orders": [
+     3,
+     6
+    ],
+    "pole_orders": [
+     4
+    ]
+   },
+   "gcd": 1,
+   "unreduced_degree": 72,
+   "n_cancellations": 0,
+   "winding_ok": true,
+   "duality": {
+    "divisors_equal": true,
+    "max_log_modulus_residual": 2.3092638912203256e-14,
+    "exclusion_radius": 0.05
+   },
+   "symmetry": {
+    "group_order": 24,
+    "preserved_proper": 12,
+    "preserved_improper": 12,
+    "inverted_proper": 0,
+    "inverted_improper": 0,
+    "preserved": 24
+   },
+   "vs_reference": {
+    "correlation": 0.7187329465916749,
+    "rms_difference": 0.06100032261425105,
+    "max_abs_difference": 0.24203807693658785,
+    "per_degree": true,
+    "samples": 20000,
+    "exclusion_radius": 0.05,
+    "excluded_fraction": 0.024599999999999955
+   },
+   "near_pairs": 0
+  },
+  {
+   "fixture": "hexagonal-pyramid",
+   "recipe": {
+    "name": "R1",
+    "kind": "uniform",
+    "a": 1,
+    "b": -1,
+    "sign": 1,
+    "face_placement": "polar",
+    "edge_placement": "foot",
+    "version": 1
+   },
+   "polyhedron": "hexagonal pyramid",
+   "divisor": {
+    "n_zeros": 7,
+    "n_poles": 7,
+    "degree": 7,
+    "balanced": true,
+    "zero_orders": [
+     1
+    ],
+    "pole_orders": [
+     1
+    ]
+   },
+   "gcd": 7,
+   "unreduced_degree": 49,
+   "n_cancellations": 0,
+   "winding_ok": true,
+   "duality": {
+    "divisors_equal": true,
+    "max_log_modulus_residual": 2.220446049250313e-15,
+    "exclusion_radius": 0.05,
+    "max_phase_residual": 5.329070518200751e-15
+   },
+   "symmetry": {
+    "group_order": 12,
+    "preserved_proper": 6,
+    "preserved_improper": 6,
+    "inverted_proper": 0,
+    "inverted_improper": 0,
+    "preserved": 12
+   },
+   "vs_reference": {
+    "correlation": 0.8333210050253641,
+    "rms_difference": 0.13355582086752868,
+    "max_abs_difference": 0.4460591118378996,
+    "per_degree": true,
+    "samples": 20000,
+    "exclusion_radius": 0.05,
+    "excluded_fraction": 0.008499999999999952
+   },
+   "near_pairs": 0
+  },
+  {
+   "fixture": "hexagonal-pyramid",
+   "recipe": {
+    "name": "R2",
+    "kind": "incidence",
+    "a": 1,
+    "b": -1,
+    "sign": 1,
+    "face_placement": "polar",
+    "edge_placement": "foot",
+    "version": 1
+   },
+   "polyhedron": "hexagonal pyramid",
+   "divisor": {
+    "n_zeros": 7,
+    "n_poles": 7,
+    "degree": 8,
+    "balanced": true,
+    "zero_orders": [
+     1,
+     2
+    ],
+    "pole_orders": [
+     1,
+     2
+    ]
+   },
+   "gcd": 3,
+   "unreduced_degree": 24,
+   "n_cancellations": 0,
+   "winding_ok": true,
+   "duality": {
+    "divisors_equal": true,
+    "max_log_modulus_residual": 4.884981308350689e-15,
+    "exclusion_radius": 0.05,
+    "max_phase_residual": 5.329070518200751e-15
+   },
+   "symmetry": {
+    "group_order": 12,
+    "preserved_proper": 6,
+    "preserved_improper": 6,
+    "inverted_proper": 0,
+    "inverted_improper": 0,
+    "preserved": 12
+   },
+   "vs_reference": null,
+   "near_pairs": 0
+  },
+  {
+   "fixture": "hexagonal-pyramid",
+   "recipe": {
+    "name": "R4ve",
+    "kind": "incidence",
+    "a": 1,
+    "b": 0,
+    "sign": 1,
+    "face_placement": "polar",
+    "edge_placement": "foot",
+    "version": 1
+   },
+   "polyhedron": "hexagonal pyramid",
+   "divisor": {
+    "n_zeros": 7,
+    "n_poles": 12,
+    "degree": 24,
+    "balanced": true,
+    "zero_orders": [
+     3,
+     6
+    ],
+    "pole_orders": [
+     2
+    ]
+   },
+   "gcd": 1,
+   "unreduced_degree": 24,
+   "n_cancellations": 0,
+   "winding_ok": true,
+   "duality": {
+    "divisors_equal": true,
+    "max_log_modulus_residual": 1.1546319456101628e-14,
+    "exclusion_radius": 0.05
+   },
+   "symmetry": {
+    "group_order": 12,
+    "preserved_proper": 6,
+    "preserved_improper": 6,
+    "inverted_proper": 0,
+    "inverted_improper": 0,
+    "preserved": 12
+   },
+   "vs_reference": {
+    "correlation": 0.746451508600989,
+    "rms_difference": 0.09798984308883771,
+    "max_abs_difference": 0.663552145577631,
+    "per_degree": true,
+    "samples": 20000,
+    "exclusion_radius": 0.05,
+    "excluded_fraction": 0.01629999999999998
+   },
+   "near_pairs": 0
+  },
+  {
+   "fixture": "hexagonal-pyramid",
+   "recipe": {
+    "name": "R4fe",
+    "kind": "incidence",
+    "a": 0,
+    "b": 1,
+    "sign": 1,
+    "face_placement": "polar",
+    "edge_placement": "foot",
+    "version": 1
+   },
+   "polyhedron": "hexagonal pyramid",
+   "divisor": {
+    "n_zeros": 7,
+    "n_poles": 12,
+    "degree": 24,
+    "balanced": true,
+    "zero_orders": [
+     3,
+     6
+    ],
+    "pole_orders": [
+     2
+    ]
+   },
+   "gcd": 1,
+   "unreduced_degree": 24,
+   "n_cancellations": 0,
+   "winding_ok": true,
+   "duality": {
+    "divisors_equal": true,
+    "max_log_modulus_residual": 1.4210854715202004e-14,
+    "exclusion_radius": 0.05
+   },
+   "symmetry": {
+    "group_order": 12,
+    "preserved_proper": 6,
+    "preserved_improper": 6,
+    "inverted_proper": 0,
+    "inverted_improper": 0,
+    "preserved": 12
+   },
+   "vs_reference": {
+    "correlation": -0.7759346796289501,
+    "rms_difference": 0.2298727816543227,
+    "max_abs_difference": 1.2664511916308612,
+    "per_degree": true,
+    "samples": 20000,
+    "exclusion_radius": 0.05,
+    "excluded_fraction": 0.01629999999999998
+   },
+   "near_pairs": 0
+  },
+  {
+   "fixture": "hexagonal-pyramid",
+   "recipe": {
+    "name": "flag",
+    "kind": "incidence",
+    "a": 1,
+    "b": 1,
+    "sign": 1,
+    "face_placement": "polar",
+    "edge_placement": "foot",
+    "version": 1
+   },
+   "polyhedron": "hexagonal pyramid",
+   "divisor": {
+    "n_zeros": 14,
+    "n_poles": 12,
+    "degree": 48,
+    "balanced": true,
+    "zero_orders": [
+     3,
+     6
+    ],
+    "pole_orders": [
+     4
+    ]
+   },
+   "gcd": 1,
+   "unreduced_degree": 48,
+   "n_cancellations": 0,
+   "winding_ok": true,
+   "duality": {
+    "divisors_equal": true,
+    "max_log_modulus_residual": 2.1316282072803006e-14,
+    "exclusion_radius": 0.05
+   },
+   "symmetry": {
+    "group_order": 12,
+    "preserved_proper": 6,
+    "preserved_improper": 6,
+    "inverted_proper": 0,
+    "inverted_improper": 0,
+    "preserved": 12
+   },
+   "vs_reference": {
+    "correlation": -0.05407720473329193,
+    "rms_difference": 0.1610541996122116,
+    "max_abs_difference": 0.9650016686042461,
+    "per_degree": true,
+    "samples": 20000,
+    "exclusion_radius": 0.05,
+    "excluded_fraction": 0.01629999999999998
+   },
+   "near_pairs": 0
+  },
+  {
+   "fixture": "irregular-9",
+   "recipe": {
+    "name": "R1",
+    "kind": "uniform",
+    "a": 1,
+    "b": -1,
+    "sign": 1,
+    "face_placement": "polar",
+    "edge_placement": "foot",
+    "version": 1
+   },
+   "polyhedron": "irregular-9",
+   "divisor": {
+    "n_zeros": 14,
+    "n_poles": 9,
+    "degree": 126,
+    "balanced": true,
+    "zero_orders": [
+     9
+    ],
+    "pole_orders": [
+     14
+    ]
+   },
+   "gcd": 1,
+   "unreduced_degree": 126,
+   "n_cancellations": 0,
+   "winding_ok": true,
+   "duality": {
+    "divisors_equal": true,
+    "max_log_modulus_residual": 5.684341886080802e-14,
+    "exclusion_radius": 0.05,
+    "max_phase_residual": 7.105427357601002e-14
+   },
+   "symmetry": {
+    "group_order": 1,
+    "preserved_proper": 1,
+    "preserved_improper": 0,
+    "inverted_proper": 0,
+    "inverted_improper": 0,
+    "preserved": 1
+   },
+   "vs_reference": {
+    "correlation": 0.9821807714984734,
+    "rms_difference": 0.01892533497921166,
+    "max_abs_difference": 0.0947997722134725,
+    "per_degree": true,
+    "samples": 20000,
+    "exclusion_radius": 0.05,
+    "excluded_fraction": 0.014700000000000046
+   },
+   "near_pairs": 0
+  },
+  {
+   "fixture": "irregular-9",
+   "recipe": {
+    "name": "R2",
+    "kind": "incidence",
+    "a": 1,
+    "b": -1,
+    "sign": 1,
+    "face_placement": "polar",
+    "edge_placement": "foot",
+    "version": 1
+   },
+   "polyhedron": "irregular-9",
+   "divisor": {
+    "n_zeros": 14,
+    "n_poles": 9,
+    "degree": 42,
+    "balanced": true,
+    "zero_orders": [
+     3
+    ],
+    "pole_orders": [
+     3,
+     4,
+     5,
+     6
+    ]
+   },
+   "gcd": 1,
+   "unreduced_degree": 42,
+   "n_cancellations": 0,
+   "winding_ok": true,
+   "duality": {
+    "divisors_equal": true,
+    "max_log_modulus_residual": 1.7763568394002505e-14,
+    "exclusion_radius": 0.05,
+    "max_phase_residual": 2.842170943040401e-14
+   },
+   "symmetry": {
+    "group_order": 1,
+    "preserved_proper": 1,
+    "preserved_improper": 0,
+    "inverted_proper": 0,
+    "inverted_improper": 0,
+    "preserved": 1
+   },
+   "vs_reference": null,
+   "near_pairs": 0
+  },
+  {
+   "fixture": "irregular-9",
+   "recipe": {
+    "name": "R4ve",
+    "kind": "incidence",
+    "a": 1,
+    "b": 0,
+    "sign": 1,
+    "face_placement": "polar",
+    "edge_placement": "foot",
+    "version": 1
+   },
+   "polyhedron": "irregular-9",
+   "divisor": {
+    "n_zeros": 14,
+    "n_poles": 21,
+    "degree": 42,
+    "balanced": true,
+    "zero_orders": [
+     3
+    ],
+    "pole_orders": [
+     2
+    ]
+   },
+   "gcd": 1,
+   "unreduced_degree": 42,
+   "n_cancellations": 0,
+   "winding_ok": true,
+   "duality": {
+    "divisors_equal": true,
+    "max_log_modulus_residual": 2.220446049250313e-14,
+    "exclusion_radius": 0.05
+   },
+   "symmetry": {
+    "group_order": 1,
+    "preserved_proper": 1,
+    "preserved_improper": 0,
+    "inverted_proper": 0,
+    "inverted_improper": 0,
+    "preserved": 1
+   },
+   "vs_reference": {
+    "correlation": 0.7590327033063329,
+    "rms_difference": 0.07244980005450168,
+    "max_abs_difference": 0.367782298440045,
+    "per_degree": true,
+    "samples": 20000,
+    "exclusion_radius": 0.05,
+    "excluded_fraction": 0.025599999999999956
+   },
+   "near_pairs": 6
+  },
+  {
+   "fixture": "irregular-9",
+   "recipe": {
+    "name": "R4fe",
+    "kind": "incidence",
+    "a": 0,
+    "b": 1,
+    "sign": 1,
+    "face_placement": "polar",
+    "edge_placement": "foot",
+    "version": 1
+   },
+   "polyhedron": "irregular-9",
+   "divisor": {
+    "n_zeros": 9,
+    "n_poles": 21,
+    "degree": 42,
+    "balanced": true,
+    "zero_orders": [
+     3,
+     4,
+     5,
+     6
+    ],
+    "pole_orders": [
+     2
+    ]
+   },
+   "gcd": 1,
+   "unreduced_degree": 42,
+   "n_cancellations": 0,
+   "winding_ok": true,
+   "duality": {
+    "divisors_equal": true,
+    "max_log_modulus_residual": 3.375077994860476e-14,
+    "exclusion_radius": 0.05
+   },
+   "symmetry": {
+    "group_order": 1,
+    "preserved_proper": 1,
+    "preserved_improper": 0,
+    "inverted_proper": 0,
+    "inverted_improper": 0,
+    "preserved": 1
+   },
+   "vs_reference": {
+    "correlation": -0.9172799565582204,
+    "rms_difference": 0.1690316263574596,
+    "max_abs_difference": 0.7504888398464893,
+    "per_degree": true,
+    "samples": 20000,
+    "exclusion_radius": 0.05,
+    "excluded_fraction": 0.025599999999999956
+   },
+   "near_pairs": 3
+  },
+  {
+   "fixture": "irregular-9",
+   "recipe": {
+    "name": "flag",
+    "kind": "incidence",
+    "a": 1,
+    "b": 1,
+    "sign": 1,
+    "face_placement": "polar",
+    "edge_placement": "foot",
+    "version": 1
+   },
+   "polyhedron": "irregular-9",
+   "divisor": {
+    "n_zeros": 23,
+    "n_poles": 21,
+    "degree": 84,
+    "balanced": true,
+    "zero_orders": [
+     3,
+     4,
+     5,
+     6
+    ],
+    "pole_orders": [
+     4
+    ]
+   },
+   "gcd": 1,
+   "unreduced_degree": 84,
+   "n_cancellations": 0,
+   "winding_ok": true,
+   "duality": {
+    "divisors_equal": true,
+    "max_log_modulus_residual": 4.440892098500626e-14,
+    "exclusion_radius": 0.05
+   },
+   "symmetry": {
+    "group_order": 1,
+    "preserved_proper": 1,
+    "preserved_improper": 0,
+    "inverted_proper": 0,
+    "inverted_improper": 0,
+    "preserved": 1
+   },
+   "vs_reference": {
+    "correlation": -0.49437037785117255,
+    "rms_difference": 0.12002348254720899,
+    "max_abs_difference": 0.5591355691432671,
+    "per_degree": true,
+    "samples": 20000,
+    "exclusion_radius": 0.05,
+    "excluded_fraction": 0.025599999999999956
+   },
+   "near_pairs": 9
+  },
+  {
+   "fixture": "irregular-mixed",
+   "recipe": {
+    "name": "R1",
+    "kind": "uniform",
+    "a": 1,
+    "b": -1,
+    "sign": 1,
+    "face_placement": "polar",
+    "edge_placement": "foot",
+    "version": 1
+   },
+   "polyhedron": "irregular-mixed",
+   "divisor": {
+    "n_zeros": 9,
+    "n_poles": 11,
+    "degree": 99,
+    "balanced": true,
+    "zero_orders": [
+     11
+    ],
+    "pole_orders": [
+     9
+    ]
+   },
+   "gcd": 1,
+   "unreduced_degree": 99,
+   "n_cancellations": 0,
+   "winding_ok": true,
+   "duality": {
+    "divisors_equal": true,
+    "max_log_modulus_residual": 4.973799150320701e-14,
+    "exclusion_radius": 0.05,
+    "max_phase_residual": 7.815970093361102e-14
+   },
+   "symmetry": {
+    "group_order": 1,
+    "preserved_proper": 1,
+    "preserved_improper": 0,
+    "inverted_proper": 0,
+    "inverted_improper": 0,
+    "preserved": 1
+   },
+   "vs_reference": {
+    "correlation": 0.9556732162790289,
+    "rms_difference": 0.041499837215766444,
+    "max_abs_difference": 0.17956939438966835,
+    "per_degree": true,
+    "samples": 20000,
+    "exclusion_radius": 0.05,
+    "excluded_fraction": 0.012299999999999978
+   },
+   "near_pairs": 0
+  },
+  {
+   "fixture": "irregular-mixed",
+   "recipe": {
+    "name": "R2",
+    "kind": "incidence",
+    "a": 1,
+    "b": -1,
+    "sign": 1,
+    "face_placement": "polar",
+    "edge_placement": "foot",
+    "version": 1
+   },
+   "polyhedron": "irregular-mixed",
+   "divisor": {
+    "n_zeros": 9,
+    "n_poles": 11,
+    "degree": 36,
+    "balanced": true,
+    "zero_orders": [
+     3,
+     4,
+     5
+    ],
+    "pole_orders": [
+     3,
+     4,
+     5
+    ]
+   },
+   "gcd": 1,
+   "unreduced_degree": 36,
+   "n_cancellations": 0,
+   "winding_ok": true,
+   "duality": {
+    "divisors_equal": true,
+    "max_log_modulus_residual": 1.7763568394002505e-14,
+    "exclusion_radius": 0.05,
+    "max_phase_residual": 2.6673108166619386e-14
+   },
+   "symmetry": {
+    "group_order": 1,
+    "preserved_proper": 1,
+    "preserved_improper": 0,
+    "inverted_proper": 0,
+    "inverted_improper": 0,
+    "preserved": 1
+   },
+   "vs_reference": null,
+   "near_pairs": 0
+  },
+  {
+   "fixture": "irregular-mixed",
+   "recipe": {
+    "name": "R4ve",
+    "kind": "incidence",
+    "a": 1,
+    "b": 0,
+    "sign": 1,
+    "face_placement": "polar",
+    "edge_placement": "foot",
+    "version": 1
+   },
+   "polyhedron": "irregular-mixed",
+   "divisor": {
+    "n_zeros": 9,
+    "n_poles": 18,
+    "degree": 36,
+    "balanced": true,
+    "zero_orders": [
+     3,
+     4,
+     5
+    ],
+    "pole_orders": [
+     2
+    ]
+   },
+   "gcd": 1,
+   "unreduced_degree": 36,
+   "n_cancellations": 0,
+   "winding_ok": true,
+   "duality": {
+    "divisors_equal": true,
+    "max_log_modulus_residual": 3.730349362740526e-14,
+    "exclusion_radius": 0.05
+   },
+   "symmetry": {
+    "group_order": 1,
+    "preserved_proper": 1,
+    "preserved_improper": 0,
+    "inverted_proper": 0,
+    "inverted_improper": 0,
+    "preserved": 1
+   },
+   "vs_reference": {
+    "correlation": 0.8733161192612894,
+    "rms_difference": 0.05374107810077106,
+    "max_abs_difference": 0.3375242116282161,
+    "per_degree": true,
+    "samples": 20000,
+    "exclusion_radius": 0.05,
+    "excluded_fraction": 0.02290000000000003
+   },
+   "near_pairs": 0
+  },
+  {
+   "fixture": "irregular-mixed",
+   "recipe": {
+    "name": "R4fe",
+    "kind": "incidence",
+    "a": 0,
+    "b": 1,
+    "sign": 1,
+    "face_placement": "polar",
+    "edge_placement": "foot",
+    "version": 1
+   },
+   "polyhedron": "irregular-mixed",
+   "divisor": {
+    "n_zeros": 11,
+    "n_poles": 18,
+    "degree": 36,
+    "balanced": true,
+    "zero_orders": [
+     3,
+     4,
+     5
+    ],
+    "pole_orders": [
+     2
+    ]
+   },
+   "gcd": 1,
+   "unreduced_degree": 36,
+   "n_cancellations": 0,
+   "winding_ok": true,
+   "duality": {
+    "divisors_equal": true,
+    "max_log_modulus_residual": 5.1514348342607263e-14,
+    "exclusion_radius": 0.05
+   },
+   "symmetry": {
+    "group_order": 1,
+    "preserved_proper": 1,
+    "preserved_improper": 0,
+    "inverted_proper": 0,
+    "inverted_improper": 0,
+    "preserved": 1
+   },
+   "vs_reference": {
+    "correlation": -0.7480292608985591,
+    "rms_difference": 0.14868143927133998,
+    "max_abs_difference": 0.6466695968018532,
+    "per_degree": true,
+    "samples": 20000,
+    "exclusion_radius": 0.05,
+    "excluded_fraction": 0.02290000000000003
+   },
+   "near_pairs": 3
+  },
+  {
+   "fixture": "irregular-mixed",
+   "recipe": {
+    "name": "flag",
+    "kind": "incidence",
+    "a": 1,
+    "b": 1,
+    "sign": 1,
+    "face_placement": "polar",
+    "edge_placement": "foot",
+    "version": 1
+   },
+   "polyhedron": "irregular-mixed",
+   "divisor": {
+    "n_zeros": 20,
+    "n_poles": 18,
+    "degree": 72,
+    "balanced": true,
+    "zero_orders": [
+     3,
+     4,
+     5
+    ],
+    "pole_orders": [
+     4
+    ]
+   },
+   "gcd": 1,
+   "unreduced_degree": 72,
+   "n_cancellations": 0,
+   "winding_ok": true,
+   "duality": {
+    "divisors_equal": true,
+    "max_log_modulus_residual": 7.327471962526033e-14,
+    "exclusion_radius": 0.05
+   },
+   "symmetry": {
+    "group_order": 1,
+    "preserved_proper": 1,
+    "preserved_improper": 0,
+    "inverted_proper": 0,
+    "inverted_improper": 0,
+    "preserved": 1
+   },
+   "vs_reference": {
+    "correlation": 0.31576067065890057,
+    "rms_difference": 0.09892345404878128,
+    "max_abs_difference": 0.47307518578127006,
+    "per_degree": true,
+    "samples": 20000,
+    "exclusion_radius": 0.05,
+    "excluded_fraction": 0.02290000000000003
+   },
+   "near_pairs": 3
+  }
+ ],
+ "outputs": [
+  {
+   "path": "out/E001-atlas/sheets/tetrahedron-recipes.png",
+   "sha256": "a9ad31f895f20514fe6aaf552beefbe475d3602554fe8cbbcea9805c6c36b3d9",
+   "bytes": 556976
+  },
+  {
+   "path": "out/E001-atlas/sheets/tetrahedron-differences.png",
+   "sha256": "a363729fd609b595978d869131b6f2fd50f59b45f8749f1c1450c94df642c8e7",
+   "bytes": 126976
+  },
+  {
+   "path": "out/E001-atlas/tiles/tetrahedron/R1-geometry.png",
+   "sha256": "f4f54b098df1f3b4cdeef03904d4895b9c0604f62c39cc9412b48a02b7ef38f0",
+   "bytes": 47893
+  },
+  {
+   "path": "out/E001-atlas/tiles/tetrahedron/R1-sphere.png",
+   "sha256": "eb49a12032438e4bce4c3b46b7ceeed87412ca94e0db08d05dc1e52ba3d8f121",
+   "bytes": 81008
+  },
+  {
+   "path": "out/E001-atlas/tiles/tetrahedron/R1-relief.png",
+   "sha256": "fe0925d4f4efd0afcaf9ff01752e1fe7b93f7115050ef154d9ba2f4f3cbe5d56",
+   "bytes": 84758
+  },
+  {
+   "path": "out/E001-atlas/tiles/tetrahedron/R1-neutral.png",
+   "sha256": "e16b3842f0370fd30da7970e4f952a74eb0e5fceb1cf35a376430b46bcbe3830",
+   "bytes": 63178
+  },
+  {
+   "path": "out/E001-atlas/tiles/tetrahedron/R2-geometry.png",
+   "sha256": "f4f54b098df1f3b4cdeef03904d4895b9c0604f62c39cc9412b48a02b7ef38f0",
+   "bytes": 47893
+  },
+  {
+   "path": "out/E001-atlas/tiles/tetrahedron/R2-sphere.png",
+   "sha256": "eb49a12032438e4bce4c3b46b7ceeed87412ca94e0db08d05dc1e52ba3d8f121",
+   "bytes": 81008
+  },
+  {
+   "path": "out/E001-atlas/tiles/tetrahedron/R2-relief.png",
+   "sha256": "fe0925d4f4efd0afcaf9ff01752e1fe7b93f7115050ef154d9ba2f4f3cbe5d56",
+   "bytes": 84758
+  },
+  {
+   "path": "out/E001-atlas/tiles/tetrahedron/R2-neutral.png",
+   "sha256": "e16b3842f0370fd30da7970e4f952a74eb0e5fceb1cf35a376430b46bcbe3830",
+   "bytes": 63178
+  },
+  {
+   "path": "out/E001-atlas/tiles/tetrahedron/R4ve-geometry.png",
+   "sha256": "99e6d0da09084e5c73a17b7080f9829bb1dd298a64dd2f730158ae45f193dd9b",
+   "bytes": 43888
+  },
+  {
+   "path": "out/E001-atlas/tiles/tetrahedron/R4ve-sphere.png",
+   "sha256": "21284826f50af79b74b0fcd2330e172675dadd50ab3e22592ce0ccab0fa465a6",
+   "bytes": 111634
+  },
+  {
+   "path": "out/E001-atlas/tiles/tetrahedron/R4ve-relief.png",
+   "sha256": "b7a42916dc21112ff534a025c354e5fc9ce737ce05d341f4bc9d1fa0e2dd106d",
+   "bytes": 73434
+  },
+  {
+   "path": "out/E001-atlas/tiles/tetrahedron/R4ve-neutral.png",
+   "sha256": "0bdc6fc733442372734b42b599c00d69e4ae315e8cf290805556f8ca43b09d07",
+   "bytes": 43869
+  },
+  {
+   "path": "out/E001-atlas/tiles/tetrahedron/R4fe-geometry.png",
+   "sha256": "e46dc55b123dad45074f5c9bd87623d4aca1de31b357a63a9ec1d532801f4a22",
+   "bytes": 41683
+  },
+  {
+   "path": "out/E001-atlas/tiles/tetrahedron/R4fe-sphere.png",
+   "sha256": "e8677fecd7f606dada94526217cf549b31f6c28367e832f5e349a17d953a2be0",
+   "bytes": 104600
+  },
+  {
+   "path": "out/E001-atlas/tiles/tetrahedron/R4fe-relief.png",
+   "sha256": "2e933df06708cbe323cc6a588d915707311357b7e93afd5a542453f0178a56ce",
+   "bytes": 70920
+  },
+  {
+   "path": "out/E001-atlas/tiles/tetrahedron/R4fe-neutral.png",
+   "sha256": "ce44d493091c666ac801be03606efea5617f02a92a0b67ee6aa02012349fe6b9",
+   "bytes": 42867
+  },
+  {
+   "path": "out/E001-atlas/tiles/tetrahedron/flag-geometry.png",
+   "sha256": "4a8840d5890293dd3588994ee98227d934be0e1542e116adde3ea46ae47182c7",
+   "bytes": 43909
+  },
+  {
+   "path": "out/E001-atlas/tiles/tetrahedron/flag-sphere.png",
+   "sha256": "877c89bce9d863b58076f9adf88637e8282e93e4e9c34f7eb94180f5a1d04cc9",
+   "bytes": 143663
+  },
+  {
+   "path": "out/E001-atlas/tiles/tetrahedron/flag-relief.png",
+   "sha256": "26b6de24dc8a3ac7a982a7da99d9976d91104f4b1a082ba2e2e7ea780e056287",
+   "bytes": 89398
+  },
+  {
+   "path": "out/E001-atlas/tiles/tetrahedron/flag-neutral.png",
+   "sha256": "d609ae8ed71d55be8fa3529a839dfa75efc5dbaff03404a0f1e734610cc3b9ca",
+   "bytes": 47440
+  },
+  {
+   "path": "out/E001-atlas/sheets/cube-recipes.png",
+   "sha256": "f407e49499707a7169b0f8dc9b37edce4c8cf33a8deecc25bd824d8f2a64d775",
+   "bytes": 668539
+  },
+  {
+   "path": "out/E001-atlas/sheets/cube-differences.png",
+   "sha256": "4c12528cac952894ca5722de85f71ac30d42445cb482145465a6cd9c33107d64",
+   "bytes": 89077
+  },
+  {
+   "path": "out/E001-atlas/tiles/cube/R1-geometry.png",
+   "sha256": "a54725cd737596bce9f465d5bc3c9e6de2a155f7282f7fc0374edce83785db26",
+   "bytes": 45796
+  },
+  {
+   "path": "out/E001-atlas/tiles/cube/R1-sphere.png",
+   "sha256": "877c89bce9d863b58076f9adf88637e8282e93e4e9c34f7eb94180f5a1d04cc9",
+   "bytes": 143663
+  },
+  {
+   "path": "out/E001-atlas/tiles/cube/R1-relief.png",
+   "sha256": "26b6de24dc8a3ac7a982a7da99d9976d91104f4b1a082ba2e2e7ea780e056287",
+   "bytes": 89398
+  },
+  {
+   "path": "out/E001-atlas/tiles/cube/R1-neutral.png",
+   "sha256": "d609ae8ed71d55be8fa3529a839dfa75efc5dbaff03404a0f1e734610cc3b9ca",
+   "bytes": 47440
+  },
+  {
+   "path": "out/E001-atlas/tiles/cube/R2-geometry.png",
+   "sha256": "a54725cd737596bce9f465d5bc3c9e6de2a155f7282f7fc0374edce83785db26",
+   "bytes": 45796
+  },
+  {
+   "path": "out/E001-atlas/tiles/cube/R2-sphere.png",
+   "sha256": "877c89bce9d863b58076f9adf88637e8282e93e4e9c34f7eb94180f5a1d04cc9",
+   "bytes": 143663
+  },
+  {
+   "path": "out/E001-atlas/tiles/cube/R2-relief.png",
+   "sha256": "26b6de24dc8a3ac7a982a7da99d9976d91104f4b1a082ba2e2e7ea780e056287",
+   "bytes": 89398
+  },
+  {
+   "path": "out/E001-atlas/tiles/cube/R2-neutral.png",
+   "sha256": "d609ae8ed71d55be8fa3529a839dfa75efc5dbaff03404a0f1e734610cc3b9ca",
+   "bytes": 47440
+  },
+  {
+   "path": "out/E001-atlas/tiles/cube/R4ve-geometry.png",
+   "sha256": "6446d99d9646383b5680284dd9e9fe18a7231cd48eae6ea73087a31a48bc54b5",
+   "bytes": 60442
+  },
+  {
+   "path": "out/E001-atlas/tiles/cube/R4ve-sphere.png",
+   "sha256": "6690bcf96956ac30cf7c0bac8ae677e900402539cd67e391cce20199e8dc2f90",
+   "bytes": 118185
+  },
+  {
+   "path": "out/E001-atlas/tiles/cube/R4ve-relief.png",
+   "sha256": "be9493e45929a188d337a499edcfa63d7e0c359cf4146ec0784650e27155f9ae",
+   "bytes": 144568
+  },
+  {
+   "path": "out/E001-atlas/tiles/cube/R4ve-neutral.png",
+   "sha256": "48359c74b5d60bc7313a0ede04d714ecf22bb396c8050cff751c0685868284a4",
+   "bytes": 95961
+  },
+  {
+   "path": "out/E001-atlas/tiles/cube/R4fe-geometry.png",
+   "sha256": "98b86b7e542d916272474ff837be9a39f3db5a078e4bcc650f3ffbba48e8e86e",
+   "bytes": 50892
+  },
+  {
+   "path": "out/E001-atlas/tiles/cube/R4fe-sphere.png",
+   "sha256": "5baad722aecdcb37d58cd43ab512cbcf2cb95fb84a4f104245695e90a100d28a",
+   "bytes": 100194
+  },
+  {
+   "path": "out/E001-atlas/tiles/cube/R4fe-relief.png",
+   "sha256": "650541a34b322d6f1621986a7e6251d1e72a1d72adccd26cd45888f18e02b553",
+   "bytes": 137795
+  },
+  {
+   "path": "out/E001-atlas/tiles/cube/R4fe-neutral.png",
+   "sha256": "c96c60bcea90e94f6b40a88b6e7f1ea4530db959b01392e7ffadfb088bc55b83",
+   "bytes": 94422
+  },
+  {
+   "path": "out/E001-atlas/tiles/cube/flag-geometry.png",
+   "sha256": "d53636888be0aa2ed6eb976285fb69ca42d21a0a8413e76fa2528eeb8ed0f467",
+   "bytes": 55684
+  },
+  {
+   "path": "out/E001-atlas/tiles/cube/flag-sphere.png",
+   "sha256": "d90b1be7aae17836a26b1a1165ad88a61530e00e1dffcaa923988b1000b1b9e2",
+   "bytes": 162996
+  },
+  {
+   "path": "out/E001-atlas/tiles/cube/flag-relief.png",
+   "sha256": "6612c129cf6fc95e249ae74411db84725d7efcb9b8cfb38344f804f154e15722",
+   "bytes": 194452
+  },
+  {
+   "path": "out/E001-atlas/tiles/cube/flag-neutral.png",
+   "sha256": "bd3774c55df03e842c8bbb69267e958d5096cdd6186487bd2a2773a5cbc138c9",
+   "bytes": 102945
+  },
+  {
+   "path": "out/E001-atlas/sheets/octahedron-recipes.png",
+   "sha256": "0739b9346fb69cafe466667c6c93c53876225de5939cd8451a71d6a260ff9a56",
+   "bytes": 731398
+  },
+  {
+   "path": "out/E001-atlas/sheets/octahedron-differences.png",
+   "sha256": "94c9466250ca59e8cc81b50653f782e0aa48d1ecda2a4c05eafbdbc48dea3bae",
+   "bytes": 91005
+  },
+  {
+   "path": "out/E001-atlas/tiles/octahedron/R1-geometry.png",
+   "sha256": "c537d3b77535282e2f76438482d5418f9ec7b098a0d13eedfc59ef3bd90b2899",
+   "bytes": 49038
+  },
+  {
+   "path": "out/E001-atlas/tiles/octahedron/R1-sphere.png",
+   "sha256": "888d5ede95e9f87f411a6afaddfefc723d0e5083b12fb1949bd590aae2db346b",
+   "bytes": 141250
+  },
+  {
+   "path": "out/E001-atlas/tiles/octahedron/R1-relief.png",
+   "sha256": "ce3b155f6702b4b54b19b7c804b2d5d90c73fa7c99201d72eced3d5c528a069a",
+   "bytes": 201727
+  },
+  {
+   "path": "out/E001-atlas/tiles/octahedron/R1-neutral.png",
+   "sha256": "5b71a13b854bfc05ca07a73df50aff9b970b33ce6c368f5b73b8383b178a8971",
+   "bytes": 102066
+  },
+  {
+   "path": "out/E001-atlas/tiles/octahedron/R2-geometry.png",
+   "sha256": "c537d3b77535282e2f76438482d5418f9ec7b098a0d13eedfc59ef3bd90b2899",
+   "bytes": 49038
+  },
+  {
+   "path": "out/E001-atlas/tiles/octahedron/R2-sphere.png",
+   "sha256": "888d5ede95e9f87f411a6afaddfefc723d0e5083b12fb1949bd590aae2db346b",
+   "bytes": 141250
+  },
+  {
+   "path": "out/E001-atlas/tiles/octahedron/R2-relief.png",
+   "sha256": "ce3b155f6702b4b54b19b7c804b2d5d90c73fa7c99201d72eced3d5c528a069a",
+   "bytes": 201727
+  },
+  {
+   "path": "out/E001-atlas/tiles/octahedron/R2-neutral.png",
+   "sha256": "5b71a13b854bfc05ca07a73df50aff9b970b33ce6c368f5b73b8383b178a8971",
+   "bytes": 102066
+  },
+  {
+   "path": "out/E001-atlas/tiles/octahedron/R4ve-geometry.png",
+   "sha256": "f8aa20d4f3f9950fb49de61a7883ef6c7384594daa00a05adacc2c789b4062dd",
+   "bytes": 53345
+  },
+  {
+   "path": "out/E001-atlas/tiles/octahedron/R4ve-sphere.png",
+   "sha256": "5baad722aecdcb37d58cd43ab512cbcf2cb95fb84a4f104245695e90a100d28a",
+   "bytes": 100194
+  },
+  {
+   "path": "out/E001-atlas/tiles/octahedron/R4ve-relief.png",
+   "sha256": "650541a34b322d6f1621986a7e6251d1e72a1d72adccd26cd45888f18e02b553",
+   "bytes": 137795
+  },
+  {
+   "path": "out/E001-atlas/tiles/octahedron/R4ve-neutral.png",
+   "sha256": "c96c60bcea90e94f6b40a88b6e7f1ea4530db959b01392e7ffadfb088bc55b83",
+   "bytes": 94422
+  },
+  {
+   "path": "out/E001-atlas/tiles/octahedron/R4fe-geometry.png",
+   "sha256": "7eadd52e9c6d2a402b103f92a31bdba0da8fc8ee80fb3e013bc37ea1574cbd0a",
+   "bytes": 63260
+  },
+  {
+   "path": "out/E001-atlas/tiles/octahedron/R4fe-sphere.png",
+   "sha256": "6690bcf96956ac30cf7c0bac8ae677e900402539cd67e391cce20199e8dc2f90",
+   "bytes": 118185
+  },
+  {
+   "path": "out/E001-atlas/tiles/octahedron/R4fe-relief.png",
+   "sha256": "be9493e45929a188d337a499edcfa63d7e0c359cf4146ec0784650e27155f9ae",
+   "bytes": 144568
+  },
+  {
+   "path": "out/E001-atlas/tiles/octahedron/R4fe-neutral.png",
+   "sha256": "48359c74b5d60bc7313a0ede04d714ecf22bb396c8050cff751c0685868284a4",
+   "bytes": 95961
+  },
+  {
+   "path": "out/E001-atlas/tiles/octahedron/flag-geometry.png",
+   "sha256": "31686ef599937f4f0f974c9c8d702b42162adece9f814f6b550ac61e25ba9ef8",
+   "bytes": 59071
+  },
+  {
+   "path": "out/E001-atlas/tiles/octahedron/flag-sphere.png",
+   "sha256": "d90b1be7aae17836a26b1a1165ad88a61530e00e1dffcaa923988b1000b1b9e2",
+   "bytes": 162996
+  },
+  {
+   "path": "out/E001-atlas/tiles/octahedron/flag-relief.png",
+   "sha256": "6612c129cf6fc95e249ae74411db84725d7efcb9b8cfb38344f804f154e15722",
+   "bytes": 194452
+  },
+  {
+   "path": "out/E001-atlas/tiles/octahedron/flag-neutral.png",
+   "sha256": "bd3774c55df03e842c8bbb69267e958d5096cdd6186487bd2a2773a5cbc138c9",
+   "bytes": 102945
+  },
+  {
+   "path": "out/E001-atlas/sheets/icosahedron-recipes.png",
+   "sha256": "f8be14578c91228fe3a17bd5c452f89e8c87e8a7df137aea19fc023ce8b417e0",
+   "bytes": 755453
+  },
+  {
+   "path": "out/E001-atlas/sheets/icosahedron-differences.png",
+   "sha256": "6d122ca493c2d87943fc34bb998414668d4b0c1889e12a4373c63d2db2e2c070",
+   "bytes": 102755
+  },
+  {
+   "path": "out/E001-atlas/tiles/icosahedron/R1-geometry.png",
+   "sha256": "9afa6b01cce9be542dbcd9ea3034a03ff982199160adf8d83736bfa01e9ae36e",
+   "bytes": 74341
+  },
+  {
+   "path": "out/E001-atlas/tiles/icosahedron/R1-sphere.png",
+   "sha256": "6eca7cfa1dd08800dcd0cea145d6df1b1550f3c5ff1ce6841f112fe5a9c396e1",
+   "bytes": 181972
+  },
+  {
+   "path": "out/E001-atlas/tiles/icosahedron/R1-relief.png",
+   "sha256": "e87158d72b2a67219731490d45fb6a9c80fcb973d086f68c90d9b8db991cfa59",
+   "bytes": 152996
+  },
+  {
+   "path": "out/E001-atlas/tiles/icosahedron/R1-neutral.png",
+   "sha256": "87e4b4d815850268cd47591988b993402b21f14c72d3e36fcecfe3c9ee7c3fe7",
+   "bytes": 84259
+  },
+  {
+   "path": "out/E001-atlas/tiles/icosahedron/R2-geometry.png",
+   "sha256": "9afa6b01cce9be542dbcd9ea3034a03ff982199160adf8d83736bfa01e9ae36e",
+   "bytes": 74341
+  },
+  {
+   "path": "out/E001-atlas/tiles/icosahedron/R2-sphere.png",
+   "sha256": "6eca7cfa1dd08800dcd0cea145d6df1b1550f3c5ff1ce6841f112fe5a9c396e1",
+   "bytes": 181972
+  },
+  {
+   "path": "out/E001-atlas/tiles/icosahedron/R2-relief.png",
+   "sha256": "e87158d72b2a67219731490d45fb6a9c80fcb973d086f68c90d9b8db991cfa59",
+   "bytes": 152996
+  },
+  {
+   "path": "out/E001-atlas/tiles/icosahedron/R2-neutral.png",
+   "sha256": "87e4b4d815850268cd47591988b993402b21f14c72d3e36fcecfe3c9ee7c3fe7",
+   "bytes": 84259
+  },
+  {
+   "path": "out/E001-atlas/tiles/icosahedron/R4ve-geometry.png",
+   "sha256": "9ec091ca19cbe0f5e347aebdfdab1508b21e7165bb2f0010b94b32bdfbde5cd3",
+   "bytes": 78286
+  },
+  {
+   "path": "out/E001-atlas/tiles/icosahedron/R4ve-sphere.png",
+   "sha256": "197edbb27b0c85f7921798f58d222d5aa63b3a5c677e7f70233b1f925da7f5ef",
+   "bytes": 169313
+  },
+  {
+   "path": "out/E001-atlas/tiles/icosahedron/R4ve-relief.png",
+   "sha256": "26dd7ee8ea4113a3cf1c1e61e4cb8830b12cd2e70bd619ae7a9adfedfb269daa",
+   "bytes": 156144
+  },
+  {
+   "path": "out/E001-atlas/tiles/icosahedron/R4ve-neutral.png",
+   "sha256": "4aee08d5f1b911742d753e9d2fb546e775be5020ca3e247e451cf1ae2c46a819",
+   "bytes": 93634
+  },
+  {
+   "path": "out/E001-atlas/tiles/icosahedron/R4fe-geometry.png",
+   "sha256": "406438628c1adb2ec5d47a7998ee1f5abed7d7c34aa5abfae7a06854038dc310",
+   "bytes": 89040
+  },
+  {
+   "path": "out/E001-atlas/tiles/icosahedron/R4fe-sphere.png",
+   "sha256": "d1016b7784ba3ad963b73745202e2da5b9ca0a112ce4679c19dcc2b9787b9f28",
+   "bytes": 150224
+  },
+  {
+   "path": "out/E001-atlas/tiles/icosahedron/R4fe-relief.png",
+   "sha256": "9e29bb31582423f7d3ed78be11b008498e5f890f5496c20f7e2894abe297a173",
+   "bytes": 140996
+  },
+  {
+   "path": "out/E001-atlas/tiles/icosahedron/R4fe-neutral.png",
+   "sha256": "55227b484788fae0c489b98dc9056d3cbb0b2ea1693cc0c899680da9b8fc55ce",
+   "bytes": 97167
+  },
+  {
+   "path": "out/E001-atlas/tiles/icosahedron/flag-geometry.png",
+   "sha256": "7f2cbb453c5797b401fb97b254b23d280acfa52bd4e790967b751c87e443f604",
+   "bytes": 92441
+  },
+  {
+   "path": "out/E001-atlas/tiles/icosahedron/flag-sphere.png",
+   "sha256": "52b1d0a4a989a42ce01f5345e8605364644f6216ceddff04882b2aff722d1b6b",
+   "bytes": 208313
+  },
+  {
+   "path": "out/E001-atlas/tiles/icosahedron/flag-relief.png",
+   "sha256": "7e72ce18935c4cd265af0c5ff73b2c4da0822383bea27b74be48822e4a8b48e9",
+   "bytes": 181791
+  },
+  {
+   "path": "out/E001-atlas/tiles/icosahedron/flag-neutral.png",
+   "sha256": "3d24cdbb520c28178ab0a6039218f41199adfd63c5944ffd06bb2807e9dac7b3",
+   "bytes": 101284
+  },
+  {
+   "path": "out/E001-atlas/sheets/dodecahedron-recipes.png",
+   "sha256": "249a544a3113f2bf6ce81c214f1d52ec3603b8e85abc36e364ac2b8f4ddbe860",
+   "bytes": 747976
+  },
+  {
+   "path": "out/E001-atlas/sheets/dodecahedron-differences.png",
+   "sha256": "123a0f152e7c582ab5648aac6fa814d965b838a25c005ee9ce5d9eaf6a73d364",
+   "bytes": 111238
+  },
+  {
+   "path": "out/E001-atlas/tiles/dodecahedron/R1-geometry.png",
+   "sha256": "52bee4e9895f654c8e2a87f9533a634bdab349cd74e437ecb8fdc6dad4b32731",
+   "bytes": 69154
+  },
+  {
+   "path": "out/E001-atlas/tiles/dodecahedron/R1-sphere.png",
+   "sha256": "36fdfe167cc4bb1cdf5921e7e98a253a6a66432784b899d92d4efd4f1c70ba52",
+   "bytes": 183172
+  },
+  {
+   "path": "out/E001-atlas/tiles/dodecahedron/R1-relief.png",
+   "sha256": "0514289d795658920d85e0bed9206dc348e04a246146885572e4f31aaa301359",
+   "bytes": 148671
+  },
+  {
+   "path": "out/E001-atlas/tiles/dodecahedron/R1-neutral.png",
+   "sha256": "a2f3a553ed3dee1fcac6a64dd393758baa920c9142c75a3b39d929791eee6cb7",
+   "bytes": 77668
+  },
+  {
+   "path": "out/E001-atlas/tiles/dodecahedron/R2-geometry.png",
+   "sha256": "52bee4e9895f654c8e2a87f9533a634bdab349cd74e437ecb8fdc6dad4b32731",
+   "bytes": 69154
+  },
+  {
+   "path": "out/E001-atlas/tiles/dodecahedron/R2-sphere.png",
+   "sha256": "36fdfe167cc4bb1cdf5921e7e98a253a6a66432784b899d92d4efd4f1c70ba52",
+   "bytes": 183172
+  },
+  {
+   "path": "out/E001-atlas/tiles/dodecahedron/R2-relief.png",
+   "sha256": "0514289d795658920d85e0bed9206dc348e04a246146885572e4f31aaa301359",
+   "bytes": 148671
+  },
+  {
+   "path": "out/E001-atlas/tiles/dodecahedron/R2-neutral.png",
+   "sha256": "a2f3a553ed3dee1fcac6a64dd393758baa920c9142c75a3b39d929791eee6cb7",
+   "bytes": 77668
+  },
+  {
+   "path": "out/E001-atlas/tiles/dodecahedron/R4ve-geometry.png",
+   "sha256": "ffb7b50de9f7b4e86041c19caccaac4570e2d09173260ab8069295a9e9d54f2c",
+   "bytes": 82478
+  },
+  {
+   "path": "out/E001-atlas/tiles/dodecahedron/R4ve-sphere.png",
+   "sha256": "d1016b7784ba3ad963b73745202e2da5b9ca0a112ce4679c19dcc2b9787b9f28",
+   "bytes": 150224
+  },
+  {
+   "path": "out/E001-atlas/tiles/dodecahedron/R4ve-relief.png",
+   "sha256": "9e29bb31582423f7d3ed78be11b008498e5f890f5496c20f7e2894abe297a173",
+   "bytes": 140996
+  },
+  {
+   "path": "out/E001-atlas/tiles/dodecahedron/R4ve-neutral.png",
+   "sha256": "55227b484788fae0c489b98dc9056d3cbb0b2ea1693cc0c899680da9b8fc55ce",
+   "bytes": 97167
+  },
+  {
+   "path": "out/E001-atlas/tiles/dodecahedron/R4fe-geometry.png",
+   "sha256": "82bad88145d24322c26d8c99397b10fa8d58a8f6bbb67311d94c6d46db128b49",
+   "bytes": 73748
+  },
+  {
+   "path": "out/E001-atlas/tiles/dodecahedron/R4fe-sphere.png",
+   "sha256": "197edbb27b0c85f7921798f58d222d5aa63b3a5c677e7f70233b1f925da7f5ef",
+   "bytes": 169313
+  },
+  {
+   "path": "out/E001-atlas/tiles/dodecahedron/R4fe-relief.png",
+   "sha256": "26dd7ee8ea4113a3cf1c1e61e4cb8830b12cd2e70bd619ae7a9adfedfb269daa",
+   "bytes": 156144
+  },
+  {
+   "path": "out/E001-atlas/tiles/dodecahedron/R4fe-neutral.png",
+   "sha256": "4aee08d5f1b911742d753e9d2fb546e775be5020ca3e247e451cf1ae2c46a819",
+   "bytes": 93634
+  },
+  {
+   "path": "out/E001-atlas/tiles/dodecahedron/flag-geometry.png",
+   "sha256": "b8d8c75e38197c1fe4a61681be01763732e95eb9646c06982f31e0e9f911301f",
+   "bytes": 87148
+  },
+  {
+   "path": "out/E001-atlas/tiles/dodecahedron/flag-sphere.png",
+   "sha256": "52b1d0a4a989a42ce01f5345e8605364644f6216ceddff04882b2aff722d1b6b",
+   "bytes": 208313
+  },
+  {
+   "path": "out/E001-atlas/tiles/dodecahedron/flag-relief.png",
+   "sha256": "7e72ce18935c4cd265af0c5ff73b2c4da0822383bea27b74be48822e4a8b48e9",
+   "bytes": 181791
+  },
+  {
+   "path": "out/E001-atlas/tiles/dodecahedron/flag-neutral.png",
+   "sha256": "3d24cdbb520c28178ab0a6039218f41199adfd63c5944ffd06bb2807e9dac7b3",
+   "bytes": 101284
+  },
+  {
+   "path": "out/E001-atlas/sheets/rhombicuboctahedron-recipes.png",
+   "sha256": "6dc39d40df03698048f38a5476c05049bfe504f1773c9cb589b8dbf402db78bb",
+   "bytes": 790436
+  },
+  {
+   "path": "out/E001-atlas/sheets/rhombicuboctahedron-differences.png",
+   "sha256": "7e75634c740fdfbf6f2cf02bc148daf8ab417a8a9f8f9d752b4b05096c0dadbb",
+   "bytes": 127905
+  },
+  {
+   "path": "out/E001-atlas/tiles/rhombicuboctahedron/R1-geometry.png",
+   "sha256": "f6dbae2cc9d5dea55ffbaf9c9a9ea89d954707c97a07c0fd926ae4986d96e747",
+   "bytes": 80822
+  },
+  {
+   "path": "out/E001-atlas/tiles/rhombicuboctahedron/R1-sphere.png",
+   "sha256": "45358f10aed925e183734c8666f0442bd0c09afa9748fa810ef07e6bd3b08dfd",
+   "bytes": 280889
+  },
+  {
+   "path": "out/E001-atlas/tiles/rhombicuboctahedron/R1-relief.png",
+   "sha256": "b764f4c7bcbbd62cc7be911d7b4b1d6647a431190ed0f5bf0a3a1c991ed1c451",
+   "bytes": 235542
+  },
+  {
+   "path": "out/E001-atlas/tiles/rhombicuboctahedron/R1-neutral.png",
+   "sha256": "afc40ab0936fc9c01b5e2d41f0a3cbb7d3fb110c871a15320a79966e1fbf003c",
+   "bytes": 101270
+  },
+  {
+   "path": "out/E001-atlas/tiles/rhombicuboctahedron/R2-geometry.png",
+   "sha256": "b2d439dfcaa4303b29b0d1ec3add0bbf5aa2c5ebe72dd1de7b340d79a65c8b41",
+   "bytes": 80630
+  },
+  {
+   "path": "out/E001-atlas/tiles/rhombicuboctahedron/R2-sphere.png",
+   "sha256": "83b869eca46c1f9cb509b2a8e112c9691b2aedf01acde06684d8975028900326",
+   "bytes": 197648
+  },
+  {
+   "path": "out/E001-atlas/tiles/rhombicuboctahedron/R2-relief.png",
+   "sha256": "530da899e2ff2fcb41ad75c09468207d14b406f5a7a442876e57de937682dcca",
+   "bytes": 149263
+  },
+  {
+   "path": "out/E001-atlas/tiles/rhombicuboctahedron/R2-neutral.png",
+   "sha256": "5ae76ae2430ab3891cb91169bb370b831560746443dde4cdab9b9f891ead68aa",
+   "bytes": 84913
+  },
+  {
+   "path": "out/E001-atlas/tiles/rhombicuboctahedron/R4ve-geometry.png",
+   "sha256": "df0a956cbda884561d621cfbab6d79236779713c78d07e09a07ebd088c6ef7d5",
+   "bytes": 102995
+  },
+  {
+   "path": "out/E001-atlas/tiles/rhombicuboctahedron/R4ve-sphere.png",
+   "sha256": "47820b04de2ecfd88bb1453b43ee309455cab85476f1a4377885414032eb9d3a",
+   "bytes": 136845
+  },
+  {
+   "path": "out/E001-atlas/tiles/rhombicuboctahedron/R4ve-relief.png",
+   "sha256": "fcd0383a5a744fa667e7bbff689656e4ae553000ede05a2e48e16f28f71b4324",
+   "bytes": 150911
+  },
+  {
+   "path": "out/E001-atlas/tiles/rhombicuboctahedron/R4ve-neutral.png",
+   "sha256": "6b70b5d7635e192dfa604d248ac69c5941528bbd302d72ef7b32281a4775459b",
+   "bytes": 112011
+  },
+  {
+   "path": "out/E001-atlas/tiles/rhombicuboctahedron/R4fe-geometry.png",
+   "sha256": "13b792de8aaa27308911579a362aaac056a9589fc600c742f47f972bdaf44311",
+   "bytes": 95087
+  },
+  {
+   "path": "out/E001-atlas/tiles/rhombicuboctahedron/R4fe-sphere.png",
+   "sha256": "e2842304376fcccf27992e42d805a8fdf66ce8be7dffb0c4b9070ee2ee22191c",
+   "bytes": 168203
+  },
+  {
+   "path": "out/E001-atlas/tiles/rhombicuboctahedron/R4fe-relief.png",
+   "sha256": "1b47fe477c27a28238f31d9495a7cd6e124677380c747c25e550927f46cb6686",
+   "bytes": 167251
+  },
+  {
+   "path": "out/E001-atlas/tiles/rhombicuboctahedron/R4fe-neutral.png",
+   "sha256": "d6a296b5d7e713e5e0424cf43c57a919f3a9b712c89e58f2bbc054a4e9a72760",
+   "bytes": 112214
+  },
+  {
+   "path": "out/E001-atlas/tiles/rhombicuboctahedron/flag-geometry.png",
+   "sha256": "6728a77d077fd084ce67a3a5c320611080e91284ba98bf41d556a540f9d75422",
+   "bytes": 109417
+  },
+  {
+   "path": "out/E001-atlas/tiles/rhombicuboctahedron/flag-sphere.png",
+   "sha256": "139affe5659526bae26788bc42cd076342073888fe2cfba2d8b42f9dddfbd225",
+   "bytes": 221118
+  },
+  {
+   "path": "out/E001-atlas/tiles/rhombicuboctahedron/flag-relief.png",
+   "sha256": "f2f94f7e26afe54c61f820f5b4b023978de78f43b01ec580aeb517db0185c8de",
+   "bytes": 206215
+  },
+  {
+   "path": "out/E001-atlas/tiles/rhombicuboctahedron/flag-neutral.png",
+   "sha256": "48cc835249a37ebdb28dec2a0a4e1ffff9d701d06af5742e0459a0a4301b28e5",
+   "bytes": 120035
+  },
+  {
+   "path": "out/E001-atlas/sheets/deltoidal-icositetrahedron-recipes.png",
+   "sha256": "11abec9103de3d28e575670b1ea61b12b873e1e29efaa9d0937c9bf1aea11947",
+   "bytes": 807799
+  },
+  {
+   "path": "out/E001-atlas/sheets/deltoidal-icositetrahedron-differences.png",
+   "sha256": "37422749e8e7407896315834b07604a9bfd10fb3458292cfed0c6255d3fcf00a",
+   "bytes": 118151
+  },
+  {
+   "path": "out/E001-atlas/tiles/deltoidal-icositetrahedron/R1-geometry.png",
+   "sha256": "c6fed83b3fa7e06be98a4c7fbfd69eda7979aa25b01285437ac7c58ad58a0bdc",
+   "bytes": 76963
+  },
+  {
+   "path": "out/E001-atlas/tiles/deltoidal-icositetrahedron/R1-sphere.png",
+   "sha256": "aefdad1c761aef0a86d91961823b6e8a24d0d4c9d0adea78aefe0b74c693ebfd",
+   "bytes": 280626
+  },
+  {
+   "path": "out/E001-atlas/tiles/deltoidal-icositetrahedron/R1-relief.png",
+   "sha256": "a253d65f756ca335c2b67e4028fadf7add1b2c8fd61a23d31d26993d6f90191a",
+   "bytes": 292856
+  },
+  {
+   "path": "out/E001-atlas/tiles/deltoidal-icositetrahedron/R1-neutral.png",
+   "sha256": "d2f173061d5e1efb38647388276abd0fc428a20ee95292f37f106e2b90048eca",
+   "bytes": 120512
+  },
+  {
+   "path": "out/E001-atlas/tiles/deltoidal-icositetrahedron/R2-geometry.png",
+   "sha256": "eb5ceda8cb6035b7c6c1621a9da06ae2bc960970b606f3fc73126625f5991da4",
+   "bytes": 77019
+  },
+  {
+   "path": "out/E001-atlas/tiles/deltoidal-icositetrahedron/R2-sphere.png",
+   "sha256": "1c03215a9d77525b3e26af7951a4b63573d4b5036762d0b965bf8c0198f1bb2d",
+   "bytes": 197477
+  },
+  {
+   "path": "out/E001-atlas/tiles/deltoidal-icositetrahedron/R2-relief.png",
+   "sha256": "f1d4cfe73c27a895056f89cb8455493ad9bb38a7758720c94d269c27e243cab0",
+   "bytes": 189405
+  },
+  {
+   "path": "out/E001-atlas/tiles/deltoidal-icositetrahedron/R2-neutral.png",
+   "sha256": "a0a0dc66c012fd6a84439ae3934ff3d9a9a9d18f0baaddfab8c4b505b47222cc",
+   "bytes": 105176
+  },
+  {
+   "path": "out/E001-atlas/tiles/deltoidal-icositetrahedron/R4ve-geometry.png",
+   "sha256": "80701bbc93cd9bd0b8d683e784c5ae735cdf32e18ccb65d4a65f2b618bd7591c",
+   "bytes": 93446
+  },
+  {
+   "path": "out/E001-atlas/tiles/deltoidal-icositetrahedron/R4ve-sphere.png",
+   "sha256": "e2842304376fcccf27992e42d805a8fdf66ce8be7dffb0c4b9070ee2ee22191c",
+   "bytes": 168203
+  },
+  {
+   "path": "out/E001-atlas/tiles/deltoidal-icositetrahedron/R4ve-relief.png",
+   "sha256": "1b47fe477c27a28238f31d9495a7cd6e124677380c747c25e550927f46cb6686",
+   "bytes": 167251
+  },
+  {
+   "path": "out/E001-atlas/tiles/deltoidal-icositetrahedron/R4ve-neutral.png",
+   "sha256": "d6a296b5d7e713e5e0424cf43c57a919f3a9b712c89e58f2bbc054a4e9a72760",
+   "bytes": 112214
+  },
+  {
+   "path": "out/E001-atlas/tiles/deltoidal-icositetrahedron/R4fe-geometry.png",
+   "sha256": "021bfc749b5e0848d221564954d29db4ab445fa29eee64d7624b81255cb2ae5f",
+   "bytes": 104315
+  },
+  {
+   "path": "out/E001-atlas/tiles/deltoidal-icositetrahedron/R4fe-sphere.png",
+   "sha256": "47820b04de2ecfd88bb1453b43ee309455cab85476f1a4377885414032eb9d3a",
+   "bytes": 136845
+  },
+  {
+   "path": "out/E001-atlas/tiles/deltoidal-icositetrahedron/R4fe-relief.png",
+   "sha256": "fcd0383a5a744fa667e7bbff689656e4ae553000ede05a2e48e16f28f71b4324",
+   "bytes": 150911
+  },
+  {
+   "path": "out/E001-atlas/tiles/deltoidal-icositetrahedron/R4fe-neutral.png",
+   "sha256": "6b70b5d7635e192dfa604d248ac69c5941528bbd302d72ef7b32281a4775459b",
+   "bytes": 112011
+  },
+  {
+   "path": "out/E001-atlas/tiles/deltoidal-icositetrahedron/flag-geometry.png",
+   "sha256": "1cb47cf63b60286e1b7aca033f961ab40f24fafa021ac4d4c7872cb1599b1be4",
+   "bytes": 107609
+  },
+  {
+   "path": "out/E001-atlas/tiles/deltoidal-icositetrahedron/flag-sphere.png",
+   "sha256": "139affe5659526bae26788bc42cd076342073888fe2cfba2d8b42f9dddfbd225",
+   "bytes": 221118
+  },
+  {
+   "path": "out/E001-atlas/tiles/deltoidal-icositetrahedron/flag-relief.png",
+   "sha256": "f2f94f7e26afe54c61f820f5b4b023978de78f43b01ec580aeb517db0185c8de",
+   "bytes": 206215
+  },
+  {
+   "path": "out/E001-atlas/tiles/deltoidal-icositetrahedron/flag-neutral.png",
+   "sha256": "48cc835249a37ebdb28dec2a0a4e1ffff9d701d06af5742e0459a0a4301b28e5",
+   "bytes": 120035
+  },
+  {
+   "path": "out/E001-atlas/sheets/triakis-tetrahedron-recipes.png",
+   "sha256": "6b012ce339dca6402a1aba2137e2dd21de9b7a5442b806aa61d1ecfe52d4bb8f",
+   "bytes": 659934
+  },
+  {
+   "path": "out/E001-atlas/sheets/triakis-tetrahedron-differences.png",
+   "sha256": "096262f9d7e87058e83f78559a9ad5ff72ca3fd8f1e96655f9158858b8aa3caa",
+   "bytes": 155173
+  },
+  {
+   "path": "out/E001-atlas/tiles/triakis-tetrahedron/R1-geometry.png",
+   "sha256": "3591425b17e5b6c82a46d25a4f4aefc4a4c4054be9361e954e3c4c93a65227aa",
+   "bytes": 64803
+  },
+  {
+   "path": "out/E001-atlas/tiles/triakis-tetrahedron/R1-sphere.png",
+   "sha256": "d2e411945cb7269bee6d7ca71fdb6d858ce5da7f2288cb974a6388272c49664b",
+   "bytes": 129444
+  },
+  {
+   "path": "out/E001-atlas/tiles/triakis-tetrahedron/R1-relief.png",
+   "sha256": "fa3407f64aa315cb7d0fcebf95990e48e7cb5238ed3a1238895fd36b9daa14c4",
+   "bytes": 106341
+  },
+  {
+   "path": "out/E001-atlas/tiles/triakis-tetrahedron/R1-neutral.png",
+   "sha256": "8e9e3ebb29e7a4b22546b8241cf4d49f236f367f8cb9b8525f7c79f367dde41c",
+   "bytes": 63026
+  },
+  {
+   "path": "out/E001-atlas/tiles/triakis-tetrahedron/R2-geometry.png",
+   "sha256": "68d657c398bb8dfea2d7824306e12acfa907ebcada6962b97d667a70402e2aff",
+   "bytes": 63493
+  },
+  {
+   "path": "out/E001-atlas/tiles/triakis-tetrahedron/R2-sphere.png",
+   "sha256": "e9be9fd6ed9593da650d564b45b189ea78899bda686bda2ecb0482f4dba67f44",
+   "bytes": 102896
+  },
+  {
+   "path": "out/E001-atlas/tiles/triakis-tetrahedron/R2-relief.png",
+   "sha256": "ffc49a835ee098cf34b8b2e286c77d7613cfc4da312aca91381668da8216bd73",
+   "bytes": 92146
+  },
+  {
+   "path": "out/E001-atlas/tiles/triakis-tetrahedron/R2-neutral.png",
+   "sha256": "b54bc6488d44e6be5e285c555fc0924134ee45465d07c5135cdd09dce480b1ef",
+   "bytes": 60164
+  },
+  {
+   "path": "out/E001-atlas/tiles/triakis-tetrahedron/R4ve-geometry.png",
+   "sha256": "e8d7b0d7e79491e6eb96ecbc6b06ba1031f40233f2f15bffc13f3974a4523316",
+   "bytes": 57279
+  },
+  {
+   "path": "out/E001-atlas/tiles/triakis-tetrahedron/R4ve-sphere.png",
+   "sha256": "2f241c0e53ba90f72d6d6c118ec53bcae0e32e83b6b780ac0bf814e3de12e32b",
+   "bytes": 150612
+  },
+  {
+   "path": "out/E001-atlas/tiles/triakis-tetrahedron/R4ve-relief.png",
+   "sha256": "0c341b75a63fa72cbe47cb62f72d714d6cc794ac531bd1e25840721f66b8aaa6",
+   "bytes": 113988
+  },
+  {
+   "path": "out/E001-atlas/tiles/triakis-tetrahedron/R4ve-neutral.png",
+   "sha256": "555ff15a3687b0aee3a06c9e92b85963aa5d77febde95f477915f94af43dcad8",
+   "bytes": 64524
+  },
+  {
+   "path": "out/E001-atlas/tiles/triakis-tetrahedron/R4fe-geometry.png",
+   "sha256": "6060c1a7124de92bd551c76184b8dd78e317668f78e7c10cb8c8e62ffbbbe4ca",
+   "bytes": 66604
+  },
+  {
+   "path": "out/E001-atlas/tiles/triakis-tetrahedron/R4fe-sphere.png",
+   "sha256": "f963a0c6777a6035ba3f955d19a34e5eb83bbec29be63f6768c3cfdb609f048d",
+   "bytes": 122908
+  },
+  {
+   "path": "out/E001-atlas/tiles/triakis-tetrahedron/R4fe-relief.png",
+   "sha256": "b17e7af211d6c5dfb561278239c20e605071958b8970421a4edbfd35adc89487",
+   "bytes": 100709
+  },
+  {
+   "path": "out/E001-atlas/tiles/triakis-tetrahedron/R4fe-neutral.png",
+   "sha256": "168e335c371d425d664247b765f80910d93fc1234025616325e2a3b89dd54b85",
+   "bytes": 68217
+  },
+  {
+   "path": "out/E001-atlas/tiles/triakis-tetrahedron/flag-geometry.png",
+   "sha256": "b388f7cfe24e7f719406e271e95d9d3ff50efcb6a7e938dcf83a47fde22a19ec",
+   "bytes": 68271
+  },
+  {
+   "path": "out/E001-atlas/tiles/triakis-tetrahedron/flag-sphere.png",
+   "sha256": "d56c2d711efe4dd3a82bccd0baa5cf83cbe3e49709083a6f1a575e6b3c8ad9d2",
+   "bytes": 183062
+  },
+  {
+   "path": "out/E001-atlas/tiles/triakis-tetrahedron/flag-relief.png",
+   "sha256": "0e52a4568778c1470cb87dcfdc2277acce4405c5ef028d6c086dc62e63bc54ba",
+   "bytes": 131067
+  },
+  {
+   "path": "out/E001-atlas/tiles/triakis-tetrahedron/flag-neutral.png",
+   "sha256": "e364ab77afd0997f53293e9bbe2e97c7cd56b8eb83c875fc651d59bd3b817e47",
+   "bytes": 68903
+  },
+  {
+   "path": "out/E001-atlas/sheets/hexagonal-pyramid-recipes.png",
+   "sha256": "2d6a06a37d0413067f6cb7cff609a2ba7311688581d24a613a5707187262fc29",
+   "bytes": 594293
+  },
+  {
+   "path": "out/E001-atlas/sheets/hexagonal-pyramid-differences.png",
+   "sha256": "e1f19610afd05369a9e79825647489c2a9d0782975e3066ccd9e4c078c495e9d",
+   "bytes": 101149
+  },
+  {
+   "path": "out/E001-atlas/tiles/hexagonal-pyramid/R1-geometry.png",
+   "sha256": "9c37a23d3554d94568bb8d26b2fc3ae9a3d560bcfb6c7f9162a81c38f5193f9c",
+   "bytes": 55121
+  },
+  {
+   "path": "out/E001-atlas/tiles/hexagonal-pyramid/R1-sphere.png",
+   "sha256": "8d6adc5f3c575b15dd1e1666211ab42c5bae11baddf611088bc9131bb703ca5a",
+   "bytes": 92321
+  },
+  {
+   "path": "out/E001-atlas/tiles/hexagonal-pyramid/R1-relief.png",
+   "sha256": "6681769f7dded70e55d71fc8b52a74bc747511fe622499c5dd2a5df06d0a5c34",
+   "bytes": 85214
+  },
+  {
+   "path": "out/E001-atlas/tiles/hexagonal-pyramid/R1-neutral.png",
+   "sha256": "44b15e1363671c73be6a57174ad530a432e89b074c015fc7867915f780dd304c",
+   "bytes": 60506
+  },
+  {
+   "path": "out/E001-atlas/tiles/hexagonal-pyramid/R2-geometry.png",
+   "sha256": "caaee71e5362a2374cc1621aa1d05a7c9014d63f14ddaf18d51c9cac64db7a0b",
+   "bytes": 53613
+  },
+  {
+   "path": "out/E001-atlas/tiles/hexagonal-pyramid/R2-sphere.png",
+   "sha256": "7370540ba8edf3a2b2c0105ec2e1cb2bf7cecc83f8a3b0cb03efa84d3cee0782",
+   "bytes": 94247
+  },
+  {
+   "path": "out/E001-atlas/tiles/hexagonal-pyramid/R2-relief.png",
+   "sha256": "6350a8247e519b4e6d0fb2ecc91e3bf4b704f59fe37324ae6241ebe08dfce360",
+   "bytes": 89102
+  },
+  {
+   "path": "out/E001-atlas/tiles/hexagonal-pyramid/R2-neutral.png",
+   "sha256": "a3d943cbbf86aea21acfe00a7aebad57ca6983f55c04c3a559f22726d36e8650",
+   "bytes": 61365
+  },
+  {
+   "path": "out/E001-atlas/tiles/hexagonal-pyramid/R4ve-geometry.png",
+   "sha256": "9a78b6c41e5358812ce9be3f475d3870011e812d0a8211cdab334bcff28bafac",
+   "bytes": 56965
+  },
+  {
+   "path": "out/E001-atlas/tiles/hexagonal-pyramid/R4ve-sphere.png",
+   "sha256": "8d879eb13893c8decb5746c419b1e7871667785df69a155c2d1ffba3ffbed783",
+   "bytes": 133640
+  },
+  {
+   "path": "out/E001-atlas/tiles/hexagonal-pyramid/R4ve-relief.png",
+   "sha256": "af4f99920edc34039026fd28375e35bd8755db2c4a28acc885058888f2584f01",
+   "bytes": 132684
+  },
+  {
+   "path": "out/E001-atlas/tiles/hexagonal-pyramid/R4ve-neutral.png",
+   "sha256": "d9d51432edbe03e768e3ea4ce35d34443616987a1a7e48ec7e132e9206840eae",
+   "bytes": 77898
+  },
+  {
+   "path": "out/E001-atlas/tiles/hexagonal-pyramid/R4fe-geometry.png",
+   "sha256": "cdae5015ff5b09c372ffa406766af5993873a65ffd48907e07e7b87c1ffe0513",
+   "bytes": 59314
+  },
+  {
+   "path": "out/E001-atlas/tiles/hexagonal-pyramid/R4fe-sphere.png",
+   "sha256": "d0829c234458a26be6ecf1164fe8ecc6ca00e8b558c179aae797caa7fa12e453",
+   "bytes": 122755
+  },
+  {
+   "path": "out/E001-atlas/tiles/hexagonal-pyramid/R4fe-relief.png",
+   "sha256": "c65d03ba1419cb211462fa9d866625b6ec0d264a5bdcc05566e3fde0c3f1f0b4",
+   "bytes": 126249
+  },
+  {
+   "path": "out/E001-atlas/tiles/hexagonal-pyramid/R4fe-neutral.png",
+   "sha256": "4c8feff247320c122d2e1fed168093bb1d7ddc855be92822e16034326b5a5e50",
+   "bytes": 85026
+  },
+  {
+   "path": "out/E001-atlas/tiles/hexagonal-pyramid/flag-geometry.png",
+   "sha256": "04acb231f9b84bf3b7574dbe91171f2955ee4fe05495afd22f7091876168bb12",
+   "bytes": 63717
+  },
+  {
+   "path": "out/E001-atlas/tiles/hexagonal-pyramid/flag-sphere.png",
+   "sha256": "15f30d55e42bd696027cbd82500c7e88a7defaf73a9e63dc82127cc4f1148adc",
+   "bytes": 159000
+  },
+  {
+   "path": "out/E001-atlas/tiles/hexagonal-pyramid/flag-relief.png",
+   "sha256": "a7ea5f42b3758ac69dbdb5070d4b052fb5b8d544741815fcc5bf149d00e03a91",
+   "bytes": 166772
+  },
+  {
+   "path": "out/E001-atlas/tiles/hexagonal-pyramid/flag-neutral.png",
+   "sha256": "b3d1929bb50ed317fd685b8db8a9808dcc84906af28ef8280de62cfaa48cbff7",
+   "bytes": 92856
+  },
+  {
+   "path": "out/E001-atlas/sheets/irregular-9-recipes.png",
+   "sha256": "b80567eb69ab5af4d53ad881c572b2cbcc4ade68525751fb7f88b7ccfac5bb38",
+   "bytes": 782297
+  },
+  {
+   "path": "out/E001-atlas/sheets/irregular-9-differences.png",
+   "sha256": "1a50b4e4d18ff69706e596036e8b133e5bb453ec59da4ffc444bff846e42310b",
+   "bytes": 166779
+  },
+  {
+   "path": "out/E001-atlas/tiles/irregular-9/R1-geometry.png",
+   "sha256": "fbabdf9b6f027f66d43473a87e3bbcefd95d5e73aeda7195ba73b3b7d1ca25bb",
+   "bytes": 56925
+  },
+  {
+   "path": "out/E001-atlas/tiles/irregular-9/R1-sphere.png",
+   "sha256": "34ebc9a50f524ce16a70749b496a8e8f66d7962b1fed9eda2d7d928180dafea2",
+   "bytes": 247996
+  },
+  {
+   "path": "out/E001-atlas/tiles/irregular-9/R1-relief.png",
+   "sha256": "fe074f741123ae86e51a74161ad9dab2cda27ef1ffea1df64e8c4965aff089dc",
+   "bytes": 201054
+  },
+  {
+   "path": "out/E001-atlas/tiles/irregular-9/R1-neutral.png",
+   "sha256": "7170933782bdb3741210e76aafbd3083e699a2becdbc6e776fa33b14af679b51",
+   "bytes": 71300
+  },
+  {
+   "path": "out/E001-atlas/tiles/irregular-9/R2-geometry.png",
+   "sha256": "7e838e0beaedc25626feb02165a42c1e669c0c96b1891a7e7c7e596d5362da69",
+   "bytes": 55749
+  },
+  {
+   "path": "out/E001-atlas/tiles/irregular-9/R2-sphere.png",
+   "sha256": "731a6a316fe10b522c344d57411f9c665bf4bd0d6cb046a000e73bc6d1329bd7",
+   "bytes": 177726
+  },
+  {
+   "path": "out/E001-atlas/tiles/irregular-9/R2-relief.png",
+   "sha256": "81c61ff095bb6bf2d3de7e36f8d5aa8669a69355d0d1dd3592fe7c7d13dc4cfa",
+   "bytes": 120162
+  },
+  {
+   "path": "out/E001-atlas/tiles/irregular-9/R2-neutral.png",
+   "sha256": "523ec042a1701c24b4034258801bc99a1a1c5783984d88fed3df0a7da5314630",
+   "bytes": 56477
+  },
+  {
+   "path": "out/E001-atlas/tiles/irregular-9/R4ve-geometry.png",
+   "sha256": "b190823870c9aa9923dc43814d55adc724a4271f31cdff968c3d726ba20d16c4",
+   "bytes": 73566
+  },
+  {
+   "path": "out/E001-atlas/tiles/irregular-9/R4ve-sphere.png",
+   "sha256": "8c06e6d8d4458aa2a42c1a69d6c564ad90568542062075c19b011213d8069c2b",
+   "bytes": 125017
+  },
+  {
+   "path": "out/E001-atlas/tiles/irregular-9/R4ve-relief.png",
+   "sha256": "bb1974af96162683e7c8048c7fb64a0d0b7a1a879848772798e1e1b56044bbd4",
+   "bytes": 123717
+  },
+  {
+   "path": "out/E001-atlas/tiles/irregular-9/R4ve-neutral.png",
+   "sha256": "700e271a49af95f10037cc25c1f858fd4f7354a35cdddda0550e14d40e4def05",
+   "bytes": 85651
+  },
+  {
+   "path": "out/E001-atlas/tiles/irregular-9/R4fe-geometry.png",
+   "sha256": "23d6e23e2e3b10f2f56d3520ebdc4d9b28ee1b2c3010034cb0764246b910315a",
+   "bytes": 58805
+  },
+  {
+   "path": "out/E001-atlas/tiles/irregular-9/R4fe-sphere.png",
+   "sha256": "f01bafdfb60104563638e245e5c0db112ca869a319c211bf5ecfc69c5f2269f8",
+   "bytes": 163143
+  },
+  {
+   "path": "out/E001-atlas/tiles/irregular-9/R4fe-relief.png",
+   "sha256": "21ee7b3db7c137205e203711c721a535959e169d2fded4b4d2037bea79add4a0",
+   "bytes": 171371
+  },
+  {
+   "path": "out/E001-atlas/tiles/irregular-9/R4fe-neutral.png",
+   "sha256": "d70825160ee7d8d193c7e117c223c9d4a22a1d0bfdfc84a4378b468617d32e5a",
+   "bytes": 100300
+  },
+  {
+   "path": "out/E001-atlas/tiles/irregular-9/flag-geometry.png",
+   "sha256": "8b760d459a9939f9fd4031741aae4ac06bb59e6eb12ed182fc94d2eabde4b6cc",
+   "bytes": 68939
+  },
+  {
+   "path": "out/E001-atlas/tiles/irregular-9/flag-sphere.png",
+   "sha256": "ce5d7185ba82707eb18ea62643394a398ad1609cdf2066b6b30c15b08d35980a",
+   "bytes": 181116
+  },
+  {
+   "path": "out/E001-atlas/tiles/irregular-9/flag-relief.png",
+   "sha256": "92e7f1b8adda060e18ddd5c943d97cacd9c7579c6e5ad3b15294f89a1567d947",
+   "bytes": 171867
+  },
+  {
+   "path": "out/E001-atlas/tiles/irregular-9/flag-neutral.png",
+   "sha256": "4d4d0d7f20bc33b6ea43a3cfe8651ffd0cc4bfdd90c468c074ae696d2b0ea5eb",
+   "bytes": 96646
+  },
+  {
+   "path": "out/E001-atlas/sheets/irregular-mixed-recipes.png",
+   "sha256": "e5c67fa8d57e00c86463a9319d3fff83015b20d9f7d9cdad03c612c4a522b458",
+   "bytes": 754213
+  },
+  {
+   "path": "out/E001-atlas/sheets/irregular-mixed-differences.png",
+   "sha256": "8321567343e1698402eb8064b53c07f13992b670094a518a4b923672a5ca68e4",
+   "bytes": 154136
+  },
+  {
+   "path": "out/E001-atlas/tiles/irregular-mixed/R1-geometry.png",
+   "sha256": "034595e23834feb6c8661fa041ebf6d0898554e7b1eb8ebca54624157cb49b31",
+   "bytes": 60651
+  },
+  {
+   "path": "out/E001-atlas/tiles/irregular-mixed/R1-sphere.png",
+   "sha256": "2354cfe5d2d0ea008c60ebd05369deca5a3ebdc2b54712208b9ce3ed7e53295a",
+   "bytes": 249935
+  },
+  {
+   "path": "out/E001-atlas/tiles/irregular-mixed/R1-relief.png",
+   "sha256": "a5d2b073e449cd2de03fbc9395f50ecb39702a15bb87315635955e07d4dc55a4",
+   "bytes": 178073
+  },
+  {
+   "path": "out/E001-atlas/tiles/irregular-mixed/R1-neutral.png",
+   "sha256": "24ef9936d841004f5e3b3b6236b9910cc687343ced61fced97cf82e87d29ec00",
+   "bytes": 58312
+  },
+  {
+   "path": "out/E001-atlas/tiles/irregular-mixed/R2-geometry.png",
+   "sha256": "c410c3e4b57dde7d2a7df072e7381e680d7d51f333a5a8050fa67a70d66bfe53",
+   "bytes": 59452
+  },
+  {
+   "path": "out/E001-atlas/tiles/irregular-mixed/R2-sphere.png",
+   "sha256": "593e1ffdd4fee6f4a9c74160db251ba6b3e16a2010fe524cc0583302708b01cb",
+   "bytes": 167952
+  },
+  {
+   "path": "out/E001-atlas/tiles/irregular-mixed/R2-relief.png",
+   "sha256": "29f88b02abff56b1600327a9c1d15c4dc913b8e1e51b6ca88ae2d3a13b6cf655",
+   "bytes": 116152
+  },
+  {
+   "path": "out/E001-atlas/tiles/irregular-mixed/R2-neutral.png",
+   "sha256": "db8d95104d1cdf0efb2315e091666ee1b793ca78fd8b95dde406ba1460d7064c",
+   "bytes": 55201
+  },
+  {
+   "path": "out/E001-atlas/tiles/irregular-mixed/R4ve-geometry.png",
+   "sha256": "7acecbf2662ceacf99e19b14330640708d166acd33cacd9129378e9fcbe005f4",
+   "bytes": 67352
+  },
+  {
+   "path": "out/E001-atlas/tiles/irregular-mixed/R4ve-sphere.png",
+   "sha256": "5341f5c8f2310e0bf63442e1dd6c4ac3a5788dcce53a43b65265802843fdc807",
+   "bytes": 149437
+  },
+  {
+   "path": "out/E001-atlas/tiles/irregular-mixed/R4ve-relief.png",
+   "sha256": "238bc52372d57d274f9a970cba6dac79ffd8cd9b297912afc2d7d5e30a69ab6b",
+   "bytes": 130068
+  },
+  {
+   "path": "out/E001-atlas/tiles/irregular-mixed/R4ve-neutral.png",
+   "sha256": "aff696e53ad8aa22f78300824b36bee9964afd7d019474b2437e1391d6029dc9",
+   "bytes": 74845
+  },
+  {
+   "path": "out/E001-atlas/tiles/irregular-mixed/R4fe-geometry.png",
+   "sha256": "741f8e05ff77ba172f299a0ab594a63a3070a94dbd3b3ab8b154ef8023fde25f",
+   "bytes": 63544
+  },
+  {
+   "path": "out/E001-atlas/tiles/irregular-mixed/R4fe-sphere.png",
+   "sha256": "bb45a90f21a2c8277009e4e97d7deb3fcb5b54917b67c88d351ed75e28fdf8ef",
+   "bytes": 136443
+  },
+  {
+   "path": "out/E001-atlas/tiles/irregular-mixed/R4fe-relief.png",
+   "sha256": "b15c4682e1049156777275b3362c698e612d1861b0fd19ebd47177c98148c9d6",
+   "bytes": 134157
+  },
+  {
+   "path": "out/E001-atlas/tiles/irregular-mixed/R4fe-neutral.png",
+   "sha256": "d8ac5a906de3011680addb5b30963f92ff98ff04a9685c3dccbab59025316720",
+   "bytes": 91592
+  },
+  {
+   "path": "out/E001-atlas/tiles/irregular-mixed/flag-geometry.png",
+   "sha256": "b806dc1b99422b9d04a091255354b359ae17db62c3c20f18c10ca322efb6177c",
+   "bytes": 74272
+  },
+  {
+   "path": "out/E001-atlas/tiles/irregular-mixed/flag-sphere.png",
+   "sha256": "e3b5f583c57ee74d1845210ba0be22f98edab9747e879a8f7feebb65479d6b00",
+   "bytes": 173634
+  },
+  {
+   "path": "out/E001-atlas/tiles/irregular-mixed/flag-relief.png",
+   "sha256": "ef2b20a539b509cd388671f6ee1ede4e923784fdd2bd844e940e3205bfaab806",
+   "bytes": 155579
+  },
+  {
+   "path": "out/E001-atlas/tiles/irregular-mixed/flag-neutral.png",
+   "sha256": "2058cb8e9d149bedcdfadba6926539ab8e2b3f7d22c85a9cbb197276b80b4af3",
+   "bytes": 88775
+  },
+  {
+   "path": "out/E001-atlas/metrics.csv",
+   "sha256": "94896111f297257b9ec2a821ff83640279dbbfa6ff903ec27567bac628df5a4c",
+   "bytes": 4230
+  }
+ ],
+ "config_file": {
+  "path": "configs/experiments/E001-atlas.json",
+  "sha256": "3577be4915c5b3ad9ad2206b13483622c84f55b9ce9682ffbff90a76a43694db"
+ },
+ "geometry": {
+  "tetrahedron": {
+   "path": "data/polyhedra/tetrahedron.json",
+   "sha256": "382d135ba37bef260be55a0bbb1716eadc488f56df5ecd1f718ff2cf7fe42d0c"
+  },
+  "cube": {
+   "path": "data/polyhedra/cube.json",
+   "sha256": "18f2d4fe43d3d1b70801546fd84cda4487a9394ec509d3d677081a7934426ead"
+  },
+  "octahedron": {
+   "path": "data/polyhedra/octahedron.json",
+   "sha256": "2bf8e0a148067e946d5256c3c946c190f7acde0b52bed28e0d48b0e8f3884cf3"
+  },
+  "icosahedron": {
+   "path": "data/polyhedra/icosahedron.json",
+   "sha256": "f96a91928cb0bd187a2a1b156a1c3dd6b15f447474d6e4d3c3789c6ab2312781"
+  },
+  "dodecahedron": {
+   "path": "data/polyhedra/dodecahedron.json",
+   "sha256": "de37164885e55152a05b8e383c38e328676628960b9d0d6edaf503978b5f1a0b"
+  },
+  "rhombicuboctahedron": {
+   "path": "data/polyhedra/rhombicuboctahedron.json",
+   "sha256": "413979b8142cfc8f2ffc09640aed710b7994af6d837daba52ec794d77ee0ae64"
+  },
+  "deltoidal-icositetrahedron": {
+   "path": "data/polyhedra/deltoidal-icositetrahedron.json",
+   "sha256": "b317213c117fececc868b910d69b5a5aa53f2e938a5fa06cd59d13847076d92b"
+  },
+  "triakis-tetrahedron": {
+   "path": "data/polyhedra/triakis-tetrahedron.json",
+   "sha256": "1bf95bcdeba4e9f026c5ca2ca65367d8f3526129c503434e9d0f269b72f6b139"
+  },
+  "hexagonal-pyramid": {
+   "path": "data/polyhedra/hexagonal-pyramid.json",
+   "sha256": "d601304351bdf0ed08fe340cc33b783bc9f3d8d2d68e365d41c892e437c2f87e"
+  },
+  "irregular-9": {
+   "path": "data/polyhedra/irregular-9.json",
+   "sha256": "30692ee590e5a5a4da1d3de94efd3858425958340bab36e09b631d3c289e5297"
+  },
+  "irregular-mixed": {
+   "path": "data/polyhedra/irregular-mixed.json",
+   "sha256": "20c6135427e4d44b7784dbc86b34f8ad2d5a74c8c024db85ff581810144e9abf"
+  }
+ },
+ "published": [
+  {
+   "path": "experiments/E001-atlas/sheets/tetrahedron-recipes.jpg",
+   "sha256": "dabc4bbb1524ce864024d6b2c28b3dba8207274e482c3b0039f9cbcea0ca0bd9",
+   "bytes": 151253,
+   "downscaled_from": "out/E001-atlas/sheets/tetrahedron-recipes.png"
+  },
+  {
+   "path": "experiments/E001-atlas/sheets/tetrahedron-differences.jpg",
+   "sha256": "83e178d85fe0ced357896a660bc34e9549688740aa1e72ff01c7d0b7c31a6a61",
+   "bytes": 60018,
+   "downscaled_from": "out/E001-atlas/sheets/tetrahedron-differences.png"
+  },
+  {
+   "path": "experiments/E001-atlas/sheets/cube-recipes.jpg",
+   "sha256": "6c26ad5d447bb4ee6742641bce7ab056bca5344d33615fca10f5f361438c8dd1",
+   "bytes": 175144,
+   "downscaled_from": "out/E001-atlas/sheets/cube-recipes.png"
+  },
+  {
+   "path": "experiments/E001-atlas/sheets/cube-differences.jpg",
+   "sha256": "f47da141d43cb27f8fe8417d74f8e5a2a53a8ac2000de5ea26102137783347ac",
+   "bytes": 61670,
+   "downscaled_from": "out/E001-atlas/sheets/cube-differences.png"
+  },
+  {
+   "path": "experiments/E001-atlas/sheets/octahedron-recipes.jpg",
+   "sha256": "e93719575c1a571c882c5dfe489ae6fcd6851dd0a64c449559ced13c7fb73201",
+   "bytes": 185440,
+   "downscaled_from": "out/E001-atlas/sheets/octahedron-recipes.png"
+  },
+  {
+   "path": "experiments/E001-atlas/sheets/octahedron-differences.jpg",
+   "sha256": "553e12875658b3d0584c8560f7f63361436d5d03c7b8568b56198c6433820065",
+   "bytes": 60048,
+   "downscaled_from": "out/E001-atlas/sheets/octahedron-differences.png"
+  },
+  {
+   "path": "experiments/E001-atlas/sheets/icosahedron-recipes.jpg",
+   "sha256": "113e9bc2be7d3807c3b534d2558152e325a321084594a5457df9751fc9fbac13",
+   "bytes": 204569,
+   "downscaled_from": "out/E001-atlas/sheets/icosahedron-recipes.png"
+  },
+  {
+   "path": "experiments/E001-atlas/sheets/icosahedron-differences.jpg",
+   "sha256": "87e2f77a99f88bcb2e8e48100c9819d68e880982307a8ddbea22eabeb750cdcc",
+   "bytes": 71146,
+   "downscaled_from": "out/E001-atlas/sheets/icosahedron-differences.png"
+  },
+  {
+   "path": "experiments/E001-atlas/sheets/dodecahedron-recipes.jpg",
+   "sha256": "0c6cd965dbe2f719919bef962e28b3e5e8be30779255a53d3310e0a1e37bbcb3",
+   "bytes": 202903,
+   "downscaled_from": "out/E001-atlas/sheets/dodecahedron-recipes.png"
+  },
+  {
+   "path": "experiments/E001-atlas/sheets/dodecahedron-differences.jpg",
+   "sha256": "7b0f25282c1a4d7e0f92c4adf4cc527cf83574891dd8da9376006897f39a1538",
+   "bytes": 73389,
+   "downscaled_from": "out/E001-atlas/sheets/dodecahedron-differences.png"
+  },
+  {
+   "path": "experiments/E001-atlas/sheets/rhombicuboctahedron-recipes.jpg",
+   "sha256": "2887ba6d2e2dfe808b1c8b3eb3f069352f56345dac8d19c60d85a28ab0179c41",
+   "bytes": 222506,
+   "downscaled_from": "out/E001-atlas/sheets/rhombicuboctahedron-recipes.png"
+  },
+  {
+   "path": "experiments/E001-atlas/sheets/rhombicuboctahedron-differences.jpg",
+   "sha256": "db7c31d0e10524c028b227af6680fcbca5669df856e1da4a91a1804207455c24",
+   "bytes": 85184,
+   "downscaled_from": "out/E001-atlas/sheets/rhombicuboctahedron-differences.png"
+  },
+  {
+   "path": "experiments/E001-atlas/sheets/deltoidal-icositetrahedron-recipes.jpg",
+   "sha256": "5f0c5ac76cbb72d65f778b50e9e3f9eb43862af860bf88a03336a0dccbad664b",
+   "bytes": 226894,
+   "downscaled_from": "out/E001-atlas/sheets/deltoidal-icositetrahedron-recipes.png"
+  },
+  {
+   "path": "experiments/E001-atlas/sheets/deltoidal-icositetrahedron-differences.jpg",
+   "sha256": "7d95b598e1219c6becbd7fa1fb6fed872a5444f1862787363e44531e7321ed77",
+   "bytes": 84963,
+   "downscaled_from": "out/E001-atlas/sheets/deltoidal-icositetrahedron-differences.png"
+  },
+  {
+   "path": "experiments/E001-atlas/sheets/triakis-tetrahedron-recipes.jpg",
+   "sha256": "31636bba015ff7b744babdcd57788699cc47e857dd359a6388e53d9e128c51bb",
+   "bytes": 176933,
+   "downscaled_from": "out/E001-atlas/sheets/triakis-tetrahedron-recipes.png"
+  },
+  {
+   "path": "experiments/E001-atlas/sheets/triakis-tetrahedron-differences.jpg",
+   "sha256": "3c557b7363839a94df1c28c861494274dfacca9464813d7b4c8b01b33abba911",
+   "bytes": 68344,
+   "downscaled_from": "out/E001-atlas/sheets/triakis-tetrahedron-differences.png"
+  },
+  {
+   "path": "experiments/E001-atlas/sheets/hexagonal-pyramid-recipes.jpg",
+   "sha256": "fdbc20bb09581050b485afa84c376843d9ecd1efcdb665190e94a369431cc4ed",
+   "bytes": 171582,
+   "downscaled_from": "out/E001-atlas/sheets/hexagonal-pyramid-recipes.png"
+  },
+  {
+   "path": "experiments/E001-atlas/sheets/hexagonal-pyramid-differences.jpg",
+   "sha256": "9a3946a54e0a23fa37b412c95b0807e15cf7baeb5d00c63c7536749325467204",
+   "bytes": 64829,
+   "downscaled_from": "out/E001-atlas/sheets/hexagonal-pyramid-differences.png"
+  },
+  {
+   "path": "experiments/E001-atlas/sheets/irregular-9-recipes.jpg",
+   "sha256": "aaf8f3749f209ae7dce035085b117daa4cbd0c5f7c3e6e009ea6bc30347913c9",
+   "bytes": 195046,
+   "downscaled_from": "out/E001-atlas/sheets/irregular-9-recipes.png"
+  },
+  {
+   "path": "experiments/E001-atlas/sheets/irregular-9-differences.jpg",
+   "sha256": "621516ab70119de80836c5b8938424d703038ab0537d7c2271345b429b526851",
+   "bytes": 69014,
+   "downscaled_from": "out/E001-atlas/sheets/irregular-9-differences.png"
+  },
+  {
+   "path": "experiments/E001-atlas/sheets/irregular-mixed-recipes.jpg",
+   "sha256": "58cac918396a775ce49a1a1f82a4f72e1e6d2e684cbde1a71ea7b317a03198ac",
+   "bytes": 190801,
+   "downscaled_from": "out/E001-atlas/sheets/irregular-mixed-recipes.png"
+  },
+  {
+   "path": "experiments/E001-atlas/sheets/irregular-mixed-differences.jpg",
+   "sha256": "dab29f5706e6c678595e3be10a31df599b817598fd0190fb7fefc64f05a3d448",
+   "bytes": 68208,
+   "downscaled_from": "out/E001-atlas/sheets/irregular-mixed-differences.png"
+  }
+ ]
+}
