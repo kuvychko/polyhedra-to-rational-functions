@@ -40,8 +40,8 @@
 | R4fe | jump | jump | **continuous**, residual ∝ `s^2.01` |
 | flag | jump (= R4fe's jump) | jump | jump (= R4ve's jump) |
 
-All tabulated jumps are tested exactly in `tests/test_families_and_transitions.py` (R2 corner,
-R4ve bevel, and both continuous cases).
+Four of these are also exact tests in `tests/test_families_and_transitions.py`: the R2 corner
+jump, the R4ve bevel jump and both continuous cases. The rest are recorded in `jumps.json`.
 
 - **Jumps add.** The jumps obey the incidence lattice: `J_R2 = J_R4ve − J_R4fe` and
   `J_flag = J_R4ve + J_R4fe`. So **no member of the incidence family is continuous under an
