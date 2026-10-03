@@ -4,11 +4,10 @@
 //
 // Progressive enhancement: each `.geometry-viewer` holds a static render, which stays in place
 // if WebGL, the network or this script is unavailable. The data comes from
-// docs/assets/pieces/<id>/geometry.json, written by scripts/a4_site_assets.py. three.js is
-// pinned to one version and loaded as ES modules; jsDelivr's +esm build makes both imports share
-// one three.js instance.
-import * as THREE from "https://cdn.jsdelivr.net/npm/three@0.170.0/+esm";
-import { OrbitControls } from "https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/controls/OrbitControls.js/+esm";
+// docs/assets/pieces/<id>/geometry.json, written by scripts/a4_site_assets.py. three.js 0.170.0
+// is vendored under ./vendor/ (see its README), so the site loads nothing from third parties.
+import * as THREE from "./vendor/three-0.170.0/three.module.min.js";
+import { OrbitControls } from "./vendor/three-0.170.0/OrbitControls.js";
 
 const ZERO = 0x2a5ea6;
 const POLE = 0xb4312c;

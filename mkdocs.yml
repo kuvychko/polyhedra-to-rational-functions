@@ -54,6 +54,7 @@ validation:
 
 exclude_docs: |
   hooks/
+  javascripts/vendor/**/*.md
 
 markdown_extensions:
   - pymdownx.highlight

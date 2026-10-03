@@ -7,9 +7,9 @@ the function that results.
 
 <div class="grid" markdown>
 
-![The cube–octahedron dual: spikes on the cube's vertices, pits on the octahedron's](experiments/R0-baseline/renders/cube-octahedron-dual.png){ width="32%" }
-![The icosidodecahedral star](experiments/R0-baseline/renders/icosidodecahedral-star.png){ width="32%" }
-![The icosahedral crown](experiments/R0-baseline/renders/icosahedral-crown.png){ width="32%" }
+![The cube–octahedron dual: spikes on the cube's vertices, pits on the octahedron's](assets/pieces/cube-octahedron-dual/relief.jpg){ width="32%" }
+![The icosidodecahedral star](assets/pieces/icosidodecahedral-star/relief.jpg){ width="32%" }
+![The icosahedral crown](assets/pieces/icosahedral-crown/relief.jpg){ width="32%" }
 
 </div>
 
