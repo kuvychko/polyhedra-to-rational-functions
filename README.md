@@ -15,7 +15,8 @@ The full research program, scope and exit criteria are in [`PROGRAM.md`](PROGRAM
 ## Status
 
 **Phase 1 (investigation) is complete**, and every exit criterion in [`PROGRAM.md`](PROGRAM.md) §13
-is met. Phase 2 (explanation and exhibition) is next. Nothing is published yet.
+is met. Phase 2 (explanation and exhibition) is planned in [`PHASE2.md`](PHASE2.md). Nothing is
+published yet.
 
 Current findings ([decision 0005](docs/decisions/0005-phase1-recipe-selection.md),
 [narrative draft](docs/research/narrative.md)):
