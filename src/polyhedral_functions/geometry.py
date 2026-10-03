@@ -141,7 +141,10 @@ class Polyhedron:
             w = np.cross(n, u)
             rel = points[idx] - centre
             angle = np.arctan2(rel @ w, rel @ u)
-            faces.append(tuple(idx[np.argsort(angle)].tolist()))
+            # Start each face at its smallest vertex index. The angle sort's starting point
+            # depends on rounding when two vertices sit at angle +-pi (e.g. a regular hexagon),
+            # and that varied between platforms.
+            faces.append(_canonical_cycle(tuple(idx[np.argsort(angle)].tolist())))
 
         faces.sort(key=lambda f: _canonical_cycle(f))
         return cls.from_faces(points, faces, name=name, tol=tol)

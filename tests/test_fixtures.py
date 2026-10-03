@@ -36,9 +36,13 @@ def test_stored_fixture_matches_construction(fixture_id):
     stored = fixtures.load(fixture_id)
     fresh = fixtures.CONSTRUCTIONS[fixture_id]()
     assert stored.faces == fresh.faces
-    assert np.allclose(stored.vertices, fresh.vertices, atol=1e-14)
+    # Coordinates come from sin, cos and sqrt, which can differ in the last bit between
+    # platforms and CPUs, so they agree to a tolerance rather than bit for bit.
+    assert np.allclose(stored.vertices, fresh.vertices, rtol=0, atol=1e-12)
     record = json.loads((fixtures.DATA_DIR / f"{fixture_id}.json").read_text(encoding="utf-8"))
-    assert record == json.loads(json.dumps(fixtures.to_record(fixture_id, fresh)))
+    expected = json.loads(json.dumps(fixtures.to_record(fixture_id, fresh)))
+    assert np.allclose(record.pop("vertices"), expected.pop("vertices"), rtol=0, atol=1e-12)
+    assert record == expected
 
 
 @pytest.mark.parametrize("fixture_id", IDS)

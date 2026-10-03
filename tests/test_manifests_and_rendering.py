@@ -51,6 +51,7 @@ def test_per_degree_field_matches_evaluation():
     assert np.isclose(field[0, 0], log_modulus_on_sphere(d, x)[0] / d.degree)
 
 
+@pytest.mark.render
 def test_offscreen_renders(tmp_path):
     poly = fixtures.load("cube")
     d = apply(R2, poly).divisor

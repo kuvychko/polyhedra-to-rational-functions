@@ -39,7 +39,10 @@ module-name = "polyhedral_functions"
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
-markers = ["slow: rebuilds a full relief mesh (deselect with -m \"not slow\")"]
+markers = [
+    "slow: rebuilds a full relief mesh (deselect with -m \"not slow\")",
+    "render: takes an off-screen screenshot (skipped on Windows CI runners)",
+]
 
 [tool.ruff]
 line-length = 100
