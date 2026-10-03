@@ -9,7 +9,8 @@ were built from.
 
 - **Baseline pieces** are regenerated as well and checked against the hashes in
   ``catalog/pieces.yaml``. This repo reproduces them byte for byte.
-- **Pieces with an owner-approved cut plane** also get cut halves in print pose (decision 0007).
+- **Pieces with an owner-approved cut plane** also get cut halves in print pose (decision 0007),
+  and hanging-ornament halves with a thread hole through one spike (decision 0008).
 """
 
 import argparse
@@ -58,6 +59,15 @@ def main() -> None:
         if piece.cut_approved():
             entry["cuts"] = meshes.export_cuts(piece, SIZES_MM, out)
             notes.append(f"cut halves {entry['cuts'][str(SIZES_MM[0])]['halves']}")
+            entry["ornament"] = meshes.export_ornament(piece, SIZES_MM, out)
+            holes = [entry["ornament"][str(s)]["hole"] for s in SIZES_MM]
+            notes.append(
+                "ornament hole "
+                + ", ".join(
+                    f"{s} mm: {h['distance_from_tip_mm']} mm in"
+                    for s, h in zip(SIZES_MM, holes, strict=True)
+                )
+            )
         record["pieces"][piece.id] = entry
         print(f"{piece.id}: " + "; ".join(notes))
     record["note"] = (

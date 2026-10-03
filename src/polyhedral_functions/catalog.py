@@ -86,6 +86,16 @@ class Piece:
         normal = [round(float(x), 4) for x in self.cut["normal"]]
         return sorted(int(s) for s, e in record.items() if e.get("normal") == normal)
 
+    def ornament_sizes(self) -> list[int]:
+        """Sizes with exported hanging-ornament halves for the approved plane (decision 0008)."""
+        if not self.cut_approved():
+            return []
+        record = exports().get(self.id, {})
+        normal = [round(float(x), 4) for x in self.cut["normal"]]
+        if record.get("cuts", {}).get("130", {}).get("normal") != normal:
+            return []
+        return sorted(int(s) for s in record.get("ornament", {}))
+
     def status(self, screened: set[str]) -> str:
         if self.printables_url:
             return "listed"
@@ -184,17 +194,19 @@ def checklist(pieces: list[Piece], screened: set[str]) -> str:
         "Generated from `catalog/pieces.yaml` by `uv run python scripts/catalog_status.py`. Do not",
         "edit by hand: change the catalog and regenerate.",
         "",
-        "| piece | origin | status | screened | STLs 80/130 | cut | planned | printed | photos "
-        "| Printables | next action |",
-        "|---|---|---|---|---|---|---|---|---|---|---|",
+        "| piece | origin | status | screened | STLs 80/130 | cut | ornament | planned | printed "
+        "| photos | Printables | next action |",
+        "|---|---|---|---|---|---|---|---|---|---|---|---|",
     ]
     for p in pieces:
         stls = "/".join(mark(s in p.stl_sizes()) for s in SIZES_MM)
+        orn = "/".join(mark(s in p.ornament_sizes()) for s in SIZES_MM)
         printed = ", ".join(f"{s} mm" for s in p.printed_sizes()) or "–"
         planned = f"{p.planned_size_mm} mm" if p.planned_size_mm else "–"
         lines.append(
             f"| {p.title} | {p.origin} | {p.status(screened)} | {mark(p.id in screened)} "
-            f"| {stls} | {cut_state(p)} | {planned} | {printed} | {len(p.photos) or '–'} "
+            f"| {stls} | {cut_state(p)} | {orn} | {planned} | {printed} "
+            f"| {len(p.photos) or '–'} "
             f"| {'[link](' + p.printables_url + ')' if p.printables_url else '–'} "
             f"| {p.next_action(screened)} |"
         )

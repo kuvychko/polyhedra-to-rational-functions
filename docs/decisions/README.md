@@ -13,3 +13,4 @@ an earlier one instead.
 | [0005](0005-phase1-recipe-selection.md) | Phase 1 selection: R2 by default, R4 as the alternative | 2026-10-01 |
 | [0006](0006-phase2-workflow.md) | Phase 2 workflow: two parallel tracks joined by one catalog | 2026-10-03 |
 | [0007](0007-cut-stls.md) | Scripted, owner-approved cut STLs for every piece | 2026-10-03 |
+| [0008](0008-hanging-ornaments.md) | A hanging-ornament variant of every piece | 2026-10-03 |

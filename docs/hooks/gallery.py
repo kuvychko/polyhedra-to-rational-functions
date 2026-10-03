@@ -113,10 +113,16 @@ def photos_block(piece) -> list[str]:
     return lines + ["</div>", ""]
 
 
+FILES = (
+    "whole, cut halves, and a [hanging-ornament](../printing.md#hanging-ornaments) version; "
+    "80 and 130 mm"
+)
+
+
 def listing(piece) -> str:
     if piece.printables_url:
-        return f"[on Printables]({piece.printables_url}): whole and cut STLs, 80 and 130 mm"
-    return "coming to Printables: whole and cut STLs, 80 and 130 mm"
+        return f"[on Printables]({piece.printables_url}): {FILES}"
+    return f"coming to Printables: {FILES}"
 
 
 def lineage(piece) -> list[str]:

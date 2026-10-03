@@ -17,6 +17,7 @@ dependencies = [
     # deliberate commit with a note on what changed.
     "complexplorer==3.1.0",
     "pyyaml>=6",
+    "manifold3d>=3.0",
 ]
 
 [dependency-groups]

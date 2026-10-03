@@ -21,6 +21,23 @@ include cut halves alongside the whole model.
 - Glue the halves together. No connectors are built in; add pins or dowels in your slicer if you
   like.
 
+## Hanging ornaments
+
+Every object also comes as a **hanging ornament**: cut halves with a 1.5 mm thread hole bored
+through one spike. Pass a thread through, tie a loop, and it hangs on a tree.
+
+- **Which spike:** the most prominent one the cut plane splits lengthwise, so the hole runs
+  through both halves and lines up when they are glued. Where no spike lies in the plane, as on
+  the irregular objects, the hole goes through the most prominent spike near the plane, entirely
+  within one half.
+- **Where on the spike:** about 9 mm in from the tip. It moves further in only where the spike
+  is too thin to keep at least 1 mm of wall on both sides of the hole. Each object's record gives
+  the exact distance.
+- **Printing:** each half lies cut face down, so the hole is vertical and needs no support. The
+  ornament halves are always two files, **a** and **b**: the hole makes them different.
+- **Gluing:** keep glue away from the hole near the cut face, or clear it with a pin before it
+  sets.
+
 ## Settings
 
 The baseline prints used the settings below. Settings for the new pieces will be added as they

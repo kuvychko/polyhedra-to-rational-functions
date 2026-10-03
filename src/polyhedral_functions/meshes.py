@@ -132,3 +132,36 @@ def export_cuts(piece: Piece, sizes_mm, out_dir: Path) -> dict:
             "files": files,
         }
     return entries
+
+
+def export_ornament(piece: Piece, sizes_mm, out_dir: Path, **hole_options) -> dict:
+    """Hanging-ornament cut halves (decision 0008): a thread hole bored through one spike.
+
+    Uses the approved cut plane, snapped to its exact symmetry plane. Always two files per size:
+    the hole breaks the symmetry that made the plain halves identical.
+    """
+    if not piece.cut_approved():
+        raise ValueError(f"{piece.id}: no approved cut plane in the catalog")
+    from . import fixtures, hangers
+
+    group = fixtures.load(piece.polyhedron).symmetry_group()
+    normal, _ = cuts.snap_normal(piece.cut["normal"], group)
+    mesh = closed_relief(piece)
+    out_dir.mkdir(parents=True, exist_ok=True)
+    entries = {}
+    for size in sizes_mm:
+        scaled = scale_to_size(mesh, float(size), axis="extent")
+        hole = hangers.place_hole(scaled, piece.divisor(), normal, **hole_options)
+        upper, lower = hangers.split(
+            hangers.bore(hangers.to_manifold(scaled), hole, normal), normal
+        )
+        files = []
+        for label, half, build in (("a", upper, normal), ("b", lower, -normal)):
+            posed = cuts.to_print_pose(half, build)
+            if not cuts.watertight(posed):
+                raise RuntimeError(f"{piece.id} {size} mm ornament half {label} is not watertight")
+            path = out_dir / f"{piece.id}-{size}mm-ornament-half-{label}.stl"
+            posed.save(str(path), binary=True)
+            files.append({"name": path.name, "sha256": sha256(path), "bytes": path.stat().st_size})
+        entries[str(size)] = {"hole": hole.record(), "files": files}
+    return entries
