@@ -28,11 +28,11 @@
     },
     "geometry_data": {
      "path": "docs/assets/pieces/cube-octahedron-dual/geometry.json",
-     "sha256": "8e398d9340a71a5c2e2b2662d23b144c95469d0fc1d01f2d0a0b6e638daa87c1"
+     "sha256": "5fedf84c4b722024689d65afa7863706324df6cc3b622ecaa0efdf699b47a02c"
     }
    },
    "data_code": {
-    "commit": "01c9799c13bf73e4c835627c62d9856dee043205",
+    "commit": "5332c8f92baeabb4229b3c1facc91d58840a812f",
     "dirty": false
    }
   },
@@ -64,11 +64,11 @@
     },
     "geometry_data": {
      "path": "docs/assets/pieces/dodecahedron-icosahedron-dual/geometry.json",
-     "sha256": "99691f1debf71d6467dcf1a572f843aa60820bc44280e1542002242bec03ace7"
+     "sha256": "603007ff120bf46b5fab53ba4082649990174a79d6daf8038a947ea9e534e52b"
     }
    },
    "data_code": {
-    "commit": "01c9799c13bf73e4c835627c62d9856dee043205",
+    "commit": "5332c8f92baeabb4229b3c1facc91d58840a812f",
     "dirty": false
    }
   },
@@ -100,11 +100,11 @@
     },
     "geometry_data": {
      "path": "docs/assets/pieces/icosahedral-crown/geometry.json",
-     "sha256": "423241a981949ad8cebae026bbc687c21686292f83ea7a368b5e1aaaeb2a6113"
+     "sha256": "603842622777b5fc7193848c2214f0759a14f2094627e58e323d4c746128ec5b"
     }
    },
    "data_code": {
-    "commit": "01c9799c13bf73e4c835627c62d9856dee043205",
+    "commit": "5332c8f92baeabb4229b3c1facc91d58840a812f",
     "dirty": false
    }
   },
@@ -136,11 +136,11 @@
     },
     "geometry_data": {
      "path": "docs/assets/pieces/icosidodecahedral-star/geometry.json",
-     "sha256": "c0192b54a72626bc0a5f1411abc55bd12f4f3aee38587e22c96ab52a3b1f02ec"
+     "sha256": "e5841b345bd176bb300fb8e2a395e48ab390c996b7d28dfb717c692068bab3b6"
     }
    },
    "data_code": {
-    "commit": "01c9799c13bf73e4c835627c62d9856dee043205",
+    "commit": "5332c8f92baeabb4229b3c1facc91d58840a812f",
     "dirty": false
    }
   },
@@ -172,11 +172,11 @@
     },
     "geometry_data": {
      "path": "docs/assets/pieces/octahedral-crown/geometry.json",
-     "sha256": "882e10bd83cb7b69fc623f8011e7123341f126b240bcfd7e345736b89538dd08"
+     "sha256": "659370f3d51fee5aeaca9a464283868cc0ddae440184f8cab9c4cd902812bdb1"
     }
    },
    "data_code": {
-    "commit": "01c9799c13bf73e4c835627c62d9856dee043205",
+    "commit": "5332c8f92baeabb4229b3c1facc91d58840a812f",
     "dirty": false
    }
   },
@@ -208,11 +208,11 @@
     },
     "geometry_data": {
      "path": "docs/assets/pieces/r2-deltoidal-icositetrahedron/geometry.json",
-     "sha256": "f2aa25b90ec798b1569cd9c4f39bccfe697e0607b530c85ca31462032ba7a0c8"
+     "sha256": "84fb15fc4e026a7a6a709b452c167accc51c3707b565d7c668bd3b5aae53b5ce"
     }
    },
    "data_code": {
-    "commit": "01c9799c13bf73e4c835627c62d9856dee043205",
+    "commit": "5332c8f92baeabb4229b3c1facc91d58840a812f",
     "dirty": false
    }
   },
@@ -244,11 +244,11 @@
     },
     "geometry_data": {
      "path": "docs/assets/pieces/r2-hexagonal-pyramid/geometry.json",
-     "sha256": "860fe5213b14bcab1003a8000c5403acd7896e647d1e20df61c5f449f4240346"
+     "sha256": "9f48208284361734dd875b0a678346f6573120d8c048d409776afe2d7fb671dc"
     }
    },
    "data_code": {
-    "commit": "01c9799c13bf73e4c835627c62d9856dee043205",
+    "commit": "5332c8f92baeabb4229b3c1facc91d58840a812f",
     "dirty": false
    }
   },
@@ -280,11 +280,11 @@
     },
     "geometry_data": {
      "path": "docs/assets/pieces/r2-irregular-mixed/geometry.json",
-     "sha256": "5c35882eef32351f3d4fdb7380c094a2d17f34954ad68f81d5031f91648a3580"
+     "sha256": "2413ed4a5399aaddec7a4934e9feecfe9241a36051bfd71ffb3c79001c453913"
     }
    },
    "data_code": {
-    "commit": "01c9799c13bf73e4c835627c62d9856dee043205",
+    "commit": "5332c8f92baeabb4229b3c1facc91d58840a812f",
     "dirty": false
    }
   },
@@ -316,11 +316,11 @@
     },
     "geometry_data": {
      "path": "docs/assets/pieces/r2-irregular-separated/geometry.json",
-     "sha256": "0da2b2cd7b5873c10ca0d81894d0d830a44cfca403a7265de136decc7fc5c9d7"
+     "sha256": "86f512137e6981b3f0d7b7b7a144f6dda730d031b17618efdbeefe796b6571ae"
     }
    },
    "data_code": {
-    "commit": "01c9799c13bf73e4c835627c62d9856dee043205",
+    "commit": "5332c8f92baeabb4229b3c1facc91d58840a812f",
     "dirty": false
    }
   },
@@ -352,11 +352,11 @@
     },
     "geometry_data": {
      "path": "docs/assets/pieces/r2-triakis-tetrahedron/geometry.json",
-     "sha256": "1336f10ac2f6572ed6e4a077f56a710a93292a4da406a452ef4213ff90e4b230"
+     "sha256": "d2a7d8b55271f7c62880b550a91aedf5ff1ce2c341b664628bf90630f532ec9e"
     }
    },
    "data_code": {
-    "commit": "01c9799c13bf73e4c835627c62d9856dee043205",
+    "commit": "5332c8f92baeabb4229b3c1facc91d58840a812f",
     "dirty": false
    }
   },
@@ -388,11 +388,11 @@
     },
     "geometry_data": {
      "path": "docs/assets/pieces/r4ve-rhombicuboctahedron/geometry.json",
-     "sha256": "39723b49dc204efb0b70b70a91e26abccadb1efca56da601b5b868aad0f2c6ac"
+     "sha256": "d8f3883004b2656d03b740b2369c752a63cd9c949c9f9050e54608d731871ace"
     }
    },
    "data_code": {
-    "commit": "01c9799c13bf73e4c835627c62d9856dee043205",
+    "commit": "5332c8f92baeabb4229b3c1facc91d58840a812f",
     "dirty": false
    }
   },
@@ -424,11 +424,11 @@
     },
     "geometry_data": {
      "path": "docs/assets/pieces/tetrahedral-dual/geometry.json",
-     "sha256": "a36eda791af5e542ad17759552ad251e66c27f7c0d04f93d9a03079596214545"
+     "sha256": "e80d471b3a457d6c473a5e88e83327edb94a77523cdf20c1013af16c1fa5c035"
     }
    },
    "data_code": {
-    "commit": "01c9799c13bf73e4c835627c62d9856dee043205",
+    "commit": "5332c8f92baeabb4229b3c1facc91d58840a812f",
     "dirty": false
    }
   }
@@ -510,5 +510,5 @@
    "vtk": "9.7.1"
   }
  },
- "updated": "2026-10-03T20:17:59Z"
+ "updated": "2026-10-03T21:19:28Z"
 }
