@@ -14,7 +14,7 @@ by hand here.
 
 ## Track A: website (Claude builds, owner reviews)
 
-- [ ] **A1 Scaffold:**
+- [x] **A1 Scaffold:**
   - MkDocs Material configured as in complexplorer (`mkdocs.yml`, strict build, MathJax);
   - a `docs` dependency group;
   - a CI build job (no deploy).

@@ -1,0 +1,85 @@
+# The project site (PROGRAM.md §14, PHASE2.md track A). Built with `mkdocs build --strict`: a
+# missing nav page or a broken internal link fails the build. Figures under experiments/ are
+# served by docs/hooks/site_assets.py, and the object pages are generated from
+# catalog/pieces.yaml by docs/hooks/gallery.py, so neither is copied into docs/.
+#
+# Deployment is a release step (decision 0006): the repository goes public and the manual deploy
+# workflow runs together. Until then the site is built and reviewed locally:
+#   uv run --group docs mkdocs serve
+site_name: Polyhedra as Complex Functions
+site_description: Turning convex polyhedra into rational functions on the Riemann sphere, and into printed objects.
+site_url: https://kuvychko.github.io/polyhedra-to-rational-functions/
+repo_url: https://github.com/kuvychko/polyhedra-to-rational-functions
+repo_name: kuvychko/polyhedra-to-rational-functions
+copyright: Code MIT; text, images and meshes CC BY 4.0. Igor Kuvychko, 2026.
+
+theme:
+  name: material
+  palette:
+    - scheme: default
+      primary: indigo
+      accent: red
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - scheme: slate
+      primary: indigo
+      accent: red
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.top
+    - navigation.indexes
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+  icon:
+    repo: fontawesome/brands/github
+
+plugins:
+  - search
+
+hooks:
+  - docs/hooks/site_assets.py
+  - docs/hooks/gallery.py
+
+strict: true
+
+exclude_docs: |
+  hooks/
+
+markdown_extensions:
+  - pymdownx.highlight
+  - pymdownx.inlinehilite
+  - pymdownx.superfences
+  - pymdownx.arithmatex:
+      generic: true
+  - admonition
+  - pymdownx.details
+  - toc:
+      permalink: true
+      title: On this page
+  - attr_list
+  - md_in_html
+  - tables
+
+extra_javascript:
+  - javascripts/mathjax.js
+  - https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js
+
+nav:
+  - Home: index.md
+  - The objects:
+      - objects/index.md
+  - The question:
+      - research/index.md
+      - The recipes: research/recipes.md
+      - The exploration: research/narrative.md
+      - Experiments: research/experiments.md
+      - Decisions: decisions/README.md
+  - Printing: printing.md
+  - Reproduce: reproduce.md
+  - About: about.md

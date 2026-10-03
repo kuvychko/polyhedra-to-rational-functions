@@ -25,6 +25,9 @@ dev = [
     # Pinned to a minor, as in complexplorer: 0.16 began formatting Markdown code blocks.
     "ruff>=0.16.7,<0.17",
 ]
+docs = [
+    "mkdocs-material>=9.5,<10",
+]
 
 [build-system]
 requires = ["uv_build>=0.8,<0.13"]
