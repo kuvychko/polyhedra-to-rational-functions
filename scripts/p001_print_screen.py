@@ -116,7 +116,7 @@ def render(piece, config, out):
                 diffuse=0.85,
                 ambient=0.25,
             )
-        _camera(pl, view)
+        _camera(pl, view, fit_points=mesh.points)  # fitted: no spike leaves the frame
         path = out / "tiles" / f"{piece.id}-{style}.png"
         path.parent.mkdir(parents=True, exist_ok=True)
         pl.screenshot(str(path))
