@@ -87,8 +87,35 @@ def asset(piece, view: str) -> str | None:
     return None
 
 
+def viewer_block(piece) -> list[str]:
+    """The interactive geometry view, with the static render inside it as the fallback."""
+    data = DOCS / "assets" / "pieces" / piece.id / "geometry.json"
+    still = asset(piece, "geometry")
+    if not (data.exists() and still):
+        return []
+    alt = f"The {solid_name(piece)} with the zeros (blue) and poles (red) of its function"
+    return [
+        "## Zeros and poles",
+        "",
+        # data-src is relative to the fallback image (see javascripts/geometry-viewer.js).
+        '<div class="geometry-viewer" data-src="geometry.json" markdown>',
+        '<div class="geometry-viewer__stage" markdown>',
+        f"![{alt}]({still})",
+        "</div>",
+        '<p class="geometry-viewer__legend"><span class="dot dot--zero"></span> zeros (pits) '
+        '<span class="dot dot--pole"></span> poles (spikes). Markers grow with order. '
+        "Drag to rotate, scroll or pinch to zoom, hover or tap a marker for details.</p>",
+        "</div>",
+        "",
+    ]
+
+
 def views_block(piece) -> list[str]:
-    figures = [(asset(piece, view), caption) for view, caption in VIEWS if asset(piece, view)]
+    figures = [
+        (asset(piece, view), caption)
+        for view, caption in VIEWS
+        if asset(piece, view) and not (view == "geometry" and viewer_block(piece))
+    ]
     if not figures:
         return []
     lines = ["## Views", "", '<div class="piece-views" markdown>', ""]
@@ -155,7 +182,7 @@ def piece_page(piece, screened, exports) -> str:
         lines += [f"Classical form: `f(z) = {piece.function}`.", ""]
     if piece.notes:
         lines += ["!!! note", f"    {piece.notes}", ""]
-    lines += views_block(piece) + photos_block(piece)
+    lines += viewer_block(piece) + views_block(piece) + photos_block(piece)
     lines += [
         "## The function and the print",
         "",

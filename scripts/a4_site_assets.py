@@ -108,6 +108,57 @@ def render_plane(piece, path: Path, config) -> Path:
     return path
 
 
+KIND_OF_LABEL = {"vertex": "vertex", "face": "face", "edge": "edge"}
+
+
+def geometry_data(piece, view) -> dict:
+    """What the interactive viewer draws: the solid at circumradius 1, with zeros and poles.
+
+    Each marker carries its order and the cell it stands for, for the viewer's labels. Points
+    are unit directions; the viewer draws them just outside the unit sphere, as the static
+    render does.
+    """
+    poly = fixtures.load(piece.polyhedron)
+    d = piece.divisor()
+
+    def marker(point, order, label):
+        kinds = sorted({part.split()[0] for part in label.split("+")})
+        return {
+            "p": [round(float(x), 6) for x in point],
+            "order": abs(int(order)),
+            "cell": " and ".join(KIND_OF_LABEL.get(k, k) for k in kinds),
+        }
+
+    return {
+        "piece": piece.id,
+        "title": piece.title,
+        "solid": poly.name,
+        "view": [float(x) for x in view],
+        "vertices": [[round(float(x), 6) for x in v] for v in poly.vertices / poly.scale],
+        "faces": [list(f) for f in poly.faces],
+        "zeros": [
+            marker(p, o, lab)
+            for p, o, lab in zip(d.points, d.orders, d.labels, strict=True)
+            if o > 0
+        ],
+        "poles": [
+            marker(p, o, lab)
+            for p, o, lab in zip(d.points, d.orders, d.labels, strict=True)
+            if o < 0
+        ],
+    }
+
+
+def write_geometry_json(piece, config) -> dict:
+    view = config["views"].get(piece.polyhedron, config["views"]["default"])
+    path = OUT / piece.id / "geometry.json"
+    path.parent.mkdir(parents=True, exist_ok=True)
+    with path.open("w", encoding="utf-8", newline="\n") as fh:
+        json.dump(geometry_data(piece, view), fh, separators=(",", ":"))
+        fh.write("\n")
+    return {"path": relative(path), "sha256": sha256(path)}
+
+
 def piece_assets(piece, config) -> dict:
     view = config["views"].get(piece.polyhedron, config["views"]["default"])
     tmp = REPO_ROOT / "out" / "site-assets" / piece.id
@@ -132,12 +183,18 @@ def piece_assets(piece, config) -> dict:
     for name in VIEWS:
         jpg = to_jpeg(pngs[name], OUT / piece.id / f"{name}.jpg", config)
         files[name] = {"path": relative(jpg), "sha256": sha256(jpg)}
+    files["geometry_data"] = write_geometry_json(piece, config)
     return files
 
 
 def main() -> None:
     ap = argparse.ArgumentParser(description=__doc__.splitlines()[0])
     ap.add_argument("-p", "--piece", action="append", help="only this piece (repeatable)")
+    ap.add_argument(
+        "--data-only",
+        action="store_true",
+        help="only (re)write each piece's geometry.json for the interactive viewer",
+    )
     args = ap.parse_args()
     config = json.loads(CONFIG.read_text(encoding="utf-8"))
     pieces = catalog.load()
@@ -153,6 +210,11 @@ def main() -> None:
     code = git_state()
     for piece in pieces:
         print(f"{piece.id} ...", flush=True)
+        if args.data_only:
+            entry = manifest["pieces"].setdefault(piece.id, {"files": {}})
+            entry["files"]["geometry_data"] = write_geometry_json(piece, config)
+            entry["data_code"] = {"commit": code["commit"], "dirty": code["dirty"]}
+            continue
         manifest["pieces"][piece.id] = {
             "code": {"commit": code["commit"], "dirty": code["dirty"]},
             "files": piece_assets(piece, config),

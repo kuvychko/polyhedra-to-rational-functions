@@ -58,3 +58,81 @@
   color: var(--md-default-fg-color--light);
   font-size: 0.7rem;
 }
+
+/* Interactive geometry viewer (javascripts/geometry-viewer.js). Until the script mounts, the
+   static render inside shows; afterwards the canvas replaces it. */
+.geometry-viewer {
+  margin: 1rem 0 1.5rem;
+  max-width: 36rem;
+}
+
+.geometry-viewer__stage {
+  background: #fff;
+  border: 1px solid var(--md-default-fg-color--lightest);
+  border-radius: 0.2rem;
+  overflow: hidden;
+  position: relative;
+}
+
+.geometry-viewer__stage img {
+  display: block;
+  width: 100%;
+}
+
+/* Once the viewer mounts it hides the fallback; this beats the display rule above. */
+.geometry-viewer__stage img[hidden] {
+  display: none;
+}
+
+.geometry-viewer__stage canvas {
+  cursor: grab;
+  display: block;
+  touch-action: none;
+}
+
+.geometry-viewer__stage canvas:active {
+  cursor: grabbing;
+}
+
+.geometry-viewer__stage canvas:focus-visible {
+  outline: 2px solid var(--md-accent-fg-color);
+  outline-offset: -2px;
+}
+
+.geometry-viewer__tooltip {
+  background: rgba(20, 24, 33, 0.88);
+  border-radius: 0.2rem;
+  color: #fff;
+  font-size: 0.65rem;
+  max-width: 14rem;
+  padding: 0.3rem 0.5rem;
+  pointer-events: none;
+  position: absolute;
+}
+
+.geometry-viewer__legend {
+  color: var(--md-default-fg-color--light);
+  font-size: 0.7rem;
+  margin: 0.4rem 0 0;
+}
+
+.geometry-viewer__legend .dot {
+  border-radius: 50%;
+  display: inline-block;
+  height: 0.6rem;
+  margin: 0 0.15rem 0 0.4rem;
+  vertical-align: middle;
+  width: 0.6rem;
+}
+
+.geometry-viewer__legend .dot:first-child {
+  margin-left: 0;
+}
+
+.dot--zero {
+  background: #2a5ea6;
+}
+
+.dot--pole {
+  background: #b4312c;
+}
