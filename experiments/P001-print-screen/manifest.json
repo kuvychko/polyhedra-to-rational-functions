@@ -5,7 +5,7 @@
   "hypothesis": "Pieces whose closest zero-pole and pole-pole gaps at sea level are no smaller than those of the printed baseline pieces at 130 mm will print comparably; R4 on irregular inputs and high-degree R2 are the risks.",
   "changed_factor": "piece and size (display rule fixed per origin: baseline pieces use their own printed settings; new pieces use the order-tuned rule)"
  },
- "started": "2026-10-03T15:01:14Z",
+ "started": "2026-10-03T15:08:04Z",
  "config": {
   "id": "P001-print-screen",
   "question": "Which catalog pieces are printable at 80 and 130 mm tip to tip, and how do their finest features compare with the pieces already printed successfully?",
@@ -16,12 +16,7 @@
    130
   ],
   "depth": 0.2,
-  "new_piece_display": "order-tuned: complexplorer pole_order = max |order| of the reduced divisor, i.e. k = min(2 mu_max, 6)",
-  "resolution": {
-   "default": 300,
-   "r2-deltoidal-icositetrahedron": 400,
-   "r4ve-rhombicuboctahedron": 400
-  },
+  "new_piece_display": "order-tuned: complexplorer pole_order = max |order| of the reduced divisor, i.e. k = min(2 mu_max, 6); mesh resolution from the catalog (meshes.py)",
   "reference_pieces": [
    "dodecahedron-icosahedron-dual",
    "icosidodecahedral-star",
@@ -79,7 +74,7 @@
   "window": 450
  },
  "code": {
-  "commit": "81306b8b255e1e2a41368e8e7a0c0b5c03c46449",
+  "commit": "96ddb79aad9d294f946511a8d31cc0a9bc8b59c6",
   "dirty": false,
   "changed_paths": []
  },
@@ -342,27 +337,51 @@
    "volume_cm3": 328.7,
    "zero_pole_gap_mm": 26.0,
    "pole_pole_gap_mm": 2.4
+  },
+  {
+   "piece": "r2-irregular-separated",
+   "size_mm": 80,
+   "display": "order-tuned (k = 6)",
+   "closed": true,
+   "triangles": 89995,
+   "waist_mm": 18.7,
+   "tip_radius_mm": 41.0,
+   "volume_cm3": 77.9,
+   "zero_pole_gap_mm": 15.9,
+   "pole_pole_gap_mm": 11.0
+  },
+  {
+   "piece": "r2-irregular-separated",
+   "size_mm": 130,
+   "display": "order-tuned (k = 6)",
+   "closed": true,
+   "triangles": 89995,
+   "waist_mm": 30.4,
+   "tip_radius_mm": 66.62,
+   "volume_cm3": 334.1,
+   "zero_pole_gap_mm": 25.9,
+   "pole_pole_gap_mm": 17.9
   }
  ],
  "outputs": [
   {
    "path": "out/P001-print-screen/screen.csv",
-   "sha256": "84ec32ff8e7b66b4689c24c9966df85be77ab521046e41a5724669049145b7f9",
-   "bytes": 2057
+   "sha256": "0313ab2a2bd774927d4f126955d932a282f98040bbbd534fe70eda7376c8a34d",
+   "bytes": 2224
   },
   {
    "path": "out/P001-print-screen/screen.png",
-   "sha256": "eb110ae2bfff281fb1f251f2ff795209ff0753149098f38458412687fa124080",
-   "bytes": 645683
+   "sha256": "2c69c0e0be62588abe4b0cdf654e01bbccd6f33ddaa73d466be4f60ec502f825",
+   "bytes": 696839
   }
  ],
  "config_file": {
   "path": "configs/experiments/P001-print-screen.json",
-  "sha256": "aa2fb06216e2f72cec2d677c81e48712b26647d6cba79c9cf30f378f0b869457"
+  "sha256": "085edf493da775c267aab9c080684f92ac637b7a65d094955b53a458c43272e7"
  },
  "catalog": {
   "path": "catalog/pieces.yaml",
-  "sha256": "269b9932241d94b5c8c89db672bfeddc332966f8fed79735b60eaf9ef7f22db5"
+  "sha256": "96acb1038ff971a21138378963a1ed0ed8a2184e790882d2422045d74d734a32"
  },
  "reference": {
   "80": {
@@ -377,14 +396,14 @@
  "published": [
   {
    "path": "experiments/P001-print-screen/screen.csv",
-   "sha256": "84ec32ff8e7b66b4689c24c9966df85be77ab521046e41a5724669049145b7f9",
-   "bytes": 2057,
+   "sha256": "0313ab2a2bd774927d4f126955d932a282f98040bbbd534fe70eda7376c8a34d",
+   "bytes": 2224,
    "source": "out/P001-print-screen/screen.csv"
   },
   {
    "path": "experiments/P001-print-screen/screen.jpg",
-   "sha256": "8dbb599d49913ae1c7f515359fefe364a3811ca8c6d86004062487586b2cab83",
-   "bytes": 298846,
+   "sha256": "1564ad90f579533808357ed64e2442f57b41dc596e301f8f57b214627bea7a34",
+   "bytes": 324289,
    "source": "out/P001-print-screen/screen.png"
   }
  ]

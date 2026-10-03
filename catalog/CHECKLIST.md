@@ -15,7 +15,7 @@ edit by hand: change the catalog and regenerate.
 | Rhombicuboctahedron (R4, vertex–edge) | new | screened | yes | –/– | 130 mm | – | – | – | export 80 and 130 mm STLs (B2) |
 | Triakis Tetrahedron (R2) | new | screened | yes | –/– | 80 mm | – | – | – | export 80 and 130 mm STLs (B2) |
 | Irregular Solid (R2) | new | screened | yes | –/– | 130 mm | – | – | – | export 80 and 130 mm STLs (B2) |
-| Irregular Solid, Separated (R2) | new | candidate | – | –/– | 130 mm | – | – | – | screen at 80 and 130 mm (B1) |
+| Irregular Solid, Separated (R2) | new | screened | yes | –/– | 130 mm | – | – | – | export 80 and 130 mm STLs (B2) |
 | Hexagonal Pyramid (R2) | new | candidate | – | –/– | – | – | – | – | none (digital only) |
 
 11 of 12 pieces have an open action.
