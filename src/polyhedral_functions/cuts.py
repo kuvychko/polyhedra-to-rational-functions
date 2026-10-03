@@ -77,6 +77,25 @@ def candidate_normals(group: list[np.ndarray], sweep: int = 240) -> list[np.ndar
     return unique
 
 
+SNAP_RAD = 1e-3  # an approved normal this close to a symmetry plane is that plane
+
+
+def snap_normal(normal, group) -> tuple[np.ndarray, bool]:
+    """Snap a hand-copied normal to the exact symmetry candidate it rounds from.
+
+    Catalog normals are written to 4 decimals for readability, about 5e-5 rad off the exact
+    plane. That is enough to break the exact symmetry tests and to cut slightly off the
+    symmetry plane. Within `SNAP_RAD` of a candidate from `candidate_normals`, the candidate is
+    used. A plane from the sweep of an asymmetric piece is kept as given.
+    """
+    n = _unit(normal)
+    if len(group) > 1:
+        for c in candidate_normals(group):
+            if abs(c @ n) > np.cos(SNAP_RAD):
+                return (c if c @ n > 0 else -c), True
+    return n, False
+
+
 def halves_relation(normal: np.ndarray, group: list[np.ndarray]) -> str:
     swaps = [g for g in group if np.allclose(g @ normal, -normal, atol=1e-6)]
     if any(np.linalg.det(g) > 0 for g in swaps):

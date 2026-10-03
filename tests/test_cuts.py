@@ -55,3 +55,19 @@ def test_unapproved_cut_blocks_export(tmp_path):
     if not piece.cut_approved():
         with pytest.raises(ValueError, match="approved"):
             meshes.export_cuts(piece, (80,), tmp_path)
+
+
+def test_rounded_catalog_normals_snap_to_the_exact_symmetry_plane():
+    """A 4-decimal normal (here cos 18 deg as 0.9511) must still give identical halves."""
+    group = fixtures.load("icosahedron").symmetry_group()
+    rounded = [0.9511, -0.309, 0.0]
+    assert cuts.halves_relation(np.array(rounded) / np.linalg.norm(rounded), group) != "identical"
+    exact, snapped = cuts.snap_normal(rounded, group)
+    assert snapped and np.allclose(exact, [np.cos(np.pi / 10), -np.sin(np.pi / 10), 0.0])
+    assert cuts.halves_relation(exact, group) == "identical"
+
+
+def test_asymmetric_normals_are_not_snapped():
+    group = fixtures.load("irregular-separated").symmetry_group()
+    n, snapped = cuts.snap_normal([-0.0011, 0.9312, -0.3646], group)
+    assert not snapped and np.isclose(np.linalg.norm(n), 1.0)

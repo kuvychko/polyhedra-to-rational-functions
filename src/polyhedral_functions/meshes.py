@@ -92,9 +92,9 @@ def export_cuts(piece: Piece, sizes_mm, out_dir: Path) -> dict:
         raise ValueError(f"{piece.id}: no approved cut plane in the catalog")
     from . import fixtures
 
-    normal = np.asarray(piece.cut["normal"], dtype=float)
-    normal = normal / np.linalg.norm(normal)
-    relation = cuts.halves_relation(normal, fixtures.load(piece.polyhedron).symmetry_group())
+    group = fixtures.load(piece.polyhedron).symmetry_group()
+    normal, snapped = cuts.snap_normal(piece.cut["normal"], group)
+    relation = cuts.halves_relation(normal, group)
     mesh = closed_relief(piece)
     out_dir.mkdir(parents=True, exist_ok=True)
     entries = {}
@@ -126,6 +126,8 @@ def export_cuts(piece: Piece, sizes_mm, out_dir: Path) -> dict:
             )
         entries[str(size)] = {
             "normal": [round(float(x), 4) + 0.0 for x in piece.cut["normal"]],
+            "exact_normal": [float(x) + 0.0 for x in normal],
+            "snapped_to_symmetry_plane": snapped,
             "halves": relation,
             "files": files,
         }
