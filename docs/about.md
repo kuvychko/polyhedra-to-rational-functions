@@ -1,6 +1,6 @@
 # About
 
-A project by Igor Kuvychko. The computations and renders use
+A project by [Igor Kuvychko](https://www.linkedin.com/in/igor-kuvychko). The computations and renders use
 [complexplorer](https://github.com/kuvychko/complexplorer), a library for visualizing complex
 functions.
 
