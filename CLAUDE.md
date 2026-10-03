@@ -116,7 +116,9 @@ uv run ruff check . && uv run ruff format --check .
 ```
 
 Before any commit, run `pytest` on its own and check its exit status. Don't pipe it into
-`tail` in an `&&` chain without `set -o pipefail`, which hides failures. After any edit to
+`tail` in an `&&` chain without `set -o pipefail`, which hides failures. Separate lines in one
+shell command keep running after a failed `&&` chain, so put a commit in its own command, or use
+`set -e`. After any edit to
 `catalog/pieces.yaml`, regenerate `CHECKLIST.md`; a test enforces it.
 
 ## Style
