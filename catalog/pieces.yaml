@@ -125,7 +125,8 @@ pieces:
   reciprocal: true
   polyhedron: octahedron
   function: "E(z) / V(z)^2"
-  planned_size_mm: null
+  planned_size_mm: 80
+  size_note: "80 mm: few, broad features (owner, 2026-10-03)."
   printed: []
   stl:
     source: figures_repo@292bec4
@@ -135,7 +136,7 @@ pieces:
       130: {name: octahedral-crown-130mm.stl, sha256: f2d8dfc2c4b347be20a8cadee0b14655df1413f1f76ab24c088f4ab811a4b3c6}
   photos: []
   printables_url: null
-  notes: "Optional: completes the baseline set."
+  notes: "Completes the baseline set."
 
 # --- new (Phase 1 recipes beyond the Platonic solids) ------------------------------------
 
@@ -144,7 +145,9 @@ pieces:
   origin: new
   recipe: R2
   polyhedron: deltoidal-icositetrahedron
-  planned_size_mm: null
+  resolution: 400
+  planned_size_mm: 130
+  size_note: "Proposed from P001 (many features, within the printed reference); confirm."
   notes: "Headline beyond-Platonic piece: degree 96, orders up to 4, octahedral symmetry."
 
 - id: r4ve-rhombicuboctahedron
@@ -152,7 +155,9 @@ pieces:
   origin: new
   recipe: R4ve
   polyhedron: rhombicuboctahedron
-  planned_size_mm: null
+  resolution: 400
+  planned_size_mm: 130
+  size_note: "Proposed from P001: pole-pole gap below the printed reference, so the larger size; a test print. Confirm."
   notes: "The alternative recipe on the same symmetry: degree 48."
 
 - id: r2-triakis-tetrahedron
@@ -160,7 +165,8 @@ pieces:
   origin: new
   recipe: R2
   polyhedron: triakis-tetrahedron
-  planned_size_mm: null
+  planned_size_mm: 80
+  size_note: "Proposed: few features, like the tetrahedral dual; confirm."
   notes: "Low degree (12) with tetrahedral symmetry."
 
 - id: r2-irregular-mixed
@@ -168,8 +174,18 @@ pieces:
   origin: new
   recipe: R2
   polyhedron: irregular-mixed
-  planned_size_mm: null
-  notes: "Any convex solid: no symmetry, mixed valences and face sizes."
+  planned_size_mm: 130
+  size_note: "Proposed: two R2 spikes 2.4 mm apart at 130 mm fuse into one double spike; the larger size shows it best. Confirm."
+  notes: "Two adjacent faces 3.4 degrees from coplanar: R2 near a combinatorial transition, made visible."
+
+- id: r2-irregular-separated
+  title: Irregular Solid, Separated (R2)
+  origin: new
+  recipe: R2
+  polyhedron: irregular-separated
+  planned_size_mm: 130
+  size_note: "Proposed; confirm after P001."
+  notes: "The printable 'any convex solid': no symmetry, mixed valences and face sizes, R2 features at least 24.7 degrees apart."
 
 - id: r2-hexagonal-pyramid
   title: Hexagonal Pyramid (R2)

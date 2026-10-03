@@ -23,6 +23,7 @@ EXPECTED = {
     "hexagonal-pyramid": (7, 12, 7, {3: 6, 6: 1}, {3: 6, 6: 1}),
     "triakis-tetrahedron": (8, 18, 12, {3: 4, 6: 4}, {3: 12}),
     "irregular-mixed": (9, 18, 11, {3: 1, 4: 7, 5: 1}, {3: 9, 4: 1, 5: 1}),
+    "irregular-separated": (9, 18, 11, {3: 1, 4: 7, 5: 1}, {3: 9, 4: 1, 5: 1}),
 }
 
 
@@ -140,3 +141,17 @@ def test_irregular_mixed_is_neither_simple_nor_simplicial():
     poly = fixtures.load("irregular-mixed")
     assert len(set(poly.valences)) > 1 and len(set(poly.face_sizes)) > 1
     assert poly.face_planes[1].min() == pytest.approx(0.555, abs=1e-3)
+
+
+def test_irregular_separated_keeps_r2_features_apart():
+    """Printable irregular solid: no two R2 features within 24 degrees (irregular-mixed: 3.4)."""
+    from polyhedral_functions.recipes import R2, apply
+
+    def smallest_angle(fixture_id):
+        d = apply(R2, fixtures.load(fixture_id)).divisor
+        cos = np.clip(d.points @ d.points.T, -1, 1)
+        np.fill_diagonal(cos, -1)
+        return np.degrees(np.arccos(cos.max()))
+
+    assert smallest_angle("irregular-separated") > 24.0
+    assert smallest_angle("irregular-mixed") < 4.0

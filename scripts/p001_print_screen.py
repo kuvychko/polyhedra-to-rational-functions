@@ -11,9 +11,8 @@ and measures it at each size (tip-to-tip extent, the baseline's convention):
   sphere (``|f| = 1``, radius ``depth + (1 - depth) / 2`` of the tip radius). A short zero-pole gap
   is a spike next to a pit; a short pole-pole gap is two spikes that may fuse.
 
-Display: baseline pieces are meshed with their own printed settings (`baseline.ornaments`). New
-pieces use the order-tuned rule (decision 0005) through complexplorer's ``pole_order``, which
-caps the scale at 6.
+Meshing goes through `polyhedral_functions.meshes`, the same path the STL export uses. Baseline
+pieces keep their printed settings; new pieces use the order-tuned rule (``k = min(2 mu_max, 6)``).
 
 The reference bar is the smallest gaps among pieces already printed successfully at 130 mm
 (``reference_pieces``). The screen reports and compares; the owner chooses.
@@ -35,11 +34,10 @@ matplotlib.use("Agg")
 import matplotlib.pyplot as plt  # noqa: E402
 import numpy as np  # noqa: E402
 import pyvista as pv  # noqa: E402
-from complexplorer.export.stl import OrnamentGenerator, max_extent, scale_to_size  # noqa: E402
+from complexplorer.export.stl import max_extent, scale_to_size  # noqa: E402
 
-from polyhedral_functions import catalog  # noqa: E402
-from polyhedral_functions.baseline import meshtools, ornaments  # noqa: E402
-from polyhedral_functions.evaluation import as_function  # noqa: E402
+from polyhedral_functions import catalog, meshes  # noqa: E402
+from polyhedral_functions.baseline import meshtools  # noqa: E402
 from polyhedral_functions.manifests import (  # noqa: E402
     REPO_ROOT,
     new_manifest,
@@ -52,25 +50,6 @@ from polyhedral_functions.manifests import (  # noqa: E402
 from polyhedral_functions.rendering import DisplaySettings, _camera, phase_cmap  # noqa: E402
 
 CONFIG = REPO_ROOT / "configs" / "experiments" / "P001-print-screen.json"
-
-
-def generator(piece, config, cmap=None):
-    """The relief generator for a piece, and a description of its display settings."""
-    if piece.origin == "baseline":
-        gen, info = ornaments.generator(ornaments.BY_SLUG[piece.baseline_slug], cmap=cmap)
-        return gen, f"baseline settings ({info['scaling']}, k = {info['sharpness']})"
-    d = piece.divisor()
-    order = int(np.abs(d.orders).max())
-    resolution = config["resolution"].get(piece.id, config["resolution"]["default"])
-    gen = OrnamentGenerator(
-        as_function(d),
-        resolution=resolution,
-        cmap=cmap,
-        normalize=None,
-        pole_order=order,
-        scaling_params={"r_min": config["depth"], "r_max": 1.0},
-    )
-    return gen, f"order-tuned (k = {gen.sharpness:g})"
 
 
 def feature_gaps(d) -> dict:
@@ -89,7 +68,7 @@ def feature_gaps(d) -> dict:
 
 
 def screen_piece(piece, config, out):
-    gen, display = generator(piece, config)
+    gen, display = meshes.relief_generator(piece)
     mesh = meshtools.close_relief(gen.generate_ornament(verbose=False))
     unit_extent = max_extent(mesh)
     gaps = feature_gaps(piece.divisor())
@@ -122,8 +101,7 @@ def render(piece, config, out):
     settings = DisplaySettings(window=config["window"])
     paths = {}
     for style in ("neutral", "colored"):
-        gen, _ = generator(piece, config, cmap=phase_cmap(settings))
-        mesh = meshtools.close_relief(gen.generate_ornament(verbose=False))
+        mesh = meshes.closed_relief(piece, cmap=phase_cmap(settings))
         pl = pv.Plotter(off_screen=True, window_size=(config["window"], config["window"]))
         pl.set_background("white")
         if style == "neutral":

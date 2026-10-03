@@ -1,0 +1,45 @@
+{
+ "id": "irregular-separated",
+ "name": "irregular-separated",
+ "construction": "polyhedral_functions.fixtures.irregular_separated",
+ "description": "An asymmetric solid chosen for printing: mixed valences (3, 4, 5) and face sizes (3, 4, 5), with no two R2 features closer than 24.7 degrees. It replaces irregular-mixed as the printable \"any convex solid\". irregular-mixed has two adjacent faces 3.4 degrees from coplanar, whose R2 poles fuse into one double spike. The points come from a seeded search (`IRREGULAR_SEPARATED_POINTS`).",
+ "summary": {
+  "V": 9,
+  "E": 18,
+  "F": 11,
+  "valences": {
+   "3": 1,
+   "4": 7,
+   "5": 1
+  },
+  "face_sizes": {
+   "3": 9,
+   "4": 1,
+   "5": 1
+  }
+ },
+ "vertices": [
+  [-0.84, 0.51, -0.69],
+  [-0.72, -0.22, 0.87],
+  [-0.32, -0.92, -0.69],
+  [-0.23, -0.74, 0.87],
+  [-0.22, 0.88, -0.69],
+  [-0.19, 0.75, 0.87],
+  [0.35, -0.84, -0.69],
+  [0.61, -0.14, 0.87],
+  [0.79, 0.37, -0.69]
+ ],
+ "faces": [
+  [5, 0, 1],
+  [1, 0, 2],
+  [6, 2, 0, 4, 8],
+  [4, 0, 5],
+  [3, 1, 2],
+  [5, 1, 3, 7],
+  [3, 2, 6],
+  [7, 3, 6],
+  [8, 4, 5],
+  [8, 5, 7],
+  [7, 6, 8]
+ ]
+}

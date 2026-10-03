@@ -199,6 +199,33 @@ def irregular_mixed() -> Polyhedron:
     return Polyhedron.from_points(_sorted_points(pts), "irregular-mixed")
 
 
+# Chosen by scripts/search_irregular_separated.py (seed 20261003, 4000 trials): the frustum-like
+# point set whose smallest angle between any two R2 features is largest (24.7 degrees).
+IRREGULAR_SEPARATED_POINTS = [
+    (0.79, 0.37, -0.69),
+    (-0.22, 0.88, -0.69),
+    (-0.84, 0.51, -0.69),
+    (-0.32, -0.92, -0.69),
+    (0.35, -0.84, -0.69),
+    (-0.19, 0.75, 0.87),
+    (-0.72, -0.22, 0.87),
+    (-0.23, -0.74, 0.87),
+    (0.61, -0.14, 0.87),
+]
+
+
+def irregular_separated() -> Polyhedron:
+    """An asymmetric solid chosen for printing: mixed valences (3, 4, 5) and face sizes (3, 4, 5),
+    with no two R2 features closer than 24.7 degrees.
+
+    It replaces irregular-mixed as the printable "any convex solid". irregular-mixed has two
+    adjacent faces 3.4 degrees from coplanar, whose R2 poles fuse into one double spike. The
+    points come from a seeded search (`IRREGULAR_SEPARATED_POINTS`).
+    """
+    pts = np.array(IRREGULAR_SEPARATED_POINTS, dtype=float)
+    return Polyhedron.from_points(_sorted_points(pts), "irregular-separated")
+
+
 CONSTRUCTIONS: dict[str, Callable[[], Polyhedron]] = {
     "tetrahedron": tetrahedron,
     "cube": cube,
@@ -211,6 +238,7 @@ CONSTRUCTIONS: dict[str, Callable[[], Polyhedron]] = {
     "hexagonal-pyramid": hexagonal_pyramid,
     "triakis-tetrahedron": triakis_tetrahedron,
     "irregular-mixed": irregular_mixed,
+    "irregular-separated": irregular_separated,
 }
 
 

@@ -18,6 +18,7 @@ checks that every stored file still matches its construction and passes the geom
 | `hexagonal-pyramid` | 7 | 12 | 7 | apex at the north pole, base at `z = −1/3` | circumradius 1 |
 | `triakis-tetrahedron` | 8 | 18 | 12 | polar dual of the truncated tetrahedron (canonical) | midradius 1 |
 | `irregular-mixed` | 9 | 18 | 11 | hull of an irregular pentagon below an irregular quadrilateral | smallest face distance 0.555 |
+| `irregular-separated` | 9 | 18 | 11 | seeded search for a printable irregular solid: R2 features at least 24.7° apart | smallest face distance ≥ 0.4 |
 
 All are centred at the origin except the two irregular solids and the pyramid, whose origin is
 just an interior point (for the pyramid, its circumcentre). Each member was chosen for what it

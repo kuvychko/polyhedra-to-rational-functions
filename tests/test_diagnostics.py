@@ -42,6 +42,7 @@ GROUP_ORDERS = {
     "hexagonal-pyramid": (12, 6),
     "triakis-tetrahedron": (24, 12),
     "irregular-mixed": (1, 1),
+    "irregular-separated": (1, 1),
 }
 
 

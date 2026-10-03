@@ -5,8 +5,7 @@
  "changed_factor": "piece and size (display rule fixed per origin: baseline pieces use their own printed settings; new pieces use the order-tuned rule)",
  "sizes_mm": [80, 130],
  "depth": 0.2,
- "new_piece_display": "order-tuned: complexplorer pole_order = max |order| of the reduced divisor, i.e. k = min(2 mu_max, 6)",
- "resolution": {"default": 300, "r2-deltoidal-icositetrahedron": 400, "r4ve-rhombicuboctahedron": 400},
+ "new_piece_display": "order-tuned: complexplorer pole_order = max |order| of the reduced divisor, i.e. k = min(2 mu_max, 6); mesh resolution from the catalog (meshes.py)",
  "reference_pieces": ["dodecahedron-icosahedron-dual", "icosidodecahedral-star", "icosahedral-crown", "cube-octahedron-dual"],
  "reference_size_mm": 130,
  "views": {
