@@ -13,9 +13,10 @@ JPEGs):
 5. ``neutral``: the printed shape, uncolored.
 
 The reliefs come from `meshes.closed_relief`, the same path as the STLs, so the picture is the
-object. ``docs/assets/pieces/manifest.json`` records the configuration, the code commit and every
-file's hash. Expensive generation is kept out of the site build (``PROGRAM.md`` §14): the site
-only reads these files.
+object. Every view uses the fitted orthographic framing (``rendering._camera``), so no spike
+leaves the frame. ``docs/assets/pieces/manifest.json`` records the configuration, the code
+commit and every file's hash. Expensive generation is kept out of the site build
+(``PROGRAM.md`` §14): the site only reads these files.
 """
 
 from __future__ import annotations
@@ -83,7 +84,7 @@ def render_printed_relief(piece, path: Path, view, config, colored: bool) -> Pat
         )
     else:
         pl.add_mesh(mesh, color="#e8e4da", smooth_shading=True, specular=0.3, diffuse=0.85)
-    _camera(pl, view)
+    _camera(pl, view, fit_points=mesh.points)
     pl.screenshot(str(path))
     pl.close()
     return path
@@ -115,6 +116,7 @@ def piece_assets(piece, config) -> dict:
         window=config["window"],
         relief_resolution=config["sphere_resolution"],
         phase_sectors=config["phase_sectors"],
+        framing="fit",
     )
     d = piece.divisor()
     pngs = {

@@ -53,6 +53,7 @@ class DisplaySettings:
     map_resolution: int = 180
     map_limit: float = 0.75
     window: int = 600
+    framing: str = "zoom"  # "zoom" (experiment figures) or "fit" (site views; see _camera)
 
     def config(self) -> dict:
         return asdict(self)
@@ -73,14 +74,34 @@ def phase_cmap(settings: DisplaySettings):
     return cp.OklabPhase(phase_sectors=settings.phase_sectors, auto_scale_r=True)
 
 
-def _camera(plotter: pv.Plotter, view) -> None:
+FIT_MARGIN = 1.08
+
+
+def _camera(plotter: pv.Plotter, view, fit_points=None) -> None:
+    """Aim at the origin from ``view``.
+
+    Without ``fit_points``: a perspective camera, fitted to the bounding box and zoomed by 1.2.
+    This is the framing of the published experiment figures, kept so reruns reproduce them.
+
+    With ``fit_points``: an orthographic camera sized to the points' true silhouette (their
+    largest distance from the view axis) plus `FIT_MARGIN`. No tip can leave the frame, whatever
+    the view direction. Spikes pointing along the view axis do leave it under the zoomed framing,
+    as on the cube-octahedron dual seen down a 3-fold axis.
+    """
     direction = np.asarray(view, dtype=float)
     direction = direction / np.linalg.norm(direction)
     plotter.camera.position = tuple(direction * 4.0)
     plotter.camera.focal_point = (0.0, 0.0, 0.0)
     plotter.camera.up = (0.0, 0.0, 1.0) if abs(direction[2]) < 0.99 else (0.0, 1.0, 0.0)
+    if fit_points is None:
+        plotter.reset_camera()
+        plotter.camera.zoom(1.2)
+        return
+    pts = np.asarray(fit_points, dtype=float).reshape(-1, 3)
+    radial = pts - np.outer(pts @ direction, direction)
+    plotter.enable_parallel_projection()
     plotter.reset_camera()
-    plotter.camera.zoom(1.2)
+    plotter.camera.parallel_scale = float(np.linalg.norm(radial, axis=1).max()) * FIT_MARGIN
 
 
 def render_geometry(
@@ -107,7 +128,10 @@ def render_geometry(
             color=ZERO_COLOR if order > 0 else POLE_COLOR,
             smooth_shading=True,
         )
-    _camera(pl, view)
+    fit = None
+    if settings.framing == "fit":
+        fit = np.vstack([mesh.points, 1.11 * pv.Sphere(radius=1.0).points])
+    _camera(pl, view, fit_points=fit)
     path.parent.mkdir(parents=True, exist_ok=True)
     pl.screenshot(str(path))
     pl.close()
@@ -156,7 +180,7 @@ def render_relief(
             diffuse=0.85,
             ambient=0.25,
         )
-    _camera(pl, view)
+    _camera(pl, view, fit_points=mesh.points if settings.framing == "fit" else None)
     path.parent.mkdir(parents=True, exist_ok=True)
     pl.screenshot(str(path))
     pl.close()

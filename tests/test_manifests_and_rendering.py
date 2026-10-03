@@ -3,6 +3,7 @@
 import json
 
 import numpy as np
+import pytest
 
 from polyhedral_functions import fixtures
 from polyhedral_functions.evaluation import log_modulus_on_sphere
@@ -67,3 +68,22 @@ def test_order_tuned_display_sets_tip_exponent_one_half():
     tuned = DisplaySettings().tuned_for(d)
     assert tuned.sharpness == 8.0  # max order 4
     assert DisplaySettings().sharpness == 4.0  # the controlled view is unchanged
+
+
+def test_fit_framing_contains_the_silhouette():
+    """Site views use an orthographic camera sized to the silhouette, so no tip is cropped."""
+    import pyvista as pv
+
+    from polyhedral_functions.rendering import FIT_MARGIN, _camera
+
+    pts = np.array([[1.0, 1.0, 1.0], [-2.0, 0.5, 0.0], [0.0, 0.0, -1.0]])
+    view = np.array([1.0, 1.0, 1.0]) / np.sqrt(3)
+    pl = pv.Plotter(off_screen=True)
+    pl.add_mesh(pv.PolyData(pts))
+    _camera(pl, view, fit_points=pts)
+    radial = pts - np.outer(pts @ view, view)
+    assert pl.camera.parallel_projection
+    assert pl.camera.parallel_scale == pytest.approx(
+        np.linalg.norm(radial, axis=1).max() * FIT_MARGIN
+    )
+    pl.close()
