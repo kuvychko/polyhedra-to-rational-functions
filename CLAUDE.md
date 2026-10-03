@@ -110,6 +110,7 @@ uv run python scripts/catalog_status.py         # validate catalog/pieces.yaml, 
 uv run python scripts/p001_print_screen.py      # printability screen of catalog pieces (80/130 mm)
 uv run python scripts/p002_cut_proposals.py     # cut-plane proposals for owner approval
 uv run python scripts/b2_export_stls.py         # whole + approved cut STLs -> out/stls/, hashes -> catalog/exports.json
+uv run python scripts/a4_site_assets.py         # precompute each piece's five views -> docs/assets/pieces/ (commit code first)
 uv run --group docs mkdocs serve                # the site (strict build in CI); object pages come from the catalog
 uv run ruff check . && uv run ruff format --check .
 ```

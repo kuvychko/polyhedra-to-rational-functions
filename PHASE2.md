@@ -25,13 +25,13 @@ by hand here.
   - a recipe page with the worked example;
   - E001–E004 summaries with their figures;
   - limitations, open questions, "Reproduce".
-- [ ] **A3 Exhibition path:**
+- [x] **A3 Exhibition path:**
   - a home page with a strong photo and two entry points ("the objects", "the question");
   - the gallery and per-piece pages generated from the catalog: recipe, function, coordinated
     views, photo, print status, Printables link;
   - one complete worked example: solid → zeros and poles → plane → sphere → relief → print →
     photo.
-- [ ] **A4 Assets:** a script precomputes the site's renders (matched cameras and palettes,
+- [x] **A4 Assets:** a script precomputes the site's renders (matched cameras and palettes,
   order-tuned display labelled as tuned), separate from the site build. The primary animation
   (sphere → relief → neutral) is optional, with a static alternative.
 - [ ] **A5 Validation:**

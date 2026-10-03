@@ -1,0 +1,418 @@
+{
+ "pieces": {
+  "cube-octahedron-dual": {
+   "code": {
+    "commit": "bdad8c9395372f02ffec25af958ac5e729c590a0",
+    "dirty": false
+   },
+   "files": {
+    "geometry": {
+     "path": "docs/assets/pieces/cube-octahedron-dual/geometry.jpg",
+     "sha256": "81d3d2f8c1242de20224d4e58775a7212e7df2c7e602a5075a5dc5d341640071"
+    },
+    "plane": {
+     "path": "docs/assets/pieces/cube-octahedron-dual/plane.jpg",
+     "sha256": "625f6bb979cc7fc84c2052df694c0f8dd249a6ab05d837018f6e802fea5e3654"
+    },
+    "sphere": {
+     "path": "docs/assets/pieces/cube-octahedron-dual/sphere.jpg",
+     "sha256": "1b5ca21c58d3a5b1d211d1d5f33e3028eb405544526510db780ccfd570323108"
+    },
+    "relief": {
+     "path": "docs/assets/pieces/cube-octahedron-dual/relief.jpg",
+     "sha256": "93b01113273a3717e63d5a1edd70e7ec76480a4fb3b0e714d3a0756cade4b69c"
+    },
+    "neutral": {
+     "path": "docs/assets/pieces/cube-octahedron-dual/neutral.jpg",
+     "sha256": "1c4921bd5e9456967d21d86e993b7a06692d8eba3d939e2f4d35f54e82917ddf"
+    }
+   }
+  },
+  "dodecahedron-icosahedron-dual": {
+   "code": {
+    "commit": "bdad8c9395372f02ffec25af958ac5e729c590a0",
+    "dirty": false
+   },
+   "files": {
+    "geometry": {
+     "path": "docs/assets/pieces/dodecahedron-icosahedron-dual/geometry.jpg",
+     "sha256": "f8d48713f21a4caa53b83d8e30691a8ac5dfdd6a25e3ec1b4987e6845965286e"
+    },
+    "plane": {
+     "path": "docs/assets/pieces/dodecahedron-icosahedron-dual/plane.jpg",
+     "sha256": "9ce47b4d8f4316c1f6adfe51f22925a87c592ef5ee0d2d8bca74c7990c680d27"
+    },
+    "sphere": {
+     "path": "docs/assets/pieces/dodecahedron-icosahedron-dual/sphere.jpg",
+     "sha256": "9c68bff54462fd5f5132b2a3d36ec173d4fd4a7fd60b2923717b73660060d81a"
+    },
+    "relief": {
+     "path": "docs/assets/pieces/dodecahedron-icosahedron-dual/relief.jpg",
+     "sha256": "f8e5e565d446a220aa16364b1f8fa69cc547eb7aacfd64cc2676ea7f53b9fecf"
+    },
+    "neutral": {
+     "path": "docs/assets/pieces/dodecahedron-icosahedron-dual/neutral.jpg",
+     "sha256": "69dacf2fcd5d726666b7b89244e834b3dee5d268594d6ca5cf85e07509699262"
+    }
+   }
+  },
+  "icosahedral-crown": {
+   "code": {
+    "commit": "bdad8c9395372f02ffec25af958ac5e729c590a0",
+    "dirty": false
+   },
+   "files": {
+    "geometry": {
+     "path": "docs/assets/pieces/icosahedral-crown/geometry.jpg",
+     "sha256": "2a60f9a1afc2c23febd2ed876de90544a80fafbc11eb2d8373adb309e2476093"
+    },
+    "plane": {
+     "path": "docs/assets/pieces/icosahedral-crown/plane.jpg",
+     "sha256": "4f30ee326456810cac24b1f493cfa82e1fef577262f8df383c847aa65ca21e7a"
+    },
+    "sphere": {
+     "path": "docs/assets/pieces/icosahedral-crown/sphere.jpg",
+     "sha256": "f425bbceb0a826e9a574dfa2f23d9e114fdb5b316445b9a2fd5404f45223732e"
+    },
+    "relief": {
+     "path": "docs/assets/pieces/icosahedral-crown/relief.jpg",
+     "sha256": "dac1bbe04dea3b8b34bea40af76923e16ee3db55a274cb1d0f0f3fc06e9b19e7"
+    },
+    "neutral": {
+     "path": "docs/assets/pieces/icosahedral-crown/neutral.jpg",
+     "sha256": "919d2adef99a22946be7fecd77fb68ff6f16c84a786aec7c2c88ecbb091c2dc1"
+    }
+   }
+  },
+  "icosidodecahedral-star": {
+   "code": {
+    "commit": "bdad8c9395372f02ffec25af958ac5e729c590a0",
+    "dirty": false
+   },
+   "files": {
+    "geometry": {
+     "path": "docs/assets/pieces/icosidodecahedral-star/geometry.jpg",
+     "sha256": "7ac058cc7fbdfbc22e92a94ab272c7e73eaa2277a1bb3ba11dd6251aa4fd3afc"
+    },
+    "plane": {
+     "path": "docs/assets/pieces/icosidodecahedral-star/plane.jpg",
+     "sha256": "5ef64821c43cb28b9bdfcae3c268623e2e570a9eabaf9966f5d7020759c75aa5"
+    },
+    "sphere": {
+     "path": "docs/assets/pieces/icosidodecahedral-star/sphere.jpg",
+     "sha256": "87838cf21cbc142b38e4b2601d727b65b2a0bc33068020d964a264a4cc2f0c35"
+    },
+    "relief": {
+     "path": "docs/assets/pieces/icosidodecahedral-star/relief.jpg",
+     "sha256": "6dbb227bdd9e94b2b3be509b0e910a5c35a6afac47487e427c4ef4e5b7e0352f"
+    },
+    "neutral": {
+     "path": "docs/assets/pieces/icosidodecahedral-star/neutral.jpg",
+     "sha256": "34d205a2a49c8f72ed175945b38884dcd7a28ec2b220b43d34245cff9efe5bcc"
+    }
+   }
+  },
+  "octahedral-crown": {
+   "code": {
+    "commit": "bdad8c9395372f02ffec25af958ac5e729c590a0",
+    "dirty": false
+   },
+   "files": {
+    "geometry": {
+     "path": "docs/assets/pieces/octahedral-crown/geometry.jpg",
+     "sha256": "210dd27850fe804cb5cd68e966b15a4399d6b30c28d9ef99be55c70cdebda902"
+    },
+    "plane": {
+     "path": "docs/assets/pieces/octahedral-crown/plane.jpg",
+     "sha256": "6c921521de90d0c868dfaf1d09a9bdfdd04ed6926bd5ced61c9ceca94f739671"
+    },
+    "sphere": {
+     "path": "docs/assets/pieces/octahedral-crown/sphere.jpg",
+     "sha256": "d7114d42a27a1511a49e655d42a70a120f667ff5379c3f07931f45d08c1689a2"
+    },
+    "relief": {
+     "path": "docs/assets/pieces/octahedral-crown/relief.jpg",
+     "sha256": "09472523264a2773d58ad77437908eeff9085d8125c257c77f47006a2fb310fc"
+    },
+    "neutral": {
+     "path": "docs/assets/pieces/octahedral-crown/neutral.jpg",
+     "sha256": "7cbc1bb3dff9a9a04be513a07cbf4feb1b1f2e57df4ca284101cd1848f762756"
+    }
+   }
+  },
+  "r2-deltoidal-icositetrahedron": {
+   "code": {
+    "commit": "bdad8c9395372f02ffec25af958ac5e729c590a0",
+    "dirty": false
+   },
+   "files": {
+    "geometry": {
+     "path": "docs/assets/pieces/r2-deltoidal-icositetrahedron/geometry.jpg",
+     "sha256": "2b209f6672212c4d0539688488b2b283f487b2cd5d4a1e3dae3dd15fba7298b6"
+    },
+    "plane": {
+     "path": "docs/assets/pieces/r2-deltoidal-icositetrahedron/plane.jpg",
+     "sha256": "8f78480460d1cd3dcd4d2279fb371c301a7846ca5f34ea19de6feea85b9d9e10"
+    },
+    "sphere": {
+     "path": "docs/assets/pieces/r2-deltoidal-icositetrahedron/sphere.jpg",
+     "sha256": "33033d34a09f891b0428389a149fc32f43abef37e356049842858630d1c8b7ff"
+    },
+    "relief": {
+     "path": "docs/assets/pieces/r2-deltoidal-icositetrahedron/relief.jpg",
+     "sha256": "ce7ab67ed1b47b0766338ee83a22fa3f3d6b52964a895a5adf76ec5652daa8bf"
+    },
+    "neutral": {
+     "path": "docs/assets/pieces/r2-deltoidal-icositetrahedron/neutral.jpg",
+     "sha256": "ffa31941be2f74ffb209b6d462f4cafe90e97ec5f40afa5c46ac85939f2f6c07"
+    }
+   }
+  },
+  "r2-hexagonal-pyramid": {
+   "code": {
+    "commit": "bdad8c9395372f02ffec25af958ac5e729c590a0",
+    "dirty": false
+   },
+   "files": {
+    "geometry": {
+     "path": "docs/assets/pieces/r2-hexagonal-pyramid/geometry.jpg",
+     "sha256": "adaca9fcf8465817cdf67806abcd58f85e7341e8746ed3c2a9fffd48c497a781"
+    },
+    "plane": {
+     "path": "docs/assets/pieces/r2-hexagonal-pyramid/plane.jpg",
+     "sha256": "7efb30ac2a03f675cbcbbe7037f2ff522f0b12aa70540db29b8f9b4b5bf2a8c2"
+    },
+    "sphere": {
+     "path": "docs/assets/pieces/r2-hexagonal-pyramid/sphere.jpg",
+     "sha256": "cc8ff80e8b323b4f4c099ad811594217971f0b6b8f2dca7143343720394df8a4"
+    },
+    "relief": {
+     "path": "docs/assets/pieces/r2-hexagonal-pyramid/relief.jpg",
+     "sha256": "ecb365ceea476f8c4dbf52d20bcd56dbc94dc38088d42e126e4e9c299ea4240c"
+    },
+    "neutral": {
+     "path": "docs/assets/pieces/r2-hexagonal-pyramid/neutral.jpg",
+     "sha256": "987ba7cdca587cddb43fce3f8f816f81bf23e48db4f96b8269071595d37aed0c"
+    }
+   }
+  },
+  "r2-irregular-mixed": {
+   "code": {
+    "commit": "bdad8c9395372f02ffec25af958ac5e729c590a0",
+    "dirty": false
+   },
+   "files": {
+    "geometry": {
+     "path": "docs/assets/pieces/r2-irregular-mixed/geometry.jpg",
+     "sha256": "6bcf542d064b981edd7fa9cc91a1299a382ebae58711886dc95b0ff37311bd2e"
+    },
+    "plane": {
+     "path": "docs/assets/pieces/r2-irregular-mixed/plane.jpg",
+     "sha256": "241571466cc3f35b8c1e4f00e668e942fb120bf5fd16382793d8ecbfcd43e723"
+    },
+    "sphere": {
+     "path": "docs/assets/pieces/r2-irregular-mixed/sphere.jpg",
+     "sha256": "1d4c10762f554d66e97f9ab78adb381e2e3af92c0c3c9fc4125d1a363d9bf9a9"
+    },
+    "relief": {
+     "path": "docs/assets/pieces/r2-irregular-mixed/relief.jpg",
+     "sha256": "915bd0578c5d1f1109f077493f18e33856d9e4edf791fd3e62eef3e76d3a9775"
+    },
+    "neutral": {
+     "path": "docs/assets/pieces/r2-irregular-mixed/neutral.jpg",
+     "sha256": "35b435b67010f2e15a18bef52f39fd864258837d197d77c222e257fe24ca3e98"
+    }
+   }
+  },
+  "r2-irregular-separated": {
+   "code": {
+    "commit": "bdad8c9395372f02ffec25af958ac5e729c590a0",
+    "dirty": false
+   },
+   "files": {
+    "geometry": {
+     "path": "docs/assets/pieces/r2-irregular-separated/geometry.jpg",
+     "sha256": "15669e80d7d39bc7b29b6b02ede5835dec49aa0c91b13eade109d41816a11e41"
+    },
+    "plane": {
+     "path": "docs/assets/pieces/r2-irregular-separated/plane.jpg",
+     "sha256": "0a7d63c65a3c3b4f430b9cedc4601b7d3191d98023f517ebf5ebc953f4ef5393"
+    },
+    "sphere": {
+     "path": "docs/assets/pieces/r2-irregular-separated/sphere.jpg",
+     "sha256": "83e86ae7a60aaf7efb332f4e86b20949cee738464bb92d1af0fa9c7dacb3e681"
+    },
+    "relief": {
+     "path": "docs/assets/pieces/r2-irregular-separated/relief.jpg",
+     "sha256": "7b4d36c9a1771d21185a68d02777a762c07e00a2a58b9f6f83cb94eba02e01c8"
+    },
+    "neutral": {
+     "path": "docs/assets/pieces/r2-irregular-separated/neutral.jpg",
+     "sha256": "e7c327154c86d9fff02d4dd540b5015ccb70f46cdc8e52a550160c29f7a04010"
+    }
+   }
+  },
+  "r2-triakis-tetrahedron": {
+   "code": {
+    "commit": "bdad8c9395372f02ffec25af958ac5e729c590a0",
+    "dirty": false
+   },
+   "files": {
+    "geometry": {
+     "path": "docs/assets/pieces/r2-triakis-tetrahedron/geometry.jpg",
+     "sha256": "53361c6498663a30ce90f31767014c4fc3bdb4ca3f525f82e88929dcc30ba7bb"
+    },
+    "plane": {
+     "path": "docs/assets/pieces/r2-triakis-tetrahedron/plane.jpg",
+     "sha256": "a64bd85f5e858b3ea75fa12f815bd71786f64fce0a43e9fd1af93c5a3c686793"
+    },
+    "sphere": {
+     "path": "docs/assets/pieces/r2-triakis-tetrahedron/sphere.jpg",
+     "sha256": "df6617694a88bd9f6e6a749a183ede5f9643693c0e75db01212806cc15824768"
+    },
+    "relief": {
+     "path": "docs/assets/pieces/r2-triakis-tetrahedron/relief.jpg",
+     "sha256": "438877649d777d5264127a0c8d90ee61a199b33996198e85e81880e747faeaa6"
+    },
+    "neutral": {
+     "path": "docs/assets/pieces/r2-triakis-tetrahedron/neutral.jpg",
+     "sha256": "b686999216e9f5fd58b839e2142d3aa9ee14db451d5ff0e22abd614ad9bb5091"
+    }
+   }
+  },
+  "r4ve-rhombicuboctahedron": {
+   "code": {
+    "commit": "bdad8c9395372f02ffec25af958ac5e729c590a0",
+    "dirty": false
+   },
+   "files": {
+    "geometry": {
+     "path": "docs/assets/pieces/r4ve-rhombicuboctahedron/geometry.jpg",
+     "sha256": "ea347abe1332eca3fdde677b48b2a7e6b1b6e50a0dd89cc4f568935da4120266"
+    },
+    "plane": {
+     "path": "docs/assets/pieces/r4ve-rhombicuboctahedron/plane.jpg",
+     "sha256": "d32c08c46303a56829d047958c92fdfaffc05ef1c903612a738855ba11f42472"
+    },
+    "sphere": {
+     "path": "docs/assets/pieces/r4ve-rhombicuboctahedron/sphere.jpg",
+     "sha256": "6a9b89ea59903642c3e2408281611a896e5ab0461ea77497fc25f24f340743e6"
+    },
+    "relief": {
+     "path": "docs/assets/pieces/r4ve-rhombicuboctahedron/relief.jpg",
+     "sha256": "2d04ac9501781ddd6b3c3038cea9cc203bfca8b47d61462acbe9fb2a56a931bd"
+    },
+    "neutral": {
+     "path": "docs/assets/pieces/r4ve-rhombicuboctahedron/neutral.jpg",
+     "sha256": "66dcdf76c91c085362f44eb4cbb54a2b027e0dc336dca5dc23152e7de32c8aaf"
+    }
+   }
+  },
+  "tetrahedral-dual": {
+   "code": {
+    "commit": "bdad8c9395372f02ffec25af958ac5e729c590a0",
+    "dirty": false
+   },
+   "files": {
+    "geometry": {
+     "path": "docs/assets/pieces/tetrahedral-dual/geometry.jpg",
+     "sha256": "84cf182e1e10071577b7628bd17fcc9087faaab1935750d22180db3ae97d9557"
+    },
+    "plane": {
+     "path": "docs/assets/pieces/tetrahedral-dual/plane.jpg",
+     "sha256": "6f3984b0593278df1e1102041a7168ee0588d0bfc34777f032835ce246baf204"
+    },
+    "sphere": {
+     "path": "docs/assets/pieces/tetrahedral-dual/sphere.jpg",
+     "sha256": "b5df105363cdca6d73dbe82ac6d5e8ab97887db82aff9dd8b5a76efa60a48143"
+    },
+    "relief": {
+     "path": "docs/assets/pieces/tetrahedral-dual/relief.jpg",
+     "sha256": "2dbcc370db74bbcad6ca3adefb8231948e6754d0635011cf10e349eb77f3d3fc"
+    },
+    "neutral": {
+     "path": "docs/assets/pieces/tetrahedral-dual/neutral.jpg",
+     "sha256": "43b23b15dc5895d4b256b029b36c232df1b0cfaeace542844d078f25536ea9b9"
+    }
+   }
+  }
+ },
+ "config": {
+  "id": "site-piece-assets",
+  "question": "Coordinated views of every catalog piece for its object page (PROGRAM.md 14): geometry with zeros and poles, plane portrait, colored sphere, colored relief, neutral relief.",
+  "changed_factor": "none (presentation assets)",
+  "relief": "the printed shape: meshes.closed_relief (baseline settings, or order-tuned for new pieces)",
+  "phase_sectors": 12,
+  "plane_half_width": 2.5,
+  "plane_resolution": 500,
+  "sphere_resolution": 160,
+  "window": 700,
+  "image_width": 640,
+  "jpeg_quality": 86,
+  "views": {
+   "default": [
+    2.2,
+    2.2,
+    1.6
+   ],
+   "tetrahedron": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "octahedron": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "cube": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "rhombicuboctahedron": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "deltoidal-icositetrahedron": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "triakis-tetrahedron": [
+    1.0,
+    1.0,
+    1.0
+   ],
+   "icosahedron": [
+    0.6,
+    0.0,
+    2.4
+   ],
+   "dodecahedron": [
+    0.6,
+    0.0,
+    2.4
+   ]
+  }
+ },
+ "config_file": {
+  "path": "configs/site/piece-assets.json",
+  "sha256": "a8184f9505a763b81d8b0d4f97f26d36dc2930453e03585fb0433c65c649e28f"
+ },
+ "environment": {
+  "python": "3.13.5",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "packages": {
+   "polyhedra-to-rational-functions": "0.0.1",
+   "complexplorer": "3.1.0",
+   "numpy": "2.5.3",
+   "scipy": "1.18.1",
+   "matplotlib": "3.11.2",
+   "pyvista": "0.49.0",
+   "vtk": "9.7.1"
+  }
+ },
+ "updated": "2026-10-03T17:20:07Z"
+}
