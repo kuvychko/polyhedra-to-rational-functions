@@ -59,3 +59,5 @@ jobs:
       - run: uv sync --locked --group docs
       # Builds only. Deployment is a release step (decision 0006), not part of CI.
       - run: uv run --no-sync mkdocs build --strict
+      # Subpath-safe links, alt text and local images in the built HTML (scripts/a5_check_site.py).
+      - run: uv run --no-sync python scripts/a5_check_site.py

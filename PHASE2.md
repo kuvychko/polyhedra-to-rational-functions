@@ -35,11 +35,16 @@ by hand here.
   order-tuned display labelled as tuned), separate from the site build. The primary animation
   (sphere → relief → neutral) is optional, with a static alternative.
 - [ ] **A5 Validation:**
-  - strict build with no broken links;
-  - links correct under the project subpath;
-  - mobile layout, alt text, reduced motion;
-  - every claim checked against the experiment records;
-  - owner read-through.
+  - [x] strict build with no broken links or anchors (anchors are now validated too);
+  - [x] subpath-safe links, alt text and local images: `scripts/a5_check_site.py`, run in CI;
+  - [x] claims checked against the experiment records: `tests/test_site_claims.py`. It caught
+    two wrong figures, now corrected;
+  - [x] reduced motion: the site has no animations; the optional A4 animation stays out until it
+    has a static alternative;
+  - [ ] phone-width layout seen in a browser. The automated browser could not emulate a phone
+    viewport. The layout is responsive by construction (Material, auto-fill grids, scrolling
+    tables), but nobody has looked at it yet;
+  - [ ] owner read-through of every page.
 - [ ] **A6 Release workflow:** a manual-dispatch deploy (`mkdocs gh-deploy`), not run until
   release.
 
