@@ -3,7 +3,7 @@
   "cube-octahedron-dual": {
    "display": "baseline settings (logarithmic, k = 6.0)",
    "code": {
-    "commit": "6b53c8ab276659532453af7de85d960e40554f09",
+    "commit": "02b665058ed03fc2c3080037b242a2f4dd14c698",
     "dirty": false
    },
    "sizes": {
@@ -151,7 +151,7 @@
   "dodecahedron-icosahedron-dual": {
    "display": "baseline settings (logarithmic, k = 6.0)",
    "code": {
-    "commit": "6b53c8ab276659532453af7de85d960e40554f09",
+    "commit": "02b665058ed03fc2c3080037b242a2f4dd14c698",
     "dirty": false
    },
    "sizes": {
@@ -269,28 +269,28 @@
       "spike_order": 3,
       "bisected": true,
       "tip_radius_mm": 64.47,
-      "distance_from_tip_mm": 9.0,
-      "side_wall_mm": 1.35,
+      "distance_from_tip_mm": 9.5,
+      "side_wall_mm": 1.55,
       "diameter_mm": 1.5,
-      "length_mm": 8.2,
+      "length_mm": 8.6,
       "centre_mm": [
-       10.405,
-       32.024,
-       -44.077
+       10.311,
+       31.735,
+       -43.68
       ],
-      "reach_plus_mm": 2.1,
-      "reach_minus_mm": 2.1
+      "reach_plus_mm": 2.3,
+      "reach_minus_mm": 2.3
      },
      "files": [
       {
        "name": "dodecahedron-icosahedron-dual-130mm-ornament-half-a.stl",
-       "sha256": "24424f4c473f186202038d20922c1742380d1c68357066bafa84e631de988aef",
-       "bytes": 8127184
+       "sha256": "ba5557a23c54e9e6747c23a797395499e50976535443f975c185bcb70de60569",
+       "bytes": 8126984
       },
       {
        "name": "dodecahedron-icosahedron-dual-130mm-ornament-half-b.stl",
-       "sha256": "f032ac3118de4cbc238837851995349fca24dda0d8b7f1f8e67273f9f0e9f896",
-       "bytes": 8166984
+       "sha256": "1f637d118f40352a58165850f893e1f83ca60c1338f06b76aaffd9c4fb20fa45",
+       "bytes": 8167184
       }
      ]
     }
@@ -299,7 +299,7 @@
   "icosahedral-crown": {
    "display": "baseline settings (logarithmic, k = 6.0)",
    "code": {
-    "commit": "6b53c8ab276659532453af7de85d960e40554f09",
+    "commit": "02b665058ed03fc2c3080037b242a2f4dd14c698",
     "dirty": false
    },
    "sizes": {
@@ -447,7 +447,7 @@
   "icosidodecahedral-star": {
    "display": "baseline settings (logarithmic, k = 4.0)",
    "code": {
-    "commit": "6b53c8ab276659532453af7de85d960e40554f09",
+    "commit": "02b665058ed03fc2c3080037b242a2f4dd14c698",
     "dirty": false
    },
    "sizes": {
@@ -565,28 +565,28 @@
       "spike_order": 2,
       "bisected": true,
       "tip_radius_mm": 64.61,
-      "distance_from_tip_mm": 9.0,
-      "side_wall_mm": 1.0,
+      "distance_from_tip_mm": 11.0,
+      "side_wall_mm": 1.6,
       "diameter_mm": 1.5,
-      "length_mm": 7.4,
+      "length_mm": 8.6,
       "centre_mm": [
-       23.651,
-       -17.183,
-       -47.302
+       22.8,
+       -16.565,
+       -45.6
       ],
-      "reach_plus_mm": 1.7,
-      "reach_minus_mm": 1.7
+      "reach_plus_mm": 2.3,
+      "reach_minus_mm": 2.3
      },
      "files": [
       {
        "name": "icosidodecahedral-star-130mm-ornament-half-a.stl",
-       "sha256": "d13601f68ea7bf704a99730364213848f1125b523382a102538d2b1ce57a7df5",
-       "bytes": 8196284
+       "sha256": "cb9f6c20617c18379f27205f0971cf0f3e415764c485a4fa2b24447618483213",
+       "bytes": 8196584
       },
       {
        "name": "icosidodecahedral-star-130mm-ornament-half-b.stl",
-       "sha256": "4bdc2f1766b296083d68d1ed788c3a5079a4baa136fc219724102611d9784477",
-       "bytes": 8195884
+       "sha256": "df1dde0c3bcf3f90b5c90f26facc3e4dd798b9f4fba8ddbacebc3b75703bf00a",
+       "bytes": 8196084
       }
      ]
     }
@@ -595,7 +595,7 @@
   "octahedral-crown": {
    "display": "baseline settings (logarithmic, k = 4.0)",
    "code": {
-    "commit": "6b53c8ab276659532453af7de85d960e40554f09",
+    "commit": "02b665058ed03fc2c3080037b242a2f4dd14c698",
     "dirty": false
    },
    "sizes": {
@@ -743,7 +743,7 @@
   "r2-deltoidal-icositetrahedron": {
    "display": "order-tuned (k = 6)",
    "code": {
-    "commit": "6b53c8ab276659532453af7de85d960e40554f09",
+    "commit": "02b665058ed03fc2c3080037b242a2f4dd14c698",
     "dirty": false
    },
    "sizes": {
@@ -891,7 +891,7 @@
   "r2-irregular-mixed": {
    "display": "order-tuned (k = 6)",
    "code": {
-    "commit": "6b53c8ab276659532453af7de85d960e40554f09",
+    "commit": "02b665058ed03fc2c3080037b242a2f4dd14c698",
     "dirty": false
    },
    "sizes": {
@@ -1051,7 +1051,7 @@
   "r2-irregular-separated": {
    "display": "order-tuned (k = 6)",
    "code": {
-    "commit": "6b53c8ab276659532453af7de85d960e40554f09",
+    "commit": "02b665058ed03fc2c3080037b242a2f4dd14c698",
     "dirty": false
    },
    "sizes": {
@@ -1211,7 +1211,7 @@
   "r2-triakis-tetrahedron": {
    "display": "order-tuned (k = 4)",
    "code": {
-    "commit": "6b53c8ab276659532453af7de85d960e40554f09",
+    "commit": "02b665058ed03fc2c3080037b242a2f4dd14c698",
     "dirty": false
    },
    "sizes": {
@@ -1359,7 +1359,7 @@
   "r4ve-rhombicuboctahedron": {
    "display": "order-tuned (k = 4)",
    "code": {
-    "commit": "6b53c8ab276659532453af7de85d960e40554f09",
+    "commit": "02b665058ed03fc2c3080037b242a2f4dd14c698",
     "dirty": false
    },
    "sizes": {
@@ -1442,28 +1442,28 @@
       "spike_order": 1,
       "bisected": true,
       "tip_radius_mm": 40.94,
-      "distance_from_tip_mm": 9.0,
-      "side_wall_mm": 1.3,
+      "distance_from_tip_mm": 9.5,
+      "side_wall_mm": 1.75,
       "diameter_mm": 1.5,
-      "length_mm": 7.8,
+      "length_mm": 8.5,
       "centre_mm": [
-       12.224,
+       12.032,
        0.0,
-       -29.51
+       -29.048
       ],
-      "reach_plus_mm": 1.9,
-      "reach_minus_mm": 1.9
+      "reach_plus_mm": 2.25,
+      "reach_minus_mm": 2.25
      },
      "files": [
       {
        "name": "r4ve-rhombicuboctahedron-80mm-ornament-half-a.stl",
-       "sha256": "6d804237d2fbeb88a4936eb4228c15e2678315ac94b4ab8cd58978f1fb67fb8e",
-       "bytes": 8051084
+       "sha256": "29475ea828f94ec64baccf92fc592c48e4170134c54621ae04cd5da095098521",
+       "bytes": 8051384
       },
       {
        "name": "r4ve-rhombicuboctahedron-80mm-ornament-half-b.stl",
-       "sha256": "6adabc8602338a6d6b62106eb7f3ad7c9658e03df7cb0190d3037b88ae43f1c3",
-       "bytes": 8051084
+       "sha256": "edfba321b6c01290f822ddc9dcfe3a39b88d1c8b0ca95fd23b128bd43e6e1d2d",
+       "bytes": 8051384
       }
      ]
     },
@@ -1477,27 +1477,27 @@
       "spike_order": 1,
       "bisected": true,
       "tip_radius_mm": 66.53,
-      "distance_from_tip_mm": 12.0,
-      "side_wall_mm": 1.0,
+      "distance_from_tip_mm": 13.0,
+      "side_wall_mm": 1.5,
       "diameter_mm": 1.5,
-      "length_mm": 7.5,
+      "length_mm": 8.4,
       "centre_mm": [
-       20.868,
+       20.485,
        0.0,
-       -50.379
+       -49.456
       ],
-      "reach_plus_mm": 1.75,
-      "reach_minus_mm": 1.75
+      "reach_plus_mm": 2.2,
+      "reach_minus_mm": 2.2
      },
      "files": [
       {
        "name": "r4ve-rhombicuboctahedron-130mm-ornament-half-a.stl",
-       "sha256": "6d76dc6713a91d1f835218b882c3151eb9de8d080035f00fce238dd9b490a2af",
+       "sha256": "67bd637289884c4f8eacb84109dc9b79a6ca4b164f5521f79d056d73600a40c6",
        "bytes": 8051284
       },
       {
        "name": "r4ve-rhombicuboctahedron-130mm-ornament-half-b.stl",
-       "sha256": "dfbc0b1a4df9ae3b76dbdec514dde3f1da2291cf00fb27e5892fc23665468d8f",
+       "sha256": "e1fef90bb39199589a99529178c5b5cad4347b20afdd65ab09cfdc6e70cf7c47",
        "bytes": 8051284
       }
      ]
@@ -1507,7 +1507,7 @@
   "tetrahedral-dual": {
    "display": "baseline settings (log_mixture, k = 2.0)",
    "code": {
-    "commit": "6b53c8ab276659532453af7de85d960e40554f09",
+    "commit": "02b665058ed03fc2c3080037b242a2f4dd14c698",
     "dirty": false
    },
    "sizes": {
