@@ -31,6 +31,9 @@ import pyvista as pv
 from .divisors import Divisor
 
 BISECTED_SIN = np.sin(np.radians(5.0))
+# Minimum material on each side of the hole. 1.0 mm (about two 0.4 mm perimeters) was the first
+# choice, and the owner raised it to 1.5 mm for a piece that hangs from a thread (decision 0008).
+MIN_WALL_MM = 1.5
 EXIT_MARGIN_MM = 2.0  # the bore continues this far past the spike surface on each side
 REMOVED_TOLERANCE = 0.15  # removed volume may exceed the spike crossing by this fraction
 NEAR_PLANE_SIN = np.sin(np.radians(35.0))
@@ -109,7 +112,13 @@ def choose_spike(mesh_mm: pv.PolyData, divisor: Divisor, normal) -> tuple[np.nda
 
 
 def place_hole(
-    mesh_mm, divisor, normal, diameter_mm=1.5, distance_mm=9.0, wall_mm=1.0, max_distance_mm=16.0
+    mesh_mm,
+    divisor,
+    normal,
+    diameter_mm=1.5,
+    distance_mm=9.0,
+    wall_mm=MIN_WALL_MM,
+    max_distance_mm=16.0,
 ) -> Hole:
     n = np.asarray(normal, dtype=float) / np.linalg.norm(normal)
     p, order, bisected = choose_spike(mesh_mm, divisor, n)

@@ -31,3 +31,10 @@ cracking a spike.
 
 A printed ornament shows a better diameter, distance or thread path: for example, a hole
 perpendicular to the spike within the cut plane, if vertical holes clog with glue.
+
+## Amendment (2026-10-03)
+
+The minimum side wall is raised from 1 mm to **1.5 mm** (`hangers.MIN_WALL_MM`), at the owner's
+request. A 1.0 mm wall is about two perimeters of a 0.4 mm nozzle, which is fragile for a piece
+hanging from a thread. Holes on thin spikes now sit further from the tip. Each piece's final
+distance and wall are recorded in `catalog/exports.json`.

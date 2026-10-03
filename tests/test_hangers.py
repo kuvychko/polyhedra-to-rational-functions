@@ -22,7 +22,7 @@ def test_hole_is_through_a_spike_with_a_wall(piece_id):
     piece, normal, mesh = prepared(piece_id)
     hole = hangers.place_hole(mesh, piece.divisor(), normal)
     assert 9.0 <= hole.distance_from_tip_mm <= 16.0
-    assert hole.side_wall_mm >= 1.0
+    assert hole.side_wall_mm >= hangers.MIN_WALL_MM == 1.5
     assert abs(np.dot(hole.spike_direction, normal)) < np.sin(np.radians(35))
     solid = hangers.to_manifold(mesh)
     bored = hangers.bore(solid, hole, normal)

@@ -31,7 +31,7 @@ through one spike. Pass a thread through, tie a loop, and it hangs on a tree.
   the irregular objects, the hole goes through the most prominent spike near the plane, entirely
   within one half.
 - **Where on the spike:** about 9 mm in from the tip. It moves further in only where the spike
-  is too thin to keep at least 1 mm of wall on both sides of the hole. Each object's record gives
+  is too thin to keep at least 1.5 mm of wall on both sides of the hole. Each object's record gives
   the exact distance.
 - **Printing:** each half lies cut face down, so the hole is vertical and needs no support. The
   ornament halves are always two files, **a** and **b**: the hole makes them different.
