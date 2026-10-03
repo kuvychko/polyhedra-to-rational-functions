@@ -113,6 +113,10 @@ uv run python scripts/b2_export_stls.py         # whole + approved cut STLs -> o
 uv run ruff check . && uv run ruff format --check .
 ```
 
+Before any commit, run `pytest` on its own and check its exit status. Don't pipe it into
+`tail` in an `&&` chain without `set -o pipefail`, which hides failures. After any edit to
+`catalog/pieces.yaml`, regenerate `CHECKLIST.md`; a test enforces it.
+
 ## Style
 
 Mirror complexplorer: PEP 8, type hints, numpy-style docstrings with the math written out,
