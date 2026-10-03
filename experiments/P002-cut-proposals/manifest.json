@@ -1,0 +1,640 @@
+{
+ "experiment": {
+  "id": "P002-cut-proposals",
+  "question": "For each printable piece, which planes through the centre give the best two-part print: identical halves, little support, no thin slivers, a large cut face?",
+  "hypothesis": "Symmetric pieces have a mirror or 2-fold plane giving identical halves; the irregular pieces need two different halves, and the best plane avoids features near it.",
+  "changed_factor": "cut plane, per piece"
+ },
+ "started": "2026-10-03T15:31:32Z",
+ "config": {
+  "id": "P002-cut-proposals",
+  "question": "For each printable piece, which planes through the centre give the best two-part print: identical halves, little support, no thin slivers, a large cut face?",
+  "hypothesis": "Symmetric pieces have a mirror or 2-fold plane giving identical halves; the irregular pieces need two different halves, and the best plane avoids features near it.",
+  "changed_factor": "cut plane, per piece",
+  "screening_resolution": 140,
+  "sweep": 240,
+  "sea_level_radius": 0.6,
+  "window": 420
+ },
+ "code": {
+  "commit": "c6619ea9dcc7e75d4582a0f10d318d13caf9e2a6",
+  "dirty": false,
+  "changed_paths": []
+ },
+ "environment": {
+  "python": "3.13.5",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "packages": {
+   "polyhedra-to-rational-functions": "0.0.1",
+   "complexplorer": "3.1.0",
+   "numpy": "2.5.3",
+   "scipy": "1.18.1",
+   "matplotlib": "3.11.2",
+   "pyvista": "0.49.0",
+   "vtk": "9.7.1"
+  }
+ },
+ "conventions": {
+  "chart": "complexplorer stereographic: z = 0 south pole, z = inf north pole",
+  "normalization": "chordal (decision 0003): log|f| = sum m log chi; geometric mean 1",
+  "phase": "chart phase with C > 0",
+  "evaluation": "log-domain, factored (evaluation.py)"
+ },
+ "runs": [
+  {
+   "piece": "cube-octahedron-dual",
+   "rank": 1,
+   "normal": [
+    0.0,
+    0.7071,
+    -0.7071
+   ],
+   "halves": "identical",
+   "size_mm": 80,
+   "support_pct": 0.48,
+   "clearance_deg": 45.0,
+   "clearance_mm": 20.7,
+   "split_features": 6,
+   "cut_area_cm2": 24.7,
+   "approved_in_catalog": false
+  },
+  {
+   "piece": "cube-octahedron-dual",
+   "rank": 2,
+   "normal": [
+    0.5774,
+    0.5774,
+    0.5774
+   ],
+   "halves": "identical",
+   "size_mm": 80,
+   "support_pct": 0.17,
+   "clearance_deg": 19.5,
+   "clearance_mm": 9.0,
+   "split_features": 0,
+   "cut_area_cm2": 23.9,
+   "approved_in_catalog": false
+  },
+  {
+   "piece": "cube-octahedron-dual",
+   "rank": 3,
+   "normal": [
+    1.0,
+    0.0,
+    0.0
+   ],
+   "halves": "identical",
+   "size_mm": 80,
+   "support_pct": 0.98,
+   "clearance_deg": 35.3,
+   "clearance_mm": 16.3,
+   "split_features": 4,
+   "cut_area_cm2": 17.2,
+   "approved_in_catalog": false
+  },
+  {
+   "piece": "dodecahedron-icosahedron-dual",
+   "rank": 1,
+   "normal": [
+    0.9511,
+    -0.309,
+    0.0
+   ],
+   "halves": "identical",
+   "size_mm": 130,
+   "support_pct": 1.48,
+   "clearance_deg": 20.9,
+   "clearance_mm": 16.0,
+   "split_features": 8,
+   "cut_area_cm2": 59.3,
+   "approved_in_catalog": false
+  },
+  {
+   "piece": "dodecahedron-icosahedron-dual",
+   "rank": 2,
+   "normal": [
+    0.9822,
+    0.0,
+    -0.1876
+   ],
+   "halves": "identical",
+   "size_mm": 130,
+   "support_pct": 1.42,
+   "clearance_deg": 10.8,
+   "clearance_mm": 8.3,
+   "split_features": 0,
+   "cut_area_cm2": 54.6,
+   "approved_in_catalog": false
+  },
+  {
+   "piece": "dodecahedron-icosahedron-dual",
+   "rank": 3,
+   "normal": [
+    -0.2764,
+    0.8507,
+    -0.4472
+   ],
+   "halves": "identical",
+   "size_mm": 130,
+   "support_pct": 1.13,
+   "clearance_deg": 10.8,
+   "clearance_mm": 8.3,
+   "split_features": 0,
+   "cut_area_cm2": 69.4,
+   "approved_in_catalog": false
+  },
+  {
+   "piece": "icosidodecahedral-star",
+   "rank": 1,
+   "normal": [
+    0.7947,
+    0.5774,
+    0.1876
+   ],
+   "halves": "identical",
+   "size_mm": 130,
+   "support_pct": 0.76,
+   "clearance_deg": 19.5,
+   "clearance_mm": 15.2,
+   "split_features": 6,
+   "cut_area_cm2": 73.5,
+   "approved_in_catalog": false
+  },
+  {
+   "piece": "icosidodecahedral-star",
+   "rank": 2,
+   "normal": [
+    0.0,
+    0.0,
+    1.0
+   ],
+   "halves": "identical",
+   "size_mm": 130,
+   "support_pct": 1.31,
+   "clearance_deg": 10.8,
+   "clearance_mm": 8.5,
+   "split_features": 10,
+   "cut_area_cm2": 72.6,
+   "approved_in_catalog": false
+  },
+  {
+   "piece": "icosidodecahedral-star",
+   "rank": 3,
+   "normal": [
+    0.6882,
+    0.5,
+    0.5257
+   ],
+   "halves": "identical",
+   "size_mm": 130,
+   "support_pct": 2.39,
+   "clearance_deg": 18.0,
+   "clearance_mm": 14.1,
+   "split_features": 8,
+   "cut_area_cm2": 63.0,
+   "approved_in_catalog": false
+  },
+  {
+   "piece": "icosahedral-crown",
+   "rank": 1,
+   "normal": [
+    -0.2764,
+    0.8507,
+    -0.4472
+   ],
+   "halves": "identical",
+   "size_mm": 130,
+   "support_pct": 1.16,
+   "clearance_deg": 26.6,
+   "clearance_mm": 18.8,
+   "split_features": 10,
+   "cut_area_cm2": 40.3,
+   "approved_in_catalog": false
+  },
+  {
+   "piece": "icosahedral-crown",
+   "rank": 2,
+   "normal": [
+    0.0,
+    1.0,
+    0.0
+   ],
+   "halves": "identical",
+   "size_mm": 130,
+   "support_pct": 0.56,
+   "clearance_deg": 18.0,
+   "clearance_mm": 12.8,
+   "split_features": 8,
+   "cut_area_cm2": 58.5,
+   "approved_in_catalog": false
+  },
+  {
+   "piece": "icosahedral-crown",
+   "rank": 3,
+   "normal": [
+    0.9822,
+    0.0,
+    -0.1876
+   ],
+   "halves": "identical",
+   "size_mm": 130,
+   "support_pct": 2.26,
+   "clearance_deg": 10.8,
+   "clearance_mm": 7.7,
+   "split_features": 6,
+   "cut_area_cm2": 52.6,
+   "approved_in_catalog": false
+  },
+  {
+   "piece": "tetrahedral-dual",
+   "rank": 1,
+   "normal": [
+    0.0,
+    0.7071,
+    0.7071
+   ],
+   "halves": "identical",
+   "size_mm": 80,
+   "support_pct": 0.19,
+   "clearance_deg": 54.7,
+   "clearance_mm": 28.7,
+   "split_features": 4,
+   "cut_area_cm2": 31.3,
+   "approved_in_catalog": false
+  },
+  {
+   "piece": "tetrahedral-dual",
+   "rank": 2,
+   "normal": [
+    0.0,
+    1.0,
+    0.0
+   ],
+   "halves": "identical",
+   "size_mm": 80,
+   "support_pct": 0.19,
+   "clearance_deg": 35.3,
+   "clearance_mm": 18.5,
+   "split_features": 0,
+   "cut_area_cm2": 28.4,
+   "approved_in_catalog": false
+  },
+  {
+   "piece": "tetrahedral-dual",
+   "rank": 3,
+   "normal": [
+    0.5774,
+    0.5774,
+    0.5774
+   ],
+   "halves": "different",
+   "size_mm": 80,
+   "support_pct": 0.31,
+   "clearance_deg": 19.5,
+   "clearance_mm": 10.2,
+   "split_features": 0,
+   "cut_area_cm2": 29.6,
+   "approved_in_catalog": false
+  },
+  {
+   "piece": "octahedral-crown",
+   "rank": 1,
+   "normal": [
+    0.0,
+    1.0,
+    0.0
+   ],
+   "halves": "identical",
+   "size_mm": 80,
+   "support_pct": 0.21,
+   "clearance_deg": 45.0,
+   "clearance_mm": 20.9,
+   "split_features": 8,
+   "cut_area_cm2": 25.4,
+   "approved_in_catalog": false
+  },
+  {
+   "piece": "octahedral-crown",
+   "rank": 2,
+   "normal": [
+    0.5774,
+    0.5774,
+    0.5774
+   ],
+   "halves": "identical",
+   "size_mm": 80,
+   "support_pct": 0.44,
+   "clearance_deg": 35.3,
+   "clearance_mm": 16.4,
+   "split_features": 6,
+   "cut_area_cm2": 19.2,
+   "approved_in_catalog": false
+  },
+  {
+   "piece": "octahedral-crown",
+   "rank": 3,
+   "normal": [
+    0.7071,
+    -0.7071,
+    0.0
+   ],
+   "halves": "identical",
+   "size_mm": 80,
+   "support_pct": 0.15,
+   "clearance_deg": 30.0,
+   "clearance_mm": 13.9,
+   "split_features": 4,
+   "cut_area_cm2": 23.2,
+   "approved_in_catalog": false
+  },
+  {
+   "piece": "r2-deltoidal-icositetrahedron",
+   "rank": 1,
+   "normal": [
+    0.7071,
+    0.7071,
+    0.0
+   ],
+   "halves": "identical",
+   "size_mm": 130,
+   "support_pct": 2.05,
+   "clearance_deg": 20.9,
+   "clearance_mm": 15.2,
+   "split_features": 12,
+   "cut_area_cm2": 51.8,
+   "approved_in_catalog": false
+  },
+  {
+   "piece": "r2-deltoidal-icositetrahedron",
+   "rank": 2,
+   "normal": [
+    1.0,
+    0.0,
+    0.0
+   ],
+   "halves": "identical",
+   "size_mm": 130,
+   "support_pct": 2.4,
+   "clearance_deg": 20.9,
+   "clearance_mm": 15.2,
+   "split_features": 8,
+   "cut_area_cm2": 41.6,
+   "approved_in_catalog": false
+  },
+  {
+   "piece": "r2-deltoidal-icositetrahedron",
+   "rank": 3,
+   "normal": [
+    -0.5774,
+    -0.5774,
+    0.5774
+   ],
+   "halves": "identical",
+   "size_mm": 130,
+   "support_pct": 2.61,
+   "clearance_deg": 4.9,
+   "clearance_mm": 3.6,
+   "split_features": 6,
+   "cut_area_cm2": 51.5,
+   "approved_in_catalog": false
+  },
+  {
+   "piece": "r4ve-rhombicuboctahedron",
+   "rank": 1,
+   "normal": [
+    0.0,
+    1.0,
+    0.0
+   ],
+   "halves": "identical",
+   "size_mm": 130,
+   "support_pct": 0.46,
+   "clearance_deg": 20.9,
+   "clearance_mm": 18.1,
+   "split_features": 8,
+   "cut_area_cm2": 85.4,
+   "approved_in_catalog": false
+  },
+  {
+   "piece": "r4ve-rhombicuboctahedron",
+   "rank": 2,
+   "normal": [
+    0.7071,
+    0.7071,
+    0.0
+   ],
+   "halves": "identical",
+   "size_mm": 130,
+   "support_pct": 1.32,
+   "clearance_deg": 11.0,
+   "clearance_mm": 9.5,
+   "split_features": 8,
+   "cut_area_cm2": 77.7,
+   "approved_in_catalog": false
+  },
+  {
+   "piece": "r4ve-rhombicuboctahedron",
+   "rank": 3,
+   "normal": [
+    0.5774,
+    -0.5774,
+    0.5774
+   ],
+   "halves": "identical",
+   "size_mm": 130,
+   "support_pct": 1.71,
+   "clearance_deg": 4.9,
+   "clearance_mm": 4.2,
+   "split_features": 0,
+   "cut_area_cm2": 73.6,
+   "approved_in_catalog": false
+  },
+  {
+   "piece": "r2-triakis-tetrahedron",
+   "rank": 1,
+   "normal": [
+    0.7071,
+    -0.7071,
+    0.0
+   ],
+   "halves": "identical",
+   "size_mm": 80,
+   "support_pct": 0.46,
+   "clearance_deg": 25.2,
+   "clearance_mm": 13.6,
+   "split_features": 6,
+   "cut_area_cm2": 28.6,
+   "approved_in_catalog": false
+  },
+  {
+   "piece": "r2-triakis-tetrahedron",
+   "rank": 2,
+   "normal": [
+    0.0,
+    1.0,
+    0.0
+   ],
+   "halves": "identical",
+   "size_mm": 80,
+   "support_pct": 0.08,
+   "clearance_deg": 17.5,
+   "clearance_mm": 9.5,
+   "split_features": 0,
+   "cut_area_cm2": 32.1,
+   "approved_in_catalog": false
+  },
+  {
+   "piece": "r2-triakis-tetrahedron",
+   "rank": 3,
+   "normal": [
+    0.5774,
+    0.5774,
+    0.5774
+   ],
+   "halves": "different",
+   "size_mm": 80,
+   "support_pct": 0.34,
+   "clearance_deg": 10.0,
+   "clearance_mm": 5.4,
+   "split_features": 0,
+   "cut_area_cm2": 29.7,
+   "approved_in_catalog": false
+  },
+  {
+   "piece": "r2-irregular-mixed",
+   "rank": 1,
+   "normal": [
+    -0.1621,
+    0.9102,
+    0.3812
+   ],
+   "halves": "different",
+   "size_mm": 130,
+   "support_pct": 0.4,
+   "clearance_deg": 13.7,
+   "clearance_mm": 9.8,
+   "split_features": 0,
+   "cut_area_cm2": 50.3,
+   "approved_in_catalog": false
+  },
+  {
+   "piece": "r2-irregular-mixed",
+   "rank": 2,
+   "normal": [
+    -0.037,
+    0.0528,
+    0.9979
+   ],
+   "halves": "different",
+   "size_mm": 130,
+   "support_pct": 0.01,
+   "clearance_deg": 13.5,
+   "clearance_mm": 9.7,
+   "split_features": 0,
+   "cut_area_cm2": 65.4,
+   "approved_in_catalog": false
+  },
+  {
+   "piece": "r2-irregular-mixed",
+   "rank": 3,
+   "normal": [
+    -0.3616,
+    0.8731,
+    0.3271
+   ],
+   "halves": "different",
+   "size_mm": 130,
+   "support_pct": 0.39,
+   "clearance_deg": 13.0,
+   "clearance_mm": 9.4,
+   "split_features": 0,
+   "cut_area_cm2": 50.6,
+   "approved_in_catalog": false
+  },
+  {
+   "piece": "r2-irregular-separated",
+   "rank": 1,
+   "normal": [
+    -0.0011,
+    0.9312,
+    -0.3646
+   ],
+   "halves": "different",
+   "size_mm": 130,
+   "support_pct": 0.3,
+   "clearance_deg": 16.5,
+   "clearance_mm": 12.0,
+   "split_features": 0,
+   "cut_area_cm2": 56.2,
+   "approved_in_catalog": false
+  },
+  {
+   "piece": "r2-irregular-separated",
+   "rank": 2,
+   "normal": [
+    -0.0219,
+    0.9517,
+    -0.3062
+   ],
+   "halves": "different",
+   "size_mm": 130,
+   "support_pct": 0.37,
+   "clearance_deg": 16.1,
+   "clearance_mm": 11.7,
+   "split_features": 0,
+   "cut_area_cm2": 56.5,
+   "approved_in_catalog": false
+  },
+  {
+   "piece": "r2-irregular-separated",
+   "rank": 3,
+   "normal": [
+    0.1016,
+    0.9136,
+    -0.3938
+   ],
+   "halves": "different",
+   "size_mm": 130,
+   "support_pct": 0.24,
+   "clearance_deg": 12.4,
+   "clearance_mm": 9.1,
+   "split_features": 0,
+   "cut_area_cm2": 56.2,
+   "approved_in_catalog": false
+  }
+ ],
+ "outputs": [
+  {
+   "path": "out/P002-cut-proposals/proposals.csv",
+   "sha256": "361fc9775e73ac0c22bafd1d6b2ad3402893356502b1172b9aa06e638439d2b7",
+   "bytes": 2826
+  },
+  {
+   "path": "out/P002-cut-proposals/proposals.png",
+   "sha256": "50a03b802d54caa35a39d2a68630b1e2bc8c9cf602c5fdeaf4270700c64cdac8",
+   "bytes": 885272
+  }
+ ],
+ "config_file": {
+  "path": "configs/experiments/P002-cut-proposals.json",
+  "sha256": "e74a1f80535bb298fd71c42c4e6b3dd08f23e33c1826d16ba1768bcfcafdfa90"
+ },
+ "catalog": {
+  "path": "catalog/pieces.yaml",
+  "sha256": "96acb1038ff971a21138378963a1ed0ed8a2184e790882d2422045d74d734a32"
+ },
+ "published": [
+  {
+   "path": "experiments/P002-cut-proposals/proposals.csv",
+   "sha256": "361fc9775e73ac0c22bafd1d6b2ad3402893356502b1172b9aa06e638439d2b7",
+   "bytes": 2826,
+   "source": "out/P002-cut-proposals/proposals.csv"
+  },
+  {
+   "path": "experiments/P002-cut-proposals/proposals.jpg",
+   "sha256": "dda072e4542574c4aab990268194d5454bc2841b859b8ddb29772be62ae7e704",
+   "bytes": 410551,
+   "source": "out/P002-cut-proposals/proposals.png"
+  }
+ ]
+}
