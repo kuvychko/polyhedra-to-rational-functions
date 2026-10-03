@@ -54,6 +54,7 @@ class Piece:
     printables_url: str | None = None
     notes: str | None = None
     resolution: int | None = None  # mesh resolution for new pieces (default in meshes.py)
+    cut: dict | None = None  # {normal: [x, y, z], approved: bool, note}: owner-approved plane
 
     # --- mathematics -----------------------------------------------------------------
 
@@ -73,6 +74,17 @@ class Piece:
         """Sizes with a hashed STL: from the catalog (baseline) or from exports.json (new)."""
         files = (self.stl or {}).get("files") or exports().get(self.id, {}).get("sizes", {})
         return sorted(int(size) for size, entry in files.items() if entry and entry.get("sha256"))
+
+    def cut_approved(self) -> bool:
+        return bool(self.cut and self.cut.get("approved") and self.cut.get("normal"))
+
+    def cut_sizes(self) -> list[int]:
+        """Sizes with exported cut halves for the currently approved plane."""
+        record = exports().get(self.id, {}).get("cuts", {})
+        if not self.cut_approved():
+            return []
+        normal = [round(float(x), 4) for x in self.cut["normal"]]
+        return sorted(int(s) for s, e in record.items() if e.get("normal") == normal)
 
     def status(self, screened: set[str]) -> str:
         if self.printables_url:
@@ -94,6 +106,10 @@ class Piece:
             return "screen at 80 and 130 mm (B1)"
         if not set(SIZES_MM) <= set(self.stl_sizes()):
             return "export 80 and 130 mm STLs (B2)"
+        if not self.cut_approved():
+            return "approve a cut plane (P002 sheet)"
+        if not set(SIZES_MM) <= set(self.cut_sizes()):
+            return "export cut STLs (B2)"
         if self.planned_size_mm is None:
             return "choose print size from the screen"
         if self.planned_size_mm not in self.printed_sizes():
@@ -150,6 +166,12 @@ def screened_ids(path: Path = SCREEN_FILE) -> set[str]:
         return {row["piece"] for row in csv.DictReader(fh)}
 
 
+def cut_state(piece: Piece) -> str:
+    if not piece.cut_approved():
+        return "proposed" if piece.cut else "–"
+    return "exported" if set(SIZES_MM) <= set(piece.cut_sizes()) else "approved"
+
+
 def checklist(pieces: list[Piece], screened: set[str]) -> str:
     """The generated checklist (Markdown), one row per piece."""
 
@@ -162,9 +184,9 @@ def checklist(pieces: list[Piece], screened: set[str]) -> str:
         "Generated from `catalog/pieces.yaml` by `uv run python scripts/catalog_status.py`. Do not",
         "edit by hand: change the catalog and regenerate.",
         "",
-        "| piece | origin | status | screened | STLs 80/130 | planned | printed | photos "
+        "| piece | origin | status | screened | STLs 80/130 | cut | planned | printed | photos "
         "| Printables | next action |",
-        "|---|---|---|---|---|---|---|---|---|---|",
+        "|---|---|---|---|---|---|---|---|---|---|---|",
     ]
     for p in pieces:
         stls = "/".join(mark(s in p.stl_sizes()) for s in SIZES_MM)
@@ -172,7 +194,7 @@ def checklist(pieces: list[Piece], screened: set[str]) -> str:
         planned = f"{p.planned_size_mm} mm" if p.planned_size_mm else "–"
         lines.append(
             f"| {p.title} | {p.origin} | {p.status(screened)} | {mark(p.id in screened)} "
-            f"| {stls} | {planned} | {printed} | {len(p.photos) or '–'} "
+            f"| {stls} | {cut_state(p)} | {planned} | {printed} | {len(p.photos) or '–'} "
             f"| {'[link](' + p.printables_url + ')' if p.printables_url else '–'} "
             f"| {p.next_action(screened)} |"
         )

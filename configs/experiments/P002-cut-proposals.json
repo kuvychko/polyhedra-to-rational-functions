@@ -1,0 +1,10 @@
+{
+ "id": "P002-cut-proposals",
+ "question": "For each printable piece, which planes through the centre give the best two-part print: identical halves, little support, no thin slivers, a large cut face?",
+ "hypothesis": "Symmetric pieces have a mirror or 2-fold plane giving identical halves; the irregular pieces need two different halves, and the best plane avoids features near it.",
+ "changed_factor": "cut plane, per piece",
+ "screening_resolution": 140,
+ "sweep": 240,
+ "sea_level_radius": 0.6,
+ "window": 420
+}

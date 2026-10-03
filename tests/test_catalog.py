@@ -44,10 +44,17 @@ def test_owner_size_choices_are_recorded():
     assert by_id["cube-octahedron-dual"].planned_size_mm == 80
     assert by_id["cube-octahedron-dual"].printed_sizes() == [130]
     assert by_id["tetrahedral-dual"].planned_size_mm == 80
-    assert by_id["cube-octahedron-dual"].next_action(catalog.screened_ids()) in (
-        "screen at 80 and 130 mm (B1)",
-        "print at 80 mm",
-    )
+    assert by_id["octahedral-crown"].planned_size_mm == 80
+
+
+def test_printing_waits_for_an_approved_cut():
+    """Decision 0007: pieces are printed from scripted cut halves, so the cut comes first."""
+    screened = catalog.screened_ids()
+    for p in catalog.load():
+        if p.digital_only or p.cut_approved() or p.id not in screened:
+            continue
+        if set(catalog.SIZES_MM) <= set(p.stl_sizes()):
+            assert p.next_action(screened) == "approve a cut plane (P002 sheet)", p.id
 
 
 def test_checklist_is_current():

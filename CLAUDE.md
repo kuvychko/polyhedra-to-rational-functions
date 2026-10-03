@@ -108,6 +108,8 @@ uv run python scripts/make_atlas.py --publish   # E001 atlas -> out/E001-atlas/,
 uv run python scripts/e00N_*.py --publish       # E002-E004; commit each one's evidence before the next run
 uv run python scripts/catalog_status.py         # validate catalog/pieces.yaml, regenerate CHECKLIST.md
 uv run python scripts/p001_print_screen.py      # printability screen of catalog pieces (80/130 mm)
+uv run python scripts/p002_cut_proposals.py     # cut-plane proposals for owner approval
+uv run python scripts/b2_export_stls.py         # whole + approved cut STLs -> out/stls/, hashes -> catalog/exports.json
 uv run ruff check . && uv run ruff format --check .
 ```
 
