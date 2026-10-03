@@ -2,20 +2,30 @@
 
 The catalog is the single source for the gallery and for the Phase 2 checklist, so the site can
 never disagree with it. Nothing is written into ``docs/``: the pages are added to the build as
-generated files. Each page describes the piece's function, its divisor, and its print and listing
-status.
+generated files. Each object page shows:
+
+- the coordinated views precomputed by ``scripts/a4_site_assets.py``
+  (geometry → plane → sphere → relief → printed shape);
+- the owner's photographs, when the catalog lists them;
+- the function and its divisor;
+- the print and listing status;
+- links to the recipe and to the experiments that cover it.
 """
 
 from __future__ import annotations
 
 import logging
 from collections import Counter
+from pathlib import Path
 
 from mkdocs.structure.files import File
 
 from polyhedral_functions import catalog, fixtures
 
 log = logging.getLogger("mkdocs.hooks.gallery")
+
+DOCS = Path(__file__).resolve().parents[1]
+ATLAS_SHEETS = DOCS.parent / "experiments" / "E001-atlas" / "sheets"
 
 RECIPE_TEXT = {
     "R2": (
@@ -38,6 +48,13 @@ HALVES_TEXT = {
     "mirror": "two mirror-image halves",
     "different": "two different halves (a and b)",
 }
+VIEWS = [
+    ("geometry", "The solid, with zeros (blue) and poles (red) on the sphere"),
+    ("plane", "Phase portrait of f in the plane"),
+    ("sphere", "Phase on the Riemann sphere"),
+    ("relief", "The printed shape, colored by phase"),
+    ("neutral", "The printed shape"),
+]
 
 
 def orders_text(orders) -> str:
@@ -45,64 +62,135 @@ def orders_text(orders) -> str:
     return ", ".join(f"{n} of order {m}" for m, n in sorted(counts.items()))
 
 
+def solid_name(piece) -> str:
+    return fixtures.load(piece.polyhedron).name
+
+
+def recipe_label(piece) -> str:
+    return f"{piece.recipe}{' (reciprocal)' if piece.reciprocal else ''}"
+
+
 def recipe_paragraph(piece) -> str:
     zeros, poles = RECIPE_TEXT[piece.recipe]
     if piece.reciprocal:
         zeros, poles = poles.replace("poles", "zeros"), zeros.replace("zeros", "poles")
-    solid = fixtures.load(piece.polyhedron).name
     return (
-        f"Recipe **{piece.recipe}**{' (reciprocal)' if piece.reciprocal else ''} on the "
-        f"**{solid}**: {zeros}; {poles}."
+        f"Recipe **{recipe_label(piece)}** on the **{solid_name(piece)}** "
+        f"([how the recipes work](../research/recipes.md)): {zeros}; {poles}."
     )
+
+
+def asset(piece, view: str) -> str | None:
+    """The page-relative path of a precomputed view, if it has been generated."""
+    if (DOCS / "assets" / "pieces" / piece.id / f"{view}.jpg").exists():
+        return f"../assets/pieces/{piece.id}/{view}.jpg"
+    return None
+
+
+def views_block(piece) -> list[str]:
+    figures = [(asset(piece, view), caption) for view, caption in VIEWS if asset(piece, view)]
+    if not figures:
+        return []
+    lines = ["## Views", "", '<div class="piece-views" markdown>', ""]
+    for src, caption in figures:
+        lines += [
+            "<figure markdown>",
+            f"![{caption}]({src})",
+            f"<figcaption>{caption}</figcaption>",
+            "</figure>",
+            "",
+        ]
+    return lines + ["</div>", ""]
+
+
+def photos_block(piece) -> list[str]:
+    if not piece.photos:
+        return []
+    lines = ["## Photographs", "", '<div class="piece-photos" markdown>', ""]
+    for i, photo in enumerate(piece.photos, start=1):
+        src = "../" + Path(photo).relative_to("docs").as_posix()
+        lines += [f"![Photograph {i} of the printed {piece.title}]({src})", ""]
+    return lines + ["</div>", ""]
+
+
+def listing(piece) -> str:
+    if piece.printables_url:
+        return f"[on Printables]({piece.printables_url}): whole and cut STLs, 80 and 130 mm"
+    return "coming to Printables: whole and cut STLs, 80 and 130 mm"
+
+
+def lineage(piece) -> list[str]:
+    items = [
+        "- How the recipes work and how the constant is fixed: "
+        "[The recipes](../research/recipes.md)."
+    ]
+    if (ATLAS_SHEETS / f"{piece.polyhedron}-recipes.jpg").exists():
+        sheet = f"../experiments/E001-atlas/sheets/{piece.polyhedron}-recipes.jpg"
+        items.append(
+            f"- Every recipe on the {solid_name(piece)}, side by side: [E001 atlas sheet]({sheet})."
+        )
+    if not piece.digital_only:
+        items.append(
+            "- Printability and the cut plane: "
+            "[P001 and P002](../research/experiments.md#for-printing-p001-and-p002)."
+        )
+    return ["## Where it comes from", "", *items, ""]
 
 
 def piece_page(piece, screened, exports) -> str:
     d = piece.divisor()
-    lines = [f"# {piece.title}", ""]
     origin = (
         "One of the original Klein-invariant ornaments (the baseline, R0)."
         if piece.origin == "baseline"
         else "A Phase 1 recipe applied beyond the Platonic solids."
     )
-    lines += [origin, "", recipe_paragraph(piece), ""]
+    lines = [f"# {piece.title}", "", origin, "", recipe_paragraph(piece), ""]
     if piece.function:
         lines += [f"Classical form: `f(z) = {piece.function}`.", ""]
+    if piece.notes:
+        lines += ["!!! note", f"    {piece.notes}", ""]
+    lines += views_block(piece) + photos_block(piece)
     lines += [
+        "## The function and the print",
+        "",
         "| | |",
         "|---|---|",
-        f"| zeros | {len(d.zeros)} points: {orders_text(d.zeros.orders)} |",
-        f"| poles | {len(d.poles)} points: {orders_text(d.poles.orders)} |",
-        f"| degree | {d.degree} |",
+        f"| **zeros** | {len(d.zeros)} points: {orders_text(d.zeros.orders)} |",
+        f"| **poles** | {len(d.poles)} points: {orders_text(d.poles.orders)} |",
+        f"| **degree** | {d.degree} |",
     ]
     if piece.digital_only:
-        lines += ["| print | digital only |", ""]
+        lines += ["| **print** | digital only |", ""]
     else:
         printed = ", ".join(f"{s} mm" for s in piece.printed_sizes()) or "not yet"
         planned = f"{piece.planned_size_mm} mm" if piece.planned_size_mm else "undecided"
         cut = exports.get(piece.id, {}).get("cuts", {}).get("130", {}).get("halves")
         lines += [
-            f"| printed | {printed} |",
-            f"| planned size | {planned} (tip to tip) |",
-            f"| cut | {HALVES_TEXT.get(cut, 'not yet chosen')} |",
-            f"| print files | {listing(piece)} |",
+            f"| **printed** | {printed} |",
+            f"| **planned size** | {planned}, tip to tip |",
+            f"| **cut** | {HALVES_TEXT.get(cut, 'not yet chosen')} |",
+            f"| **print files** | {listing(piece)} |",
             "",
         ]
-    if piece.notes:
-        lines += [f"!!! note\n    {piece.notes}", ""]
-    lines += [
-        f"*Status: {piece.status(screened)}. Generated from the catalog entry `{piece.id}`.*",
-        "",
-    ]
-    return "\n".join(lines)
+    lines += lineage(piece)
+    lines.append(
+        f"*Status: {piece.status(screened)}. Generated from the catalog entry `{piece.id}`.*"
+    )
+    return "\n".join(lines) + "\n"
 
 
-def listing(piece) -> str:
-    if piece.printables_url:
-        return f"[Printables]({piece.printables_url}): whole and cut STLs, 80 and 130 mm"
-    return "coming to Printables (whole and cut STLs, 80 and 130 mm)"
+def card(piece) -> str:
+    thumb = asset(piece, "relief")
+    image = f"![{piece.title}]({thumb})" if thumb else ""
+    meta = f"{recipe_label(piece)} on the {solid_name(piece)}, degree {piece.divisor().degree}"
+    return (
+        f'<a class="piece-card" href="{piece.id}/" markdown>\n{image}\n'
+        f'<span class="piece-title">{piece.title}</span>\n'
+        f'<span class="piece-meta">{meta}</span>\n</a>\n'
+    )
 
 
-def index_page(pieces, screened) -> str:
+def index_page(pieces) -> str:
     groups = [
         ("Printed", [p for p in pieces if p.printed and not p.digital_only]),
         ("In the print queue", [p for p in pieces if not p.printed and not p.digital_only]),
@@ -112,41 +200,26 @@ def index_page(pieces, screened) -> str:
         "# The objects",
         "",
         "Each object is the modulus relief of one rational function on the Riemann sphere: "
-        "poles are spikes, zeros are pits. The recipes that place them are explained under "
-        "[The question](../research/index.md). Every object has its own page with its function, "
-        "how it is printed, and where to get the files.",
+        "poles are spikes, zeros are pits, and the color is the function's phase. The recipes "
+        "that place them are explained under [The question](../research/index.md). Each object "
+        "has its own page with its views, its function, how it is printed, and where to get "
+        "the files.",
         "",
     ]
     for heading, members in groups:
-        if not members:
-            continue
-        lines += [
-            f"## {heading}",
-            "",
-            "| object | recipe | degree | print files |",
-            "|---|---|---|---|",
-        ]
-        for p in members:
-            files = f"[Printables]({p.printables_url})" if p.printables_url else "coming"
-            if p.digital_only:
-                files = "–"
-            lines.append(
-                f"| [{p.title}]({p.id}.md) | {p.recipe}{' (reciprocal)' if p.reciprocal else ''} "
-                f"on {fixtures.load(p.polyhedron).name} | {p.divisor().degree} | {files} |"
-            )
-        lines.append("")
+        if members:
+            lines += [f"## {heading}", "", '<div class="piece-cards" markdown>', ""]
+            lines += [card(p) for p in members]
+            lines += ["</div>", ""]
     return "\n".join(lines)
 
 
 def on_files(files, config):
     pieces = catalog.load()
     screened, exports = catalog.screened_ids(), catalog.exports()
-    files.append(File.generated(config, "objects/index.md", content=index_page(pieces, screened)))
+    files.append(File.generated(config, "objects/index.md", content=index_page(pieces)))
     for piece in pieces:
-        files.append(
-            File.generated(
-                config, f"objects/{piece.id}.md", content=piece_page(piece, screened, exports)
-            )
-        )
+        content = piece_page(piece, screened, exports)
+        files.append(File.generated(config, f"objects/{piece.id}.md", content=content))
     log.info("gallery: generated %d object pages", len(pieces))
     return files

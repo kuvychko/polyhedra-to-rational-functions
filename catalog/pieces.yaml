@@ -7,7 +7,7 @@
 #   planned_size_mm                   the size you intend to print: 80 or 130; null = undecided
 #   printed                           list of {size_mm, date, material, notes}
 #   stl.files                         {80: {name, sha256}, 130: {...}}; STLs are not in git
-#   photos                            repository-relative paths; photos are CC BY 4.0
+#   photos                            docs/assets/photos/<id>/<file>.jpg (about 1600 px wide); CC BY 4.0
 #   printables_url                    the piece's own Printables listing, with both sizes
 #
 # Baseline STLs: figures_repo @ 292bec4, 2026/09-20-riemann-ornaments/polyhedral/stl/. They were

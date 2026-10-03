@@ -1,0 +1,60 @@
+/* Object pages: the coordinated views, a photo strip, and the card grid on the index. Colors come
+   from Material's own variables, so both themes work. Renders sit on white plates in both themes:
+   they are rendered on white. */
+
+.piece-views,
+.piece-cards {
+  display: grid;
+  gap: 0.8rem;
+  grid-template-columns: repeat(auto-fill, minmax(11rem, 1fr));
+  margin: 1rem 0 1.5rem;
+}
+
+.piece-views figure {
+  margin: 0;
+}
+
+.piece-views img,
+.piece-card img,
+.piece-photos img {
+  background: #fff;
+  border: 1px solid var(--md-default-fg-color--lightest);
+  border-radius: 0.2rem;
+  display: block;
+  width: 100%;
+}
+
+.piece-views figcaption {
+  color: var(--md-default-fg-color--light);
+  font-size: 0.7rem;
+  line-height: 1.3;
+  margin-top: 0.3rem;
+  max-width: none;
+}
+
+.piece-photos {
+  display: grid;
+  gap: 0.8rem;
+  grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr));
+}
+
+.md-typeset a.piece-card {
+  color: var(--md-default-fg-color);
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.md-typeset a.piece-card:hover .piece-title,
+.md-typeset a.piece-card:focus-visible .piece-title {
+  color: var(--md-accent-fg-color);
+}
+
+.piece-title {
+  font-weight: 600;
+}
+
+.piece-meta {
+  color: var(--md-default-fg-color--light);
+  font-size: 0.7rem;
+}

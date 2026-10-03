@@ -145,8 +145,8 @@ def load(path: Path = CATALOG_FILE) -> list[Piece]:
             if size is not None and size not in SIZES_MM:
                 problems.append(f"{p.id}: size {size} is not one of {SIZES_MM}")
         for photo in p.photos:
-            if Path(photo).is_absolute():
-                problems.append(f"{p.id}: photo paths must be repository-relative")
+            if not Path(photo).as_posix().startswith(f"docs/assets/photos/{p.id}/"):
+                problems.append(f"{p.id}: photos go under docs/assets/photos/{p.id}/ ({photo})")
     if problems:
         raise ValueError("; ".join(problems))
     return pieces

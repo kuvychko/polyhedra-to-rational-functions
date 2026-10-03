@@ -1,0 +1,20 @@
+{
+ "id": "site-piece-assets",
+ "question": "Coordinated views of every catalog piece for its object page (PROGRAM.md 14): geometry with zeros and poles, plane portrait, colored sphere, colored relief, neutral relief.",
+ "changed_factor": "none (presentation assets)",
+ "relief": "the printed shape: meshes.closed_relief (baseline settings, or order-tuned for new pieces)",
+ "phase_sectors": 12,
+ "plane_half_width": 2.5,
+ "plane_resolution": 500,
+ "sphere_resolution": 160,
+ "window": 700,
+ "image_width": 640,
+ "jpeg_quality": 86,
+ "views": {
+  "default": [2.2, 2.2, 1.6],
+  "tetrahedron": [1.0, 1.0, 1.0], "octahedron": [1.0, 1.0, 1.0], "cube": [1.0, 1.0, 1.0],
+  "rhombicuboctahedron": [1.0, 1.0, 1.0], "deltoidal-icositetrahedron": [1.0, 1.0, 1.0],
+  "triakis-tetrahedron": [1.0, 1.0, 1.0],
+  "icosahedron": [0.6, 0.0, 2.4], "dodecahedron": [0.6, 0.0, 2.4]
+ }
+}
