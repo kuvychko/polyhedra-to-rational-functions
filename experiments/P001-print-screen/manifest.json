@@ -5,7 +5,7 @@
   "hypothesis": "Pieces whose closest zero-pole and pole-pole gaps at sea level are no smaller than those of the printed baseline pieces at 130 mm will print comparably; R4 on irregular inputs and high-degree R2 are the risks.",
   "changed_factor": "piece and size (display rule fixed per origin: baseline pieces use their own printed settings; new pieces use the order-tuned rule)"
  },
- "started": "2026-10-03T15:08:04Z",
+ "started": "2026-10-03T20:35:36Z",
  "config": {
   "id": "P001-print-screen",
   "question": "Which catalog pieces are printable at 80 and 130 mm tip to tip, and how do their finest features compare with the pieces already printed successfully?",
@@ -74,7 +74,7 @@
   "window": 450
  },
  "code": {
-  "commit": "96ddb79aad9d294f946511a8d31cc0a9bc8b59c6",
+  "commit": "80ec958c1359da80e114d2bb33c4c08780dcb4e4",
   "dirty": false,
   "changed_paths": []
  },
@@ -371,8 +371,8 @@
   },
   {
    "path": "out/P001-print-screen/screen.png",
-   "sha256": "2c69c0e0be62588abe4b0cdf654e01bbccd6f33ddaa73d466be4f60ec502f825",
-   "bytes": 696839
+   "sha256": "6c261fc6610c70510dea638aa32a41d2d40b8fe2fba031b53685b5846893e81c",
+   "bytes": 870950
   }
  ],
  "config_file": {
@@ -381,7 +381,7 @@
  },
  "catalog": {
   "path": "catalog/pieces.yaml",
-  "sha256": "96acb1038ff971a21138378963a1ed0ed8a2184e790882d2422045d74d734a32"
+  "sha256": "3a31a12be0aec708751cf9f73cff4b1418418a13587debfea2ed5d1ff949ed5b"
  },
  "reference": {
   "80": {
@@ -402,8 +402,8 @@
   },
   {
    "path": "experiments/P001-print-screen/screen.jpg",
-   "sha256": "1564ad90f579533808357ed64e2442f57b41dc596e301f8f57b214627bea7a34",
-   "bytes": 324289,
+   "sha256": "f2caa03220df616fe0b9d28a69867646c86a0aa905bb4ebddf729580e9107ea7",
+   "bytes": 354854,
    "source": "out/P001-print-screen/screen.png"
   }
  ]
