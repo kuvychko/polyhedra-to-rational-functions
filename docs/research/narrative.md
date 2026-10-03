@@ -147,7 +147,7 @@ that: the deltoidal icositetrahedron's relief correlation rises from 0.950 to 0.
 ([E004](experiments.md#e004-what-the-display-does)). Phase cannot be tuned away. R1 winds about
 three times as often, and its coloring becomes hard to read.
 
-**R4 is genuinely different.** Its correlation with R2 is 0.55–0.92, whatever the display **[N]**
+**R4 is genuinely different.** Its correlation with R2 is 0.48–0.92, whatever the display **[N]**
 (E001, E004). On irregular solids it places zeros and poles very close together at short edges
 **[N]**. That first looked like a defect.
 
@@ -195,7 +195,7 @@ should change continuously: orders stay fixed and every placement point moves co
 **[D]**. Both tested families behaved this way **[N]**
 ([E003](experiments.md#e003-deformation-and-placement)). Two results went against expectation:
 
-- How far apart R1 and R2 look depends on geometry, not only on combinatorics: 0.96 to 0.57 along
+- How far apart R1 and R2 look depends on geometry, not only on combinatorics: 0.96 to 0.56 along
   the pyramid family.
 - Polar placement can put a face's pole **outside the face it represents**. On a sheared box this
   happens exactly at shear 1, together with edge feet leaving their edges **[D, N]**. Centroids

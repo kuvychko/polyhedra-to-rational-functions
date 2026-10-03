@@ -32,7 +32,7 @@ the reference, and the per-step ratios in the CSV stay bounded.
 
 **R1~R2 is not constant at fixed combinatorics: hypothesis refuted [N].**
 
-- **Pyramid:** R1~R2 falls from 0.96 (flat pyramid, `h = 0.15`) to 0.57 (`h = 4`).
+- **Pyramid:** R1~R2 falls from 0.96 (flat pyramid, `h = 0.15`) to 0.56 (`h = 4`).
 - **Why:** the orders are fixed (R1: all 1; R2: apex and hexagon 2, the rest 1), but the
   reweighted features (the apex zero and the hexagon pole) move. Their influence on the field
   depends on where they sit relative to everything else.

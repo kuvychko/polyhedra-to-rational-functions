@@ -58,7 +58,7 @@ R4ve 12, rhombicuboctahedron R4ve 48) or much dearer (pyramid, triakis tetrahedr
 
 - **R1 vs R2:** ≥ 0.98 except the pyramid (0.83) and the triakis tetrahedron and irregular-mixed
   (0.96). That confirms the screen.
-- **R4ve vs R2:** 0.55–0.92.
+- **R4ve vs R2:** 0.48–0.92 (lowest on the dodecahedron).
 - **R4fe vs R2:** negatively correlated (−0.29 to −0.92). It puts faces on the zero side.
 - **flag:** roughly uncorrelated with R2.
 

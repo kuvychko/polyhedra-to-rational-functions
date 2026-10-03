@@ -108,3 +108,10 @@ The decision itself stands. Four statements above are made precise here. The nar
      "the only recipe with transition continuity" for R4.
 4. **The order-tuned display equalizes only the highest-order features.** With `k = 2 μ_max`, a
    feature of order `μ` has tip exponent `μ / (2 μ_max)`. It is 1/2 only where `μ = μ_max`.
+
+## Erratum (2026-10-03)
+
+The criteria table gives R4's correlation with R2 as 0.55–0.92. Across the E001 corpus it is
+**0.48–0.92**: the dodecahedron is at 0.48. The site's claims test (`tests/test_site_claims.py`)
+caught the error. The conclusion is unchanged, and if anything stronger: R4's field differs from
+R2's.
