@@ -1,0 +1,172 @@
+"""The piece catalog: the hand-off between the website and the physical track (decision 0006).
+
+``catalog/pieces.yaml`` holds one entry per object. People edit it by hand: a printed size, a
+photo path, a Printables URL. Code never rewrites it. Everything else is derived here:
+
+- each piece's divisor, from its recipe and solid;
+- its status, from what the entry and the print screen record;
+- the next action;
+- the generated checklist ``catalog/CHECKLIST.md`` (``scripts/catalog_status.py``).
+
+The gallery reads the same entries, so the site and the checklist cannot disagree.
+"""
+
+from __future__ import annotations
+
+import csv
+from dataclasses import dataclass, field
+from pathlib import Path
+
+import yaml
+
+from . import fixtures
+from .divisors import Divisor
+from .recipes import PRESETS, apply
+
+CATALOG_DIR = Path(__file__).resolve().parents[2] / "catalog"
+CATALOG_FILE = CATALOG_DIR / "pieces.yaml"
+CHECKLIST_FILE = CATALOG_DIR / "CHECKLIST.md"
+SCREEN_FILE = (
+    Path(__file__).resolve().parents[2] / "experiments" / "P001-print-screen" / "screen.csv"
+)
+SIZES_MM = (80, 130)
+STATUSES = ("candidate", "screened", "exported", "printed", "photographed", "listed")
+
+
+@dataclass
+class Piece:
+    id: str
+    title: str
+    origin: str  # "baseline" (R0) or "new"
+    recipe: str
+    polyhedron: str
+    reciprocal: bool = False
+    baseline_slug: str | None = None
+    function: str | None = None
+    digital_only: bool = False
+    planned_size_mm: int | None = None
+    size_note: str | None = None
+    printed: list = field(default_factory=list)
+    stl: dict | None = None
+    photos: list = field(default_factory=list)
+    printables_url: str | None = None
+    notes: str | None = None
+
+    # --- mathematics -----------------------------------------------------------------
+
+    def divisor(self, reduced: bool = True) -> Divisor:
+        """The piece's divisor. Reduced by default: the printed relief uses the reduced
+        function, with an order-tuned display, which is unchanged by reduction."""
+        recipe = PRESETS[self.recipe].reciprocal() if self.reciprocal else PRESETS[self.recipe]
+        result = apply(recipe, fixtures.load(self.polyhedron))
+        return result.divisor if reduced else result.unreduced
+
+    # --- status ----------------------------------------------------------------------
+
+    def printed_sizes(self) -> list[int]:
+        return sorted({int(p["size_mm"]) for p in self.printed})
+
+    def stl_sizes(self) -> list[int]:
+        files = (self.stl or {}).get("files") or {}
+        return sorted(int(size) for size, entry in files.items() if entry and entry.get("sha256"))
+
+    def status(self, screened: set[str]) -> str:
+        if self.printables_url:
+            return "listed"
+        if self.photos:
+            return "photographed"
+        if self.printed:
+            return "printed"
+        if set(SIZES_MM) <= set(self.stl_sizes()):
+            return "exported"
+        if self.id in screened:
+            return "screened"
+        return "candidate"
+
+    def next_action(self, screened: set[str]) -> str:
+        if self.digital_only:
+            return "none (digital only)"
+        if self.id not in screened:
+            return "screen at 80 and 130 mm (B1)"
+        if not set(SIZES_MM) <= set(self.stl_sizes()):
+            return "export 80 and 130 mm STLs (B2)"
+        if self.planned_size_mm is None:
+            return "choose print size from the screen"
+        if self.planned_size_mm not in self.printed_sizes():
+            return f"print at {self.planned_size_mm} mm"
+        if not self.photos:
+            return "photograph"
+        if not self.printables_url:
+            return "upload to Printables (both sizes) and record the URL"
+        return "done"
+
+
+def load(path: Path = CATALOG_FILE) -> list[Piece]:
+    """Load and validate the catalog. Raises `ValueError` listing every problem found."""
+    data = yaml.safe_load(path.read_text(encoding="utf-8"))
+    pieces = [Piece(**entry) for entry in data["pieces"]]
+    problems = []
+    ids = [p.id for p in pieces]
+    if len(set(ids)) != len(ids):
+        problems.append("duplicate piece ids")
+    for p in pieces:
+        if p.origin not in ("baseline", "new"):
+            problems.append(f"{p.id}: origin must be baseline or new")
+        if p.recipe not in PRESETS:
+            problems.append(f"{p.id}: unknown recipe {p.recipe!r}")
+        if p.polyhedron not in fixtures.CONSTRUCTIONS:
+            problems.append(f"{p.id}: unknown polyhedron {p.polyhedron!r}")
+        if p.origin == "baseline":
+            from .baseline.ornaments import BY_SLUG
+
+            if p.baseline_slug not in BY_SLUG:
+                problems.append(f"{p.id}: baseline piece needs a known baseline_slug")
+        for size in [p.planned_size_mm, *p.printed_sizes()]:
+            if size is not None and size not in SIZES_MM:
+                problems.append(f"{p.id}: size {size} is not one of {SIZES_MM}")
+        for photo in p.photos:
+            if Path(photo).is_absolute():
+                problems.append(f"{p.id}: photo paths must be repository-relative")
+    if problems:
+        raise ValueError("; ".join(problems))
+    return pieces
+
+
+def screened_ids(path: Path = SCREEN_FILE) -> set[str]:
+    if not path.exists():
+        return set()
+    with path.open(encoding="utf-8") as fh:
+        return {row["piece"] for row in csv.DictReader(fh)}
+
+
+def checklist(pieces: list[Piece], screened: set[str]) -> str:
+    """The generated checklist (Markdown), one row per piece."""
+
+    def mark(ok: bool) -> str:
+        return "yes" if ok else "–"
+
+    lines = [
+        "# Phase 2 checklist",
+        "",
+        "Generated from `catalog/pieces.yaml` by `uv run python scripts/catalog_status.py`. Do not",
+        "edit by hand: change the catalog and regenerate.",
+        "",
+        "| piece | origin | status | screened | STLs 80/130 | planned | printed | photos "
+        "| Printables | next action |",
+        "|---|---|---|---|---|---|---|---|---|---|",
+    ]
+    for p in pieces:
+        stls = "/".join(mark(s in p.stl_sizes()) for s in SIZES_MM)
+        printed = ", ".join(f"{s} mm" for s in p.printed_sizes()) or "–"
+        planned = f"{p.planned_size_mm} mm" if p.planned_size_mm else "–"
+        lines.append(
+            f"| {p.title} | {p.origin} | {p.status(screened)} | {mark(p.id in screened)} "
+            f"| {stls} | {planned} | {printed} | {len(p.photos) or '–'} "
+            f"| {'[link](' + p.printables_url + ')' if p.printables_url else '–'} "
+            f"| {p.next_action(screened)} |"
+        )
+    open_items = [
+        p for p in pieces if p.next_action(screened) not in ("done", "none (digital only)")
+    ]
+    lines += ["", f"{len(open_items)} of {len(pieces)} pieces have an open action."]
+    return "\n".join(lines) + "\n"

@@ -1,0 +1,20 @@
+{
+ "id": "P001-print-screen",
+ "question": "Which catalog pieces are printable at 80 and 130 mm tip to tip, and how do their finest features compare with the pieces already printed successfully?",
+ "hypothesis": "Pieces whose closest zero-pole and pole-pole gaps at sea level are no smaller than those of the printed baseline pieces at 130 mm will print comparably; R4 on irregular inputs and high-degree R2 are the risks.",
+ "changed_factor": "piece and size (display rule fixed per origin: baseline pieces use their own printed settings; new pieces use the order-tuned rule)",
+ "sizes_mm": [80, 130],
+ "depth": 0.2,
+ "new_piece_display": "order-tuned: complexplorer pole_order = max |order| of the reduced divisor, i.e. k = min(2 mu_max, 6)",
+ "resolution": {"default": 300, "r2-deltoidal-icositetrahedron": 400, "r4ve-rhombicuboctahedron": 400},
+ "reference_pieces": ["dodecahedron-icosahedron-dual", "icosidodecahedral-star", "icosahedral-crown", "cube-octahedron-dual"],
+ "reference_size_mm": 130,
+ "views": {
+  "default": [2.2, 2.2, 1.6],
+  "tetrahedron": [1.0, 1.0, 1.0], "octahedron": [1.0, 1.0, 1.0], "cube": [1.0, 1.0, 1.0],
+  "rhombicuboctahedron": [1.0, 1.0, 1.0], "deltoidal-icositetrahedron": [1.0, 1.0, 1.0],
+  "triakis-tetrahedron": [1.0, 1.0, 1.0],
+  "icosahedron": [0.6, 0.0, 2.4], "dodecahedron": [0.6, 0.0, 2.4]
+ },
+ "window": 450
+}
