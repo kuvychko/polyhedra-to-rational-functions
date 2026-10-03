@@ -226,3 +226,60 @@ def placement_report(poly: Polyhedron) -> dict:
         "n_faces": poly.n_faces,
         "n_edges": poly.n_edges,
     }
+
+
+def phase_character(d: Divisor, g, n: int = 400, seed: int = 0) -> dict:
+    """How the complex function, not just ``|f|``, transforms under an orthogonal map ``g``
+    that preserves the divisor.
+
+    For a rotation, ``f(g x) / f(x)`` has no zeros or poles, and under the chordal convention it
+    has modulus 1, so it is a constant ``e^{i theta_g}`` **[D]**. The relief is invariant, but
+    the phase colors shift by ``theta_g``. A reflection acts antiholomorphically in the chart,
+    and then ``f(g x) = e^{i theta_g} conj(f(x))``: the phase is mirrored and shifted.
+
+    Measured on random sphere points away from the chart's far region. Returns ``theta`` in
+    ``(-pi, pi]``, the largest deviation from that constant (``spread``, about 1e-13 when the
+    relation holds), and whether ``g`` is proper.
+    """
+    g = np.asarray(g, dtype=float)
+    rng = np.random.default_rng(seed)
+    x = rng.normal(size=(n, 3))
+    x /= np.linalg.norm(x, axis=1, keepdims=True)
+    z, zg = to_chart(x), to_chart(x @ g.T)
+    keep = np.isfinite(z) & np.isfinite(zg) & (np.abs(z) < 20) & (np.abs(zg) < 20)
+    _, phase = log_modulus_and_phase(d, z[keep])
+    _, phase_g = log_modulus_and_phase(d, zg[keep])
+    proper = bool(np.linalg.det(g) > 0)
+    diff = phase_g - phase if proper else phase_g + phase
+    theta = float(np.angle(np.mean(np.exp(1j * diff))))
+    spread = float(np.abs(np.angle(np.exp(1j * (diff - theta)))).max())
+    return {"theta": theta, "spread": spread, "proper": proper}
+
+
+def character_report(d: Divisor, group: list[np.ndarray], tol: float = 1e-8) -> dict:
+    """`phase_character` over every group element that preserves the divisor.
+
+    Reports how many elements fix ``f`` exactly (``theta = 0``) and the distinct nonzero
+    ``theta / pi`` values, separately for proper and improper elements.
+    """
+    report = {"checked": 0, "max_spread": 0.0}
+    for kind in ("proper", "improper"):
+        report[f"{kind}_trivial"] = 0
+        report[f"{kind}_nontrivial_theta_over_pi"] = []
+    for g in group:
+        if not d.rotated(g).same_as(d):
+            continue
+        c = phase_character(d, g)
+        kind = "proper" if c["proper"] else "improper"
+        report["checked"] += 1
+        report["max_spread"] = max(report["max_spread"], c["spread"])
+        if abs(c["theta"]) < tol:
+            report[f"{kind}_trivial"] += 1
+        else:
+            values = report[f"{kind}_nontrivial_theta_over_pi"]
+            value = round(c["theta"] / np.pi, 6)
+            if value not in values:
+                values.append(value)
+    for kind in ("proper", "improper"):
+        report[f"{kind}_nontrivial_theta_over_pi"].sort()
+    return report

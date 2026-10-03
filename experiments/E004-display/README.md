@@ -10,8 +10,8 @@
 - **Changed factor:** only the logistic scale `k` in `r = depth + (1 − depth) logistic(log|f| / k)`.
   The functions and `depth = 0.2` are fixed. Three mappings:
   - **fixed:** `k = 4` for every recipe, as in E001;
-  - **order-tuned:** `k = 2 × max |order|`, the baseline's rule, which gives every recipe tip
-    exponent 1/2;
+  - **order-tuned:** `k = 2 × max |order|`, the baseline's rule. It gives tip exponent 1/2 to
+    each recipe's highest-order features; a feature of order `μ` gets `μ / (2 μ_max)`;
   - **degree-compressed:** `k = degree / 6`, calibrated so that the cube's R2 equals the fixed
     display.
 - **Method:**
@@ -19,6 +19,9 @@
     complexplorer's mesh to 1e-6 (tested).
   - They are compared on 20,000 Fibonacci samples. Radii are bounded, so no caps are needed.
   - Neutral reliefs are rendered for the DI and irregular-9.
+  - Divisors are **gcd-reduced**. Reduction matters only to the fixed display, where `log|f|`
+    scales with the reduction and `k` does not. The order-tuned and degree-compressed displays
+    are unchanged by reduction, because `log|f|` and `k` scale together.
 - **Status:** complete. Run from clean commit `6284280`; its code is identical to `7c929c7`.
   Reproduce with `uv run python scripts/e004_display.py --publish`.
 - **Files:**

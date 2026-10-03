@@ -34,7 +34,8 @@
 
 - every local order matches its winding, including features at ∞;
 - every recipe meets its predicted duality (residuals ≤ 1e-13);
-- every recipe preserves the fixture's full symmetry group;
+- every recipe's divisor, and so its relief `|f|`, is invariant under the fixture's full
+  symmetry group (the function itself can pick up a phase character; see the narrative, §6);
 - no zero–pole cancellations occur anywhere.
 
 These checks pass for all recipes alike, so none of them separates the recipes.

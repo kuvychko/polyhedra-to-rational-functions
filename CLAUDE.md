@@ -45,6 +45,12 @@ means flipping visibility; there is no scrub step. So:
   multiplicities; the rational function is determined up to a nonzero constant. Total zero and
   pole orders balance across the whole sphere, including `∞`. Cancellation of coincident points
   is explicit and reported; nearby distinct points are never silently merged.
+- **Unreduced by convention**: a recipe is its unreduced divisor. gcd reduction is a separate,
+  reported, per-solid step. Identities, duality and transition comparisons use unreduced
+  divisors (`RecipeResult.unreduced`).
+- **Say which symmetry**: a preserved divisor means a symmetric relief `|f|`. The function itself
+  may pick up a phase character `e^{iθ_g}`. Never write "full symmetry" without saying which
+  is meant.
 - **Polarity**: for a face plane `n · x = h` (unit outward `n`, `h > 0`), the unit-sphere polar
   dual vertex is `n / h` and its spherical direction is `n`. Projected face centroids are a
   separate candidate point set. Use the same origin for a polyhedron and its dual.
@@ -58,7 +64,8 @@ means flipping visibility; there is no scrub step. So:
   compression (e.g. `|f|^(1/d)`) and radial transfer function are separately configured and
   separately recorded. A display mapping is not a change of recipe.
 - **Label claims** as established background, derived result, numerical observation,
-  conjecture, or design preference. No novelty claims without a targeted literature review.
+  conjecture, or design preference. A finding from the corpus is "in the tested examples" unless
+  it is derived; name the transition classes or solids it covers. No novelty claims without a targeted literature review.
 - "Klein duals" is a historical label for existing assets only. Attribute to Klein only
   classical constructions whose formulas and attribution have been checked.
 

@@ -11,8 +11,8 @@ sharpness).
 The display mappings change only the logistic scale ``k``; the functions are untouched:
 
 - ``fixed``: the same ``k`` for every recipe, as in the E001 atlas;
-- ``order-tuned``: ``k = 2 x max |order|``, the baseline's rule, which gives every recipe the same
-  tip exponent 1/2;
+- ``order-tuned``: ``k = 2 x max |order|``, the baseline's rule. It gives tip exponent 1/2 to each
+  recipe's highest-order features, and ``mu / (2 mu_max)`` to a feature of order ``mu``;
 - ``degree-compressed``: ``k = degree / 6``, so the logistic sees ``log|f| / degree``.
 
 Outputs, in ``out/E004-display/``: ``display.csv``, ``display.png`` (correlations) and

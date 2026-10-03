@@ -22,12 +22,12 @@ Current findings ([decision 0005](docs/decisions/0005-phase1-recipe-selection.md
 
 - **Default recipe, R2:** zeros at vertex directions with order equal to the valence, and poles at
   the polar face directions with order equal to the number of sides. It has exact reciprocal
-  duality, the full symmetry group, and in practice the lowest degree.
-- **Alternative, R4:** vertices or faces against edges. It is the only recipe that stays
-  continuous across a matching combinatorial transition, and it reproduces the existing crown and
-  star ornaments.
-- **An exact family:** `f_R2 = f_R4ve / f_R4fe`. The existing Klein-invariant ornaments are all
-  outputs of these recipes on Platonic solids.
+  duality, a relief as symmetric as the solid, and the lowest degree on most tested solids.
+- **Alternative, R4:** vertices or faces against edges. In the tested transitions it is the only
+  recipe that stays continuous, under the transition matching its pairing (for R4ve, any vertex
+  truncation). It reproduces the existing crown and star ornaments.
+- **An exact family:** for unreduced divisors, `f_R2 = C · f_R4ve / f_R4fe`. The existing
+  Klein-invariant ornaments are all outputs of these recipes on Platonic solids.
 - **An exact normalization:** `log|f| = Σ m log χ` (chordal distance). It is self-dual and has
   geometric mean 1, with no sampling.
 

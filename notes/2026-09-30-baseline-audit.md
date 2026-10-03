@@ -165,3 +165,10 @@ Finding 4 is resolved (`notes/2026-10-01-recipes-and-diagnostics.md`):
 - All six pieces have their full groups, including mirrors.
 - The claim that tetrahedral-dual is chiral is **false**: it has the tetrahedron's six mirror
   planes, and its cut halves are congruent.
+
+## Erratum (2026-10-03)
+
+§2 says the baseline's `k = 2·pole_order` "fixes the tip exponent at 1/2". That holds only for the
+highest-order poles. A feature of order `μ` gets exponent `μ / (2·pole_order)`, so the
+lower-order zeros on, for example, the icosahedral crown are sharper. The frozen baseline's
+comment repeats the claim, and is left unedited.

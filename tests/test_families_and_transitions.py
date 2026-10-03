@@ -107,3 +107,17 @@ def test_relief_radius_matches_complexplorer_mesh():
     directions = mesh.points[keep] / r[keep, None]
     predicted = relief_radius(log_modulus_on_sphere(d, directions), k, depth)
     assert np.allclose(predicted, r[keep], atol=1e-6)
+
+
+def test_gcd_reduction_can_break_continuity():
+    """Recipes are compared unreduced (RecipeResult.unreduced). Reduced R4fe is not continuous at
+    the raised-face transition: the cube's gcd is 2 and the raised cube's is 1, so the reduced
+    limit is the square of the cube's reduced function."""
+    from polyhedral_functions.diagnostics import field_comparison
+
+    near, cube = apply(R4FE, families.raised_face_cube(1e-4)), apply(R4FE, CUBE)
+    assert (near.gcd, cube.gcd) == (1, 2)
+    unreduced = field_comparison(near.unreduced, cube.unreduced, n=4000, per_degree=False)
+    reduced = field_comparison(near.divisor, cube.divisor, n=4000, per_degree=False)
+    assert unreduced["rms_difference"] < 1e-6
+    assert reduced["rms_difference"] > 0.5

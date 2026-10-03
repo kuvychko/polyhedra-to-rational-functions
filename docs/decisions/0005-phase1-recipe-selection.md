@@ -85,3 +85,26 @@ of the six baseline pieces, and its field differs from R2's in a way no display 
 - Phase 2 printing shows R4's near pairs to be unprintable at practical sizes.
 - A review finds prior work that settles the choice.
 - A recipe outside the incidence lattice turns out to be continuous across transitions.
+
+## Clarifications (2026-10-03, after review)
+
+The decision itself stands. Four statements above are made precise here. The narrative
+(`docs/research/narrative.md`) carries the same corrections.
+
+1. **Unreduced multiplicities define a recipe.** Identities between recipes, duality comparisons
+   and transition comparisons refer to unreduced divisors (`RecipeResult.unreduced`). gcd
+   reduction is a per-solid economy step, so the "degree" entries in the table are reduced
+   degrees. Reduction can break continuity: reduced R4fe jumps at the raised-face transition,
+   where the gcd changes from 1 to 2 (`tests/test_families_and_transitions.py`).
+2. **"Full group" means symmetry of the relief.** What was tested is that the divisor is
+   preserved, which is the same as `|f|` being invariant. The function itself transforms by a
+   phase character: `f(gx) = e^{iθ_g} f(x)` for rotations and `e^{iθ_g} conj f(x)` for
+   reflections. `θ_g` is nontrivial in several cases, for example cube roots of unity for R2 on
+   the tetrahedron, which includes the existing tetrahedral dual (`diagnostics.character_report`).
+3. **Corpus observations are not universal.**
+   - *Proved generally:* R2 jumps under every vertex truncation, and R4ve is continuous under it.
+   - *Shown for the tested cube cases only:* the edge-bevel and raised-face results.
+   - *Observations of the tested corpus, not proofs:* "no near zero–pole pairs" for R2, and
+     "the only recipe with transition continuity" for R4.
+4. **The order-tuned display equalizes only the highest-order features.** With `k = 2 μ_max`, a
+   feature of order `μ` has tip exponent `μ / (2 μ_max)`. It is 1/2 only where `μ = μ_max`.

@@ -122,6 +122,19 @@ class RecipeResult:
 
     ``divisor`` is coalesced and gcd-reduced. ``unreduced_degree`` and ``gcd`` record the
     reduction, and ``cancellations`` lists every zero-pole cancellation of coincident points.
+
+    **Convention: the recipe is defined by its unreduced divisor** (`unreduced`). The gcd
+    reduction is a separate economy step for one solid at a time. It takes a ``g``-th root of the
+    function, and ``g`` can differ between solids, so:
+
+    - identities between recipes (``D_R2 = D_R4ve - D_R4fe``);
+    - comparisons across a combinatorial transition;
+    - comparisons between a solid and its polar dual
+
+    are stated for unreduced divisors. Between reduced ones they hold only up to powers
+    (``f_R2^g2 = C f_R4ve^gve / f_R4fe^gfe``). Continuity can also fail outright: reduced R4fe is
+    discontinuous at the raised-face transition, where the cube's gcd is 2 and the raised cube's
+    is 1 (``tests/test_families_and_transitions.py``).
     """
 
     recipe: Recipe
@@ -133,7 +146,13 @@ class RecipeResult:
 
     @property
     def degree(self) -> int:
+        """Degree of the gcd-reduced divisor."""
         return self.divisor.degree
+
+    @property
+    def unreduced(self) -> Divisor:
+        """The recipe's divisor before gcd reduction: the one identities and transitions use."""
+        return self.divisor * self.gcd
 
     def record(self) -> dict:
         """Manifest entry: the recipe's settings plus the resulting divisor's summary."""

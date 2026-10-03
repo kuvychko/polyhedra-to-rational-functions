@@ -62,7 +62,8 @@ jump, the R4ve bevel jump and both continuous cases. The rest are recorded in `j
   continuity under truncation, not only a liability. They are small cells that are close to
   collapsing. For printing they remain a spike beside a pit.
 - **Stability favours R4 here:** among the recipes compared, only R4 has any transition-continuity
-  (for the transitions polar to its edge pairing). R2 jumps at every one. This is a real point in
+  (for the transitions polar to its edge pairing). R2 jumps in all three tested classes, and under
+  vertex truncation in general. This is a real point in
   R4's favour on the stability criterion of `PROGRAM.md` §5.
 - **Degree needs care in reporting:** degree economy must be reported with that caveat. A
   recipe's degree can be inflated by near-cancelling structure that is invisible in the field.

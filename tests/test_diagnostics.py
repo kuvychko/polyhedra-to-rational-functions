@@ -11,6 +11,7 @@ from polyhedral_functions import fixtures
 from polyhedral_functions.baseline import ornaments
 from polyhedral_functions.chart import to_chart, to_sphere
 from polyhedral_functions.diagnostics import (
+    character_report,
     field_comparison,
     symmetry_report,
     winding_orders,
@@ -120,3 +121,32 @@ def test_field_comparison_reproduces_the_separation_screen():
     apart = field_comparison(apply(R1, pyramid).divisor, apply(R2, pyramid).divisor)
     assert apart["correlation"] < 0.9
     assert 0 < apart["excluded_fraction"] < 0.2
+
+
+# --- symmetry of the complex function, not only of the relief ---------------------------
+
+
+@pytest.mark.parametrize("slug", R0_RECIPES)
+def test_symmetries_act_on_f_by_a_constant_phase(slug):
+    """A divisor-preserving rotation multiplies f by e^{i theta}; a reflection conjugates the
+    phase and shifts it. The relation holds exactly (spread ~1e-13) on every baseline piece."""
+    recipe, fixture_id = R0_RECIPES[slug]
+    poly = fixtures.load(fixture_id)
+    report = character_report(apply(recipe, poly).divisor, poly.symmetry_group())
+    assert report["checked"] == len(poly.symmetry_group())
+    assert report["max_spread"] < 1e-9
+
+
+def test_tetrahedral_dual_phase_rotates_under_three_fold_rotations():
+    """|f| is invariant under T_d, but f is not: the 8 three-fold rotations multiply it by
+    e^{+-2 pi i / 3}. The relief is symmetric and the phase coloring is not."""
+    poly = fixtures.load("tetrahedron")
+    report = character_report(apply(R2, poly).divisor, poly.symmetry_group())
+    assert report["proper_trivial"] == 4  # identity and the three half-turns
+    assert report["proper_nontrivial_theta_over_pi"] == [-0.666667, 0.666667]
+
+
+def test_octahedral_pieces_are_invariant_as_functions():
+    poly = fixtures.load("octahedron")
+    report = character_report(apply(R2, poly).divisor, poly.symmetry_group())
+    assert report["proper_trivial"] == 24 and report["improper_trivial"] == 24

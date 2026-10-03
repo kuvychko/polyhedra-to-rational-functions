@@ -88,3 +88,11 @@ record the correction.
 - Symmetry preservation is not a discriminating criterion among the current candidates.
   Duality, degree, interpretability and the field comparisons are.
 - Next is M5: the comparison atlas (rendering adapters, run manifests, standard panels).
+
+## Addendum (2026-10-03)
+
+"Preserve the full symmetry group" above means that the divisor is preserved, which is the same
+as `|f|` (the relief) being invariant. The complex function transforms by a phase character,
+`f(gx) = e^{iθ_g} f(x)` for rotations and `e^{iθ_g} conj f(x)` for reflections, and `θ_g` is
+nontrivial in several cases. They are measured by `diagnostics.character_report`; the narrative,
+§6, has the table.
