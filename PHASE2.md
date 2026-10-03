@@ -20,7 +20,7 @@ by hand here.
   - a CI build job (no deploy).
   - The site source is `docs/`. Internal records (decisions, notes) are either published as part
     of the research path or excluded deliberately.
-- [ ] **A2 Research path:**
+- [x] **A2 Research path:**
   - the narrative;
   - a recipe page with the worked example;
   - E001–E004 summaries with their figures;

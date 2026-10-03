@@ -9,11 +9,13 @@ each one fails.
 
 - **[The recipes](recipes.md):** the construction in brief, the selected default (R2), its
   alternative (R4), and a complete worked example.
-- **[The exploration](narrative.md):** the full account. It covers how the question was set up,
-  which experiments changed the picture, and what remains open. Every claim is labelled as
+- **[The exploration](narrative.md):** the full account. It covers how the question was set up
+  and which experiments changed the picture. Every claim is labelled as
   established background, derived here, numerical observation, conjecture, or design
   preference.
 - **[Experiments](experiments.md):** the comparison atlas and the controlled experiments, with
   their figures.
+- **[Limitations](limitations.md):** how far each result reaches, what the construction gives
+  up, the known weaknesses, and the open questions.
 - **[Decisions](../decisions/README.md):** short records of each convention and choice, with the
   reasons for it and what would reopen it.

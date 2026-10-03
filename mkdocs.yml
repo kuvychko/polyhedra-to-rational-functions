@@ -48,6 +48,10 @@ hooks:
 
 strict: true
 
+# Broken #anchor links fail the strict build too (MkDocs reports them only as INFO by default).
+validation:
+  anchors: warn
+
 exclude_docs: |
   hooks/
 
@@ -82,6 +86,7 @@ nav:
       - The recipes: research/recipes.md
       - The exploration: research/narrative.md
       - Experiments: research/experiments.md
+      - Limitations: research/limitations.md
       - Decisions: decisions/README.md
   - Printing: printing.md
   - Reproduce: reproduce.md
