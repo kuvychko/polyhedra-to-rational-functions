@@ -25,6 +25,7 @@ pieces:
   baseline_slug: cube-octahedron-dual
   recipe: R2
   polyhedron: octahedron
+  cut: {normal: [0, 0.7071, -0.7071], approved: true, note: "P002 proposal #1, approved by owner 2026-10-03 (identical halves)"}
   function: "V(z)^4 / F(z)^3"
   planned_size_mm: 80
   size_note: "Reprint at 80 mm: too few features to gain from 130 mm (owner, 2026-10-03)."
@@ -45,6 +46,7 @@ pieces:
   baseline_slug: dodecahedron-icosahedron-dual
   recipe: R2
   polyhedron: icosahedron
+  cut: {normal: [0.9511, -0.309, 0], approved: true, note: "P002 proposal #1, approved by owner 2026-10-03 (identical halves)"}
   function: "V(z)^5 / H(z)^3 (icosahedral forms)"
   planned_size_mm: 130
   printed:
@@ -64,6 +66,7 @@ pieces:
   baseline_slug: icosidodecahedral-star
   recipe: R4ve
   polyhedron: dodecahedron
+  cut: {normal: [0.7947, 0.5774, 0.1876], approved: true, note: "P002 proposal #1, approved by owner 2026-10-03 (identical halves)"}
   function: "H(z)^3 / T(z)^2 (icosahedral forms)"
   planned_size_mm: 130
   printed:
@@ -84,6 +87,7 @@ pieces:
   recipe: R4ve
   reciprocal: true
   polyhedron: icosahedron
+  cut: {normal: [-0.2764, 0.8507, -0.4472], approved: true, note: "P002 proposal #1, approved by owner 2026-10-03 (identical halves)"}
   function: "T(z)^2 / V(z)^5 (icosahedral forms)"
   planned_size_mm: 130
   printed:
@@ -103,6 +107,7 @@ pieces:
   baseline_slug: tetrahedral-dual
   recipe: R2
   polyhedron: tetrahedron
+  cut: {normal: [0, 0.7071, 0.7071], approved: true, note: "P002 proposal #1, approved by owner 2026-10-03 (identical halves)"}
   function: "Φ(z) / Ψ(z)"
   planned_size_mm: 80
   size_note: "80 mm: too few features to gain from 130 mm (owner, 2026-10-03)."
@@ -124,6 +129,7 @@ pieces:
   recipe: R4ve
   reciprocal: true
   polyhedron: octahedron
+  cut: {normal: [0, 1, 0], approved: true, note: "P002 proposal #1, approved by owner 2026-10-03 (identical halves)"}
   function: "E(z) / V(z)^2"
   planned_size_mm: 80
   size_note: "80 mm: few, broad features (owner, 2026-10-03)."
@@ -145,6 +151,7 @@ pieces:
   origin: new
   recipe: R2
   polyhedron: deltoidal-icositetrahedron
+  cut: {normal: [0.7071, 0.7071, 0], approved: true, note: "P002 proposal #1, approved by owner 2026-10-03 (identical halves)"}
   resolution: 400
   planned_size_mm: 130
   size_note: "Proposed from P001 (many features, within the printed reference); confirm."
@@ -155,6 +162,7 @@ pieces:
   origin: new
   recipe: R4ve
   polyhedron: rhombicuboctahedron
+  cut: {normal: [0, 1, 0], approved: true, note: "P002 proposal #1, approved by owner 2026-10-03 (identical halves)"}
   resolution: 400
   planned_size_mm: 130
   size_note: "Proposed from P001: pole-pole gap below the printed reference, so the larger size; a test print. Confirm."
@@ -165,6 +173,7 @@ pieces:
   origin: new
   recipe: R2
   polyhedron: triakis-tetrahedron
+  cut: {normal: [0.7071, -0.7071, 0], approved: true, note: "P002 proposal #1, approved by owner 2026-10-03 (identical halves)"}
   planned_size_mm: 80
   size_note: "Proposed: few features, like the tetrahedral dual; confirm."
   notes: "Low degree (12) with tetrahedral symmetry."
@@ -174,6 +183,7 @@ pieces:
   origin: new
   recipe: R2
   polyhedron: irregular-mixed
+  cut: {normal: [-0.1621, 0.9102, 0.3812], approved: true, note: "P002 proposal #1, approved by owner 2026-10-03 (different halves)"}
   planned_size_mm: 130
   size_note: "Proposed: two R2 spikes 2.4 mm apart at 130 mm fuse into one double spike; the larger size shows it best. Confirm."
   notes: "Two adjacent faces 3.4 degrees from coplanar: R2 near a combinatorial transition, made visible."
@@ -183,6 +193,7 @@ pieces:
   origin: new
   recipe: R2
   polyhedron: irregular-separated
+  cut: {normal: [-0.0011, 0.9312, -0.3646], approved: true, note: "P002 proposal #1, approved by owner 2026-10-03 (different halves)"}
   planned_size_mm: 130
   size_note: "Proposed; confirm after P001."
   notes: "The printable 'any convex solid': no symmetry, mixed valences and face sizes, R2 features at least 24.7 degrees apart."
