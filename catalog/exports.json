@@ -3,7 +3,7 @@
   "cube-octahedron-dual": {
    "display": "baseline settings (logarithmic, k = 6.0)",
    "code": {
-    "commit": "02b665058ed03fc2c3080037b242a2f4dd14c698",
+    "commit": "deae31d13291719af7d92eaff7e4c5495fbaaefa",
     "dirty": false
    },
    "sizes": {
@@ -43,12 +43,20 @@
      ],
      "snapped_to_symmetry_plane": true,
      "halves": "identical",
+     "dowel": {
+      "diameter_mm": 5.2,
+      "depth_each_side_mm": 6.0,
+      "floor_plus_mm": 20.84,
+      "floor_minus_mm": 20.84,
+      "side_wall_mm": 1.5,
+      "pin": "M5 x 10 dowel pin"
+     },
      "files": [
       {
        "name": "cube-octahedron-dual-80mm-half.stl",
-       "sha256": "e1fc2fb210d16a1eef5159285ef0e92f9391b1d3b39b1ed84ec79faa8814e0af",
+       "sha256": "a2f6233885c0eef377754cb227b43e3733b367fd8f3efe9c6a79559d041b7fd6",
        "copies": 2,
-       "bytes": 4544784
+       "bytes": 4613384
       }
      ]
     },
@@ -65,12 +73,20 @@
      ],
      "snapped_to_symmetry_plane": true,
      "halves": "identical",
+     "dowel": {
+      "diameter_mm": 5.2,
+      "depth_each_side_mm": 11.0,
+      "floor_plus_mm": 32.62,
+      "floor_minus_mm": 32.62,
+      "side_wall_mm": 1.5,
+      "pin": "M5 x 20 dowel pin"
+     },
      "files": [
       {
        "name": "cube-octahedron-dual-130mm-half.stl",
-       "sha256": "31a1bb0093d88dfbedd7ad8c8b4aec9b3ef83325c0dec9d947922867cde48177",
+       "sha256": "02992f740ded17d8fc1b7540c1bb98670a974ca5e25cd5be2330f8d9d43a93e2",
        "copies": 2,
-       "bytes": 4544784
+       "bytes": 4613384
       }
      ]
     }
@@ -98,16 +114,24 @@
       "reach_plus_mm": 4.75,
       "reach_minus_mm": 4.75
      },
+     "dowel": {
+      "diameter_mm": 5.2,
+      "depth_each_side_mm": 6.0,
+      "floor_plus_mm": 20.84,
+      "floor_minus_mm": 20.84,
+      "side_wall_mm": 1.5,
+      "pin": "M5 x 10 dowel pin"
+     },
      "files": [
       {
        "name": "cube-octahedron-dual-80mm-ornament-half-a.stl",
-       "sha256": "567719eec9f8b7a27322e1aa658e0da0a86a625d0c1cdd94572418cc305c55cc",
-       "bytes": 4615084
+       "sha256": "c46d2e658b83b3d75c8e3f32bf127bf76a18dc3c08d50372b28794ca5d98185f",
+       "bytes": 4624684
       },
       {
        "name": "cube-octahedron-dual-80mm-ornament-half-b.stl",
-       "sha256": "3b4d731290c26348b1074d287e7d2d970cceb632967aad07e430c7439ad99296",
-       "bytes": 4615184
+       "sha256": "afc9222a8ab0f77389c8cc13ff66f149ab660b9520225b0075a586ec3445813b",
+       "bytes": 4624784
       }
      ]
     },
@@ -133,16 +157,24 @@
       "reach_plus_mm": 3.55,
       "reach_minus_mm": 3.55
      },
+     "dowel": {
+      "diameter_mm": 5.2,
+      "depth_each_side_mm": 11.0,
+      "floor_plus_mm": 32.62,
+      "floor_minus_mm": 32.62,
+      "side_wall_mm": 1.5,
+      "pin": "M5 x 20 dowel pin"
+     },
      "files": [
       {
        "name": "cube-octahedron-dual-130mm-ornament-half-a.stl",
-       "sha256": "568482c26f2063ea374c34f60d876692ea51d0e58e1709ef23667520ee3e1952",
-       "bytes": 4614384
+       "sha256": "9bb310509bfb5a91bd61907ba642f725354fc67238e5f9f3c1a849d243704ec6",
+       "bytes": 4623984
       },
       {
        "name": "cube-octahedron-dual-130mm-ornament-half-b.stl",
-       "sha256": "f5472d3e97bd9dee13b37beb6b90015a24eac01de7e2f307580dee70e3e02123",
-       "bytes": 4614484
+       "sha256": "32cc4cdf6f4521a6936a0ea8c0939a5e880258818897514fae2593f45febf6ea",
+       "bytes": 4624084
       }
      ]
     }
@@ -151,7 +183,7 @@
   "dodecahedron-icosahedron-dual": {
    "display": "baseline settings (logarithmic, k = 6.0)",
    "code": {
-    "commit": "02b665058ed03fc2c3080037b242a2f4dd14c698",
+    "commit": "deae31d13291719af7d92eaff7e4c5495fbaaefa",
     "dirty": false
    },
    "sizes": {
@@ -191,12 +223,20 @@
      ],
      "snapped_to_symmetry_plane": true,
      "halves": "identical",
+     "dowel": {
+      "diameter_mm": 5.2,
+      "depth_each_side_mm": 6.0,
+      "floor_plus_mm": 20.91,
+      "floor_minus_mm": 20.9,
+      "side_wall_mm": 1.5,
+      "pin": "M5 x 10 dowel pin"
+     },
      "files": [
       {
        "name": "dodecahedron-icosahedron-dual-80mm-half.stl",
-       "sha256": "592a45f835391db43990cbad81c05a9fb9d233f9c83c8d98e51df317628037a2",
+       "sha256": "7db6d6753981805cd6bf177c89d16e592f55bba26ec7ccf6c9ff8d9f13df9099",
        "copies": 2,
-       "bytes": 8084084
+       "bytes": 8125484
       }
      ]
     },
@@ -213,12 +253,20 @@
      ],
      "snapped_to_symmetry_plane": true,
      "halves": "identical",
+     "dowel": {
+      "diameter_mm": 5.2,
+      "depth_each_side_mm": 11.0,
+      "floor_plus_mm": 32.72,
+      "floor_minus_mm": 32.72,
+      "side_wall_mm": 1.5,
+      "pin": "M5 x 20 dowel pin"
+     },
      "files": [
       {
        "name": "dodecahedron-icosahedron-dual-130mm-half.stl",
-       "sha256": "85c3ac413b34b2b02577293b457e457bfc18c2f717c009690e211f7d1df75c3a",
+       "sha256": "69ec0266b871745eae1374de6f2bd5b95c95db36753a36e6516405eb32ac3d3b",
        "copies": 2,
-       "bytes": 8084084
+       "bytes": 8125684
       }
      ]
     }
@@ -246,16 +294,24 @@
       "reach_plus_mm": 3.05,
       "reach_minus_mm": 3.05
      },
+     "dowel": {
+      "diameter_mm": 5.2,
+      "depth_each_side_mm": 6.0,
+      "floor_plus_mm": 20.91,
+      "floor_minus_mm": 20.9,
+      "side_wall_mm": 1.5,
+      "pin": "M5 x 10 dowel pin"
+     },
      "files": [
       {
        "name": "dodecahedron-icosahedron-dual-80mm-ornament-half-a.stl",
-       "sha256": "d2cad9c265dc4db836eed32f8ec439453f60a7b41a9155bed372a52938199cff",
-       "bytes": 8126884
+       "sha256": "0a4e0298eb196d49e762ba3bf2c12076b4d98a6deef952e4519d67d857741e87",
+       "bytes": 8136484
       },
       {
        "name": "dodecahedron-icosahedron-dual-80mm-ornament-half-b.stl",
-       "sha256": "1b7d534ca1d9506f8add780da1c5f3af66a71a5366c095fe32367fbf53e2c915",
-       "bytes": 8167284
+       "sha256": "4dd8c92845362929f50e13a4887e4c80c463bbfefe108b369fac28e0e4726d2c",
+       "bytes": 8176884
       }
      ]
     },
@@ -281,16 +337,24 @@
       "reach_plus_mm": 2.3,
       "reach_minus_mm": 2.3
      },
+     "dowel": {
+      "diameter_mm": 5.2,
+      "depth_each_side_mm": 11.0,
+      "floor_plus_mm": 32.72,
+      "floor_minus_mm": 32.72,
+      "side_wall_mm": 1.5,
+      "pin": "M5 x 20 dowel pin"
+     },
      "files": [
       {
        "name": "dodecahedron-icosahedron-dual-130mm-ornament-half-a.stl",
-       "sha256": "ba5557a23c54e9e6747c23a797395499e50976535443f975c185bcb70de60569",
-       "bytes": 8126984
+       "sha256": "c24b001fe35da274af751b3421bd81411c71703e4df3f0e43d155d4831db2bc6",
+       "bytes": 8136584
       },
       {
        "name": "dodecahedron-icosahedron-dual-130mm-ornament-half-b.stl",
-       "sha256": "1f637d118f40352a58165850f893e1f83ca60c1338f06b76aaffd9c4fb20fa45",
-       "bytes": 8167184
+       "sha256": "a23c0c74b32c79dbc4b9bf7d092c849890e39e76bfb3bd80486ecff402e8fa8e",
+       "bytes": 8176784
       }
      ]
     }
@@ -299,7 +363,7 @@
   "icosahedral-crown": {
    "display": "baseline settings (logarithmic, k = 6.0)",
    "code": {
-    "commit": "02b665058ed03fc2c3080037b242a2f4dd14c698",
+    "commit": "deae31d13291719af7d92eaff7e4c5495fbaaefa",
     "dirty": false
    },
    "sizes": {
@@ -339,12 +403,20 @@
      ],
      "snapped_to_symmetry_plane": true,
      "halves": "identical",
+     "dowel": {
+      "diameter_mm": 5.2,
+      "depth_each_side_mm": 6.0,
+      "floor_plus_mm": 33.63,
+      "floor_minus_mm": 33.82,
+      "side_wall_mm": 1.5,
+      "pin": "M5 x 10 dowel pin"
+     },
      "files": [
       {
        "name": "icosahedral-crown-80mm-half.stl",
-       "sha256": "ac397be3fd44b43fae2345598514f19a616618bc4cc6ee589e06169105610783",
+       "sha256": "ca51037db410141f05948f8f0e8dfb275fc8746145f3b1dce47d5b7a17ebeb00",
        "copies": 2,
-       "bytes": 8076384
+       "bytes": 8168684
       }
      ]
     },
@@ -361,12 +433,20 @@
      ],
      "snapped_to_symmetry_plane": true,
      "halves": "identical",
+     "dowel": {
+      "diameter_mm": 5.2,
+      "depth_each_side_mm": 11.0,
+      "floor_plus_mm": 53.4,
+      "floor_minus_mm": 53.7,
+      "side_wall_mm": 1.5,
+      "pin": "M5 x 20 dowel pin"
+     },
      "files": [
       {
        "name": "icosahedral-crown-130mm-half.stl",
-       "sha256": "8197089afde38122d10dc58faf3ef827bf37786a3f0b2c0857d85f5c02828d85",
+       "sha256": "94ada52d27ac7b841620a950153125b7b94eb7c864856c7ff174277258e00c91",
        "copies": 2,
-       "bytes": 8076384
+       "bytes": 8168684
       }
      ]
     }
@@ -394,16 +474,24 @@
       "reach_plus_mm": 5.55,
       "reach_minus_mm": 3.25
      },
+     "dowel": {
+      "diameter_mm": 5.2,
+      "depth_each_side_mm": 6.0,
+      "floor_plus_mm": 33.63,
+      "floor_minus_mm": 33.82,
+      "side_wall_mm": 1.5,
+      "pin": "M5 x 10 dowel pin"
+     },
      "files": [
       {
        "name": "icosahedral-crown-80mm-ornament-half-a.stl",
-       "sha256": "84535c1a95b22e37e35796bee21e9a2bce7b5080c7f3a22cd25b5762225a7482",
-       "bytes": 8159084
+       "sha256": "ca51037db410141f05948f8f0e8dfb275fc8746145f3b1dce47d5b7a17ebeb00",
+       "bytes": 8168684
       },
       {
        "name": "icosahedral-crown-80mm-ornament-half-b.stl",
-       "sha256": "517212dd0be168b3c51a58962ea0ccc73827a3584726aa6d330cb046d0f47e84",
-       "bytes": 8172684
+       "sha256": "4e83dbb0700a9630e3d27dedcb59272372ff8e9a37dccc1fb06fa54beea15d4f",
+       "bytes": 8182284
       }
      ]
     },
@@ -429,16 +517,24 @@
       "reach_plus_mm": 4.75,
       "reach_minus_mm": 3.05
      },
+     "dowel": {
+      "diameter_mm": 5.2,
+      "depth_each_side_mm": 11.0,
+      "floor_plus_mm": 53.4,
+      "floor_minus_mm": 53.7,
+      "side_wall_mm": 1.5,
+      "pin": "M5 x 20 dowel pin"
+     },
      "files": [
       {
        "name": "icosahedral-crown-130mm-ornament-half-a.stl",
-       "sha256": "2f9df5c3cc587b4129adf6be50f96a548576e72bcbbf00d36eee746914194470",
-       "bytes": 8159084
+       "sha256": "94ada52d27ac7b841620a950153125b7b94eb7c864856c7ff174277258e00c91",
+       "bytes": 8168684
       },
       {
        "name": "icosahedral-crown-130mm-ornament-half-b.stl",
-       "sha256": "c9eee3a1551968d675a9acf6748008e15b4dd6e8e193342baea61141b512ffb8",
-       "bytes": 8172084
+       "sha256": "9ea37704ddbfc316affda244b3e87a257918c5290e7630601d093b4f0bb4e695",
+       "bytes": 8181684
       }
      ]
     }
@@ -447,7 +543,7 @@
   "icosidodecahedral-star": {
    "display": "baseline settings (logarithmic, k = 4.0)",
    "code": {
-    "commit": "02b665058ed03fc2c3080037b242a2f4dd14c698",
+    "commit": "deae31d13291719af7d92eaff7e4c5495fbaaefa",
     "dirty": false
    },
    "sizes": {
@@ -487,12 +583,20 @@
      ],
      "snapped_to_symmetry_plane": true,
      "halves": "identical",
+     "dowel": {
+      "diameter_mm": 5.2,
+      "depth_each_side_mm": 6.0,
+      "floor_plus_mm": 4.65,
+      "floor_minus_mm": 5.53,
+      "side_wall_mm": 1.5,
+      "pin": "M5 x 10 dowel pin"
+     },
      "files": [
       {
        "name": "icosidodecahedral-star-80mm-half.stl",
-       "sha256": "7ddc5d3ae7ad0df195881fac3dd110dccfa3d10f20458d84d2fca1fa6894db44",
+       "sha256": "aff077933d8099f6854d4363b35bd51e59380b686dce69fdf22199b8732b5d96",
        "copies": 2,
-       "bytes": 8090784
+       "bytes": 8194984
       }
      ]
     },
@@ -509,12 +613,20 @@
      ],
      "snapped_to_symmetry_plane": true,
      "halves": "identical",
+     "dowel": {
+      "diameter_mm": 5.2,
+      "depth_each_side_mm": 11.0,
+      "floor_plus_mm": 6.3,
+      "floor_minus_mm": 7.73,
+      "side_wall_mm": 1.5,
+      "pin": "M5 x 20 dowel pin"
+     },
      "files": [
       {
        "name": "icosidodecahedral-star-130mm-half.stl",
-       "sha256": "b3fda940a128e0df3fd245d1dcb33a7294b133b297ae32634f5104c292fc3d97",
+       "sha256": "bf3071b9741fcf940966bc8d09418fa25458f0ba7884da6ae5b163b1fbb32549",
        "copies": 2,
-       "bytes": 8090784
+       "bytes": 8194984
       }
      ]
     }
@@ -542,16 +654,24 @@
       "reach_plus_mm": 2.2,
       "reach_minus_mm": 2.2
      },
+     "dowel": {
+      "diameter_mm": 5.2,
+      "depth_each_side_mm": 6.0,
+      "floor_plus_mm": 4.65,
+      "floor_minus_mm": 5.53,
+      "side_wall_mm": 1.5,
+      "pin": "M5 x 10 dowel pin"
+     },
      "files": [
       {
        "name": "icosidodecahedral-star-80mm-ornament-half-a.stl",
-       "sha256": "b5682c9dfff382f391a109879242c6ec1b0c8aa4966aa48b60d4296c8c2de828",
-       "bytes": 8196684
+       "sha256": "91951a03e3ab05ba4a0cc36c2ec1ed92f8ba70de6e44d21e4af3b193a7348d39",
+       "bytes": 8206284
       },
       {
        "name": "icosidodecahedral-star-80mm-ornament-half-b.stl",
-       "sha256": "e8ff6b0028d4cf3d803e5bb2f371823160cfd9ea4c540590d97d54b8c63c718a",
-       "bytes": 8196384
+       "sha256": "1daab6449474751c6d805de01fe4c17f2185b68e6c0619c616b19bb22e2cbea9",
+       "bytes": 8205984
       }
      ]
     },
@@ -577,16 +697,24 @@
       "reach_plus_mm": 2.3,
       "reach_minus_mm": 2.3
      },
+     "dowel": {
+      "diameter_mm": 5.2,
+      "depth_each_side_mm": 11.0,
+      "floor_plus_mm": 6.3,
+      "floor_minus_mm": 7.73,
+      "side_wall_mm": 1.5,
+      "pin": "M5 x 20 dowel pin"
+     },
      "files": [
       {
        "name": "icosidodecahedral-star-130mm-ornament-half-a.stl",
-       "sha256": "cb9f6c20617c18379f27205f0971cf0f3e415764c485a4fa2b24447618483213",
-       "bytes": 8196584
+       "sha256": "0772c02dd62435d6690240d15d7756c06e1a803e6303f037953315256e256882",
+       "bytes": 8206184
       },
       {
        "name": "icosidodecahedral-star-130mm-ornament-half-b.stl",
-       "sha256": "df1dde0c3bcf3f90b5c90f26facc3e4dd798b9f4fba8ddbacebc3b75703bf00a",
-       "bytes": 8196084
+       "sha256": "e99713667960ddaadd38c4495484044fdc3832fa45139c86d4faba74564db6f7",
+       "bytes": 8205684
       }
      ]
     }
@@ -595,7 +723,7 @@
   "octahedral-crown": {
    "display": "baseline settings (logarithmic, k = 4.0)",
    "code": {
-    "commit": "02b665058ed03fc2c3080037b242a2f4dd14c698",
+    "commit": "deae31d13291719af7d92eaff7e4c5495fbaaefa",
     "dirty": false
    },
    "sizes": {
@@ -635,12 +763,20 @@
      ],
      "snapped_to_symmetry_plane": true,
      "halves": "identical",
+     "dowel": {
+      "diameter_mm": 5.2,
+      "depth_each_side_mm": 6.0,
+      "floor_plus_mm": 33.59,
+      "floor_minus_mm": 33.59,
+      "side_wall_mm": 1.5,
+      "pin": "M5 x 10 dowel pin"
+     },
      "files": [
       {
        "name": "octahedral-crown-80mm-half.stl",
-       "sha256": "ecf1fd20e22ff7f9c14eec78a0f8be57d3d43c5594a1697fd135723afce982de",
+       "sha256": "e1d223d189feee04aadfb0d6acbd5c1bd4efa7811545fa245788f976c57df5c0",
        "copies": 2,
-       "bytes": 4574484
+       "bytes": 4539484
       }
      ]
     },
@@ -657,12 +793,20 @@
      ],
      "snapped_to_symmetry_plane": true,
      "halves": "identical",
+     "dowel": {
+      "diameter_mm": 5.2,
+      "depth_each_side_mm": 11.0,
+      "floor_plus_mm": 53.33,
+      "floor_minus_mm": 53.33,
+      "side_wall_mm": 1.5,
+      "pin": "M5 x 20 dowel pin"
+     },
      "files": [
       {
        "name": "octahedral-crown-130mm-half.stl",
-       "sha256": "e1411a8b3a6519b9abaf910ab8c7a32a79fbd8bb49595a4510da627522c7301a",
+       "sha256": "e0df4a2c98dee4f486d74ed5e8e7b451eec74e7cfd1c55166f6ac7bb3039b3c2",
        "copies": 2,
-       "bytes": 4574484
+       "bytes": 4539484
       }
      ]
     }
@@ -690,16 +834,24 @@
       "reach_plus_mm": 4.25,
       "reach_minus_mm": 4.25
      },
+     "dowel": {
+      "diameter_mm": 5.2,
+      "depth_each_side_mm": 6.0,
+      "floor_plus_mm": 33.59,
+      "floor_minus_mm": 33.59,
+      "side_wall_mm": 1.5,
+      "pin": "M5 x 10 dowel pin"
+     },
      "files": [
       {
        "name": "octahedral-crown-80mm-ornament-half-a.stl",
-       "sha256": "88c18b1cdeb52583c11c914cabe3ba2147fd56592cac4d72b91e84a55be53e38",
-       "bytes": 4540884
+       "sha256": "15ffb93b7cf2454b13ecbba29a0ac758d871a5dd7d4e07747712ba32581cf32d",
+       "bytes": 4550484
       },
       {
        "name": "octahedral-crown-80mm-ornament-half-b.stl",
-       "sha256": "636539d89c1a9e75bf56b08b11c32cc105ec4c8b0e8e3b9d71e20501b41c1ce9",
-       "bytes": 4540884
+       "sha256": "dbceaba0c1ebd256831c7a3b678d151d467383f9c04b2b0d9dab70d98312cf91",
+       "bytes": 4550484
       }
      ]
     },
@@ -725,16 +877,24 @@
       "reach_plus_mm": 3.15,
       "reach_minus_mm": 3.15
      },
+     "dowel": {
+      "diameter_mm": 5.2,
+      "depth_each_side_mm": 11.0,
+      "floor_plus_mm": 53.33,
+      "floor_minus_mm": 53.33,
+      "side_wall_mm": 1.5,
+      "pin": "M5 x 20 dowel pin"
+     },
      "files": [
       {
        "name": "octahedral-crown-130mm-ornament-half-a.stl",
-       "sha256": "daf997253d0a54a2844b127233cccdcaaa808f6625534eedcdf34ec63e2ff5f5",
-       "bytes": 4540484
+       "sha256": "de1105a6c80e5026f99468eadfd0d163098fe402af7111454c0beeaf594d2bcf",
+       "bytes": 4550084
       },
       {
        "name": "octahedral-crown-130mm-ornament-half-b.stl",
-       "sha256": "d05f5fa377bddf571ff5efe019e13ce6d17ce279cbc8036906815d58d24a69b6",
-       "bytes": 4540484
+       "sha256": "31aa5969ff8811bfb5ec8aa9ac48593d7ead74f11c7a4698d2376c8421257744",
+       "bytes": 4550084
       }
      ]
     }
@@ -743,7 +903,7 @@
   "r2-deltoidal-icositetrahedron": {
    "display": "order-tuned (k = 6)",
    "code": {
-    "commit": "02b665058ed03fc2c3080037b242a2f4dd14c698",
+    "commit": "deae31d13291719af7d92eaff7e4c5495fbaaefa",
     "dirty": false
    },
    "sizes": {
@@ -783,12 +943,20 @@
      ],
      "snapped_to_symmetry_plane": true,
      "halves": "identical",
+     "dowel": {
+      "diameter_mm": 5.2,
+      "depth_each_side_mm": 6.0,
+      "floor_plus_mm": 4.48,
+      "floor_minus_mm": 5.18,
+      "side_wall_mm": 1.5,
+      "pin": "M5 x 10 dowel pin"
+     },
      "files": [
       {
        "name": "r2-deltoidal-icositetrahedron-80mm-half.stl",
-       "sha256": "74f16789ab5ca65326bd4508a981890394c181bf676794c3af408220cd188033",
+       "sha256": "65890fff3e19dce0270511325a39018d94edd829c9605cc88bed4f2ef4450b01",
        "copies": 2,
-       "bytes": 8105884
+       "bytes": 8126484
       }
      ]
     },
@@ -805,12 +973,20 @@
      ],
      "snapped_to_symmetry_plane": true,
      "halves": "identical",
+     "dowel": {
+      "diameter_mm": 5.2,
+      "depth_each_side_mm": 11.0,
+      "floor_plus_mm": 6.03,
+      "floor_minus_mm": 7.17,
+      "side_wall_mm": 1.5,
+      "pin": "M5 x 20 dowel pin"
+     },
      "files": [
       {
        "name": "r2-deltoidal-icositetrahedron-130mm-half.stl",
-       "sha256": "77e59b07e832e4d2ebafe96c55b17868e3de86faa25428e95cedc00315165358",
+       "sha256": "23ace828417d832e41cb395a81d72426e9ebe879b996a5666bcb8f1442d6c72d",
        "copies": 2,
-       "bytes": 8105884
+       "bytes": 8126684
       }
      ]
     }
@@ -838,16 +1014,24 @@
       "reach_plus_mm": 2.8,
       "reach_minus_mm": 2.8
      },
+     "dowel": {
+      "diameter_mm": 5.2,
+      "depth_each_side_mm": 6.0,
+      "floor_plus_mm": 4.48,
+      "floor_minus_mm": 5.18,
+      "side_wall_mm": 1.5,
+      "pin": "M5 x 10 dowel pin"
+     },
      "files": [
       {
        "name": "r2-deltoidal-icositetrahedron-80mm-ornament-half-a.stl",
-       "sha256": "fcec8d7969cc8f2a9dade34dcdfa680aeb45693d9f6709d254ad89f3c38373fd",
-       "bytes": 8128284
+       "sha256": "2c7509595c319aee6331d1593373a1718ae8cc3b6fdac6d15d38b96b3dbe9bee",
+       "bytes": 8137884
       },
       {
        "name": "r2-deltoidal-icositetrahedron-80mm-ornament-half-b.stl",
-       "sha256": "e26950b317ed5113425f0c9d7efe6941a81dfb8a998179cffdf39964585a50f6",
-       "bytes": 8168184
+       "sha256": "a43b43ba40ffc923cb81bc2c1ef8e770330212318e37fecca8cbb780361e8b3f",
+       "bytes": 8177784
       }
      ]
     },
@@ -873,16 +1057,24 @@
       "reach_plus_mm": 2.35,
       "reach_minus_mm": 2.35
      },
+     "dowel": {
+      "diameter_mm": 5.2,
+      "depth_each_side_mm": 11.0,
+      "floor_plus_mm": 6.03,
+      "floor_minus_mm": 7.17,
+      "side_wall_mm": 1.5,
+      "pin": "M5 x 20 dowel pin"
+     },
      "files": [
       {
        "name": "r2-deltoidal-icositetrahedron-130mm-ornament-half-a.stl",
-       "sha256": "98d2baf476db27793f48028f4a8add4eafe50dab53d7e0fbbf8a71a00ca2a1ed",
-       "bytes": 8128184
+       "sha256": "d10ca9cf94ce57e3ecb1bb008508ca881f2fe576cd3bc68a310b4989198e8fa1",
+       "bytes": 8137784
       },
       {
        "name": "r2-deltoidal-icositetrahedron-130mm-ornament-half-b.stl",
-       "sha256": "dfaccbe5b555c3fb35d2dc066b52a1d59d7fb71a3c358025474d33fb1fd57aa7",
-       "bytes": 8168284
+       "sha256": "b895628980f6cd849db271fa8c984672008d5fc6b4d96c2df4bb6171f292c9dc",
+       "bytes": 8177884
       }
      ]
     }
@@ -891,7 +1083,7 @@
   "r2-irregular-mixed": {
    "display": "order-tuned (k = 6)",
    "code": {
-    "commit": "02b665058ed03fc2c3080037b242a2f4dd14c698",
+    "commit": "deae31d13291719af7d92eaff7e4c5495fbaaefa",
     "dirty": false
    },
    "sizes": {
@@ -931,18 +1123,26 @@
      ],
      "snapped_to_symmetry_plane": false,
      "halves": "different",
+     "dowel": {
+      "diameter_mm": 5.2,
+      "depth_each_side_mm": 6.0,
+      "floor_plus_mm": 25.13,
+      "floor_minus_mm": 12.92,
+      "side_wall_mm": 1.5,
+      "pin": "M5 x 10 dowel pin"
+     },
      "files": [
       {
        "name": "r2-irregular-mixed-80mm-half-a.stl",
-       "sha256": "10a3eb27b8e5702b7dc6518cb444c82c49c8f08729f42f2eda5e824b7eb03ce8",
+       "sha256": "a858bdf9ce9bf181d237dd2fde0aa53360fc646f880a23987ca7303d479dc093",
        "copies": 1,
-       "bytes": 4559284
+       "bytes": 4612384
       },
       {
        "name": "r2-irregular-mixed-80mm-half-b.stl",
-       "sha256": "c2e9633e6e2bd6c0ccb1ed8bf316d482395b6e561d6a4d9c82705dbedbea0e0e",
+       "sha256": "57cd8f31253cefe5e7952d527a74c32ba274e90b5c5767887c8b63d71cae87c1",
        "copies": 1,
-       "bytes": 4560584
+       "bytes": 4613884
       }
      ]
     },
@@ -959,18 +1159,26 @@
      ],
      "snapped_to_symmetry_plane": false,
      "halves": "different",
+     "dowel": {
+      "diameter_mm": 5.2,
+      "depth_each_side_mm": 11.0,
+      "floor_plus_mm": 39.59,
+      "floor_minus_mm": 19.75,
+      "side_wall_mm": 1.5,
+      "pin": "M5 x 20 dowel pin"
+     },
      "files": [
       {
        "name": "r2-irregular-mixed-130mm-half-a.stl",
-       "sha256": "e44fa9e93918d821aa0c5f46164841ea6320456a79ee805404bc4cfe0a688e0b",
+       "sha256": "e20c977262c86ed43e380b9fdbde73d683ba32f3aacdd5693a3f01a465007d76",
        "copies": 1,
-       "bytes": 4559384
+       "bytes": 4612384
       },
       {
        "name": "r2-irregular-mixed-130mm-half-b.stl",
-       "sha256": "25fa200f699b184c80f67c2060fa9ff156f072446b5d98ae95049ba425fa1dbc",
+       "sha256": "1cf62e4c4256e49a9c7cfa3b0016623975638d18873125d5256afcebbb6f7feb",
        "copies": 1,
-       "bytes": 4560584
+       "bytes": 4613884
       }
      ]
     }
@@ -998,16 +1206,24 @@
       "reach_plus_mm": 14.3,
       "reach_minus_mm": 7.1
      },
+     "dowel": {
+      "diameter_mm": 5.2,
+      "depth_each_side_mm": 6.0,
+      "floor_plus_mm": 25.13,
+      "floor_minus_mm": 12.92,
+      "side_wall_mm": 1.5,
+      "pin": "M5 x 10 dowel pin"
+     },
      "files": [
       {
        "name": "r2-irregular-mixed-80mm-ornament-half-a.stl",
-       "sha256": "e0542f4d0ff7148184cf51c29919b0895fb3e1b3d3e3b093badf019418c0c1a8",
-       "bytes": 4602784
+       "sha256": "a858bdf9ce9bf181d237dd2fde0aa53360fc646f880a23987ca7303d479dc093",
+       "bytes": 4612384
       },
       {
        "name": "r2-irregular-mixed-80mm-ornament-half-b.stl",
-       "sha256": "f948909b542afcf2e43750e501e77be805a72ed157a3aab29a300bb28575c281",
-       "bytes": 4616984
+       "sha256": "d261367681f41e50b696958c8409b16b5099656ba0e25b9054b0e635d08de2bb",
+       "bytes": 4626584
       }
      ]
     },
@@ -1033,16 +1249,24 @@
       "reach_plus_mm": 16.05,
       "reach_minus_mm": 8.2
      },
+     "dowel": {
+      "diameter_mm": 5.2,
+      "depth_each_side_mm": 11.0,
+      "floor_plus_mm": 39.59,
+      "floor_minus_mm": 19.75,
+      "side_wall_mm": 1.5,
+      "pin": "M5 x 20 dowel pin"
+     },
      "files": [
       {
        "name": "r2-irregular-mixed-130mm-ornament-half-a.stl",
-       "sha256": "e1c1f657b0bc6ca465c4b9039cd202fb1ca6923dd9ff9cc0e45568946fc4df57",
-       "bytes": 4602784
+       "sha256": "e20c977262c86ed43e380b9fdbde73d683ba32f3aacdd5693a3f01a465007d76",
+       "bytes": 4612384
       },
       {
        "name": "r2-irregular-mixed-130mm-ornament-half-b.stl",
-       "sha256": "65b7a9434eab347c8a87adbf5034701f9def484d60c4033840860d4386c12757",
-       "bytes": 4616684
+       "sha256": "b1732d91366c524a98db288946116ef134b1f9616d56d2080290d63aa7330d5f",
+       "bytes": 4626284
       }
      ]
     }
@@ -1051,7 +1275,7 @@
   "r2-irregular-separated": {
    "display": "order-tuned (k = 6)",
    "code": {
-    "commit": "02b665058ed03fc2c3080037b242a2f4dd14c698",
+    "commit": "deae31d13291719af7d92eaff7e4c5495fbaaefa",
     "dirty": false
    },
    "sizes": {
@@ -1091,18 +1315,26 @@
      ],
      "snapped_to_symmetry_plane": false,
      "halves": "different",
+     "dowel": {
+      "diameter_mm": 5.2,
+      "depth_each_side_mm": 6.0,
+      "floor_plus_mm": 18.04,
+      "floor_minus_mm": 22.49,
+      "side_wall_mm": 1.5,
+      "pin": "M5 x 10 dowel pin"
+     },
      "files": [
       {
        "name": "r2-irregular-separated-80mm-half-a.stl",
-       "sha256": "51c2863527398634f36b6ff81a63fcc0e0a1652998e8f7f6a87a462ec07305b0",
+       "sha256": "cfb78913a0f1e67f202bdc554ebbfa7f725dc477c50a674a34f6132813fb5566",
        "copies": 1,
-       "bytes": 4561084
+       "bytes": 4613584
       },
       {
        "name": "r2-irregular-separated-80mm-half-b.stl",
-       "sha256": "d8583bcf71c1d17542f254619e6556e4b46372f6c0648f60bdb5872677beebaa",
+       "sha256": "0534e8bd220573d7bd29c15544f7efe65de9967998192bb896de8c42868ef52a",
        "copies": 1,
-       "bytes": 4560484
+       "bytes": 4612984
       }
      ]
     },
@@ -1119,18 +1351,26 @@
      ],
      "snapped_to_symmetry_plane": false,
      "halves": "different",
+     "dowel": {
+      "diameter_mm": 5.2,
+      "depth_each_side_mm": 11.0,
+      "floor_plus_mm": 28.07,
+      "floor_minus_mm": 35.3,
+      "side_wall_mm": 1.5,
+      "pin": "M5 x 20 dowel pin"
+     },
      "files": [
       {
        "name": "r2-irregular-separated-130mm-half-a.stl",
-       "sha256": "314815c5080c25a7322ae961d6805a120d7fd63ac4482407d7495fe0633d2e9f",
+       "sha256": "2c92c98901fd6fcdcd2cf9ea93f6aa814b0fffff7eae272986f87e35046e862f",
        "copies": 1,
-       "bytes": 4561084
+       "bytes": 4613584
       },
       {
        "name": "r2-irregular-separated-130mm-half-b.stl",
-       "sha256": "14b28b7fa341f1f02125ec9d625d3e3f2b1632b59c91d424fa7531385f079104",
+       "sha256": "74466e3a4a8043c75d68d06c9391664c539056f8181a106e9190e7b9a178d83b",
        "copies": 1,
-       "bytes": 4560484
+       "bytes": 4612984
       }
      ]
     }
@@ -1158,16 +1398,24 @@
       "reach_plus_mm": 3.9,
       "reach_minus_mm": 5.8
      },
+     "dowel": {
+      "diameter_mm": 5.2,
+      "depth_each_side_mm": 6.0,
+      "floor_plus_mm": 18.04,
+      "floor_minus_mm": 22.49,
+      "side_wall_mm": 1.5,
+      "pin": "M5 x 10 dowel pin"
+     },
      "files": [
       {
        "name": "r2-irregular-separated-80mm-ornament-half-a.stl",
-       "sha256": "846ca6af6552683b674044af882d9bdd2ce5a20f7567465f5344e71abce2a37e",
-       "bytes": 4620284
+       "sha256": "8c7b21c6aeb4d50d9a4e877b7659e5a0f81b3514934c8482a3e612829bb6f11e",
+       "bytes": 4629884
       },
       {
        "name": "r2-irregular-separated-80mm-ornament-half-b.stl",
-       "sha256": "777f2704fce29ca925318f5e50fc0b421f29974b85caba3cd05140e018abcc91",
-       "bytes": 4603384
+       "sha256": "0534e8bd220573d7bd29c15544f7efe65de9967998192bb896de8c42868ef52a",
+       "bytes": 4612984
       }
      ]
     },
@@ -1193,16 +1441,24 @@
       "reach_plus_mm": 3.85,
       "reach_minus_mm": 5.55
      },
+     "dowel": {
+      "diameter_mm": 5.2,
+      "depth_each_side_mm": 11.0,
+      "floor_plus_mm": 28.07,
+      "floor_minus_mm": 35.3,
+      "side_wall_mm": 1.5,
+      "pin": "M5 x 20 dowel pin"
+     },
      "files": [
       {
        "name": "r2-irregular-separated-130mm-ornament-half-a.stl",
-       "sha256": "b74c74a655327930a681ad7a27cf01f5b11d2b5ecf68a117909d33a85a2d066a",
-       "bytes": 4624484
+       "sha256": "cbc3030d7135344a5413b5baad44de321a2214528d73d880f6493593d448b2a5",
+       "bytes": 4634084
       },
       {
        "name": "r2-irregular-separated-130mm-ornament-half-b.stl",
-       "sha256": "0b06f30c671a0d2dd4db9a92dab98d4b086263514817a143958d59288b246378",
-       "bytes": 4603384
+       "sha256": "74466e3a4a8043c75d68d06c9391664c539056f8181a106e9190e7b9a178d83b",
+       "bytes": 4612984
       }
      ]
     }
@@ -1211,7 +1467,7 @@
   "r2-triakis-tetrahedron": {
    "display": "order-tuned (k = 4)",
    "code": {
-    "commit": "02b665058ed03fc2c3080037b242a2f4dd14c698",
+    "commit": "deae31d13291719af7d92eaff7e4c5495fbaaefa",
     "dirty": false
    },
    "sizes": {
@@ -1251,12 +1507,20 @@
      ],
      "snapped_to_symmetry_plane": true,
      "halves": "identical",
+     "dowel": {
+      "diameter_mm": 5.2,
+      "depth_each_side_mm": 6.0,
+      "floor_plus_mm": 23.9,
+      "floor_minus_mm": 23.9,
+      "side_wall_mm": 1.5,
+      "pin": "M5 x 10 dowel pin"
+     },
      "files": [
       {
        "name": "r2-triakis-tetrahedron-80mm-half.stl",
-       "sha256": "d812ef44b920fb2d79728f557411601c1f21b62da36741e5af3f18386018c861",
+       "sha256": "cee791accf5bccd4ef65b0b25af8ec7862a5153b2e5cea8d1cee2b0e7859c1ca",
        "copies": 2,
-       "bytes": 4582284
+       "bytes": 4630884
       }
      ]
     },
@@ -1273,12 +1537,20 @@
      ],
      "snapped_to_symmetry_plane": true,
      "halves": "identical",
+     "dowel": {
+      "diameter_mm": 5.2,
+      "depth_each_side_mm": 11.0,
+      "floor_plus_mm": 37.59,
+      "floor_minus_mm": 37.59,
+      "side_wall_mm": 1.5,
+      "pin": "M5 x 20 dowel pin"
+     },
      "files": [
       {
        "name": "r2-triakis-tetrahedron-130mm-half.stl",
-       "sha256": "536e55ba65b3512917b23d8bacfbdd1fc223f1bf0c94fca6213cb9c0948eec47",
+       "sha256": "80cce976635546531a249eccc006da9fa46a47af8761161c7bbe9da6483d8dfd",
        "copies": 2,
-       "bytes": 4582284
+       "bytes": 4630384
       }
      ]
     }
@@ -1306,16 +1578,24 @@
       "reach_plus_mm": 6.2,
       "reach_minus_mm": 6.2
      },
+     "dowel": {
+      "diameter_mm": 5.2,
+      "depth_each_side_mm": 6.0,
+      "floor_plus_mm": 23.9,
+      "floor_minus_mm": 23.9,
+      "side_wall_mm": 1.5,
+      "pin": "M5 x 10 dowel pin"
+     },
      "files": [
       {
        "name": "r2-triakis-tetrahedron-80mm-ornament-half-a.stl",
-       "sha256": "4a0cbfc2f6a0b6f56f193dd6a7b3ff14aab5dcffe039030f4bab240ff4ee3b2b",
-       "bytes": 4632684
+       "sha256": "772a516a98788aa10294bf3942eb962bcfff2afd532b5cb333ff4bb87e045df4",
+       "bytes": 4642284
       },
       {
        "name": "r2-triakis-tetrahedron-80mm-ornament-half-b.stl",
-       "sha256": "6a6b8b7f89667cc2a6efc9fffece1e8ee0218f97162a459741d8335ce5742356",
-       "bytes": 4602784
+       "sha256": "869085425124c04bbd1b80497383a33cf824b9138449b1ae52b0144b028d9157",
+       "bytes": 4612384
       }
      ]
     },
@@ -1341,16 +1621,24 @@
       "reach_plus_mm": 3.35,
       "reach_minus_mm": 3.3
      },
+     "dowel": {
+      "diameter_mm": 5.2,
+      "depth_each_side_mm": 11.0,
+      "floor_plus_mm": 37.59,
+      "floor_minus_mm": 37.59,
+      "side_wall_mm": 1.5,
+      "pin": "M5 x 20 dowel pin"
+     },
      "files": [
       {
        "name": "r2-triakis-tetrahedron-130mm-ornament-half-a.stl",
-       "sha256": "03d2811f634cd4fd017e683619d14c195ed79eb01c04b4f731b6bcab1486bb50",
-       "bytes": 4631584
+       "sha256": "da7ad37da251f5f2bd86d7ecd4fb2fc8216194cf70b875aa68e4e471bbf850ef",
+       "bytes": 4641184
       },
       {
        "name": "r2-triakis-tetrahedron-130mm-ornament-half-b.stl",
-       "sha256": "70c2267521e6a5fd86a5f76d69fc40d970a921e1a037a503a63e2190f5c213d4",
-       "bytes": 4601484
+       "sha256": "b6682b4d83c070055ec9b1b8970e92996fd0619ce91d8575a250de0a51477585",
+       "bytes": 4611084
       }
      ]
     }
@@ -1359,7 +1647,7 @@
   "r4ve-rhombicuboctahedron": {
    "display": "order-tuned (k = 4)",
    "code": {
-    "commit": "02b665058ed03fc2c3080037b242a2f4dd14c698",
+    "commit": "deae31d13291719af7d92eaff7e4c5495fbaaefa",
     "dirty": false
    },
    "sizes": {
@@ -1399,12 +1687,20 @@
      ],
      "snapped_to_symmetry_plane": true,
      "halves": "identical",
+     "dowel": {
+      "diameter_mm": 5.2,
+      "depth_each_side_mm": 6.0,
+      "floor_plus_mm": 23.84,
+      "floor_minus_mm": 23.84,
+      "side_wall_mm": 1.5,
+      "pin": "M5 x 10 dowel pin"
+     },
      "files": [
       {
        "name": "r4ve-rhombicuboctahedron-80mm-half.stl",
-       "sha256": "742dd64407d4249ffb0e1ca753b5f1125d4d71452dcf9d703442b556a1b80bd1",
+       "sha256": "866b4116bdb97e10a3b0ecb339fa19f29976e79d939d3c9ed7e2d5b27083381b",
        "copies": 2,
-       "bytes": 8105984
+       "bytes": 8049684
       }
      ]
     },
@@ -1421,12 +1717,20 @@
      ],
      "snapped_to_symmetry_plane": true,
      "halves": "identical",
+     "dowel": {
+      "diameter_mm": 5.2,
+      "depth_each_side_mm": 11.0,
+      "floor_plus_mm": 37.48,
+      "floor_minus_mm": 37.48,
+      "side_wall_mm": 1.5,
+      "pin": "M5 x 20 dowel pin"
+     },
      "files": [
       {
        "name": "r4ve-rhombicuboctahedron-130mm-half.stl",
-       "sha256": "a9b4d82aa601b9d183ddde79684b7a23fdc6b4e9fff3fbd2a0891fd94de48998",
+       "sha256": "d4813baf8f6188d85ee295d9363c9109698bf90b833b4a2863bbf81fb0109f3f",
        "copies": 2,
-       "bytes": 8105984
+       "bytes": 8049884
       }
      ]
     }
@@ -1454,16 +1758,24 @@
       "reach_plus_mm": 2.25,
       "reach_minus_mm": 2.25
      },
+     "dowel": {
+      "diameter_mm": 5.2,
+      "depth_each_side_mm": 6.0,
+      "floor_plus_mm": 23.84,
+      "floor_minus_mm": 23.84,
+      "side_wall_mm": 1.5,
+      "pin": "M5 x 10 dowel pin"
+     },
      "files": [
       {
        "name": "r4ve-rhombicuboctahedron-80mm-ornament-half-a.stl",
-       "sha256": "29475ea828f94ec64baccf92fc592c48e4170134c54621ae04cd5da095098521",
-       "bytes": 8051384
+       "sha256": "73d3c5ab9fc52deac7c55cefaf414f6ed41afca56c8713f85bae087a5a52f870",
+       "bytes": 8060984
       },
       {
        "name": "r4ve-rhombicuboctahedron-80mm-ornament-half-b.stl",
-       "sha256": "edfba321b6c01290f822ddc9dcfe3a39b88d1c8b0ca95fd23b128bd43e6e1d2d",
-       "bytes": 8051384
+       "sha256": "aed84e579adfe66b5a0c210d916e65f9064d63a3467f99508ce05ca18aa7b6a7",
+       "bytes": 8060984
       }
      ]
     },
@@ -1489,16 +1801,24 @@
       "reach_plus_mm": 2.2,
       "reach_minus_mm": 2.2
      },
+     "dowel": {
+      "diameter_mm": 5.2,
+      "depth_each_side_mm": 11.0,
+      "floor_plus_mm": 37.48,
+      "floor_minus_mm": 37.48,
+      "side_wall_mm": 1.5,
+      "pin": "M5 x 20 dowel pin"
+     },
      "files": [
       {
        "name": "r4ve-rhombicuboctahedron-130mm-ornament-half-a.stl",
-       "sha256": "67bd637289884c4f8eacb84109dc9b79a6ca4b164f5521f79d056d73600a40c6",
-       "bytes": 8051284
+       "sha256": "4dffd0a215945f71b00d19c605f54171311eb5ae36687e9f7706eea6785c2072",
+       "bytes": 8060884
       },
       {
        "name": "r4ve-rhombicuboctahedron-130mm-ornament-half-b.stl",
-       "sha256": "e1fef90bb39199589a99529178c5b5cad4347b20afdd65ab09cfdc6e70cf7c47",
-       "bytes": 8051284
+       "sha256": "20063f0c61c77288126a7f9e3fe8ec5cf414885655144a8d8f995f7db7bec63c",
+       "bytes": 8060884
       }
      ]
     }
@@ -1507,7 +1827,7 @@
   "tetrahedral-dual": {
    "display": "baseline settings (log_mixture, k = 2.0)",
    "code": {
-    "commit": "02b665058ed03fc2c3080037b242a2f4dd14c698",
+    "commit": "deae31d13291719af7d92eaff7e4c5495fbaaefa",
     "dirty": false
    },
    "sizes": {
@@ -1547,12 +1867,20 @@
      ],
      "snapped_to_symmetry_plane": true,
      "halves": "identical",
+     "dowel": {
+      "diameter_mm": 5.2,
+      "depth_each_side_mm": 6.0,
+      "floor_plus_mm": 24.15,
+      "floor_minus_mm": 24.15,
+      "side_wall_mm": 1.5,
+      "pin": "M5 x 10 dowel pin"
+     },
      "files": [
       {
        "name": "tetrahedral-dual-80mm-half.stl",
-       "sha256": "8739cb49e17145a2789ab0b07d76ca794b4ad49ce49982a5dd2396cbae8c0524",
+       "sha256": "8903d27666d8c5c601fa7df22f7764bff02f118f8fe0a441c3495ef8ce5aeab4",
        "copies": 2,
-       "bytes": 3162484
+       "bytes": 3221584
       }
      ]
     },
@@ -1569,12 +1897,20 @@
      ],
      "snapped_to_symmetry_plane": true,
      "halves": "identical",
+     "dowel": {
+      "diameter_mm": 5.2,
+      "depth_each_side_mm": 11.0,
+      "floor_plus_mm": 38.0,
+      "floor_minus_mm": 38.0,
+      "side_wall_mm": 1.5,
+      "pin": "M5 x 20 dowel pin"
+     },
      "files": [
       {
        "name": "tetrahedral-dual-130mm-half.stl",
-       "sha256": "b04bb8a8ef255433e18708c4b0f049565fc635647ec018fbd86a3d41fb75f246",
+       "sha256": "d9f6502fb7c161515a0ee48f4a105900aac75f84c5e4c079fc115fc00f6cc94d",
        "copies": 2,
-       "bytes": 3162484
+       "bytes": 3221584
       }
      ]
     }
@@ -1602,16 +1938,24 @@
       "reach_plus_mm": 11.0,
       "reach_minus_mm": 11.0
      },
+     "dowel": {
+      "diameter_mm": 5.2,
+      "depth_each_side_mm": 6.0,
+      "floor_plus_mm": 24.15,
+      "floor_minus_mm": 24.15,
+      "side_wall_mm": 1.5,
+      "pin": "M5 x 10 dowel pin"
+     },
      "files": [
       {
        "name": "tetrahedral-dual-80mm-ornament-half-a.stl",
-       "sha256": "430f2e70f264fb864962ca2c0ad09baaf9db49d0017f82815c8ac994215174f8",
-       "bytes": 3222984
+       "sha256": "49a387fcb94cdc91d41f76ec167b39a7314b2622da282e760f95ac6846aab4a7",
+       "bytes": 3232584
       },
       {
        "name": "tetrahedral-dual-80mm-ornament-half-b.stl",
-       "sha256": "252b99ddb2fa65d3705f13afa3cfbb32f822632106c9ff3e569cac0d3bc261d5",
-       "bytes": 3222984
+       "sha256": "4496bc6d5f15a349f1d2adf3a994fc3ef48af88c8c2681ac48e7db41be911140",
+       "bytes": 3232584
       }
      ]
     },
@@ -1637,16 +1981,24 @@
       "reach_plus_mm": 12.2,
       "reach_minus_mm": 12.2
      },
+     "dowel": {
+      "diameter_mm": 5.2,
+      "depth_each_side_mm": 11.0,
+      "floor_plus_mm": 38.0,
+      "floor_minus_mm": 38.0,
+      "side_wall_mm": 1.5,
+      "pin": "M5 x 20 dowel pin"
+     },
      "files": [
       {
        "name": "tetrahedral-dual-130mm-ornament-half-a.stl",
-       "sha256": "e879648a69fa85fb12fab2251e8e4cdce1840f70653b0b66bfa7641a269168d7",
-       "bytes": 3222884
+       "sha256": "7a6ff6cbca1449a887d18fa7773e21e7a8992dfb20351d46af3b86dda1032a2a",
+       "bytes": 3232484
       },
       {
        "name": "tetrahedral-dual-130mm-ornament-half-b.stl",
-       "sha256": "9093851bd212be1ac1718f57581295a00f2856b66c84f8ac7962087201d1e05c",
-       "bytes": 3222584
+       "sha256": "85c0d0efcc5953a6d8d13a821137bcf2f3a3eb10a6c0fa669006acd1d5e276a6",
+       "bytes": 3232184
       }
      ]
     }
