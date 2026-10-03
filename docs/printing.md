@@ -18,8 +18,12 @@ include cut halves alongside the whole model.
 - Where a symmetry swaps the two sides, the halves are **identical**: print the half file twice.
   This applies to every symmetric object here.
 - The irregular objects have two different halves, **a** and **b**.
-- Glue the halves together. No connectors are built in; add pins or dowels in your slicer if you
-  like.
+- Each half has a **dowel hole**, 5.2 mm across, in the middle of its cut face, for an **M5 dowel
+  pin**:
+    - 130 mm prints take a **20 mm** pin, in holes 11 mm deep;
+    - 80 mm prints take a **10 mm** pin, in holes 6 mm deep.
+- The holes line up by construction. Glue the pin into one half, then glue the halves together;
+  the pin keeps them aligned. Without a pin, just glue the faces.
 
 ## Hanging ornaments
 
@@ -35,8 +39,8 @@ through one spike. Pass a thread through, tie a loop, and it hangs on a tree.
   the exact distance.
 - **Printing:** each half lies cut face down, so the hole is vertical and needs no support. The
   ornament halves are always two files, **a** and **b**: the hole makes them different.
-- **Gluing:** keep glue away from the hole near the cut face, or clear it with a pin before it
-  sets.
+- **Gluing:** the ornament halves have the same dowel hole as the plain halves. Keep glue away
+  from the thread hole, or clear it with a pin before it sets.
 
 ## Settings
 

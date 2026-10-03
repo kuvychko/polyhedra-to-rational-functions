@@ -153,18 +153,11 @@ def place_hole(
     )
 
 
-def bore(solid: mf.Manifold, hole: Hole, normal) -> mf.Manifold:
-    """Subtract the hole cylinder from the solid.
-
-    The cylinder runs along ``normal`` from ``EXIT_MARGIN_MM`` beyond the spike surface on one
-    side to the same beyond it on the other. The removed volume is checked against the cylinder
-    crossing the spike. A bore that also cut into another part of the object raises, rather than
-    making a hole somewhere unintended.
-    """
+def axis_cylinder(normal, radius, start, end, centre=(0.0, 0.0, 0.0)) -> mf.Manifold:
+    """A cylinder of ``radius`` along ``normal`` through ``centre``, from ``start`` to ``end``
+    (signed distances along the normal)."""
     n = np.asarray(normal, dtype=float) / np.linalg.norm(normal)
-    r = hole.diameter_mm / 2
-    cyl = mf.Manifold.cylinder(hole.length_mm, r, r, 48)
-    cyl = cyl.translate([0.0, 0.0, -(hole.reach_minus_mm + EXIT_MARGIN_MM)])
+    cyl = mf.Manifold.cylinder(end - start, radius, radius, 48).translate([0.0, 0.0, start])
     z = np.array([0.0, 0.0, 1.0])
     axis, c = np.cross(z, n), float(z @ n)
     s = np.linalg.norm(axis)
@@ -174,8 +167,22 @@ def bore(solid: mf.Manifold, hole: Hole, normal) -> mf.Manifold:
         k = axis / s
         K = np.array([[0, -k[2], k[1]], [k[2], 0, -k[0]], [-k[1], k[0], 0]])
         R = np.eye(3) + s * K + (1 - c) * K @ K
-    affine = np.hstack([R, np.asarray(hole.centre_mm, dtype=float).reshape(3, 1)])
-    bored = solid - cyl.transform(affine.tolist())
+    affine = np.hstack([R, np.asarray(centre, dtype=float).reshape(3, 1)])
+    return cyl.transform(affine.tolist())
+
+
+def bore(solid: mf.Manifold, hole: Hole, normal) -> mf.Manifold:
+    """Subtract the hole cylinder from the solid.
+
+    The cylinder runs along ``normal`` from ``EXIT_MARGIN_MM`` beyond the spike surface on one
+    side to the same beyond it on the other. The removed volume is checked against the cylinder
+    crossing the spike. A bore that also cut into another part of the object raises, rather than
+    making a hole somewhere unintended.
+    """
+    r = hole.diameter_mm / 2
+    reach_minus = hole.reach_minus_mm + EXIT_MARGIN_MM
+    cyl = axis_cylinder(normal, r, -reach_minus, hole.length_mm - reach_minus, hole.centre_mm)
+    bored = solid - cyl
     removed = solid.volume() - bored.volume()
     crossing = np.pi * r**2 * (hole.reach_plus_mm + hole.reach_minus_mm)
     if removed > crossing * (1 + REMOVED_TOLERANCE) or removed <= 0:

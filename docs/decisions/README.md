@@ -14,3 +14,4 @@ an earlier one instead.
 | [0006](0006-phase2-workflow.md) | Phase 2 workflow: two parallel tracks joined by one catalog | 2026-10-03 |
 | [0007](0007-cut-stls.md) | Scripted, owner-approved cut STLs for every piece | 2026-10-03 |
 | [0008](0008-hanging-ornaments.md) | A hanging-ornament variant of every piece | 2026-10-03 |
+| [0009](0009-dowel-holes.md) | Alignment dowel holes in every cut face | 2026-10-03 |

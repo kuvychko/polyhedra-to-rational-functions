@@ -10,7 +10,8 @@ were built from.
 - **Baseline pieces** are regenerated as well and checked against the hashes in
   ``catalog/pieces.yaml``. This repo reproduces them byte for byte.
 - **Pieces with an owner-approved cut plane** also get cut halves in print pose (decision 0007),
-  and hanging-ornament halves with a thread hole through one spike (decision 0008).
+  and hanging-ornament halves with a thread hole through one spike (decision 0008). Every cut
+  half has a centred dowel hole for an M5 pin (decision 0009).
 """
 
 import argparse

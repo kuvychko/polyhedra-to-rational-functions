@@ -84,13 +84,14 @@ def export_stl(piece: Piece, sizes_mm, out_dir: Path) -> dict:
 def export_cuts(piece: Piece, sizes_mm, out_dir: Path) -> dict:
     """Cut STLs for the piece's approved plane, in print pose (cut face on z = 0), per size.
 
-    Identical halves (a proper symmetry swaps the sides) are exported once, to be printed twice.
-    Mirror-image or different halves are exported as ``-half-a`` (the ``+n`` side) and
-    ``-half-b``. Each half must be watertight, or this raises.
+    Each half has a blind dowel hole in the middle of its cut face (decision 0009). Identical
+    halves (a proper symmetry swaps the sides) are exported once, to be printed twice; the dowel
+    is symmetric, so both copies have it. Mirror-image or different halves are exported as
+    ``-half-a`` (the ``+n`` side) and ``-half-b``. Each half must be watertight, or this raises.
     """
     if not piece.cut_approved():
         raise ValueError(f"{piece.id}: no approved cut plane in the catalog")
-    from . import fixtures
+    from . import dowels, fixtures, hangers
 
     group = fixtures.load(piece.polyhedron).symmetry_group()
     normal, snapped = cuts.snap_normal(piece.cut["normal"], group)
@@ -100,7 +101,9 @@ def export_cuts(piece: Piece, sizes_mm, out_dir: Path) -> dict:
     entries = {}
     for size in sizes_mm:
         scaled = scale_to_size(mesh, float(size), axis="extent")
-        upper, lower = cuts.cut(scaled, normal)
+        dowel = dowels.plan(scaled, normal, size)
+        solid = dowels.bore(hangers.to_manifold(scaled), dowel, normal)
+        upper, lower = hangers.split(solid, normal)
         halves = (
             [("half", upper, normal, 2)]
             if relation == "identical"
@@ -129,20 +132,22 @@ def export_cuts(piece: Piece, sizes_mm, out_dir: Path) -> dict:
             "exact_normal": [float(x) + 0.0 for x in normal],
             "snapped_to_symmetry_plane": snapped,
             "halves": relation,
+            "dowel": dowel.record(),
             "files": files,
         }
     return entries
 
 
 def export_ornament(piece: Piece, sizes_mm, out_dir: Path, **hole_options) -> dict:
-    """Hanging-ornament cut halves (decision 0008): a thread hole bored through one spike.
+    """Hanging-ornament cut halves (decision 0008): a thread hole bored through one spike,
+    plus the alignment dowel hole in the cut faces (decision 0009).
 
     Uses the approved cut plane, snapped to its exact symmetry plane. Always two files per size:
-    the hole breaks the symmetry that made the plain halves identical.
+    the thread hole breaks the symmetry that made the plain halves identical.
     """
     if not piece.cut_approved():
         raise ValueError(f"{piece.id}: no approved cut plane in the catalog")
-    from . import fixtures, hangers
+    from . import dowels, fixtures, hangers
 
     group = fixtures.load(piece.polyhedron).symmetry_group()
     normal, _ = cuts.snap_normal(piece.cut["normal"], group)
@@ -152,9 +157,12 @@ def export_ornament(piece: Piece, sizes_mm, out_dir: Path, **hole_options) -> di
     for size in sizes_mm:
         scaled = scale_to_size(mesh, float(size), axis="extent")
         hole = hangers.place_hole(scaled, piece.divisor(), normal, **hole_options)
-        upper, lower = hangers.split(
-            hangers.bore(hangers.to_manifold(scaled), hole, normal), normal
-        )
+        dowel = dowels.plan(scaled, normal, size)
+        clearance = np.linalg.norm(hole.centre_mm) - dowel.depth_each_side_mm - dowel.diameter_mm
+        if clearance < 5.0:
+            raise RuntimeError(f"{piece.id} {size} mm: thread hole too close to the dowel")
+        solid = dowels.bore(hangers.bore(hangers.to_manifold(scaled), hole, normal), dowel, normal)
+        upper, lower = hangers.split(solid, normal)
         files = []
         for label, half, build in (("a", upper, normal), ("b", lower, -normal)):
             posed = cuts.to_print_pose(half, build)
@@ -163,5 +171,5 @@ def export_ornament(piece: Piece, sizes_mm, out_dir: Path, **hole_options) -> di
             path = out_dir / f"{piece.id}-{size}mm-ornament-half-{label}.stl"
             posed.save(str(path), binary=True)
             files.append({"name": path.name, "sha256": sha256(path), "bytes": path.stat().st_size})
-        entries[str(size)] = {"hole": hole.record(), "files": files}
+        entries[str(size)] = {"hole": hole.record(), "dowel": dowel.record(), "files": files}
     return entries
