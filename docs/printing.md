@@ -62,6 +62,6 @@ pieces will be added as they are printed.
 | infill | 15% gyroid | tested |
 | perimeters | 3 | used for the baseline prints |
 | dowel fit | 5.2 mm hole on a 5.00 mm M5 pin: light friction fit | tested |
-| supports | tree supports for downward spikes, if any | depends on the cut |
+| supports | none: halves print cut face down | tested: no printed piece has needed them |
 
 Each object's page links to its files once they are published.
