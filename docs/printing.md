@@ -46,14 +46,17 @@ through one spike. Pass a thread through, tie a loop, and it hangs on a tree.
 
 ## Settings
 
-The baseline prints used the settings below. Settings for the new pieces will be added as they
-are printed.
+These settings produced the prints so far, including the dowel-fit test. Notes for individual
+pieces will be added as they are printed.
 
 | setting | value | status |
 |---|---|---|
-| layer height | 0.2 mm | used for the baseline prints |
+| material | PLA | tested |
+| nozzle | 0.4 mm | tested |
+| layer height | 0.20 mm (the slicer's "QUALITY" profile) | tested |
+| infill | 15% gyroid | tested |
 | perimeters | 3 | used for the baseline prints |
-| infill | 15% gyroid | used for the baseline prints |
+| dowel fit | 5.2 mm hole on a 5.00 mm M5 pin: light friction fit | tested |
 | supports | tree supports for downward spikes, if any | depends on the cut |
 
 Each object's page links to its files once they are published.
