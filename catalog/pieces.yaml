@@ -111,7 +111,8 @@ pieces:
   function: "Φ(z) / Ψ(z)"
   planned_size_mm: 80
   size_note: "80 mm: too few features to gain from 130 mm (owner, 2026-10-03)."
-  printed: []
+  printed:
+    - {size_mm: 80, date: null, material: PLA, notes: "settings on the printing page; no supports"}
   stl:
     source: figures_repo@292bec4
     matches_print: null
@@ -119,7 +120,7 @@ pieces:
       80: {name: tetrahedral-dual-80mm.stl, sha256: c4d280b61fca0a285c6059ab213ee37876fe011967800fbfb1452277800e383c}
       130: {name: tetrahedral-dual-130mm.stl, sha256: bf902347395cdb0eea600aa7db37e39f93c6d7b388e6335f8ab2777fe41ebf32}
   photos: []
-  printables_url: null
+  printables_url: https://www.printables.com/model/1865859-tetrahedron-dual
   notes: "Not chiral (six mirror planes); the phase rotates by cube roots of unity under three-fold rotations."
 
 - id: octahedral-crown

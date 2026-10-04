@@ -9,7 +9,7 @@ edit by hand: change the catalog and regenerate.
 | Dodecahedron–Icosahedron Dual | baseline | printed | yes | yes/yes | exported | yes/yes | 130 mm | 130 mm | – | – | photograph |
 | Icosidodecahedral Star | baseline | printed | yes | yes/yes | exported | yes/yes | 130 mm | 130 mm | – | – | photograph |
 | Icosahedral Crown | baseline | printed | yes | yes/yes | exported | yes/yes | 130 mm | 130 mm | – | – | photograph |
-| Tetrahedral Dual | baseline | exported | yes | yes/yes | exported | yes/yes | 80 mm | – | – | – | print at 80 mm |
+| Tetrahedral Dual | baseline | listed | yes | yes/yes | exported | yes/yes | 80 mm | 80 mm | – | [link](https://www.printables.com/model/1865859-tetrahedron-dual) | photograph |
 | Octahedral Crown | baseline | exported | yes | yes/yes | exported | yes/yes | 80 mm | – | – | – | print at 80 mm |
 | Deltoidal Icositetrahedron (R2) | new | exported | yes | yes/yes | exported | yes/yes | 130 mm | – | – | – | print at 130 mm |
 | Rhombicuboctahedron (R4, vertex–edge) | new | exported | yes | yes/yes | exported | yes/yes | 130 mm | – | – | – | print at 130 mm |
