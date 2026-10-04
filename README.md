@@ -15,8 +15,11 @@ The full research program, scope and exit criteria are in [`PROGRAM.md`](PROGRAM
 ## Status
 
 **Phase 1 (investigation) is complete**, and every exit criterion in [`PROGRAM.md`](PROGRAM.md) §13
-is met. Phase 2 (explanation and exhibition) is planned in [`PHASE2.md`](PHASE2.md). Nothing is
-published yet.
+is met. Phase 2 (explanation and exhibition) is under way ([`PHASE2.md`](PHASE2.md)):
+
+- **Site:** <https://kuvychko.github.io/polyhedra-to-rational-functions/>, with the objects, the
+  research narrative and an interactive recipe comparison.
+- **Print files:** each object's page links to its Printables listing once it is published.
 
 Current findings ([decision 0005](docs/decisions/0005-phase1-recipe-selection.md),
 [narrative draft](docs/research/narrative.md)):

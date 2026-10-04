@@ -10,14 +10,13 @@ polyhedron into a rational function on the Riemann sphere, study the results wit
 eventually turn selected results into printed objects and a public exhibition.
 
 `PROGRAM.md` is the source of truth for scope, phases, criteria and exit conditions. Read the
-relevant section before starting a milestone. Current status: **Phase 1 (investigation)**.
-Phase 2 (narrative + exhibition site) starts only once a recipe is understood well enough to
-explain. Decisions that change conventions go in `docs/decisions/`.
+relevant section before starting a milestone. Current status: **Phase 2** (narrative and
+exhibition site; `PHASE2.md`). Phase 1 (investigation) is complete (decision 0005). Decisions that change conventions go in `docs/decisions/`.
 
 ## Public from day one
 
-The repository is private for now but is kept **public-ready at every commit**. Releasing it
-means flipping visibility; there is no scrub step. So:
+The repository is **public**. It was developed public-ready from its first commit, so the release
+was a visibility flip with no scrub step, and every commit must stay that way:
 
 - No absolute local paths, usernames, machine names or drive letters in committed files. Refer
   to other repos by name and commit (e.g. "figures_repo @ 292bec4"), not by local path.
@@ -32,8 +31,8 @@ means flipping visibility; there is no scrub step. So:
 - Every committed file falls under a declared license: code is MIT (`LICENSE`); media, meshes,
   documentation and prose are CC BY 4.0 (`LICENSE-media`). Third-party data (e.g. polyhedron
   coordinates) needs a recorded source and compatible terms.
-- Never change repository visibility, enable/deploy GitHub Pages, push tags or publish to
-  Printables without an explicit request at that time.
+- Never change repository visibility, run the site deploy workflow (`docs.yml`), push tags or
+  publish to Printables without an explicit request at that time.
 - Write notes and docs for an outside reader: no "as discussed" references to conversations.
 
 ## Mathematical conventions

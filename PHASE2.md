@@ -45,8 +45,8 @@ by hand here.
     viewport. The layout is responsive by construction (Material, auto-fill grids, scrolling
     tables), but nobody has looked at it yet;
   - [ ] owner read-through of every page.
-- [ ] **A6 Release workflow:** a manual-dispatch deploy (`mkdocs gh-deploy`), not run until
-  release.
+- [ ] **A6 Release workflow:** a manual-dispatch deploy (`.github/workflows/docs.yml`,
+  `mkdocs gh-deploy`), run at release.
 
 ## Track B: physical (Claude screens and exports, owner prints and uploads)
 
