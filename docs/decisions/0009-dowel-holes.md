@@ -30,3 +30,10 @@ and 10 mm long. A pin in matching blind holes aligns the halves and strengthens 
 
 A test print shows a different hole diameter fits the pins better (printed holes often shrink).
 Then change `DIAMETER_MM` and re-export.
+
+## Verified (2026-10-03)
+
+A test print with the owner's material and print settings gave a **light friction fit** on
+**5.00 mm** M5 dowel pins. That fit suits the application: the pin seats by hand and holds the
+halves aligned while the glue sets. `DIAMETER_MM` stays at 5.2 mm, and the pin diameter is
+recorded as `PIN_DIAMETER_MM`.

@@ -18,8 +18,10 @@ include cut halves alongside the whole model.
 - Where a symmetry swaps the two sides, the halves are **identical**: print the half file twice.
   This applies to every symmetric object here.
 - The irregular objects have two different halves, **a** and **b**.
-- Each half has a **dowel hole**, 5.2 mm across, in the middle of its cut face, for an **M5 dowel
-  pin**:
+- Each half has a **dowel hole** in the middle of its cut face, for an **M5 dowel pin, 5.00 mm in
+  diameter**. The hole is modelled at 5.2 mm because printed holes come out undersized. On a
+  test print it gave a light friction fit, which suits gluing. If your printer prints holes
+  tighter or looser, scale the hole or ream it lightly.
     - 130 mm prints take a **20 mm** pin, in holes 11 mm deep;
     - 80 mm prints take a **10 mm** pin, in holes 6 mm deep.
 - The holes line up by construction. Glue the pin into one half, then glue the halves together;

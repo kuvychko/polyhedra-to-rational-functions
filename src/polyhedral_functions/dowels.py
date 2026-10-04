@@ -29,6 +29,10 @@ import pyvista as pv
 
 from . import hangers
 
+PIN_DIAMETER_MM = 5.00  # M5 dowel pins, measured
+# The modelled hole is 0.2 mm larger than the pin. Printed holes come out undersized, and with the
+# owner's material and print settings a 5.2 mm hole gives a light friction fit on a 5.00 mm pin
+# (tested 2026-10-03). Other printers may need a different value.
 DIAMETER_MM = 5.2
 # pin length (mm) -> hole depth on each side (mm): half the pin plus 1 mm slack.
 PINS = {20.0: 11.0, 10.0: 6.0}
