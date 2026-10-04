@@ -74,7 +74,7 @@ pieces:
     files:
       80: {name: icosidodecahedral-star-80mm.stl, sha256: 0cb419fc32e210ce83854860fe7e8b8951a256d7658a2f9090241c8242f50349}
       130: {name: icosidodecahedral-star-130mm.stl, sha256: 423bc3cb6c1057b16912ed6828e07fc4f8ca6a2f060024dbd054b84da7fc8f99}
-  printables_url: null
+  printables_url: https://www.printables.com/model/1866036-icosidodecahedral-star
 
 - id: icosahedral-crown
   title: Icosahedral Crown

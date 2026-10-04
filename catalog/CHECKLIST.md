@@ -7,7 +7,7 @@ edit by hand: change the catalog and regenerate.
 |---|---|---|---|---|---|---|---|---|---|---|
 | Cube–Octahedron Dual | baseline | listed | yes | yes/yes | exported | yes/yes | 80 mm | 130 mm | [link](https://www.printables.com/model/1865813-cube-octahedron-dual) | print at 80 mm |
 | Dodecahedron–Icosahedron Dual | baseline | printed | yes | yes/yes | exported | yes/yes | 130 mm | 130 mm | – | upload to Printables (both sizes) and record the URL |
-| Icosidodecahedral Star | baseline | printed | yes | yes/yes | exported | yes/yes | 130 mm | 130 mm | – | upload to Printables (both sizes) and record the URL |
+| Icosidodecahedral Star | baseline | listed | yes | yes/yes | exported | yes/yes | 130 mm | 130 mm | [link](https://www.printables.com/model/1866036-icosidodecahedral-star) | done |
 | Icosahedral Crown | baseline | listed | yes | yes/yes | exported | yes/yes | 130 mm | 130 mm | [link](https://www.printables.com/model/1865893-icosahedral-crown) | done |
 | Tetrahedral Dual | baseline | listed | yes | yes/yes | exported | yes/yes | 80 mm | 80 mm | [link](https://www.printables.com/model/1865859-tetrahedron-dual) | done |
 | Octahedral Crown | baseline | exported | yes | yes/yes | exported | yes/yes | 80 mm | – | – | print at 80 mm |
@@ -18,4 +18,4 @@ edit by hand: change the catalog and regenerate.
 | Irregular Solid, Separated (R2) | new | exported | yes | yes/yes | exported | yes/yes | 130 mm | – | – | print at 130 mm |
 | Hexagonal Pyramid (R2) | new | candidate | – | –/– | – | –/– | – | – | – | none (digital only) |
 
-9 of 12 pieces have an open action.
+8 of 12 pieces have an open action.
