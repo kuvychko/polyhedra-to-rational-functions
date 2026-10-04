@@ -26,7 +26,8 @@ include cut halves alongside the whole model.
     - 80 mm prints take a **10 mm** pin, in holes 6 mm deep.
 - The holes line up by construction. Glue the pin into one half, then glue the halves together;
   the pin keeps them aligned. Without a pin, just glue the faces.
-- **Glue:** a budget cyanoacrylate (super glue) made for plastics worked well with PLA.
+- **Glue:** a budget cyanoacrylate (super glue) made for plastics worked well with PLA. The one
+  tested was LOOCTOT glue for plastic.
 
 ## Hanging ornaments
 
