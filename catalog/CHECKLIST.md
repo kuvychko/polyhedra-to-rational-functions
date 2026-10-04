@@ -5,7 +5,7 @@ edit by hand: change the catalog and regenerate.
 
 | piece | origin | status | screened | STLs 80/130 | cut | ornament | planned | printed | photos | Printables | next action |
 |---|---|---|---|---|---|---|---|---|---|---|---|
-| Cube–Octahedron Dual | baseline | printed | yes | yes/yes | exported | yes/yes | 80 mm | 130 mm | – | – | print at 80 mm |
+| Cube–Octahedron Dual | baseline | listed | yes | yes/yes | exported | yes/yes | 80 mm | 130 mm | – | [link](https://www.printables.com/model/1865813-cube-octahedron-dual) | print at 80 mm |
 | Dodecahedron–Icosahedron Dual | baseline | printed | yes | yes/yes | exported | yes/yes | 130 mm | 130 mm | – | – | photograph |
 | Icosidodecahedral Star | baseline | printed | yes | yes/yes | exported | yes/yes | 130 mm | 130 mm | – | – | photograph |
 | Icosahedral Crown | baseline | printed | yes | yes/yes | exported | yes/yes | 130 mm | 130 mm | – | – | photograph |

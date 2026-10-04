@@ -38,7 +38,7 @@ pieces:
       80: {name: cube-octahedron-dual-80mm.stl, sha256: af7297eb4494e8cf84f42de1c7b4e2395d9635348812ed59f5ce8c4cd0e70252}
       130: {name: cube-octahedron-dual-130mm.stl, sha256: 7883a768c84f823e452e6b08dd51894c21d0eeed01add37c054f7ae507ee0621}
   photos: []
-  printables_url: null
+  printables_url: https://www.printables.com/model/1865813-cube-octahedron-dual
 
 - id: dodecahedron-icosahedron-dual
   title: Dodecahedron–Icosahedron Dual
