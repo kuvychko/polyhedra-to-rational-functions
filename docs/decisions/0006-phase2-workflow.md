@@ -64,3 +64,12 @@ The repository was made public, and the deploy workflow published the site to
 <https://kuvychko.github.io/polyhedra-to-rational-functions/>. A crawl of the live site found
 every internal link and image in place. The first piece listed on Printables is the
 Cube–Octahedron Dual.
+
+## Amendment (2026-10-04): deploy on push
+
+After the release, a manual deploy for every catalog update was a step easy to forget. The
+deploy workflow now also runs automatically when CI completes successfully for a push to `main`,
+and it deploys the commit CI tested. Lint, the tests on both platforms and the strict site
+build therefore gate every publication. Running it by hand still works, for redeploying without
+a new commit. Other branches and pull requests never deploy. Pushing to `main` is now a
+publishing step.

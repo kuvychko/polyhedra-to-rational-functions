@@ -57,7 +57,7 @@ jobs:
           python-version: "3.13"
           enable-cache: true
       - run: uv sync --locked --group docs
-      # Builds only. Deployment is a release step (decision 0006), not part of CI.
+      # Builds only. On main, docs.yml deploys after this whole workflow passes (decision 0006).
       - run: uv run --no-sync mkdocs build --strict
       # Subpath-safe links, alt text and local images in the built HTML (scripts/a5_check_site.py).
       - run: uv run --no-sync python scripts/a5_check_site.py

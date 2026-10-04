@@ -45,8 +45,8 @@ by hand here.
     viewport. The layout is responsive by construction (Material, auto-fill grids, scrolling
     tables), but nobody has looked at it yet;
   - [ ] owner read-through of every page.
-- [x] **A6 Release workflow:** a manual-dispatch deploy (`.github/workflows/docs.yml`,
-  `mkdocs gh-deploy`). First run at release, 2026-10-04.
+- [x] **A6 Release workflow:** `.github/workflows/docs.yml` (`mkdocs gh-deploy`). First run
+  by hand at release, 2026-10-04; since then it also runs after CI passes on a push to `main`.
 
 ## Track B: physical (Claude screens and exports, owner prints and uploads)
 
@@ -88,6 +88,6 @@ by hand here.
 ## Release (owner action, end of Phase 2)
 
 - [ ] `PROGRAM.md` §15 acceptance criteria met.
-- [ ] Flip the repository public, run the deploy workflow, and check the live site under its
-  subpath.
+- [x] Flip the repository public, run the deploy workflow, and check the live site under its
+  subpath (2026-10-04).
 - [ ] Every Printables listing links to the live site, and the site links back.

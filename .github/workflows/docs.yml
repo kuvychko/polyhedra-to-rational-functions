@@ -1,9 +1,17 @@
 name: Deploy site
 
-# Publishes the site to GitHub Pages (the gh-pages branch). Deployment is a deliberate step
-# (decision 0006): only a person choosing to run this workflow publishes. Pushes build the site
-# in CI (the `docs` job there) but never publish it.
+# Publishes the site to GitHub Pages (the gh-pages branch).
+#
+# - Automatically, after CI passes on a push to main: lint, tests on both platforms and the
+#   strict site build must all succeed first, so a broken commit never replaces the live site.
+# - By hand (Run workflow), to redeploy without a new commit.
+#
+# Pushes to other branches build the site in CI but never publish it.
 on:
+  workflow_run:
+    workflows: ["CI"]
+    types: [completed]
+    branches: [main]
   workflow_dispatch:
 
 permissions:
@@ -17,9 +25,16 @@ jobs:
   deploy:
     name: Build and publish to GitHub Pages
     runs-on: ubuntu-latest
+    # Only a successful CI run on a push deploys (not a pull request's run).
+    if: >-
+      github.event_name == 'workflow_dispatch' ||
+      (github.event.workflow_run.conclusion == 'success' &&
+       github.event.workflow_run.event == 'push')
     steps:
       - uses: actions/checkout@v4
         with:
+          # The commit CI tested, not whatever main points to by now.
+          ref: ${{ github.event.workflow_run.head_sha || github.sha }}
           # gh-deploy pushes to gh-pages and needs that branch's history.
           fetch-depth: 0
       - uses: astral-sh/setup-uv@v6

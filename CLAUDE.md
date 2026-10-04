@@ -31,8 +31,9 @@ was a visibility flip with no scrub step, and every commit must stay that way:
 - Every committed file falls under a declared license: code is MIT (`LICENSE`); media, meshes,
   documentation and prose are CC BY 4.0 (`LICENSE-media`). Third-party data (e.g. polyhedron
   coordinates) needs a recorded source and compatible terms.
-- Never change repository visibility, run the site deploy workflow (`docs.yml`), push tags or
-  publish to Printables without an explicit request at that time.
+- Never change repository visibility, push, run the site deploy workflow (`docs.yml`), push
+  tags or publish to Printables without an explicit request at that time. **A push to `main`
+  publishes the site** once CI passes, so pushing is a publishing step.
 - Write notes and docs for an outside reader: no "as discussed" references to conversations.
 
 ## Mathematical conventions
