@@ -9,6 +9,8 @@ each one fails.
 
 - **[The recipes](recipes.md):** the construction in brief, the selected default (R2), its
   alternative (R4), and a complete worked example.
+- **[Compare recipes](compare.md):** an interactive 3D comparison of where each recipe puts its
+  zeros and poles, for any two solids and recipes side by side.
 - **[The exploration](narrative.md):** the full account. It covers how the question was set up
   and which experiments changed the picture. Every claim is labelled as
   established background, derived here, numerical observation, conjecture, or design

@@ -35,7 +35,7 @@ import matplotlib.pyplot as plt  # noqa: E402
 import pyvista as pv  # noqa: E402
 from PIL import Image  # noqa: E402
 
-from polyhedral_functions import catalog, fixtures, meshes  # noqa: E402
+from polyhedral_functions import catalog, fixtures, meshes, viewer_data  # noqa: E402
 from polyhedral_functions.evaluation import as_function  # noqa: E402
 from polyhedral_functions.manifests import (  # noqa: E402
     REPO_ROOT,
@@ -108,44 +108,21 @@ def render_plane(piece, path: Path, config) -> Path:
     return path
 
 
-KIND_OF_LABEL = {"vertex": "vertex", "face": "face", "edge": "edge"}
-
-
 def geometry_data(piece, view) -> dict:
     """What the interactive viewer draws: the solid at circumradius 1, with zeros and poles.
 
-    Each marker carries its order and the cell it stands for, for the viewer's labels. Points
-    are unit directions; the viewer draws them just outside the unit sphere, as the static
-    render does.
+    Each marker carries its order and the cell it stands for, for the viewer's labels (see
+    `viewer_data`).
     """
-    poly = fixtures.load(piece.polyhedron)
-    d = piece.divisor()
-
-    def marker(point, order, label):
-        kinds = sorted({part.split()[0] for part in label.split("+")})
-        return {
-            "p": [round(float(x), 6) for x in point],
-            "order": abs(int(order)),
-            "cell": " and ".join(KIND_OF_LABEL.get(k, k) for k in kinds),
-        }
-
+    record = viewer_data.solid(fixtures.load(piece.polyhedron))
     return {
         "piece": piece.id,
         "title": piece.title,
-        "solid": poly.name,
+        "solid": record["name"],
         "view": [float(x) for x in view],
-        "vertices": [[round(float(x), 6) for x in v] for v in poly.vertices / poly.scale],
-        "faces": [list(f) for f in poly.faces],
-        "zeros": [
-            marker(p, o, lab)
-            for p, o, lab in zip(d.points, d.orders, d.labels, strict=True)
-            if o > 0
-        ],
-        "poles": [
-            marker(p, o, lab)
-            for p, o, lab in zip(d.points, d.orders, d.labels, strict=True)
-            if o < 0
-        ],
+        "vertices": record["vertices"],
+        "faces": record["faces"],
+        **viewer_data.markers(piece.divisor()),
     }
 
 

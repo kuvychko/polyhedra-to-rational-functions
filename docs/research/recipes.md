@@ -31,6 +31,9 @@ $$
 For these unreduced divisors, \(D_{R2} = D_{R4ve} - D_{R4fe}\). Polarity exchanges vertices and
 faces, so R2 on the polar dual gives exactly the reciprocal function, and R4ve and R4fe swap.
 
+To see these divisors side by side in 3D, for any solid in the corpus, use
+[Compare recipes](compare.md).
+
 ## Fixing the constant
 
 The relief needs an absolute modulus, not one defined up to a constant. With \(\chi\) the chordal
