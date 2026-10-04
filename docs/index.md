@@ -25,5 +25,5 @@ prints, and where to get the files.
 polyhedron into a function, which recipes do it well, and where they fail.
 
 !!! info "Status"
-    The research (Phase 1) is complete. The exhibition is being printed and photographed, and
+    The research (Phase 1) is complete. The exhibition is being printed, and
     print files will be linked from each object's page as they are published.

@@ -7,7 +7,6 @@
 #   planned_size_mm                   the size you intend to print: 80 or 130; null = undecided
 #   printed                           list of {size_mm, date, material, notes}
 #   stl.files                         {80: {name, sha256}, 130: {...}}; STLs are not in git
-#   photos                            docs/assets/photos/<id>/<file>.jpg (about 1600 px wide); CC BY 4.0
 #   printables_url                    the piece's own Printables listing, with both sizes
 #
 # Baseline STLs: figures_repo @ 292bec4, 2026/09-20-riemann-ornaments/polyhedral/stl/. They were
@@ -37,7 +36,6 @@ pieces:
     files:
       80: {name: cube-octahedron-dual-80mm.stl, sha256: af7297eb4494e8cf84f42de1c7b4e2395d9635348812ed59f5ce8c4cd0e70252}
       130: {name: cube-octahedron-dual-130mm.stl, sha256: 7883a768c84f823e452e6b08dd51894c21d0eeed01add37c054f7ae507ee0621}
-  photos: []
   printables_url: https://www.printables.com/model/1865813-cube-octahedron-dual
 
 - id: dodecahedron-icosahedron-dual
@@ -57,7 +55,6 @@ pieces:
     files:
       80: {name: dodecahedron-icosahedron-dual-80mm.stl, sha256: f9ce36c6ec82790a66ef064357260f48ebd6c97f0e089e8ff0dfb1fba6aeaee8}
       130: {name: dodecahedron-icosahedron-dual-130mm.stl, sha256: 6721c35567103819e1e61621e69e4dc04f654994942a3dac25f95371e1f60f66}
-  photos: []
   printables_url: null
 
 - id: icosidodecahedral-star
@@ -77,7 +74,6 @@ pieces:
     files:
       80: {name: icosidodecahedral-star-80mm.stl, sha256: 0cb419fc32e210ce83854860fe7e8b8951a256d7658a2f9090241c8242f50349}
       130: {name: icosidodecahedral-star-130mm.stl, sha256: 423bc3cb6c1057b16912ed6828e07fc4f8ca6a2f060024dbd054b84da7fc8f99}
-  photos: []
   printables_url: null
 
 - id: icosahedral-crown
@@ -98,7 +94,6 @@ pieces:
     files:
       80: {name: icosahedral-crown-80mm.stl, sha256: 58698f7d6247fea88d0c56238ac8d6b50291a466560d90be78e70d5607a821ae}
       130: {name: icosahedral-crown-130mm.stl, sha256: 05c52c6957f4931da74fb91f4f9873325064dcf23fcaf7a7a22123a1d9cc94cd}
-  photos: []
   printables_url: null
 
 - id: tetrahedral-dual
@@ -119,7 +114,6 @@ pieces:
     files:
       80: {name: tetrahedral-dual-80mm.stl, sha256: c4d280b61fca0a285c6059ab213ee37876fe011967800fbfb1452277800e383c}
       130: {name: tetrahedral-dual-130mm.stl, sha256: bf902347395cdb0eea600aa7db37e39f93c6d7b388e6335f8ab2777fe41ebf32}
-  photos: []
   printables_url: https://www.printables.com/model/1865859-tetrahedron-dual
   notes: "Not chiral (six mirror planes); the phase rotates by cube roots of unity under three-fold rotations."
 
@@ -141,7 +135,6 @@ pieces:
     files:
       80: {name: octahedral-crown-80mm.stl, sha256: 1299a27ac5eae20023fb104607639219077f88eb88e00a76f2a65eedd2147cf8}
       130: {name: octahedral-crown-130mm.stl, sha256: f2d8dfc2c4b347be20a8cadee0b14655df1413f1f76ab24c088f4ab811a4b3c6}
-  photos: []
   printables_url: null
   notes: "Completes the baseline set."
 

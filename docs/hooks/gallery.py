@@ -6,7 +6,6 @@ generated files. Each object page shows:
 
 - the coordinated views precomputed by ``scripts/a4_site_assets.py``
   (geometry → plane → sphere → relief → printed shape);
-- the owner's photographs, when the catalog lists them;
 - the function and its divisor;
 - the print and listing status;
 - links to the recipe and to the experiments that cover it.
@@ -130,16 +129,6 @@ def views_block(piece) -> list[str]:
     return lines + ["</div>", ""]
 
 
-def photos_block(piece) -> list[str]:
-    if not piece.photos:
-        return []
-    lines = ["## Photographs", "", '<div class="piece-photos" markdown>', ""]
-    for i, photo in enumerate(piece.photos, start=1):
-        src = "../" + Path(photo).relative_to("docs").as_posix()
-        lines += [f"![Photograph {i} of the printed {piece.title}]({src})", ""]
-    return lines + ["</div>", ""]
-
-
 FILES = (
     "whole, cut halves, and a [hanging-ornament](../printing.md#hanging-ornaments) version; "
     "80 and 130 mm"
@@ -182,7 +171,7 @@ def piece_page(piece, screened, exports) -> str:
         lines += [f"Classical form: `f(z) = {piece.function}`.", ""]
     if piece.notes:
         lines += ["!!! note", f"    {piece.notes}", ""]
-    lines += viewer_block(piece) + views_block(piece) + photos_block(piece)
+    lines += viewer_block(piece) + views_block(piece)
     lines += [
         "## The function and the print",
         "",

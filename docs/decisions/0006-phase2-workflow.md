@@ -73,3 +73,18 @@ and it deploys the commit CI tested. Lint, the tests on both platforms and the s
 build therefore gate every publication. Running it by hand still works, for redeploying without
 a new commit. Other branches and pull requests never deploy. Pushing to `main` is now a
 publishing step.
+
+## Amendment (2026-10-04): one group photo, not a photo per piece
+
+Photographs of individual prints go on each piece's Printables listing, not on the site. The
+object pages already show the piece through the precomputed renders, including the uncolored
+relief, which does that job well. Once every piece is printed, one group photograph of the whole
+set goes on the home page. So:
+
+- the catalog has no `photos` field, and its status chain is
+  `candidate → screened → exported → printed → listed`;
+- the checklist's next action after printing is the Printables listing;
+- the object pages have no photograph section.
+
+PROGRAM.md's photograph items (§4's regression reference, the home page's strong photograph) are
+met by the group photo.

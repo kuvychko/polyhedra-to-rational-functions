@@ -1,7 +1,8 @@
 """The piece catalog: the hand-off between the website and the physical track (decision 0006).
 
 ``catalog/pieces.yaml`` holds one entry per object. People edit it by hand: a printed size, a
-photo path, a Printables URL. Code never rewrites it. Everything else is derived here:
+Printables URL. Photographs of individual prints live on Printables, not here (decision 0006
+amendment). Code never rewrites it. Everything else is derived here:
 
 - each piece's divisor, from its recipe and solid;
 - its status, from what the entry and the print screen record;
@@ -32,7 +33,7 @@ SCREEN_FILE = (
     Path(__file__).resolve().parents[2] / "experiments" / "P001-print-screen" / "screen.csv"
 )
 SIZES_MM = (80, 130)
-STATUSES = ("candidate", "screened", "exported", "printed", "photographed", "listed")
+STATUSES = ("candidate", "screened", "exported", "printed", "listed")
 
 
 @dataclass
@@ -50,7 +51,6 @@ class Piece:
     size_note: str | None = None
     printed: list = field(default_factory=list)
     stl: dict | None = None
-    photos: list = field(default_factory=list)
     printables_url: str | None = None
     notes: str | None = None
     resolution: int | None = None  # mesh resolution for new pieces (default in meshes.py)
@@ -99,8 +99,6 @@ class Piece:
     def status(self, screened: set[str]) -> str:
         if self.printables_url:
             return "listed"
-        if self.photos:
-            return "photographed"
         if self.printed:
             return "printed"
         if set(SIZES_MM) <= set(self.stl_sizes()):
@@ -124,8 +122,6 @@ class Piece:
             return "choose print size from the screen"
         if self.planned_size_mm not in self.printed_sizes():
             return f"print at {self.planned_size_mm} mm"
-        if not self.photos:
-            return "photograph"
         if not self.printables_url:
             return "upload to Printables (both sizes) and record the URL"
         return "done"
@@ -154,9 +150,6 @@ def load(path: Path = CATALOG_FILE) -> list[Piece]:
         for size in [p.planned_size_mm, *p.printed_sizes()]:
             if size is not None and size not in SIZES_MM:
                 problems.append(f"{p.id}: size {size} is not one of {SIZES_MM}")
-        for photo in p.photos:
-            if not Path(photo).as_posix().startswith(f"docs/assets/photos/{p.id}/"):
-                problems.append(f"{p.id}: photos go under docs/assets/photos/{p.id}/ ({photo})")
     if problems:
         raise ValueError("; ".join(problems))
     return pieces
@@ -195,8 +188,8 @@ def checklist(pieces: list[Piece], screened: set[str]) -> str:
         "edit by hand: change the catalog and regenerate.",
         "",
         "| piece | origin | status | screened | STLs 80/130 | cut | ornament | planned | printed "
-        "| photos | Printables | next action |",
-        "|---|---|---|---|---|---|---|---|---|---|---|---|",
+        "| Printables | next action |",
+        "|---|---|---|---|---|---|---|---|---|---|---|",
     ]
     for p in pieces:
         stls = "/".join(mark(s in p.stl_sizes()) for s in SIZES_MM)
@@ -206,7 +199,6 @@ def checklist(pieces: list[Piece], screened: set[str]) -> str:
         lines.append(
             f"| {p.title} | {p.origin} | {p.status(screened)} | {mark(p.id in screened)} "
             f"| {stls} | {cut_state(p)} | {orn} | {planned} | {printed} "
-            f"| {len(p.photos) or '–'} "
             f"| {'[link](' + p.printables_url + ')' if p.printables_url else '–'} "
             f"| {p.next_action(screened)} |"
         )
