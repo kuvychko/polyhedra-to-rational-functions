@@ -57,3 +57,10 @@ crown (130 mm).
   the site.
 - Printables URLs exist only after upload. The site shows "print files coming" until then, so
   the site can be finished before every piece is listed.
+
+## Released (2026-10-04)
+
+The repository was made public, and the deploy workflow published the site to
+<https://kuvychko.github.io/polyhedra-to-rational-functions/>. A crawl of the live site found
+every internal link and image in place. The first piece listed on Printables is the
+Cube–Octahedron Dual.
