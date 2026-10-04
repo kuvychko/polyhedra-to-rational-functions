@@ -195,12 +195,12 @@ def piece_page(piece, screened, exports) -> str:
     if piece.digital_only:
         lines += ["| **print** | digital only |", ""]
     else:
-        printed = ", ".join(f"{s} mm" for s in piece.printed_sizes()) or "not yet"
-        planned = f"{piece.planned_size_mm} mm" if piece.planned_size_mm else "undecided"
+        # Both sizes are offered, so the page says only whether the piece has been printed;
+        # sizes and plans stay in the catalog and CHECKLIST.md.
+        printed = "yes" if piece.printed else "not yet"
         cut = exports.get(piece.id, {}).get("cuts", {}).get("130", {}).get("halves")
         lines += [
             f"| **printed** | {printed} |",
-            f"| **planned size** | {planned}, tip to tip |",
             f"| **cut** | {HALVES_TEXT.get(cut, 'not yet chosen')} |",
             f"| **print files** | {listing(piece)} |",
             "",
