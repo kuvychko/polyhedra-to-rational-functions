@@ -38,3 +38,9 @@ The minimum side wall is raised from 1 mm to **1.5 mm** (`hangers.MIN_WALL_MM`),
 request. A 1.0 mm wall is about two perimeters of a 0.4 mm nozzle, which is fragile for a piece
 hanging from a thread. Holes on thin spikes now sit further from the tip. Each piece's final
 distance and wall are recorded in `catalog/exports.json`.
+
+## Verified (2026-10-03)
+
+On the owner's prints (settings on the printing page), the 1.5 mm hole needs cleaning up with a
+1.5 mm drill bit in a pin vise. After that it suits a monofilament loop. The diameter stays at
+1.5 mm.

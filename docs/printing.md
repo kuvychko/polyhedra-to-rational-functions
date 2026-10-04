@@ -26,11 +26,13 @@ include cut halves alongside the whole model.
     - 80 mm prints take a **10 mm** pin, in holes 6 mm deep.
 - The holes line up by construction. Glue the pin into one half, then glue the halves together;
   the pin keeps them aligned. Without a pin, just glue the faces.
+- **Glue:** a budget cyanoacrylate (super glue) made for plastics worked well with PLA.
 
 ## Hanging ornaments
 
 Every object also comes as a **hanging ornament**: cut halves with a 1.5 mm thread hole bored
-through one spike. Pass a thread through, tie a loop, and it hangs on a tree.
+through one spike. Pass a thread through, tie a loop, and it hangs on a tree. Monofilament
+(fishing line) makes a good loop at this hole size.
 
 - **Which spike:** the most prominent one the cut plane splits lengthwise, so the hole runs
   through both halves and lines up when they are glued. Where no spike lies in the plane, as on
@@ -41,6 +43,8 @@ through one spike. Pass a thread through, tie a loop, and it hangs on a tree.
   the exact distance.
 - **Printing:** each half lies cut face down, so the hole is vertical and needs no support. The
   ornament halves are always two files, **a** and **b**: the hole makes them different.
+- **Cleaning the hole:** a printed 1.5 mm hole comes out rough and slightly undersized. Run a
+  1.5 mm drill bit through it by hand in a pin vise.
 - **Gluing:** the ornament halves have the same dowel hole as the plain halves. Keep glue away
   from the thread hole, or clear it with a pin before it sets.
 
