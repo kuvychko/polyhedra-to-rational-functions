@@ -94,7 +94,7 @@ pieces:
     files:
       80: {name: icosahedral-crown-80mm.stl, sha256: 58698f7d6247fea88d0c56238ac8d6b50291a466560d90be78e70d5607a821ae}
       130: {name: icosahedral-crown-130mm.stl, sha256: 05c52c6957f4931da74fb91f4f9873325064dcf23fcaf7a7a22123a1d9cc94cd}
-  printables_url: null
+  printables_url: https://www.printables.com/model/1865893-icosahedral-crown
 
 - id: tetrahedral-dual
   title: Tetrahedral Dual
