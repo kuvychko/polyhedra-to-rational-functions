@@ -42,7 +42,7 @@ def test_baseline_entries_reproduce_the_baseline_function(piece):
 def test_owner_size_choices_are_recorded():
     by_id = {p.id: p for p in PIECES}
     assert by_id["cube-octahedron-dual"].planned_size_mm == 80
-    assert by_id["cube-octahedron-dual"].printed_sizes() == [130]
+    assert by_id["cube-octahedron-dual"].printed_sizes() == [80, 130]
     assert by_id["tetrahedral-dual"].planned_size_mm == 80
     assert by_id["octahedral-crown"].planned_size_mm == 80
 
