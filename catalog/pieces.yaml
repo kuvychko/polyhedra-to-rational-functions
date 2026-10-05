@@ -135,7 +135,7 @@ pieces:
     files:
       80: {name: octahedral-crown-80mm.stl, sha256: 1299a27ac5eae20023fb104607639219077f88eb88e00a76f2a65eedd2147cf8}
       130: {name: octahedral-crown-130mm.stl, sha256: f2d8dfc2c4b347be20a8cadee0b14655df1413f1f76ab24c088f4ab811a4b3c6}
-  printables_url: null
+  printables_url: https://www.printables.com/model/1866245-octahedral-crown
   notes: "Completes the baseline set."
 
 # --- new (Phase 1 recipes beyond the Platonic solids) ------------------------------------
