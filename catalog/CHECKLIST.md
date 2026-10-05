@@ -10,12 +10,12 @@ edit by hand: change the catalog and regenerate.
 | Icosidodecahedral Star | baseline | listed | yes | yes/yes | exported | yes/yes | 130 mm | 130 mm | [link](https://www.printables.com/model/1866036-icosidodecahedral-star) | done |
 | Icosahedral Crown | baseline | listed | yes | yes/yes | exported | yes/yes | 130 mm | 130 mm | [link](https://www.printables.com/model/1865893-icosahedral-crown) | done |
 | Tetrahedral Dual | baseline | listed | yes | yes/yes | exported | yes/yes | 80 mm | 80 mm | [link](https://www.printables.com/model/1865859-tetrahedron-dual) | done |
-| Octahedral Crown | baseline | listed | yes | yes/yes | exported | yes/yes | 80 mm | – | [link](https://www.printables.com/model/1866245-octahedral-crown) | print at 80 mm |
-| Deltoidal Icositetrahedron (R2) | new | exported | yes | yes/yes | exported | yes/yes | 130 mm | – | – | print at 130 mm |
+| Octahedral Crown | baseline | listed | yes | yes/yes | exported | yes/yes | 80 mm | 80 mm | [link](https://www.printables.com/model/1866245-octahedral-crown) | done |
+| Deltoidal Icositetrahedron (R2) | new | printed | yes | yes/yes | exported | yes/yes | 80 mm | 80 mm | – | upload to Printables (both sizes) and record the URL |
 | Rhombicuboctahedron (R4, vertex–edge) | new | exported | yes | yes/yes | exported | yes/yes | 130 mm | – | – | print at 130 mm |
 | Triakis Tetrahedron (R2) | new | exported | yes | yes/yes | exported | yes/yes | 80 mm | – | – | print at 80 mm |
 | Irregular Solid (R2) | new | exported | yes | yes/yes | exported | yes/yes | 130 mm | – | – | print at 130 mm |
 | Irregular Solid, Separated (R2) | new | exported | yes | yes/yes | exported | yes/yes | 130 mm | – | – | print at 130 mm |
 | Hexagonal Pyramid (R2) | new | candidate | – | –/– | – | –/– | – | – | – | none (digital only) |
 
-8 of 12 pieces have an open action.
+7 of 12 pieces have an open action.
