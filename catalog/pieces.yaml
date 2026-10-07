@@ -174,7 +174,9 @@ pieces:
   polyhedron: triakis-tetrahedron
   cut: {normal: [0.7071, -0.7071, 0], approved: true, note: "P002 proposal #1, approved by owner 2026-10-03 (identical halves)"}
   planned_size_mm: 80
-  size_note: "Proposed: few features, like the tetrahedral dual; confirm."
+  size_note: "80 mm: few features, like the tetrahedral dual (printed by the owner)."
+  printed:
+    - {size_mm: 80, date: null, material: PLA, notes: "settings on the printing page; no supports"}
   notes: "Low degree (12) with tetrahedral symmetry."
 
 - id: r2-irregular-mixed
