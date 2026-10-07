@@ -163,8 +163,10 @@ pieces:
   polyhedron: rhombicuboctahedron
   cut: {normal: [0, 1, 0], approved: true, note: "P002 proposal #1, approved by owner 2026-10-03 (identical halves)"}
   resolution: 400
-  planned_size_mm: 130
-  size_note: "Proposed from P001: pole-pole gap below the printed reference, so the larger size; a test print. Confirm."
+  planned_size_mm: 80
+  size_note: "Printed at 80 mm (owner, 2026-10-06); P001 had proposed 130 mm for the narrow pole-pole gaps."
+  printed:
+    - {size_mm: 80, date: null, material: PLA, notes: "settings on the printing page; no supports"}
   notes: "The alternative recipe on the same symmetry: degree 48."
 
 - id: r2-triakis-tetrahedron

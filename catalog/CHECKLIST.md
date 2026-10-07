@@ -12,7 +12,7 @@ edit by hand: change the catalog and regenerate.
 | Tetrahedral Dual | baseline | listed | yes | yes/yes | exported | yes/yes | 80 mm | 80 mm | [link](https://www.printables.com/model/1865859-tetrahedron-dual) | done |
 | Octahedral Crown | baseline | listed | yes | yes/yes | exported | yes/yes | 80 mm | 80 mm | [link](https://www.printables.com/model/1866245-octahedral-crown) | done |
 | Deltoidal Icositetrahedron (R2) | new | listed | yes | yes/yes | exported | yes/yes | 80 mm | 80 mm | [link](https://www.printables.com/model/1866447-deltoidal-icositetrahedron) | done |
-| Rhombicuboctahedron (R4, vertex–edge) | new | exported | yes | yes/yes | exported | yes/yes | 130 mm | – | – | print at 130 mm |
+| Rhombicuboctahedron (R4, vertex–edge) | new | printed | yes | yes/yes | exported | yes/yes | 80 mm | 80 mm | – | upload to Printables (both sizes) and record the URL |
 | Triakis Tetrahedron (R2) | new | listed | yes | yes/yes | exported | yes/yes | 80 mm | 80 mm | [link](https://www.printables.com/model/1868361-triakis-tetrahedron) | done |
 | Irregular Solid (R2) | new | exported | yes | yes/yes | exported | yes/yes | 130 mm | – | – | print at 130 mm |
 | Irregular Solid, Separated (R2) | new | exported | yes | yes/yes | exported | yes/yes | 130 mm | – | – | print at 130 mm |
