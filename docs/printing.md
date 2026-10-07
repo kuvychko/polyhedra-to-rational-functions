@@ -3,6 +3,9 @@
 Every object is a solid that is star-shaped about its centre: each ray from the centre crosses
 the surface once. There are no thin walls. The fine geometry is all in the tips.
 
+The print files are on Printables, one listing per object, gathered in the collection
+[Polyhedra as Complex Functions](https://www.printables.com/@Igor_2829688/collections/3812430).
+
 ## Sizes
 
 Each object comes in two sizes, **80 mm** and **130 mm**, measured **tip to tip**: the object's

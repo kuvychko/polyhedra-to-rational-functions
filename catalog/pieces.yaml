@@ -14,6 +14,9 @@
 # 09-20 to 09-28, before the tip-to-tip sizing change). Whether these files match those prints is
 # UNVERIFIED (stl.matches_print: null).
 
+# The Printables collection holding every listed piece.
+printables_collection: https://www.printables.com/@Igor_2829688/collections/3812430
+
 pieces:
 
 # --- baseline (R0): Klein-invariant ornaments ---------------------------------------------

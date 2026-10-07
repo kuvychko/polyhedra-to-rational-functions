@@ -61,3 +61,8 @@ def test_checklist_is_current():
     """CHECKLIST.md is generated; regenerate it with scripts/catalog_status.py after any change."""
     expected = catalog.checklist(PIECES, catalog.screened_ids())
     assert catalog.CHECKLIST_FILE.read_text(encoding="utf-8") == expected
+
+
+def test_printables_collection_is_recorded():
+    url = catalog.collection_url()
+    assert url and url.startswith("https://www.printables.com/")

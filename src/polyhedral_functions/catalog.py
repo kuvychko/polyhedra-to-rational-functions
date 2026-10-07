@@ -155,6 +155,11 @@ def load(path: Path = CATALOG_FILE) -> list[Piece]:
     return pieces
 
 
+def collection_url(path: Path = CATALOG_FILE) -> str | None:
+    """The Printables collection that holds every listed piece, if there is one."""
+    return yaml.safe_load(path.read_text(encoding="utf-8")).get("printables_collection")
+
+
 def exports(path: Path = EXPORTS_FILE) -> dict:
     """The generated record of STLs exported for new pieces (empty before the first export)."""
     if not path.exists():

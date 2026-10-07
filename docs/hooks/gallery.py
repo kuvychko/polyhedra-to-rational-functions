@@ -228,6 +228,12 @@ def index_page(pieces) -> str:
         "the files.",
         "",
     ]
+    if catalog.collection_url():
+        lines += [
+            f"All the print files are also gathered in one [Printables collection]"
+            f"({catalog.collection_url()}).",
+            "",
+        ]
     for heading, members in groups:
         if members:
             lines += [f"## {heading}", "", '<div class="piece-cards" markdown>', ""]
