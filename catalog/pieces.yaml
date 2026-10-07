@@ -178,6 +178,7 @@ pieces:
   printed:
     - {size_mm: 80, date: null, material: PLA, notes: "settings on the printing page; no supports"}
   notes: "Low degree (12) with tetrahedral symmetry."
+  printables_url: https://www.printables.com/model/1868361-triakis-tetrahedron
 
 - id: r2-irregular-mixed
   title: Irregular Solid (R2)
