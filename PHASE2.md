@@ -34,17 +34,16 @@ by hand here.
 - [x] **A4 Assets:** a script precomputes the site's renders (matched cameras and palettes,
   order-tuned display labelled as tuned), separate from the site build. The primary animation
   (sphere → relief → neutral) is optional, with a static alternative.
-- [ ] **A5 Validation:**
+- [x] **A5 Validation** (closed 2026-10-09):
   - [x] strict build with no broken links or anchors (anchors are now validated too);
   - [x] subpath-safe links, alt text and local images: `scripts/a5_check_site.py`, run in CI;
   - [x] claims checked against the experiment records: `tests/test_site_claims.py`. It caught
     two wrong figures, now corrected;
   - [x] reduced motion: the site has no animations; the optional A4 animation stays out until it
     has a static alternative;
-  - [ ] phone-width layout seen in a browser. The automated browser could not emulate a phone
-    viewport. The layout is responsive by construction (Material, auto-fill grids, scrolling
-    tables), but nobody has looked at it yet;
-  - [ ] owner read-through of every page.
+  - [x] phone-width layout: checked by the owner on a phone, 2026-10-09 (the automated browser
+    could not emulate a phone viewport);
+  - [x] owner read-through of the site, closed by the owner 2026-10-09.
 - [x] **A6 Release workflow:** `.github/workflows/docs.yml` (`mkdocs gh-deploy`). First run
   by hand at release, 2026-10-04; since then it also runs after CI passes on a push to `main`.
 

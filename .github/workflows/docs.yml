@@ -31,13 +31,13 @@ jobs:
       (github.event.workflow_run.conclusion == 'success' &&
        github.event.workflow_run.event == 'push')
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
         with:
           # The commit CI tested, not whatever main points to by now.
           ref: ${{ github.event.workflow_run.head_sha || github.sha }}
           # gh-deploy pushes to gh-pages and needs that branch's history.
           fetch-depth: 0
-      - uses: astral-sh/setup-uv@v6
+      - uses: astral-sh/setup-uv@v10.2.0
         with:
           python-version: "3.13"
           enable-cache: true
