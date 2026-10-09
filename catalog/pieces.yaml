@@ -203,8 +203,10 @@ pieces:
   recipe: R2
   polyhedron: irregular-separated
   cut: {normal: [-0.0011, 0.9312, -0.3646], approved: true, note: "P002 proposal #1, approved by owner 2026-10-03 (different halves)"}
-  planned_size_mm: 130
-  size_note: "Proposed; confirm after P001."
+  planned_size_mm: 80
+  size_note: "Printed at 80 mm (owner, 2026-10-08)."
+  printed:
+    - {size_mm: 80, date: null, material: PLA, notes: "settings on the printing page; no supports"}
   notes: "The printable 'any convex solid': no symmetry, mixed valences and face sizes, R2 features at least 24.7 degrees apart."
 
 - id: r2-hexagonal-pyramid
