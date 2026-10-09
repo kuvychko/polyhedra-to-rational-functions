@@ -72,11 +72,22 @@ A third irregular solid was added for printing. Results fall into three groups.
 
 ## Printing
 
-- **The printability reference is narrow.** It is the smallest feature gaps among four pieces
-  already printed at 130 mm, scaled linearly to 80 mm. Nothing has yet been printed at 80 mm.
+What the prints showed, as of 2026-10-08: ten pieces are printed, all on the settings of the
+[printing page](../printing.md), and none needed supports.
+
+- **The printability reference was conservative for these prints.** It is the smallest feature
+  gaps among four pieces printed at 130 mm before this project, scaled linearly to 80 mm. Eight
+  pieces have since printed well at 80 mm. Two of them, the R4ve rhombicuboctahedron and the
+  separated irregular solid, have spike-to-spike gaps of about 11 mm, below the reference's
+  16.7 mm ([P001](experiments.md#for-printing-p001-and-p002)). Two data points do not make a new
+  threshold.
 - **The gap measure is a proxy.** It is an arc length at sea level, and does not capture the
   ridge profile between a spike and a pit.
-- **New-recipe pieces are not yet tested.** Until they are printed, their settings are proposals.
+- **New-recipe pieces are tested at 80 mm only.** The four printed new-recipe pieces (R2 on the
+  deltoidal icositetrahedron, the triakis tetrahedron and the separated irregular solid, and
+  R4ve on the rhombicuboctahedron) were printed at 80 mm. Their 130 mm files are untested.
+- **One piece was retired on the screen's evidence, not a print.** On the first irregular
+  solid, two R2 poles fuse into one double spike; it stays a digital example.
 - **"Identical" halves are congruent only up to mesh resolution.** The latitude–longitude mesh is
   not exactly symmetric.
 

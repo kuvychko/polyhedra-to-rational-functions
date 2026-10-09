@@ -98,3 +98,42 @@ def test_worked_example_constant_and_degree():
     assert d.degree == 24
     assert "\\(C = 729/4\\)" in RECIPES_PAGE
     assert "6 \\cdot 4 = 8 \\cdot 3 = 24" in RECIPES_PAGE
+
+
+def test_research_landing_summary_quotes_the_same_figures():
+    """The short account on research/index.md repeats figures checked above."""
+    landing = (DOCS / "research" / "index.md").read_text(encoding="utf-8")
+    assert "all 55 runs" in landing
+    assert "0.48–0.92" in landing
+    assert "from 0.950 to 0.991" in landing
+
+
+def test_printing_limitations_gap_figures():
+    """Limitations quotes the P001 reference scaled to 80 mm and the two pieces below it."""
+    screen = rows("experiments/P001-print-screen/screen.csv")
+    baseline = {
+        "cube-octahedron-dual",
+        "dodecahedron-icosahedron-dual",
+        "icosidodecahedral-star",
+        "icosahedral-crown",
+    }
+    ref_80 = (
+        min(
+            float(r["pole_pole_gap_mm"])
+            for r in screen
+            if r["piece"] in baseline and r["size_mm"] == "130"
+        )
+        * 80
+        / 130
+    )
+    below = {
+        r["piece"]
+        for r in screen
+        if r["size_mm"] == "80"
+        and float(r["pole_pole_gap_mm"]) < ref_80
+        and r["piece"] in {"r4ve-rhombicuboctahedron", "r2-irregular-separated"}
+    }
+    assert round(ref_80, 1) == 16.7
+    assert below == {"r4ve-rhombicuboctahedron", "r2-irregular-separated"}
+    limitations = (DOCS / "research" / "limitations.md").read_text(encoding="utf-8")
+    assert "16.7 mm" in limitations

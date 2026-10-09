@@ -1,7 +1,8 @@
 # The exploration
 
 *Written at the end of the research phase (2026-10-01) and revised after review (2026-10-03).
-It will be revised again as the printed objects come in.*
+The printed exhibition was completed on 2026-10-08; what the prints showed is recorded under
+[Limitations: Printing](limitations.md#printing).*
 
 Claims are labelled **[E]** established background, **[D]** derived here, **[N]** numerical
 observation, **[C]** conjecture, **[P]** design preference. Numerical claims point to an
