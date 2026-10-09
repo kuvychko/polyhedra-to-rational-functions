@@ -60,7 +60,7 @@ pieces:
     files:
       80: {name: dodecahedron-icosahedron-dual-80mm.stl, sha256: f9ce36c6ec82790a66ef064357260f48ebd6c97f0e089e8ff0dfb1fba6aeaee8}
       130: {name: dodecahedron-icosahedron-dual-130mm.stl, sha256: 6721c35567103819e1e61621e69e4dc04f654994942a3dac25f95371e1f60f66}
-  printables_url: null
+  printables_url: https://www.printables.com/model/1870549-dodecahedron-icosahedron
 
 - id: icosidodecahedral-star
   title: Icosidodecahedral Star
