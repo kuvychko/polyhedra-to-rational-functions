@@ -193,8 +193,8 @@ pieces:
   recipe: R2
   polyhedron: irregular-mixed
   cut: {normal: [-0.1621, 0.9102, 0.3812], approved: true, note: "P002 proposal #1, approved by owner 2026-10-03 (different halves)"}
-  planned_size_mm: 130
-  size_note: "Proposed: two R2 spikes 2.4 mm apart at 130 mm fuse into one double spike; the larger size shows it best. Confirm."
+  digital_only: true
+  size_note: "Retired from printing (owner, 2026-10-08): two R2 spikes 2.4 mm apart at 130 mm fuse into one double spike; Irregular Solid, Separated (R2) is the printed irregular piece."
   notes: "Two adjacent faces 3.4 degrees from coplanar: R2 near a combinatorial transition, made visible."
 
 - id: r2-irregular-separated

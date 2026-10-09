@@ -14,8 +14,8 @@ edit by hand: change the catalog and regenerate.
 | Deltoidal Icositetrahedron (R2) | new | listed | yes | yes/yes | exported | yes/yes | 80 mm | 80 mm | [link](https://www.printables.com/model/1866447-deltoidal-icositetrahedron) | done |
 | Rhombicuboctahedron (R4, vertex–edge) | new | listed | yes | yes/yes | exported | yes/yes | 80 mm | 80 mm | [link](https://www.printables.com/model/1868367-rhombicuboctahedron) | done |
 | Triakis Tetrahedron (R2) | new | listed | yes | yes/yes | exported | yes/yes | 80 mm | 80 mm | [link](https://www.printables.com/model/1868361-triakis-tetrahedron) | done |
-| Irregular Solid (R2) | new | exported | yes | yes/yes | exported | yes/yes | 130 mm | – | – | print at 130 mm |
+| Irregular Solid (R2) | new | exported | yes | yes/yes | exported | yes/yes | – | – | – | none (digital only) |
 | Irregular Solid, Separated (R2) | new | listed | yes | yes/yes | exported | yes/yes | 80 mm | 80 mm | [link](https://www.printables.com/model/1870554-irregular-polyhedron-ornament) | done |
 | Hexagonal Pyramid (R2) | new | candidate | – | –/– | – | –/– | – | – | – | none (digital only) |
 
-1 of 12 pieces have an open action.
+0 of 12 pieces have an open action.

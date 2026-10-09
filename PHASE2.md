@@ -65,10 +65,10 @@ by hand here.
 - [ ] **B2b Cuts (decision 0007):** `scripts/p002_cut_proposals.py` proposes three planes per
   piece. The owner approves one in the catalog (`cut: {normal, approved: true}`), and
   `b2_export_stls.py` writes the cut halves in print pose.
-- [ ] **B3 Owner loop, per piece:** print, then upload a Printables listing (both sizes,
+- [x] **B3 Owner loop, per piece** (done 2026-10-08 for all ten printed pieces; the irregular-mixed piece is retired to digital only): print, then upload a Printables listing (both sizes,
   CC BY 4.0, photos of the print, a link to the site). Record the size, date and URL in the
   catalog. The listing text goes in `catalog/printables/<id>.md`.
-- [ ] **B4 Group photo:** once every piece is printed, one photograph of the whole set for the
+- [x] **B4 Group photo** (2026-10-08, `docs/assets/photos/collection.jpg`, on the home page): once every piece is printed, one photograph of the whole set for the
   home page (`docs/assets/photos/`, CC BY 4.0). Individual prints are photographed on Printables
   only; the object pages use the renders.
 

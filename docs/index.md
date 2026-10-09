@@ -5,6 +5,14 @@ determined by finitely many points, its zeros and its poles. This project transl
 other: it places zeros and poles where a polyhedron's vertices, faces and edges point, and studies
 the function that results.
 
+<figure markdown>
+![The printed collection: thirteen white and pale blue PLA prints of the pieces, spiky reliefs of different sizes on a green cutting mat](assets/photos/collection.jpg)
+<figcaption>The printed collection: all ten pieces.</figcaption>
+</figure>
+
+The function's modulus pushes the sphere out into a relief: **poles become spikes and zeros
+become pits**. On screen, the color is the function's phase:
+
 <div class="grid" markdown>
 
 ![The cube–octahedron dual: spikes on the cube's vertices, pits on the octahedron's](assets/pieces/cube-octahedron-dual/relief.jpg){ width="32%" }
@@ -12,9 +20,6 @@ the function that results.
 ![The icosahedral crown](assets/pieces/icosahedral-crown/relief.jpg){ width="32%" }
 
 </div>
-
-The function's modulus pushes the sphere out into a relief: **poles become spikes and zeros
-become pits**. The color is the function's phase. Each relief can be 3D-printed.
 
 ## Two ways in
 
@@ -25,6 +30,6 @@ prints, and where to get the files.
 polyhedron into a function, which recipes do it well, and where they fail.
 
 !!! info "Status"
-    The research (Phase 1) is complete. The exhibition is being printed. Print files are
-    linked from each object's page as they are published, and gathered in one
+    The research (Phase 1) is complete, and the exhibition is printed: ten pieces, each with
+    print files linked from its page and gathered in one
     [Printables collection](https://www.printables.com/@Igor_2829688/collections/3812430).
