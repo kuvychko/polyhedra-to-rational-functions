@@ -28,6 +28,8 @@ WIDTH = 480
 
 
 def main() -> None:
+    # Read the tree state before writing anything, or the outputs themselves make it dirty.
+    code = git_state()
     OUT.mkdir(parents=True, exist_ok=True)
     tmp = REPO_ROOT / "out" / "compare-fallback"
     tmp.mkdir(parents=True, exist_ok=True)
@@ -42,7 +44,6 @@ def main() -> None:
         im = im.resize((WIDTH, round(im.height * WIDTH / im.width)), Image.LANCZOS)
         im.save(jpg, quality=86, optimize=True)
         files[name] = {"path": relative(jpg), "sha256": sha256(jpg)}
-    code = git_state()
     write_json(
         OUT / "manifest.json",
         {
