@@ -241,3 +241,96 @@
   display: block;
   width: 100%;
 }
+
+/* The introduction (javascripts/riemann-primer.js): a stereographic projection figure and
+   function figures (plane and/or sphere). The static fallback shows until the script mounts. */
+.stereo-demo,
+.sphere-demo {
+  margin: 1rem 0 1.5rem;
+  max-width: 40rem;
+}
+
+.primer__fallback[hidden] {
+  display: none;
+}
+
+.primer__svg {
+  display: block;
+  font-family: inherit;
+  max-width: 26rem;
+  width: 100%;
+}
+
+.primer__svg text {
+  fill: var(--md-default-fg-color);
+}
+
+.primer__controls {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 0.75rem;
+  gap: 0.4rem 1rem;
+  margin-bottom: 0.6rem;
+}
+
+.primer__controls .md-button {
+  font-size: 0.7rem;
+  padding: 0.25em 0.9em;
+}
+
+.primer__controls select {
+  margin-left: 0.4rem;
+}
+
+.primer__slider {
+  align-items: center;
+  display: inline-flex;
+  gap: 0.4rem;
+}
+
+.primer__slider input {
+  width: 8rem;
+}
+
+.primer__panels {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: 1fr;
+}
+
+.primer__panels--1 {
+  max-width: 30rem;
+}
+
+@media screen and (min-width: 40em) {
+  .primer__panels--2 {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.primer__figure {
+  margin: 0;
+  min-width: 0;
+}
+
+.primer__figure figcaption {
+  color: var(--md-default-fg-color--light);
+  font-size: 0.65rem;
+  margin: 0.3rem 0 0;
+  max-width: none;
+}
+
+.primer__plane {
+  border: 1px solid var(--md-default-fg-color--lightest);
+  border-radius: 0.2rem;
+  display: block;
+  height: auto;
+  width: 100%;
+}
+
+.primer__readout {
+  font-size: 0.75rem;
+  margin: 0.5rem 0 0;
+  min-height: 2.4em;
+}

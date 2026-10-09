@@ -29,6 +29,9 @@ prints, and where to get the files.
 **[The question](research/index.md).** Start with the mathematics: what it means to turn a
 polyhedron into a function, which recipes do it well, and where they fail.
 
+New to complex numbers? **[Start here](research/primer.md)**: a gentle introduction to the
+Riemann sphere, stereographic projection and the reliefs, with figures you can turn and drag.
+
 !!! info "Status"
     The research (Phase 1) is complete, and the exhibition is printed: ten pieces, each with
     print files linked from its page and gathered in one

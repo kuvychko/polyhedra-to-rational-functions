@@ -6,7 +6,8 @@ from pathlib import Path
 import numpy as np
 import pytest
 
-from polyhedral_functions import catalog, fixtures, viewer_data
+from polyhedral_functions import catalog, evaluation, fixtures, viewer_data
+from polyhedral_functions.chart import to_sphere
 from polyhedral_functions.divisors import Divisor
 from polyhedral_functions.recipes import PRESETS, apply
 
@@ -69,3 +70,47 @@ def test_compare_page_claims():
     # The pyramid's apex has valence 6, its base vertices 3.
     pyramid = solids["hexagonal-pyramid"]["recipes"]["R2"]["zeros"]
     assert sorted(m["order"] for m in pyramid) == [3] * 6 + [6]
+
+
+# --- the introduction page (research/primer.md) ------------------------------------------------
+
+PRIMER = viewer_data.primer_data()["functions"]
+
+# Each textbook function as plain code, with the positive constant the chordal normalization puts
+# in front of it (research/primer.md, section 5: 1 for the first four).
+PLAIN = {
+    "z": (lambda z: z, 1.0),
+    "z2": (lambda z: z**2, 1.0),
+    "inv": (lambda z: 1 / z, 1.0),
+    "mobius": (lambda z: (z - 1) / (z + 1), 1.0),
+    "z3m1": (lambda z: z**3 - 1, 2**-1.5),
+}
+
+
+def test_primer_menu_is_the_textbook_functions_then_cube_r2():
+    assert list(PRIMER) == [*viewer_data.PRIMER_FUNCTIONS, "cube-R2"]
+
+
+@pytest.mark.parametrize("function_id", list(PLAIN))
+def test_primer_function_is_the_plain_function(function_id):
+    d = viewer_data.primer_divisor(function_id)
+    assert d.is_balanced
+    stored = viewer_data.unreduced_from_markers(PRIMER[function_id])
+    assert stored.same_as(d, tol=1e-6)
+    rng = np.random.default_rng(1)
+    z = rng.normal(size=200) + 1j * rng.normal(size=200)
+    plain, constant = PLAIN[function_id]
+    # The page's JavaScript evaluates log|f| on the sphere by chordal distances and arg f in the
+    # chart; both must give the plain function times the constant.
+    log_mod = evaluation.log_modulus_on_sphere(d, to_sphere(z))
+    assert np.allclose(log_mod, np.log(constant * np.abs(plain(z))))
+    assert np.allclose(evaluation.evaluate(d, z), constant * plain(z))
+
+
+def test_primer_inverse_is_the_negated_divisor():
+    assert viewer_data.primer_divisor("inv").same_as(-viewer_data.primer_divisor("z"))
+
+
+def test_primer_cube_is_the_explorer_entry():
+    assert PRIMER["cube-R2"]["zeros"] == EXPLORER["solids"]["cube"]["recipes"]["R2"]["zeros"]
+    assert PRIMER["cube-R2"]["poles"] == EXPLORER["solids"]["cube"]["recipes"]["R2"]["poles"]

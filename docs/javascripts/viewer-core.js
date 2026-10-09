@@ -68,8 +68,10 @@ function dispose(object) {
   });
 }
 
-// Throws if WebGL is unavailable; callers keep their static fallback in that case.
-export function createView(stage, { ariaLabel, view, aspect = 0.8 }) {
+// The common stage: renderer, scene with lights, z-up camera with orbit controls, and resizing to
+// the stage's width. Throws if WebGL is unavailable; callers keep their static fallback then.
+// Used by createView below and by riemann-primer.js (the introduction page).
+export function createStage(stage, { ariaLabel, view, aspect = 0.8, distance = DISTANCE, maxDistance = 9 }) {
   const renderer = new THREE.WebGLRenderer({ antialias: true });
   renderer.setPixelRatio(window.devicePixelRatio);
   renderer.setClearColor(0xffffff, 1);
@@ -86,26 +88,52 @@ export function createView(stage, { ariaLabel, view, aspect = 0.8 }) {
   const headlight = new THREE.DirectionalLight(0xffffff, 1.6);
   headlight.position.set(1, 1, 2);
   camera.add(headlight);
+
+  const controls = new OrbitControls(camera, canvas);
+  controls.enableDamping = true;
+  controls.enablePan = false;
+  controls.minDistance = 2.2;
+  controls.maxDistance = maxDistance;
+
+  function resetCamera(direction = view) {
+    camera.position.set(...direction).normalize().multiplyScalar(distance);
+    camera.up.set(0, 0, 1);
+    controls.target.set(0, 0, 0);
+    controls.update();
+  }
+  resetCamera();
+
+  function resize() {
+    const width = stage.clientWidth;
+    if (!width) return;
+    const height = Math.round(width * aspect);
+    renderer.setSize(width, height, false);
+    canvas.style.width = "100%";
+    canvas.style.height = `${height}px`;
+    camera.aspect = width / height;
+    camera.updateProjectionMatrix();
+  }
+
+  stage.append(canvas);
+  new ResizeObserver(resize).observe(stage);
+  resize();
+
+  return {
+    renderer, scene, camera, controls, canvas, resetCamera,
+    render: () => renderer.render(scene, camera),
+  };
+}
+
+// One solid with its zeros and poles. Throws if WebGL is unavailable.
+export function createView(stage, { ariaLabel, view, aspect = 0.8 }) {
+  const { scene, camera, controls, canvas, resetCamera, render } =
+    createStage(stage, { ariaLabel, view, aspect });
   scene.add(
     new THREE.Mesh(
       new THREE.SphereGeometry(1, 64, 32),
       new THREE.MeshBasicMaterial({ color: 0xffffff, transparent: true, opacity: 0.12, depthWrite: false }),
     ),
   );
-
-  const controls = new OrbitControls(camera, canvas);
-  controls.enableDamping = true;
-  controls.enablePan = false;
-  controls.minDistance = 2.2;
-  controls.maxDistance = 9;
-
-  function resetCamera(direction = view) {
-    camera.position.set(...direction).normalize().multiplyScalar(DISTANCE);
-    camera.up.set(0, 0, 1);
-    controls.target.set(0, 0, 0);
-    controls.update();
-  }
-  resetCamera();
 
   let content = null;
   let markers = [];
@@ -181,23 +209,7 @@ export function createView(stage, { ariaLabel, view, aspect = 0.8 }) {
   canvas.addEventListener("pointerdown", pick); // taps on touch screens
   canvas.addEventListener("pointerleave", () => { tooltip.hidden = true; });
 
-  function resize() {
-    const width = stage.clientWidth;
-    if (!width) return;
-    const height = Math.round(width * aspect);
-    renderer.setSize(width, height, false);
-    canvas.style.width = "100%";
-    canvas.style.height = `${height}px`;
-    camera.aspect = width / height;
-    camera.updateProjectionMatrix();
-  }
+  stage.append(tooltip);
 
-  stage.append(canvas, tooltip);
-  new ResizeObserver(resize).observe(stage);
-  resize();
-
-  return {
-    camera, controls, canvas, show, resetCamera,
-    render: () => renderer.render(scene, camera),
-  };
+  return { camera, controls, canvas, show, resetCamera, render };
 }

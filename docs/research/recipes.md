@@ -1,5 +1,7 @@
 # The recipes
 
+*This page assumes zeros, poles and the Riemann sphere; [Start here](primer.md) introduces them.*
+
 ## From a polyhedron to a divisor
 
 A rational function on the Riemann sphere is determined, up to a constant factor, by its

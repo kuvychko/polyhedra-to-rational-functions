@@ -7,6 +7,10 @@ There need not be one right answer, and this is not a story of one. The research
 several recipes and measured what each one preserves and what it costs. It also recorded where
 each one fails.
 
+!!! tip "New to complex functions?"
+    [Start here: the Riemann sphere](primer.md) introduces stereographic projection, zeros and
+    poles, and the reliefs, with interactive figures. The rest of this section assumes it.
+
 ## What we found
 
 These are findings for the solids tested, not theorems about every polyhedron;
@@ -33,6 +37,8 @@ Labels: **[D]** derived here, **[N]** numerical observation, as in
 
 ## The pages
 
+- **[Start here: the Riemann sphere](primer.md):** the background, gently: complex numbers,
+  zeros and poles, stereographic projection and the reliefs.
 - **[The recipes](recipes.md):** the construction in brief, the selected default (R2), its
   alternative (R4), and a complete worked example.
 - **[Compare recipes](compare.md):** an interactive 3D comparison of where each recipe puts its

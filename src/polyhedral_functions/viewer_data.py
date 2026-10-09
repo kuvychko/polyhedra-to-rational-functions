@@ -5,7 +5,9 @@ Two viewers use it:
 - each object page's viewer (``docs/assets/pieces/<id>/geometry.json``, written by
   ``scripts/a4_site_assets.py``);
 - the recipe comparison page (``assets/explorer/recipes.json``, generated at build time by
-  ``docs/hooks/explorer.py``): every fixture under every preset recipe.
+  ``docs/hooks/explorer.py``): every fixture under every preset recipe;
+- the introduction page (``assets/explorer/primer.json``, from the same hook): a few textbook
+  functions, written as divisors, and one recipe divisor.
 
 Solids are scaled to circumradius 1, and markers are unit directions; the viewers draw them just
 outside the unit sphere. Nothing here renders, so the data and the mathematics cannot drift
@@ -17,6 +19,7 @@ from __future__ import annotations
 import numpy as np
 
 from . import fixtures
+from .chart import to_sphere
 from .divisors import Divisor
 from .geometry import Polyhedron
 from .recipes import PRESETS, apply
@@ -108,3 +111,50 @@ def unreduced_from_markers(entry: dict) -> Divisor:
         np.array([m["p"] for m in zeros + poles]),
         np.array([m["order"] for m in zeros] + [-m["order"] for m in poles]),
     )
+
+
+# --- the introduction page (research/primer.md) ------------------------------------------------
+
+_OMEGA = np.exp(2j * np.pi / 3)
+
+#: Textbook functions for the introduction, in menu order: (label, divisor as
+#: ``[(chart point, order), ...]``). ``inf`` is the north pole. The chordal normalization gives
+#: each of them exactly up to a positive constant, which is 1 for the first four.
+PRIMER_FUNCTIONS = {
+    "z": ("f(z) = z", [(0, 1), (np.inf, -1)]),
+    "z2": ("f(z) = z²", [(0, 2), (np.inf, -2)]),
+    "inv": ("f(z) = 1/z", [(0, -1), (np.inf, 1)]),
+    "mobius": ("f(z) = (z − 1)/(z + 1)", [(1, 1), (-1, -1)]),
+    "z3m1": ("f(z) = z³ − 1", [(1, 1), (_OMEGA, 1), (_OMEGA**2, 1), (np.inf, -3)]),
+}
+
+#: The recipe example closing the introduction's menu: a solid and a recipe from the explorer.
+PRIMER_RECIPE = ("cube", "R2")
+
+
+def primer_divisor(function_id: str) -> Divisor:
+    """The divisor of one of `PRIMER_FUNCTIONS`, at points of the unit sphere."""
+    _, entries = PRIMER_FUNCTIONS[function_id]
+    z = np.array([complex(a) for a, _ in entries])
+    return Divisor(to_sphere(z), np.array([m for _, m in entries]), ("point",) * len(entries))
+
+
+def primer_data() -> dict:
+    """The introduction's functions: label, degree and markers (zeros and poles), in menu order.
+
+    Display settings (palette, relief sharpness) are added by the site hook, since they belong to
+    rendering, not to the mathematics.
+    """
+    functions = {}
+    for function_id, (label, _) in PRIMER_FUNCTIONS.items():
+        d = primer_divisor(function_id)
+        functions[function_id] = {"label": label, "degree": int(d.degree), **markers(d)}
+    solid_id, recipe = PRIMER_RECIPE
+    poly = fixtures.load(solid_id)
+    d = apply(PRESETS[recipe], poly).unreduced
+    functions[f"{solid_id}-{recipe}"] = {
+        "label": f"{recipe} on the {poly.name}",
+        "degree": int(d.degree),
+        **markers(d),
+    }
+    return {"functions": functions}

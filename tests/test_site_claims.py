@@ -7,6 +7,7 @@ Each test reads a published data file under ``experiments/`` and checks that the
 import csv
 from pathlib import Path
 
+import numpy as np
 import pytest
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -137,3 +138,43 @@ def test_printing_limitations_gap_figures():
     assert below == {"r4ve-rhombicuboctahedron", "r2-irregular-separated"}
     limitations = (DOCS / "research" / "limitations.md").read_text(encoding="utf-8")
     assert "16.7 mm" in limitations
+
+
+PRIMER_PAGE = (DOCS / "research" / "primer.md").read_text(encoding="utf-8")
+
+
+def test_primer_chart_facts():
+    """Section 3 of the introduction: where the plane's points land on the sphere."""
+    from polyhedral_functions.chart import to_sphere
+
+    assert np.allclose(to_sphere(0), [[0, 0, -1]])
+    unit_circle = np.exp(1j * np.linspace(0, 2 * np.pi, 13))
+    assert np.allclose(to_sphere(unit_circle)[:, 2], 0)
+    assert (to_sphere([0.3, 0.9j, -0.5 + 0.5j])[:, 2] < 0).all()
+    assert (to_sphere([1.1, 3j, -2 - 2j])[:, 2] > 0).all()
+    assert to_sphere(1e4)[0, 2] > 1 - 1e-7
+    # The fallback drawing: circle of radius 100 centred at (200, 150), points z = 1.8, w = 0.5.
+    for z, (sx, sy) in [(1.8, (284.9, 97.2)), (0.5, (280, 210))]:
+        x, _, h = to_sphere(z)[0]
+        assert np.isclose(200 + 100 * x, sx, atol=0.1) and np.isclose(150 - 100 * h, sy, atol=0.1)
+    assert r"\(z = 0\) is the south pole, \(z = \infty\) the" + "\nnorth pole" in PRIMER_PAGE
+
+
+def test_primer_relief_settings():
+    """Section 5: the transfer, its depth, and the order-tuned sharpness the figure uses."""
+    import sys
+
+    from polyhedral_functions.rendering import DisplaySettings, relief_radius
+
+    sys.path.insert(0, str(DOCS / "hooks"))
+    import explorer
+
+    data = explorer.primer_json()
+    assert data["display"]["depth"] == DisplaySettings().depth == 0.2
+    assert r"\(d = 0.2\)" in PRIMER_PAGE
+    for entry in data["functions"].values():
+        top = max(m["order"] for m in entry["zeros"] + entry["poles"])
+        assert entry["sharpness"] == 2 * top
+    assert "twice the highest order" in PRIMER_PAGE
+    # Sea level |f| = 1 is halfway between the deepest pit d and the tips at 1.
+    assert np.isclose(relief_radius(0.0, 4.0, 0.2), 0.2 + 0.8 / 2)

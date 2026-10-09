@@ -83,6 +83,8 @@ extra_javascript:
     type: module
   - path: javascripts/recipe-explorer.js
     type: module
+  - path: javascripts/riemann-primer.js
+    type: module
   - https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js
 
 nav:
@@ -91,6 +93,7 @@ nav:
       - objects/index.md
   - The question:
       - research/index.md
+      - "Start here: the Riemann sphere": research/primer.md
       - The recipes: research/recipes.md
       - Compare recipes: research/compare.md
       - The exploration: research/narrative.md
