@@ -208,6 +208,7 @@ pieces:
   printed:
     - {size_mm: 80, date: null, material: PLA, notes: "settings on the printing page; no supports"}
   notes: "The printable 'any convex solid': no symmetry, mixed valences and face sizes, R2 features at least 24.7 degrees apart."
+  printables_url: https://www.printables.com/model/1870554-irregular-polyhedron-ornament
 
 - id: r2-hexagonal-pyramid
   title: Hexagonal Pyramid (R2)
