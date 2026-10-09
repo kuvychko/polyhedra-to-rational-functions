@@ -18,7 +18,6 @@ import logging
 
 import complexplorer as cp
 import numpy as np
-from mkdocs.structure.files import File
 
 from polyhedral_functions import viewer_data
 from polyhedral_functions.manifests import REPO_ROOT
@@ -59,6 +58,9 @@ def primer_json() -> dict:
 
 
 def on_files(files, config):
+    # Imported here, not at the top: the tests call primer_json() without the docs dependencies.
+    from mkdocs.structure.files import File
+
     data = viewer_data.explorer_data()
     content = json.dumps(data, separators=(",", ":")) + "\n"
     files.append(File.generated(config, PATH, content=content))
