@@ -212,6 +212,32 @@
   text-align: left;
 }
 
-.compare-presets button:hover {
+.compare-presets button:hover:not(:disabled) {
   text-decoration: underline;
+}
+
+/* Disabled until the explorer mounts: a plain bold label, not a link-colored dead control. */
+.compare-presets button:disabled {
+  color: inherit;
+  cursor: default;
+  font-weight: 700;
+}
+
+.recipe-explorer__stills {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
+  margin-top: 0.6rem;
+}
+
+.recipe-explorer__stills figure {
+  margin: 0;
+}
+
+.recipe-explorer__stills img {
+  background: #fff;
+  border: 1px solid var(--md-default-fg-color--lightest);
+  border-radius: 0.2rem;
+  display: block;
+  width: 100%;
 }

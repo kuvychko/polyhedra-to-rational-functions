@@ -201,8 +201,10 @@ async function mount(container) {
     if (state.reduce) reduce.checked = state.reduce === "1";
     refresh();
   }
-  // Preset comparisons in the page text: <button data-compare="a=...&b=...">.
+  // Preset comparisons in the page text: <button data-compare="a=...&b=..." disabled>. They
+  // ship disabled, so without a working explorer they read as plain labels, not dead buttons.
   document.querySelectorAll("[data-compare]").forEach((button) => {
+    button.disabled = false;
     button.addEventListener("click", () => {
       apply(parseState(button.dataset.compare));
       container.scrollIntoView({ behavior: "smooth", block: "start" });
