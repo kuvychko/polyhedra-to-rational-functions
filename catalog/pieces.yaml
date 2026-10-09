@@ -53,6 +53,7 @@ pieces:
   planned_size_mm: 130
   printed:
     - {size_mm: 130, date: null, material: null, notes: "printed before Phase 2"}
+    - {size_mm: 80, date: null, material: PLA, notes: "hanging-ornament version; settings on the printing page; no supports"}
   stl:
     source: figures_repo@292bec4
     matches_print: null

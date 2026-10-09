@@ -6,7 +6,7 @@ edit by hand: change the catalog and regenerate.
 | piece | origin | status | screened | STLs 80/130 | cut | ornament | planned | printed | Printables | next action |
 |---|---|---|---|---|---|---|---|---|---|---|
 | Cube–Octahedron Dual | baseline | listed | yes | yes/yes | exported | yes/yes | 80 mm | 80 mm, 130 mm | [link](https://www.printables.com/model/1865813-cube-octahedron-dual) | done |
-| Dodecahedron–Icosahedron Dual | baseline | printed | yes | yes/yes | exported | yes/yes | 130 mm | 130 mm | – | upload to Printables (both sizes) and record the URL |
+| Dodecahedron–Icosahedron Dual | baseline | printed | yes | yes/yes | exported | yes/yes | 130 mm | 80 mm, 130 mm | – | upload to Printables (both sizes) and record the URL |
 | Icosidodecahedral Star | baseline | listed | yes | yes/yes | exported | yes/yes | 130 mm | 130 mm | [link](https://www.printables.com/model/1866036-icosidodecahedral-star) | done |
 | Icosahedral Crown | baseline | listed | yes | yes/yes | exported | yes/yes | 130 mm | 130 mm | [link](https://www.printables.com/model/1865893-icosahedral-crown) | done |
 | Tetrahedral Dual | baseline | listed | yes | yes/yes | exported | yes/yes | 80 mm | 80 mm | [link](https://www.printables.com/model/1865859-tetrahedron-dual) | done |
