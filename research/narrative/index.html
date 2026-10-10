@@ -1,0 +1,1497 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Turning convex polyhedra into rational functions on the Riemann sphere, and into printed objects.">
+      
+      
+      
+        <link rel="canonical" href="https://kuvychko.github.io/polyhedra-to-rational-functions/research/narrative/">
+      
+      
+        <link rel="prev" href="../compare/">
+      
+      
+        <link rel="next" href="../experiments/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>The exploration - Polyhedra as Complex Functions</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="red">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#the-exploration" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Polyhedra as Complex Functions" class="md-header__button md-logo" aria-label="Polyhedra as Complex Functions" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Polyhedra as Complex Functions
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              The exploration
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="red"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="red"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/kuvychko/polyhedra-to-rational-functions" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    kuvychko/polyhedra-to-rational-functions
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../objects/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  The objects
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../" class="md-tabs__link">
+          
+  
+  
+    
+  
+  The question
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../printing/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Printing
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../reproduce/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Reproduce
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../about/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  About
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Polyhedra as Complex Functions" class="md-nav__button md-logo" aria-label="Polyhedra as Complex Functions" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Polyhedra as Complex Functions
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/kuvychko/polyhedra-to-rational-functions" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    kuvychko/polyhedra-to-rational-functions
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../objects/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    The objects
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    The objects
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    The question
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    The question
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../primer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Start here: the Riemann sphere
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../recipes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    The recipes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../compare/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Compare recipes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    The exploration
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    The exploration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="On this page">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      On this page
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-the-question" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. The question
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-the-construction-space" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. The construction space
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-the-first-obstacle-balance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. The first obstacle: balance
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-competing-recipes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Competing recipes
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-experiments-that-changed-our-view" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Experiments that changed our view
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-symmetry-and-deformation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Symmetry and deformation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-the-selected-recipe" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. The selected recipe
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-from-analysis-to-object" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. From analysis to object
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-what-remains-open" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9. What remains open
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../experiments/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Experiments
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../limitations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Limitations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../decisions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Decisions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../printing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Printing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reproduce/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reproduce
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../about/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    About
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="On this page">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      On this page
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-the-question" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. The question
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-the-construction-space" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. The construction space
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-the-first-obstacle-balance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. The first obstacle: balance
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-competing-recipes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Competing recipes
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-experiments-that-changed-our-view" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Experiments that changed our view
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-symmetry-and-deformation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Symmetry and deformation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-the-selected-recipe" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. The selected recipe
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-from-analysis-to-object" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. From analysis to object
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-what-remains-open" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9. What remains open
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="the-exploration">The exploration<a class="headerlink" href="#the-exploration" title="Permanent link">&para;</a></h1>
+<p><em>Written at the end of the research phase (2026-10-01) and revised after review (2026-10-03).
+The printed exhibition was completed on 2026-10-08; what the prints showed is recorded under
+<a href="../limitations/#printing">Limitations: Printing</a>.</em></p>
+<p>Claims are labelled <strong>[E]</strong> established background, <strong>[D]</strong> derived here, <strong>[N]</strong> numerical
+observation, <strong>[C]</strong> conjecture, <strong>[P]</strong> design preference. Numerical claims point to an
+<a href="../experiments/">experiment</a> that reproduces them. The scope of the evidence and the open
+questions are collected in <a href="../limitations/">Limitations</a>.</p>
+<h2 id="1-the-question">1. The question<a class="headerlink" href="#1-the-question" title="Permanent link">&para;</a></h2>
+<p>A convex polyhedron is a finite, rigid object: points, edges, flat faces. A rational function on
+the Riemann sphere is also determined by finitely many points: its zeros and poles, with integer
+multiplicities, fix it up to a constant factor <strong>[E]</strong>. That suggests a translation. Place zeros
+and poles according to the polyhedron, and study the function that results.</p>
+<p>The function can be seen in two ways. Its phase colors the sphere (domain coloring). Its modulus
+can push the sphere radially in and out, giving a relief: poles become spikes, zeros become pits.
+That relief can be printed. Six such objects existed before this project started, built from
+Klein's classical invariants of the Platonic groups.</p>
+<p>The question is not whether this can be done, but how to do it well. Which recipe keeps the
+polyhedron recognizable? What does each recipe cost? Where does each one fail?</p>
+<h2 id="2-the-construction-space">2. The construction space<a class="headerlink" href="#2-the-construction-space" title="Permanent link">&para;</a></h2>
+<p>A recipe has two parts <strong>[P]</strong>:</p>
+<ul>
+<li><strong>placement:</strong> which points on the sphere stand for which cells of the polyhedron;</li>
+<li><strong>multiplicities:</strong> which integer order each point gets.</li>
+</ul>
+<p><strong>Placement.</strong> The natural points are:</p>
+<ul>
+<li>the directions of the vertices;</li>
+<li>the directions of the polar dual's vertices, i.e. the face normals;</li>
+<li>the projected face centroids;</li>
+<li>for edges, either the foot of the perpendicular from the origin or the projected midpoint.</li>
+</ul>
+<p><strong>Duality.</strong> Polar duality with respect to the unit sphere exchanges vertices and faces and maps
+edges to edges <strong>[E]</strong>. Of these candidates, the face normals and the edge feet are the two that
+commute with it <strong>[D]</strong>.</p>
+<p><strong>Normalization.</strong> The constant in front of <span class="arithmatex">\(f\)</span> matters for a relief, because it sets "sea
+level". Write <span class="arithmatex">\(\chi\)</span> for the chordal (straight-line) distance between points of the unit
+sphere. A balanced divisor with points <span class="arithmatex">\(a_i\)</span> and orders <span class="arithmatex">\(m_i\)</span> then determines the modulus
+exactly <strong>[D]</strong>:</p>
+<div class="arithmatex">\[
+\log|f(x)| = \sum_i m_i \log \chi(x, a_i).
+\]</div>
+<p>That modulus is:</p>
+<ul>
+<li>self-dual: the negated divisor gives <span class="arithmatex">\(1/|f|\)</span>;</li>
+<li>rotation-covariant;</li>
+<li>of geometric mean 1 over the sphere, since the mean of <span class="arithmatex">\(\log \chi(x, a)\)</span> is <span class="arithmatex">\(\log 2 - \tfrac12\)</span>
+  for every <span class="arithmatex">\(a\)</span>.</li>
+</ul>
+<p>The existing ornaments had fixed the constant by sampling that geometric mean. This formula
+reproduces their normalization exactly, to <span class="arithmatex">\(10^{-8}\)</span> <strong>[N]</strong>.</p>
+<p><strong>Multiplicities: unreduced by convention.</strong> A recipe is defined by its <strong>unreduced</strong> divisor:
+valences, side counts and edge orders exactly as counted. Dividing every order by their gcd <span class="arithmatex">\(g\)</span>
+lowers the degree, but it takes a <span class="arithmatex">\(g\)</span>-th root of the function, and <span class="arithmatex">\(g\)</span> depends on the solid.
+Therefore:</p>
+<ul>
+<li>every identity between recipes is stated for unreduced divisors, as is every comparison across
+  a combinatorial transition and between a solid and its dual;</li>
+<li>between independently reduced divisors, an identity holds only up to powers;</li>
+<li>reduction can also break continuity. Reduced R4fe jumps at the raised-face transition, because
+  the cube's gcd is 2 and the raised cube's is 1, while the unreduced divisors converge <strong>[N]</strong>.</li>
+</ul>
+<p>Degrees quoted in tables are reduced degrees, used as a measure of economy for one solid.</p>
+<p><strong>Information lost.</strong> The radial projection discards distances. A cube and a stretched box with
+the same face normals give the same face points. No recipe here claims to reconstruct the solid.</p>
+<h2 id="3-the-first-obstacle-balance">3. The first obstacle: balance<a class="headerlink" href="#3-the-first-obstacle-balance" title="Permanent link">&para;</a></h2>
+<p>A rational function has as many zeros as poles, counted with multiplicity, including at infinity
+<strong>[E]</strong>. Zeros at the 8 cube vertices and poles at the 6 face directions don't balance with equal
+orders. Two simple fixes:</p>
+<ul>
+<li><strong>R1, uniform:</strong> order <span class="arithmatex">\(F\)</span> at every vertex and <span class="arithmatex">\(V\)</span> at every face.</li>
+<li><strong>R2, incidence:</strong> order equal to the valence at each vertex, and to the number of sides at each
+  face. Both sides total <span class="arithmatex">\(2E\)</span>, because each count goes through edge incidences <strong>[E]</strong>.</li>
+</ul>
+<p>On the cube, both give degree-24 functions of the form <span class="arithmatex">\(V^4/F^3\)</span>, where <span class="arithmatex">\(V\)</span> and <span class="arithmatex">\(F\)</span> are
+Klein's octahedral forms. They are exactly the existing "cube–octahedron dual" ornament, up to
+which side is called zeros <strong>[N]</strong>.</p>
+<h2 id="4-competing-recipes">4. Competing recipes<a class="headerlink" href="#4-competing-recipes" title="Permanent link">&para;</a></h2>
+<p>R2 counts vertex–face incidences. The existing crown and star ornaments suggested counting
+<strong>vertex–edge</strong> and <strong>face–edge</strong> incidences instead: order equal to the valence or the number of
+sides, and 2 at each edge point. That is <strong>R4</strong> (R4ve, R4fe). The three are linked by an exact
+identity between the unreduced divisors <strong>[D, confirmed N on all 11 solids]</strong>:</p>
+<div class="arithmatex">\[
+D_{R2} = D_{R4ve} - D_{R4fe}, \qquad \text{i.e.} \qquad f_{R2} = C\,\frac{f_{R4ve}}{f_{R4fe}}.
+\]</div>
+<p>After each side is reduced by its own gcd, this becomes a relation between powers,
+<span class="arithmatex">\(f_{R2}^{\,g_2} = C\, f_{R4ve}^{\,g_{ve}} / f_{R4fe}^{\,g_{fe}}\)</span>. So the incidence recipes form a
+two-parameter family <span class="arithmatex">\(f_{ve}^{\,a} f_{fe}^{\,b}\)</span> of unreduced functions, with R2 at
+<span class="arithmatex">\((a, b) = (1, -1)\)</span>. The "flag" recipe <span class="arithmatex">\((1, 1)\)</span>, vertices and faces against edges, is another
+member. Polarity maps <span class="arithmatex">\((a, b)\)</span> on a solid to <span class="arithmatex">\((b, a)\)</span> on its dual <strong>[D]</strong>. Consequences:</p>
+<ul>
+<li>R1 and R2 give the reciprocal function on the dual;</li>
+<li>R4ve and R4fe swap;</li>
+<li>the flag recipe gives the <em>same</em> function for a solid and its dual, so it cannot tell them apart.</li>
+</ul>
+<p>These hold for unreduced divisors, and also after reduction. In each case the dual's divisor is
+the primal's, negated or relabelled, so the gcd is the same on both.</p>
+<p>All six existing ornaments turned out to be recipe outputs <strong>[N]</strong>:</p>
+<ul>
+<li>R1 = R2 on the tetrahedron, octahedron and icosahedron;</li>
+<li>R4ve on the octahedron, icosahedron and dodecahedron.</li>
+</ul>
+<h2 id="5-experiments-that-changed-our-view">5. Experiments that changed our view<a class="headerlink" href="#5-experiments-that-changed-our-view" title="Permanent link">&para;</a></h2>
+<p><strong>The Platonic solids cannot decide anything.</strong> Every candidate coincides on them <strong>[D]</strong>:</p>
+<ul>
+<li>R1 = R2, because all valences are equal and all faces are the same size;</li>
+<li>face centroids sit on the face normals, and edge midpoints on the feet.</li>
+</ul>
+<p>The corpus therefore had to grow with members chosen for what they separate:</p>
+<ul>
+<li>a hexagonal pyramid, for valence spread;</li>
+<li>a triakis tetrahedron, symmetric but with separated edge placements;</li>
+<li>irregular solids.</li>
+</ul>
+<p>The deltoidal icositetrahedron, the obvious next example, barely separates the placements:
+0.9° on every kite <strong>[N]</strong>.</p>
+<p><strong>R1 and R2 are nearly the same shape.</strong> Divided by its degree, each is the potential of "vertex
+points minus face points", weighted uniformly for R1 and by incidence for R2 <strong>[D]</strong>. They
+correlate at 0.96–0.99 on most solids. Only strong valence spread separates them: 0.83 on the
+pyramid <strong>[N]</strong> (<a href="../experiments/#e001-the-comparison-atlas">E001</a>). The real differences are
+reduced degree, which is up to 3.25× smaller for R2 on the tested solids, and phase readability.</p>
+<p><strong>The display had been exaggerating.</strong> Under one fixed relief sharpness, high-order R1 renders as
+rounded lobes and R2 as spikes. Tuning sharpness to each recipe's highest order removes most of
+that: the deltoidal icositetrahedron's relief correlation rises from 0.950 to 0.991 <strong>[N]</strong>
+(<a href="../experiments/#e004-what-the-display-does">E004</a>). Phase cannot be tuned away. R1 winds about
+three times as often, and its coloring becomes hard to read.</p>
+<p><strong>R4 is genuinely different.</strong> Its correlation with R2 is 0.48–0.92, whatever the display <strong>[N]</strong>
+(E001, E004). On irregular solids it places zeros and poles very close together at short edges
+<strong>[N]</strong>. That first looked like a defect.</p>
+<h2 id="6-symmetry-and-deformation">6. Symmetry and deformation<a class="headerlink" href="#6-symmetry-and-deformation" title="Permanent link">&para;</a></h2>
+<p><strong>Symmetry of the relief.</strong> The test was:</p>
+<ul>
+<li>for every element <span class="arithmatex">\(g\)</span>, proper or improper, of each solid's symmetry group about the origin,
+  the recipe's divisor is mapped exactly onto itself;</li>
+<li>under the chordal normalization <span class="arithmatex">\(|f|\)</span> depends only on the divisor, so that is the same as
+  <span class="arithmatex">\(|f(gx)| = |f(x)|\)</span>: the relief is symmetric.</li>
+</ul>
+<p>It held for every recipe, in both placements, on every fixture <strong>[N]</strong> (E001, 55 of 55 runs). It
+holds for any input, because every placement rule is equivariant under orthogonal maps that fix
+the origin <strong>[D]</strong>. So relief symmetry cannot choose between the recipes.</p>
+<p>It did correct a claim. The existing "tetrahedral dual" piece was described as chiral, and it is
+not: it has the tetrahedron's six mirror planes, and its cut halves are congruent <strong>[N]</strong>.</p>
+<p><strong>Symmetry of the function is weaker.</strong> If a rotation <span class="arithmatex">\(g\)</span> preserves the divisor, then
+<span class="arithmatex">\(f(gx)/f(x)\)</span> has no zeros or poles and modulus 1. So it is a constant <strong>[D]</strong>:</p>
+<div class="arithmatex">\[
+f(gx) = e^{i\theta_g} f(x) \quad\text{(rotations)}, \qquad
+f(gx) = e^{i\theta_g}\, \overline{f(x)} \quad\text{(reflections)}.
+\]</div>
+<p>The relief is unchanged, but the phase colors can shift. The angle <span class="arithmatex">\(\theta_g\)</span> does not depend on
+the chart or the constant. The measured values are exact to about <span class="arithmatex">\(10^{-13}\)</span> <strong>[N]</strong>:</p>
+<table>
+<thead>
+<tr>
+<th>inputs</th>
+<th><span class="arithmatex">\(\theta_g\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>icosahedron and dodecahedron, all recipes</td>
+<td>0: <span class="arithmatex">\(f\)</span> itself is invariant, as it must be, since the icosahedral rotation group has no nontrivial one-dimensional characters <strong>[E]</strong></td>
+</tr>
+<tr>
+<td>cube, octahedron, rhombicuboctahedron, deltoidal icositetrahedron, under R1 and R2</td>
+<td>0 throughout</td>
+</tr>
+<tr>
+<td>cube and octahedron, under one R4 variant each</td>
+<td><span class="arithmatex">\(\pi\)</span> (signs) on some elements</td>
+</tr>
+<tr>
+<td>tetrahedron (including the existing tetrahedral dual) and triakis tetrahedron, under R2</td>
+<td><span class="arithmatex">\(\pm 2\pi/3\)</span> (cube roots of unity) on rotations and reflections, e.g. on the tetrahedron's eight three-fold rotations; R1 does the same on the tetrahedron</td>
+</tr>
+<tr>
+<td>tetrahedron and triakis tetrahedron, under R4</td>
+<td>signs, on reflections only</td>
+</tr>
+<tr>
+<td>hexagonal pyramid</td>
+<td>cube roots under R2; sixth roots under R1; R4 and flag invariant</td>
+</tr>
+<tr>
+<td>flag recipe, every fixture</td>
+<td>0 throughout</td>
+</tr>
+</tbody>
+</table>
+<p>A symmetric relief can therefore carry phase coloring that is not symmetric.</p>
+<p><strong>Continuous deformation.</strong> With combinatorics fixed and the origin kept inside, every recipe
+should change continuously: orders stay fixed and every placement point moves continuously
+<strong>[D]</strong>. Both tested families behaved this way <strong>[N]</strong>
+(<a href="../experiments/#e003-deformation-and-placement">E003</a>). Two results went against expectation:</p>
+<ul>
+<li>How far apart R1 and R2 look depends on geometry, not only on combinatorics: 0.96 to 0.56 along
+  the pyramid family.</li>
+<li>Polar placement can put a face's pole <strong>outside the face it represents</strong>. On a sheared box this
+  happens exactly at shear 1, together with edge feet leaving their edges <strong>[D, N]</strong>. Centroids
+  never leave their faces, but they break duality.</li>
+</ul>
+<p><strong>Combinatorial transitions.</strong> Three transition classes were tested on the cube
+(<a href="../experiments/#e002-when-a-face-or-edge-shrinks-to-nothing">E002</a>): a corner truncated away,
+an edge bevel, and a flat pyramid on a face. All comparisons use unreduced divisors (§2).</p>
+<p><strong>Vertex truncation.</strong> Here the results generalize to any vertex <strong>[D]</strong>. Truncating a vertex of
+valence <span class="arithmatex">\(q\)</span> adds <span class="arithmatex">\(q\)</span> valence-3 vertices, <span class="arithmatex">\(q\)</span> new edges and a <span class="arithmatex">\(q\)</span>-gon, and each of the <span class="arithmatex">\(q\)</span>
+adjacent faces gains a side. The cut edges keep their lines, so their feet do not move. As the
+cut shrinks:</p>
+<ul>
+<li><strong>R4ve is continuous:</strong> <span class="arithmatex">\(+3q\)</span> in vertices and <span class="arithmatex">\(-2q\)</span> in edges collapse to the old vertex's
+  <span class="arithmatex">\(+q\)</span>.</li>
+<li><strong>R2 jumps by a fixed divisor:</strong> <span class="arithmatex">\(+q\)</span> at the corner and <span class="arithmatex">\(-1\)</span> on each adjacent face. At the
+  cube corner that is <span class="arithmatex">\(+3\)</span> and three <span class="arithmatex">\(-1\)</span>s, matching the measurement <strong>[N]</strong>.</li>
+</ul>
+<p><strong>Raised face.</strong> By polarity, R4fe is continuous as a raised face flattens, the dual of vertex
+truncation <strong>[D]</strong>.</p>
+<p><strong>Edge bevel.</strong> In the cube case, no member of the incidence family is continuous, because the
+R4ve and R4fe jumps there are not proportional <strong>[D for that case, N]</strong>.</p>
+<p>R1 jumped in all three classes. The continuous cases converge as the square of the feature size
+<strong>[N]</strong>. R4's near zero–pole pairs are this mechanism at work: small cells about to collapse.</p>
+<p>Whether a recipe is continuous under the other classes of transition, or under an edge bevel in
+general, is not established. One caveat: the degree jumps even when the function converges, so
+degree is not a continuous measure <strong>[N]</strong>.</p>
+<h2 id="7-the-selected-recipe">7. The selected recipe<a class="headerlink" href="#7-the-selected-recipe" title="Permanent link">&para;</a></h2>
+<p><strong>Default: R2, with polar placement</strong> (<a href="../../decisions/0005-phase1-recipe-selection/">decision 0005</a>)
+<strong>[P]</strong>:</p>
+<ul>
+<li>vertex directions with order equal to the valence, face normals with order equal to the number
+  of sides;</li>
+<li>normalize by the chordal formula;</li>
+<li>optionally reduce by the gcd for economy on a single solid, reporting <span class="arithmatex">\(g\)</span>; comparisons use the
+  unreduced divisor.</li>
+</ul>
+<p><strong>Assumptions.</strong> A convex solid with the origin strictly inside and genuine polygonal faces.</p>
+<p><strong>Strengths.</strong></p>
+<ul>
+<li>exact reciprocal duality <strong>[D]</strong>;</li>
+<li>a symmetric relief for every symmetric input <strong>[D]</strong>;</li>
+<li>a reduced degree never above R1's on the tested solids, except the hexagonal pyramid <strong>[N]</strong>;</li>
+<li>no zero–pole pairs closer than chordal distance 0.1 anywhere in the tested corpus <strong>[N]</strong>.</li>
+</ul>
+<p>Close pairs are not ruled out in general. A face whose polar direction lies near one of its own
+vertices, on a strongly oblique solid, would create one.</p>
+<p><strong>Limitations.</strong></p>
+<ul>
+<li>it jumps under every vertex truncation <strong>[D]</strong>, and at the edge bevel and raised face tested
+  <strong>[N]</strong>;</li>
+<li>on strongly oblique solids a pole can leave its face <strong>[D, N]</strong>;</li>
+<li>the function, unlike the relief, can pick up phase characters under symmetries <strong>[N]</strong>.</li>
+</ul>
+<p><strong>Alternative: R4</strong> <strong>[P]</strong>. Of the recipes tested, it is the only one continuous across any of
+the tested transitions, under the class matching its pairing. It reproduces the crowns and the
+star, and its field is genuinely different. Its cost is tight zero–pole pairs, observed on
+irregular inputs.</p>
+<p><strong>Worked example.</strong> R2 on the octahedron is the existing cube–octahedron dual: degree 24, with the
+exact constant <span class="arithmatex">\(C = 729/4\)</span> in its classical chart form. R2 on the cube gives its reciprocal, by
+duality. The <a href="../recipes/#worked-example-the-octahedron">worked example</a> walks through it.</p>
+<h2 id="8-from-analysis-to-object">8. From analysis to object<a class="headerlink" href="#8-from-analysis-to-object" title="Permanent link">&para;</a></h2>
+<p>The relief maps <span class="arithmatex">\(\log|f|\)</span> through a logistic:</p>
+<div class="arithmatex">\[
+r = r_{\min} + (1 - r_{\min})\,\operatorname{logistic}\!\left(\frac{\log|f|}{k}\right).
+\]</div>
+<p>The tip exponent near a feature of order <span class="arithmatex">\(\mu\)</span> is <span class="arithmatex">\(\mu / k\)</span> <strong>[E/D]</strong>. That makes <span class="arithmatex">\(k\)</span> a
+display choice, separate from the function. The baseline's rule <span class="arithmatex">\(k = 2\mu_{\max}\)</span> gives exponent
+<span class="arithmatex">\(\tfrac12\)</span> only to each recipe's <strong>highest-order</strong> features. A feature of lower order <span class="arithmatex">\(\mu\)</span>
+keeps exponent <span class="arithmatex">\(\mu / (2\mu_{\max})\)</span>, which is sharper. So the rule equalizes the strongest
+features across recipes, not every feature. E004 shows it is enough to remove most of the visual
+gap between R1 and R2.</p>
+<p>Meshing, closing and sizing (tip-to-tip extent) are inherited from the baseline and complexplorer
+3.1. The baseline's printed files rebuild byte for byte from this project's code. The new pieces
+are screened for printability, cut into halves along owner-approved planes, and printed. The
+<a href="../../objects/">objects</a> record their status.</p>
+<h2 id="9-what-remains-open">9. What remains open<a class="headerlink" href="#9-what-remains-open" title="Permanent link">&para;</a></h2>
+<p>The open questions, and the precise scope of each claim above, are collected in
+<a href="../limitations/">Limitations</a>. <a href="../../reproduce/">Reproduce</a> lists the commands that regenerate
+every result.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Code MIT; text, images and meshes CC BY 4.0. Igor Kuvychko, 2026.
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.sections", "navigation.top", "navigation.indexes", "search.suggest", "search.highlight", "content.code.copy"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="../../javascripts/geometry-viewer.js" type="module"></script>
+      
+        <script src="../../javascripts/recipe-explorer.js" type="module"></script>
+      
+        <script src="../../javascripts/riemann-primer.js" type="module"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

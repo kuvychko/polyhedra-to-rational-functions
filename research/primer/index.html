@@ -1,0 +1,1318 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Turning convex polyhedra into rational functions on the Riemann sphere, and into printed objects.">
+      
+      
+      
+        <link rel="canonical" href="https://kuvychko.github.io/polyhedra-to-rational-functions/research/primer/">
+      
+      
+        <link rel="prev" href="../">
+      
+      
+        <link rel="next" href="../recipes/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Start here: the Riemann sphere - Polyhedra as Complex Functions</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="red">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#start-here-the-riemann-sphere" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Polyhedra as Complex Functions" class="md-header__button md-logo" aria-label="Polyhedra as Complex Functions" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Polyhedra as Complex Functions
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Start here: the Riemann sphere
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="red"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="red"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/kuvychko/polyhedra-to-rational-functions" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    kuvychko/polyhedra-to-rational-functions
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../objects/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  The objects
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../" class="md-tabs__link">
+          
+  
+  
+    
+  
+  The question
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../printing/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Printing
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../reproduce/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Reproduce
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../about/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  About
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Polyhedra as Complex Functions" class="md-nav__button md-logo" aria-label="Polyhedra as Complex Functions" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Polyhedra as Complex Functions
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/kuvychko/polyhedra-to-rational-functions" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    kuvychko/polyhedra-to-rational-functions
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../objects/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    The objects
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    The objects
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    The question
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    The question
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Start here: the Riemann sphere
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Start here: the Riemann sphere
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="On this page">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      On this page
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-numbers-as-points" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Numbers as points
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-functions-zeros-and-poles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Functions, zeros and poles
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-the-trouble-with-infinity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. The trouble with infinity
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-the-riemann-sphere" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. The Riemann sphere
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-from-color-to-shape-the-relief" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. From color to shape: the relief
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#where-next" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Where next
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../recipes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    The recipes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../compare/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Compare recipes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../narrative/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    The exploration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../experiments/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Experiments
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../limitations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Limitations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../decisions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Decisions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../printing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Printing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reproduce/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reproduce
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../about/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    About
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="On this page">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      On this page
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-numbers-as-points" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Numbers as points
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-functions-zeros-and-poles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Functions, zeros and poles
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-the-trouble-with-infinity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. The trouble with infinity
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-the-riemann-sphere" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. The Riemann sphere
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-from-color-to-shape-the-relief" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. From color to shape: the relief
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#where-next" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Where next
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="start-here-the-riemann-sphere">Start here: the Riemann sphere<a class="headerlink" href="#start-here-the-riemann-sphere" title="Permanent link">&para;</a></h1>
+<p>The rest of this site talks about rational functions on the Riemann sphere, zeros and poles, and
+reliefs. This page builds those ideas from the ground up, assuming only coordinates in the plane.
+Nothing here is new: it is standard background <strong>[E]</strong>, with figures you can turn and drag.</p>
+<h2 id="1-numbers-as-points">1. Numbers as points<a class="headerlink" href="#1-numbers-as-points" title="Permanent link">&para;</a></h2>
+<p>A complex number <span class="arithmatex">\(z = x + iy\)</span> is a point <span class="arithmatex">\((x, y)\)</span> of the plane. Two numbers describe where it
+is:</p>
+<ul>
+<li>its <strong>modulus</strong> <span class="arithmatex">\(|z| = \sqrt{x^2 + y^2}\)</span>, the distance from <span class="arithmatex">\(0\)</span>;</li>
+<li>its <strong>phase</strong> <span class="arithmatex">\(\arg z\)</span>, the angle from the positive <span class="arithmatex">\(x\)</span> axis, counterclockwise.</li>
+</ul>
+<p>Complex numbers can be added, multiplied and divided much like ordinary numbers. Multiplying by
+<span class="arithmatex">\(z\)</span> scales by <span class="arithmatex">\(|z|\)</span> and turns by <span class="arithmatex">\(\arg z\)</span>.</p>
+<h2 id="2-functions-zeros-and-poles">2. Functions, zeros and poles<a class="headerlink" href="#2-functions-zeros-and-poles" title="Permanent link">&para;</a></h2>
+<p>A function <span class="arithmatex">\(f\)</span> takes each point <span class="arithmatex">\(z\)</span> to a new number <span class="arithmatex">\(f(z)\)</span>. Since the result is a number in
+a plane, we cannot draw a graph as we would for <span class="arithmatex">\(y = x^2\)</span>. Instead we <strong>color</strong> each point <span class="arithmatex">\(z\)</span>
+by the phase of <span class="arithmatex">\(f(z)\)</span>. This is called <em>domain coloring</em>. For <span class="arithmatex">\(f(z) = z\)</span>, the picture is
+just the color wheel: each direction from <span class="arithmatex">\(0\)</span> gets its own color.</p>
+<p>This site works with <strong>rational functions</strong>, one polynomial divided by another, such as
+<span class="arithmatex">\(z^2\)</span>, <span class="arithmatex">\(1/z\)</span> or <span class="arithmatex">\((z - 1)/(z + 1)\)</span>. They have two kinds of special points:</p>
+<ul>
+<li>a <strong>zero</strong>, where <span class="arithmatex">\(f = 0\)</span>, such as <span class="arithmatex">\(z = 1\)</span> for <span class="arithmatex">\((z - 1)/(z + 1)\)</span>;</li>
+<li>a <strong>pole</strong>, where <span class="arithmatex">\(f\)</span> grows without bound, such as <span class="arithmatex">\(z = -1\)</span> for the same function.</li>
+</ul>
+<p>Each has an <strong>order</strong>, a whole number that says how strongly. <span class="arithmatex">\(z^2\)</span> has a zero of order 2 at
+<span class="arithmatex">\(0\)</span>, and <span class="arithmatex">\(1/z^3\)</span> a pole of order 3. The coloring shows the order. Walk once around a zero of
+order <span class="arithmatex">\(m\)</span>, counterclockwise, and the colors run through the whole wheel <span class="arithmatex">\(m\)</span> times. Around a
+pole of order <span class="arithmatex">\(m\)</span> they run through it <span class="arithmatex">\(m\)</span> times in the opposite direction.</p>
+<div class="sphere-demo" data-function="z" data-panels="plane">
+<div class="primer__fallback">
+<p><em>The interactive figure needs JavaScript. Here is the same kind of picture for one of the
+printed pieces, the <a href="../../objects/cube-octahedron-dual/">cube–octahedron dual</a>: the colors wind
+one way around its zeros and the other way around its poles.</em></p>
+<p><img alt="Domain coloring of the cube–octahedron dual in the plane" src="../../assets/pieces/cube-octahedron-dual/plane.jpg" width="320" /></p>
+</div>
+</div>
+<p>Choose <span class="arithmatex">\(z^2\)</span> in the menu: the colors now wind twice around <span class="arithmatex">\(0\)</span>. Choose
+<span class="arithmatex">\((z - 1)/(z + 1)\)</span>: one zero (blue dot) and one pole (red dot), winding in opposite directions.</p>
+<h2 id="3-the-trouble-with-infinity">3. The trouble with infinity<a class="headerlink" href="#3-the-trouble-with-infinity" title="Permanent link">&para;</a></h2>
+<p>Look at <span class="arithmatex">\(f(z) = z\)</span> again. It has a zero at <span class="arithmatex">\(0\)</span>, but where is its pole? As <span class="arithmatex">\(z\)</span> moves away,
+<span class="arithmatex">\(f(z)\)</span> grows without bound, yet no point of the plane is "far enough". It is natural to say the
+pole sits at a point <strong><span class="arithmatex">\(\infty\)</span></strong>, which the plane does not contain.</p>
+<p><strong>Stereographic projection</strong> supplies that point. Put a sphere of radius 1 with its centre at
+<span class="arithmatex">\(0\)</span>, so that the plane cuts it along the equator. Join any point <span class="arithmatex">\(z\)</span> of the plane to the
+<strong>north pole</strong> by a straight line. That line crosses the sphere at exactly one more point: the
+<strong>image</strong> of <span class="arithmatex">\(z\)</span>.</p>
+<div class="stereo-demo">
+<div class="primer__fallback">
+<p><em>The interactive figure needs JavaScript and WebGL. A cross-section through the north pole:</em></p>
+<figure>
+<p><svg class="primer__svg" viewBox="0 0 400 270" role="img" aria-label="Cross-section of stereographic projection: the circle of radius 1, the plane through its centre, and lines from the north pole through two points of the plane to their images on the circle">
+  <line x1="10" y1="150" x2="395" y2="150" stroke="#888" stroke-width="1.5"/>
+  <circle cx="200" cy="150" r="100" fill="#c9d4e6" fill-opacity="0.35" stroke="#222" stroke-width="1.5"/>
+  <line x1="200" y1="50" x2="380" y2="150" stroke="#333" stroke-width="1.2"/>
+  <line x1="200" y1="50" x2="280" y2="210" stroke="#333" stroke-width="1.2"/>
+  <circle cx="200" cy="50" r="4.5" fill="#222"/>
+  <circle cx="200" cy="250" r="4.5" fill="#222"/>
+  <circle cx="380" cy="150" r="5" fill="#d9822b"/>
+  <circle cx="250" cy="150" r="5" fill="#d9822b"/>
+  <circle cx="284.9" cy="97.2" r="5" fill="#6b3fa0"/>
+  <circle cx="280" cy="210" r="5" fill="#6b3fa0"/>
+  <text x="212" y="44" font-size="14">N = ∞</text>
+  <text x="212" y="264" font-size="14">S = 0</text>
+  <text x="368" y="172" font-size="14">z</text>
+  <text x="240" y="172" font-size="14">w</text>
+  <text x="292" y="92" font-size="14">image of z</text>
+  <text x="290" y="226" font-size="14">image of w</text>
+</svg></p>
+<figcaption>z lies outside the unit circle, so its image is in the northern half. w lies inside, so
+its image is in the southern half.</figcaption>
+</figure>
+</div>
+</div>
+<p>Drag the orange point <span class="arithmatex">\(z\)</span>, or use the sliders, and watch its image (purple):</p>
+<ul>
+<li><span class="arithmatex">\(z = 0\)</span> goes to the <strong>south pole</strong>;</li>
+<li>the <strong>unit circle</strong> <span class="arithmatex">\(|z| = 1\)</span> stays where it is: it <em>is</em> the equator;</li>
+<li>points <strong>inside</strong> the unit circle go to the southern hemisphere, and points <strong>outside</strong> it to
+  the northern one;</li>
+<li>as <span class="arithmatex">\(z\)</span> moves away in any direction, its image climbs towards the <strong>north pole</strong>. Press
+  <em>Send z towards ∞</em> to see it happen.</li>
+</ul>
+<p>Every point of the plane gets exactly one point of the sphere, and every point of the sphere
+except the north pole comes from exactly one point of the plane. The north pole is the one
+missing point, and it plays the role of <span class="arithmatex">\(\infty\)</span>. The sphere is the plane with that point added
+<strong>[E]</strong>. The grid shows how the plane's circles around <span class="arithmatex">\(0\)</span> become circles of latitude, and its
+rays from <span class="arithmatex">\(0\)</span> become meridians.</p>
+<p>This is the convention used across the site: <span class="arithmatex">\(z = 0\)</span> is the south pole, <span class="arithmatex">\(z = \infty\)</span> the
+north pole, and <span class="arithmatex">\(|z| = 1\)</span> the equator.</p>
+<h2 id="4-the-riemann-sphere">4. The Riemann sphere<a class="headerlink" href="#4-the-riemann-sphere" title="Permanent link">&para;</a></h2>
+<p>The plane with <span class="arithmatex">\(\infty\)</span> added, pictured as this sphere, is the <strong>Riemann sphere</strong>. A rational
+function is at home on it. Every point, <span class="arithmatex">\(\infty\)</span> included, has a value, and that value may
+itself be <span class="arithmatex">\(\infty\)</span>. So the coloring of the plane can be carried over to the sphere, point by
+point.</p>
+<div class="sphere-demo" data-function="z" data-panels="plane sphere">
+<div class="primer__fallback">
+<p><em>The interactive figure needs JavaScript and WebGL. Here is the cube–octahedron dual, in the
+plane and on the sphere.</em></p>
+<div class="grid">
+<p><img alt="The cube–octahedron dual's domain coloring in the plane" src="../../assets/pieces/cube-octahedron-dual/plane.jpg" width="48%" />
+<img alt="The same function's coloring on the sphere" src="../../assets/pieces/cube-octahedron-dual/sphere.jpg" width="48%" /></p>
+</div>
+</div>
+</div>
+<p>Things to try:</p>
+<ul>
+<li><strong><span class="arithmatex">\(f(z) = z\)</span></strong>: a zero at the south pole and a pole at the north pole. The pole that had no
+  place in the plane is now an ordinary point.</li>
+<li><strong><span class="arithmatex">\(1/z\)</span></strong>: the same two points, with zero and pole swapped.</li>
+<li><strong><span class="arithmatex">\(z^3 - 1\)</span></strong>: three zeros on the equator, at the cube roots of 1. A polynomial of degree
+  <span class="arithmatex">\(d\)</span> has a pole of order <span class="arithmatex">\(d\)</span> at <span class="arithmatex">\(\infty\)</span>, here of order 3.</li>
+<li>In every case the zeros and the poles <strong>balance</strong>. Counted with their orders, there are as many
+  zeros as poles, once <span class="arithmatex">\(\infty\)</span> is included <strong>[E]</strong>.</li>
+</ul>
+<p>A rational function is fixed, up to a constant factor, by where its zeros and poles are and by
+their orders <strong>[E]</strong>. This is what the project builds on. Choose the points from a polyhedron,
+for example a zero at each corner of a cube and a pole above the middle of each face, and you
+get a function that "is" the cube. The last menu entry, <em>R2 on the cube</em>, is exactly that:
+recipe R2, the site's default, explained on <a href="../recipes/">the recipes page</a>.</p>
+<h2 id="5-from-color-to-shape-the-relief">5. From color to shape: the relief<a class="headerlink" href="#5-from-color-to-shape-the-relief" title="Permanent link">&para;</a></h2>
+<p>Color shows the phase of <span class="arithmatex">\(f\)</span>. The other half of each value, the modulus <span class="arithmatex">\(|f|\)</span>, can be shown
+as <strong>shape</strong>. Move each point of the sphere outwards where <span class="arithmatex">\(|f|\)</span> is large and inwards where it
+is small:</p>
+<ul>
+<li>near a <strong>pole</strong>, <span class="arithmatex">\(|f|\)</span> grows without bound, so the surface rises into a <strong>spike</strong>;</li>
+<li>near a <strong>zero</strong>, <span class="arithmatex">\(|f|\)</span> falls to 0, so the surface sinks into a <strong>pit</strong>;</li>
+<li>where <span class="arithmatex">\(|f| = 1\)</span>, the surface stays at "<strong>sea level</strong>", the original sphere.</li>
+</ul>
+<div class="sphere-demo" data-function="cube-R2" data-panels="sphere" data-relief="1">
+<div class="primer__fallback">
+<p><em>The interactive figure needs JavaScript and WebGL. Here is the colored sphere of the
+cube–octahedron dual and its printed relief.</em></p>
+<div class="grid">
+<p><img alt="The cube–octahedron dual's coloring on the sphere" src="../../assets/pieces/cube-octahedron-dual/sphere.jpg" width="48%" />
+<img alt="The same function as a relief: spikes at its poles, pits at its zeros" src="../../assets/pieces/cube-octahedron-dual/relief.jpg" width="48%" /></p>
+</div>
+</div>
+</div>
+<p>Move the <em>relief</em> slider from 0 to 1 to push the sphere out by <span class="arithmatex">\(|f|\)</span>. Untick <em>Sea level</em> to
+hide the white sphere of radius 1.</p>
+<p>Since <span class="arithmatex">\(|f|\)</span> runs from 0 to infinity, the radius cannot simply equal <span class="arithmatex">\(|f|\)</span>. It goes through a
+smooth S-shaped curve of <span class="arithmatex">\(\log|f|\)</span> instead:</p>
+<div class="arithmatex">\[
+r \;=\; d + \frac{1 - d}{1 + e^{-\log|f| / k}},
+\]</div>
+<p>where <span class="arithmatex">\(d\)</span> is the bottom of the deepest pit and <span class="arithmatex">\(k\)</span> sets how sharp the features are. Sea level
+<span class="arithmatex">\(|f| = 1\)</span> gives <span class="arithmatex">\(\log|f| = 0\)</span>, exactly halfway. The figure uses <span class="arithmatex">\(d = 0.2\)</span> and sets <span class="arithmatex">\(k\)</span> to
+twice the highest order, so that spikes of every order look comparably sharp. The figure scales
+sea level to radius 1. The printed pieces are shaped the same way, with transfer settings chosen
+for each piece.</p>
+<p>Where sea level falls depends on the constant factor in front of <span class="arithmatex">\(f\)</span>, which the zeros and poles
+leave open. The site always chooses it so that the average of <span class="arithmatex">\(\log|f|\)</span> over the sphere is 0.
+<a href="../narrative/#2-the-construction-space">The exploration</a> explains why <strong>[D]</strong>. For <span class="arithmatex">\(z\)</span>, <span class="arithmatex">\(z^2\)</span>,
+<span class="arithmatex">\(1/z\)</span> and <span class="arithmatex">\((z - 1)/(z + 1)\)</span>, that choice is the plain function itself. For <span class="arithmatex">\(z^3 - 1\)</span> it is
+the function times a positive constant.</p>
+<h2 id="where-next">Where next<a class="headerlink" href="#where-next" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong><a href="../../objects/">The objects</a>:</strong> the printed reliefs, each with its sphere, plane and
+  3D views like the ones above.</li>
+<li><strong><a href="../recipes/">The recipes</a>:</strong> the rules that turn a polyhedron into zeros and poles.</li>
+<li><strong><a href="../compare/">Compare recipes</a>:</strong> two recipes side by side on any of the test solids.</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Code MIT; text, images and meshes CC BY 4.0. Igor Kuvychko, 2026.
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.sections", "navigation.top", "navigation.indexes", "search.suggest", "search.highlight", "content.code.copy"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="../../javascripts/geometry-viewer.js" type="module"></script>
+      
+        <script src="../../javascripts/recipe-explorer.js" type="module"></script>
+      
+        <script src="../../javascripts/riemann-primer.js" type="module"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>
