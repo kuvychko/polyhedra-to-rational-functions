@@ -67,3 +67,10 @@ These settings produced all ten printed pieces, including the dowel-fit test.
 | supports | none: halves print cut face down | tested: no printed piece has needed them |
 
 Each object's page links to its files once they are published.
+
+## Finishing
+
+Minor stringing can occur between the spikes. I remove it with brief passes of hot air from an
+SMD rework station. Keep the airflow moving and apply heat sparingly: the thin PLA tips soften
+quickly. If a spike bends slightly, let it cool enough to touch safely, then gently reshape it by
+hand while it is still pliable and hold it in position until it sets.
