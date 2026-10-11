@@ -6,7 +6,7 @@ other: it places zeros and poles where a polyhedron's vertices, faces and edges 
 the function that results.
 
 <figure markdown>
-![The printed collection: thirteen white and pale blue PLA prints of the pieces, spiky reliefs of different sizes on a green cutting mat](assets/photos/collection.jpg)
+![The printed collection: thirteen white and pale blue PLA prints of the pieces, spiky reliefs of different sizes arranged in three rows on a grey background](assets/photos/collection.jpg)
 <figcaption>The printed collection: all ten pieces.</figcaption>
 </figure>
 
