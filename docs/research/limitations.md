@@ -79,17 +79,18 @@ What the prints showed, as of 2026-10-11: eleven pieces are printed, all on the 
   gaps among four pieces printed at 130 mm before this project, scaled linearly to 80 mm. Nine
   pieces have since printed well at 80 mm. Two of them, the R4ve rhombicuboctahedron and the
   separated irregular solid, have spike-to-spike gaps of about 11 mm, below the reference's
-  16.7 mm ([P001](experiments.md#for-printing-p001-and-p002)). Two data points do not make a new
-  threshold.
+  16.7 mm ([P001](experiments.md#for-printing-p001-and-p002)). On the mixed irregular solid the
+  gap is 1.5 mm, and its two spikes still print as separate tips. Three data points do not make
+  a new threshold.
 - **The gap measure is a proxy.** It is an arc length at sea level, and does not capture the
   ridge profile between a spike and a pit.
 - **New-recipe pieces are tested at 80 mm only.** The five printed new-recipe pieces (R2 on the
   deltoidal icositetrahedron, the triakis tetrahedron and both irregular solids, and R4ve on the
   rhombicuboctahedron) were printed at 80 mm. Their 130 mm files are untested.
-- **One piece was first retired on the screen's evidence, then printed for that feature.** On
-  the mixed irregular solid, two R2 poles 1.5 mm apart at 80 mm fuse into one double spike. It
-  was printed at 80 mm as an ornament, double spike included. It is not evidence that features
-  that close print as separate spikes.
+- **One piece was retired on the screen's evidence, then printed.** On the mixed irregular
+  solid, two R2 poles are 1.5 mm apart at 80 mm, and the screen expected them to fuse into one
+  spike. Printed at 80 mm as an ornament, they came out as two separate tips about 1.5 mm apart,
+  clearly visible as a double spike.
 - **"Identical" halves are congruent only up to mesh resolution.** The latitude–longitude mesh is
   not exactly symmetric.
 
