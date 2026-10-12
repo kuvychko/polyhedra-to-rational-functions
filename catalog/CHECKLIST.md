@@ -16,6 +16,6 @@ edit by hand: change the catalog and regenerate.
 | Triakis Tetrahedron (R2) | new | listed | yes | yes/yes | exported | yes/yes | 80 mm | 80 mm | [link](https://www.printables.com/model/1868361-triakis-tetrahedron) | done |
 | Irregular Solid (R2) | new | listed | yes | yes/yes | exported | yes/yes | 80 mm | 80 mm | [link](https://www.printables.com/model/1873990-irregular-polyhedron-ornament-double-spike) | done |
 | Irregular Solid, Separated (R2) | new | listed | yes | yes/yes | exported | yes/yes | 80 mm | 80 mm | [link](https://www.printables.com/model/1870554-irregular-polyhedron-ornament) | done |
-| Hexagonal Pyramid (R2) | new | exported | – | yes/yes | exported | yes/yes | – | – | – | screen at 80 and 130 mm (B1) |
+| Hexagonal Pyramid (R2) | new | exported | yes | yes/yes | exported | yes/yes | – | – | – | choose print size from the screen |
 
 1 of 12 pieces have an open action.

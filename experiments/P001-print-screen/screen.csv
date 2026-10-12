@@ -21,3 +21,5 @@ r2-irregular-mixed,80,order-tuned (k = 6),True,89995,18.4,41.52,76.6,16.0,1.5
 r2-irregular-mixed,130,order-tuned (k = 6),True,89995,29.8,67.46,328.7,26.0,2.4
 r2-irregular-separated,80,order-tuned (k = 6),True,89995,18.7,41.0,77.9,15.9,11.0
 r2-irregular-separated,130,order-tuned (k = 6),True,89995,30.4,66.62,334.1,25.9,17.9
+r2-hexagonal-pyramid,80,order-tuned (k = 4),True,89995,31.7,46.98,129.4,31.7,27.4
+r2-hexagonal-pyramid,130,order-tuned (k = 4),True,89995,51.5,76.35,555.1,51.6,44.5

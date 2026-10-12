@@ -5,7 +5,7 @@
   "hypothesis": "Pieces whose closest zero-pole and pole-pole gaps at sea level are no smaller than those of the printed baseline pieces at 130 mm will print comparably; R4 on irregular inputs and high-degree R2 are the risks.",
   "changed_factor": "piece and size (display rule fixed per origin: baseline pieces use their own printed settings; new pieces use the order-tuned rule)"
  },
- "started": "2026-10-03T20:35:36Z",
+ "started": "2026-10-12T01:11:12Z",
  "config": {
   "id": "P001-print-screen",
   "question": "Which catalog pieces are printable at 80 and 130 mm tip to tip, and how do their finest features compare with the pieces already printed successfully?",
@@ -74,7 +74,7 @@
   "window": 450
  },
  "code": {
-  "commit": "80ec958c1359da80e114d2bb33c4c08780dcb4e4",
+  "commit": "def66d21473e17509ab178a31f05bcc7438b8fcc",
   "dirty": false,
   "changed_paths": []
  },
@@ -361,18 +361,42 @@
    "volume_cm3": 334.1,
    "zero_pole_gap_mm": 25.9,
    "pole_pole_gap_mm": 17.9
+  },
+  {
+   "piece": "r2-hexagonal-pyramid",
+   "size_mm": 80,
+   "display": "order-tuned (k = 4)",
+   "closed": true,
+   "triangles": 89995,
+   "waist_mm": 31.7,
+   "tip_radius_mm": 46.98,
+   "volume_cm3": 129.4,
+   "zero_pole_gap_mm": 31.7,
+   "pole_pole_gap_mm": 27.4
+  },
+  {
+   "piece": "r2-hexagonal-pyramid",
+   "size_mm": 130,
+   "display": "order-tuned (k = 4)",
+   "closed": true,
+   "triangles": 89995,
+   "waist_mm": 51.5,
+   "tip_radius_mm": 76.35,
+   "volume_cm3": 555.1,
+   "zero_pole_gap_mm": 51.6,
+   "pole_pole_gap_mm": 44.5
   }
  ],
  "outputs": [
   {
    "path": "out/P001-print-screen/screen.csv",
-   "sha256": "0313ab2a2bd774927d4f126955d932a282f98040bbbd534fe70eda7376c8a34d",
-   "bytes": 2224
+   "sha256": "2cd79e61ce516fe9fb69063aaaea3142be04df41486bd357a31680141e5cc4ec",
+   "bytes": 2389
   },
   {
    "path": "out/P001-print-screen/screen.png",
-   "sha256": "6c261fc6610c70510dea638aa32a41d2d40b8fe2fba031b53685b5846893e81c",
-   "bytes": 870950
+   "sha256": "a48a411f2bedfaf31d82b51a84bd9c8e7c47d6678bb55ed83f485f0723d90c9a",
+   "bytes": 931950
   }
  ],
  "config_file": {
@@ -381,7 +405,7 @@
  },
  "catalog": {
   "path": "catalog/pieces.yaml",
-  "sha256": "3a31a12be0aec708751cf9f73cff4b1418418a13587debfea2ed5d1ff949ed5b"
+  "sha256": "9bbdc98fc41d4fe507bc9da7383323ee19c68ca162a9662e663fc10b1f9edefd"
  },
  "reference": {
   "80": {
@@ -396,14 +420,14 @@
  "published": [
   {
    "path": "experiments/P001-print-screen/screen.csv",
-   "sha256": "0313ab2a2bd774927d4f126955d932a282f98040bbbd534fe70eda7376c8a34d",
-   "bytes": 2224,
+   "sha256": "2cd79e61ce516fe9fb69063aaaea3142be04df41486bd357a31680141e5cc4ec",
+   "bytes": 2389,
    "source": "out/P001-print-screen/screen.csv"
   },
   {
    "path": "experiments/P001-print-screen/screen.jpg",
-   "sha256": "f2caa03220df616fe0b9d28a69867646c86a0aa905bb4ebddf729580e9107ea7",
-   "bytes": 354854,
+   "sha256": "5f03dcc5be0a409bdb4f7c9547b1d137122bee3595b0b3a62fd49585ee822d9a",
+   "bytes": 374939,
    "source": "out/P001-print-screen/screen.png"
   }
  ]
