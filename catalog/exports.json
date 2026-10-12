@@ -1080,6 +1080,186 @@
     }
    }
   },
+  "r2-hexagonal-pyramid": {
+   "display": "order-tuned (k = 4)",
+   "code": {
+    "commit": "3da7f96b01e865eb3b6eb9b46b6a9280cf0d382c",
+    "dirty": false
+   },
+   "sizes": {
+    "80": {
+     "name": "r2-hexagonal-pyramid-80mm.stl",
+     "sha256": "230d4a3ce597f18838877b84f2575dab877076bcb2a706089975437ade3b0676",
+     "bytes": 8969884,
+     "extent_mm": 80.0,
+     "waist_mm": 31.7,
+     "volume_cm3": 129.4,
+     "triangles": 89995,
+     "watertight": true
+    },
+    "130": {
+     "name": "r2-hexagonal-pyramid-130mm.stl",
+     "sha256": "ea931fc8ee59324ae17c25e30814ad6ab8f1d3394df7114ce2468da23a88194d",
+     "bytes": 8969884,
+     "extent_mm": 130.0,
+     "waist_mm": 51.5,
+     "volume_cm3": 555.1,
+     "triangles": 89995,
+     "watertight": true
+    }
+   },
+   "resolution": 300,
+   "cuts": {
+    "80": {
+     "normal": [
+      1.0,
+      0.0,
+      0.0
+     ],
+     "exact_normal": [
+      1.0,
+      0.0,
+      0.0
+     ],
+     "snapped_to_symmetry_plane": true,
+     "halves": "identical",
+     "dowel": {
+      "diameter_mm": 5.2,
+      "depth_each_side_mm": 6.0,
+      "floor_plus_mm": 23.62,
+      "floor_minus_mm": 23.62,
+      "side_wall_mm": 1.5,
+      "pin": "M5 x 10 dowel pin"
+     },
+     "files": [
+      {
+       "name": "r2-hexagonal-pyramid-80mm-half.stl",
+       "sha256": "beb2f2aceb9904ab101935059919007bf6fa86bac6bf840c88e998b290a5cf75",
+       "copies": 2,
+       "bytes": 4578684
+      }
+     ]
+    },
+    "130": {
+     "normal": [
+      1.0,
+      0.0,
+      0.0
+     ],
+     "exact_normal": [
+      1.0,
+      0.0,
+      0.0
+     ],
+     "snapped_to_symmetry_plane": true,
+     "halves": "identical",
+     "dowel": {
+      "diameter_mm": 5.2,
+      "depth_each_side_mm": 11.0,
+      "floor_plus_mm": 37.14,
+      "floor_minus_mm": 37.14,
+      "side_wall_mm": 1.5,
+      "pin": "M5 x 20 dowel pin"
+     },
+     "files": [
+      {
+       "name": "r2-hexagonal-pyramid-130mm-half.stl",
+       "sha256": "1f7cf4592b0bf45b8d167365773cf3aab11ba6c870c57eacd3c5d65ed91afcc6",
+       "copies": 2,
+       "bytes": 4578884
+      }
+     ]
+    }
+   },
+   "ornament": {
+    "80": {
+     "hole": {
+      "spike_direction": [
+       0.0,
+       -0.0,
+       -1.0
+      ],
+      "spike_order": 2,
+      "bisected": true,
+      "tip_radius_mm": 46.98,
+      "distance_from_tip_mm": 9.0,
+      "side_wall_mm": 4.35,
+      "diameter_mm": 1.5,
+      "length_mm": 14.2,
+      "centre_mm": [
+       0.0,
+       -0.0,
+       -37.983
+      ],
+      "reach_plus_mm": 5.1,
+      "reach_minus_mm": 5.1
+     },
+     "dowel": {
+      "diameter_mm": 5.2,
+      "depth_each_side_mm": 6.0,
+      "floor_plus_mm": 23.62,
+      "floor_minus_mm": 23.62,
+      "side_wall_mm": 1.5,
+      "pin": "M5 x 10 dowel pin"
+     },
+     "files": [
+      {
+       "name": "r2-hexagonal-pyramid-80mm-ornament-half-a.stl",
+       "sha256": "7a8addd3f482c52d480eb643011fbb404a6ed0e789b7eb64091af9a97ecda17e",
+       "bytes": 4588184
+      },
+      {
+       "name": "r2-hexagonal-pyramid-80mm-ornament-half-b.stl",
+       "sha256": "dd42499d1113e4fa93da4e155809d6dbc5d9f20dbc6884698b439b31876181e7",
+       "bytes": 4618284
+      }
+     ]
+    },
+    "130": {
+     "hole": {
+      "spike_direction": [
+       0.0,
+       -0.0,
+       -1.0
+      ],
+      "spike_order": 2,
+      "bisected": true,
+      "tip_radius_mm": 76.35,
+      "distance_from_tip_mm": 9.0,
+      "side_wall_mm": 3.45,
+      "diameter_mm": 1.5,
+      "length_mm": 12.4,
+      "centre_mm": [
+       0.0,
+       -0.0,
+       -67.347
+      ],
+      "reach_plus_mm": 4.2,
+      "reach_minus_mm": 4.2
+     },
+     "dowel": {
+      "diameter_mm": 5.2,
+      "depth_each_side_mm": 11.0,
+      "floor_plus_mm": 37.14,
+      "floor_minus_mm": 37.14,
+      "side_wall_mm": 1.5,
+      "pin": "M5 x 20 dowel pin"
+     },
+     "files": [
+      {
+       "name": "r2-hexagonal-pyramid-130mm-ornament-half-a.stl",
+       "sha256": "7ff779cd0349328a986b918f24946f02951444321e45790ebe603990883b170c",
+       "bytes": 4590384
+      },
+      {
+       "name": "r2-hexagonal-pyramid-130mm-ornament-half-b.stl",
+       "sha256": "7e771309ddae170dded500f766b28f68a4d58e3ade3e2f37cc058bd2b0f82c18",
+       "bytes": 4620584
+      }
+     ]
+    }
+   }
+  },
   "r2-irregular-mixed": {
    "display": "order-tuned (k = 6)",
    "code": {
