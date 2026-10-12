@@ -7,7 +7,7 @@ the function that results.
 
 <figure markdown>
 ![The printed collection: thirteen white and pale blue PLA prints of the pieces, spiky reliefs of different sizes arranged in three rows on a grey background](assets/photos/collection.jpg)
-<figcaption>The printed collection: all ten pieces.</figcaption>
+<figcaption>The printed collection.</figcaption>
 </figure>
 
 The function's modulus pushes the sphere out into a relief: **poles become spikes and zeros
@@ -33,6 +33,6 @@ New to complex numbers? **[Start here](research/primer.md)**: a gentle introduct
 Riemann sphere, stereographic projection and the reliefs, with figures you can turn and drag.
 
 !!! info "Status"
-    The research (Phase 1) is complete, and the exhibition is printed: ten pieces, each with
+    The research (Phase 1) is complete, and the exhibition is printed: eleven pieces, each with
     print files linked from its page and gathered in one
     [Printables collection](https://www.printables.com/@Igor_2829688/collections/3812430).

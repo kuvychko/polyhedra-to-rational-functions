@@ -54,7 +54,7 @@ through one spike. Pass a thread through, tie a loop, and it hangs on a tree. Mo
 
 ## Settings
 
-These settings produced all ten printed pieces, including the dowel-fit test.
+These settings produced all eleven printed pieces, including the dowel-fit test.
 
 | setting | value | status |
 |---|---|---|
