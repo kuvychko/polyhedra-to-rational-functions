@@ -218,6 +218,6 @@ pieces:
   origin: new
   recipe: R2
   polyhedron: hexagonal-pyramid
+  cut: {normal: [1, 0, 0], approved: true, note: "P002 proposal #1, approved by owner 2026-10-11 (identical halves)"}
   planned_size_mm: null
-  digital_only: true
   notes: "Digital only unless it screens well. The case where R1 (degree 7) is cheaper than R2 (8)."
