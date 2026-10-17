@@ -16,6 +16,7 @@ Nothing in the mathematical modules imports this one.
 
 from __future__ import annotations
 
+from collections.abc import Sequence
 from dataclasses import asdict, dataclass, replace
 from pathlib import Path
 
@@ -112,8 +113,20 @@ def render_geometry(
     Marker area grows with order, and markers sit slightly outside the unit sphere so they stay
     visible.
     """
-    faces = np.concatenate([[len(f), *f] for f in poly.faces])
-    mesh = pv.PolyData(poly.vertices / poly.scale, faces)
+    return render_solids([poly], divisor, path, view, settings)
+
+
+def render_solids(
+    polys: Sequence[Polyhedron], divisor: Divisor, path: Path, view, settings: DisplaySettings
+) -> Path:
+    """`render_geometry` for a compound such as the stella octangula: the solids drawn together,
+    scaled by one common factor so the largest circumradius is 1."""
+    scale = max(poly.scale for poly in polys)
+    meshes = [
+        pv.PolyData(poly.vertices / scale, np.concatenate([[len(f), *f] for f in poly.faces]))
+        for poly in polys
+    ]
+    mesh = meshes[0].merge(meshes[1:]) if len(meshes) > 1 else meshes[0]
     pl = pv.Plotter(off_screen=True, window_size=(settings.window, settings.window))
     pl.set_background("white")
     pl.add_mesh(mesh, color="#d9d4c7", opacity=0.55, show_edges=True, edge_color="#4a4a4a")
