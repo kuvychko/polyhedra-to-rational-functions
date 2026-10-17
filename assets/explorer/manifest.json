@@ -1,0 +1,29 @@
+{
+ "id": "site-compare-fallback",
+ "solid": "cube",
+ "recipes": [
+  "R2",
+  "R4ve"
+ ],
+ "divisors": "unreduced",
+ "view": [
+  2.2,
+  2.2,
+  1.6
+ ],
+ "code": {
+  "commit": "84402d6e864114bb393484206de72f7642714c48",
+  "dirty": false
+ },
+ "files": {
+  "R2": {
+   "path": "docs/assets/explorer/cube-R2.jpg",
+   "sha256": "8ce5beb651bd517e63f9a445103fd4516ee26a3ccb0672b1f8107b5b761d1fe8"
+  },
+  "R4ve": {
+   "path": "docs/assets/explorer/cube-R4ve.jpg",
+   "sha256": "0608f6edecf57f1b9783588b3f4419089892e10428c6a17c38b2d73b2f770e31"
+  }
+ },
+ "updated": "2026-10-09T02:01:28Z"
+}

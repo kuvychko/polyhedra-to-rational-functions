@@ -1,0 +1,61 @@
+{
+ "id": "site-stellation-figure",
+ "solid": "octahedron",
+ "recipe": "R2",
+ "divisors": "unreduced",
+ "view": [
+  3.0,
+  1.3,
+  0.8
+ ],
+ "display": {
+  "geometry": {
+   "relief_resolution": 160,
+   "depth": 0.2,
+   "sharpness": 4.0,
+   "phase_sectors": 12,
+   "plane_half_width": 2.5,
+   "plane_resolution": 300,
+   "map_resolution": 180,
+   "map_limit": 0.75,
+   "window": 700,
+   "framing": "fit"
+  },
+  "relief": {
+   "relief_resolution": 160,
+   "depth": 0.2,
+   "sharpness": 8.0,
+   "phase_sectors": 12,
+   "plane_half_width": 2.5,
+   "plane_resolution": 300,
+   "map_resolution": 180,
+   "map_limit": 0.75,
+   "window": 700,
+   "framing": "fit"
+  }
+ },
+ "display_note": "relief views order-tuned (sharpness = 2 x max |order|), shared by the octahedron and its polar dual",
+ "code": {
+  "commit": "cdb68ae37fa297f3eaa5ec33fa82e7adcc42c803",
+  "dirty": false
+ },
+ "files": {
+  "octahedron": {
+   "path": "docs/assets/stellation/octahedron.jpg",
+   "sha256": "c8dc9515dbdf2e315187ce52f3021853d98e8c4328564ff8805f130c0ebf1f17"
+  },
+  "stella-octangula": {
+   "path": "docs/assets/stellation/stella-octangula.jpg",
+   "sha256": "4e686611fa373d1e1da41dd326792a0026453725616de424491895d923f3a691"
+  },
+  "relief-octahedron": {
+   "path": "docs/assets/stellation/relief-octahedron.jpg",
+   "sha256": "080d7fe571d41abc00501249487d5921aa3be2bc501db27e974cb2d560b081c6"
+  },
+  "relief-cube": {
+   "path": "docs/assets/stellation/relief-cube.jpg",
+   "sha256": "1e10c20674c7a526e21b91b06f1fca14c7938bcf092c8fd40f872217d30bde41"
+  }
+ },
+ "updated": "2026-10-17T03:21:18Z"
+}
