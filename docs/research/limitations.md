@@ -72,7 +72,7 @@ A third irregular solid was added for printing. Results fall into three groups.
 
 ## Printing
 
-What the prints showed, as of 2026-10-11: eleven pieces are printed, all on the settings of the
+What the prints showed, as of 2026-10-11: eleven designs are printed, all on the settings of the
 [printing page](../printing.md), and none needed supports.
 
 - **The printability reference was conservative for these prints.** It is the smallest feature

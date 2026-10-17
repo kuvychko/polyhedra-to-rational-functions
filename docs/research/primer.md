@@ -173,9 +173,10 @@ $$
 
 where \(d\) is the bottom of the deepest pit and \(k\) sets how sharp the features are. Sea level
 \(|f| = 1\) gives \(\log|f| = 0\), exactly halfway. The figure uses \(d = 0.2\) and sets \(k\) to
-twice the highest order, so that spikes of every order look comparably sharp. The figure scales
-sea level to radius 1. The printed pieces are shaped the same way, with transfer settings chosen
-for each piece.
+twice the highest order. The highest-order features of every example then share one tip
+exponent, \(1/2\). A feature of lower order \(\mu\) keeps its own exponent \(\mu / k\), so the rule
+does not equalize it ([Limitations](limitations.md)). The figure scales sea level to radius 1.
+The printed pieces are shaped the same way, with transfer settings chosen for each piece.
 
 Where sea level falls depends on the constant factor in front of \(f\), which the zeros and poles
 leave open. The site always chooses it so that the average of \(\log|f|\) over the sphere is 0.
