@@ -96,14 +96,35 @@ What the prints showed, as of 2026-10-11: eleven designs are printed, all on the
 
 ## Open questions
 
-- Is any natural recipe continuous under every class of transition, or at least under edge
-  bevels?
-- What determines the phase characters \(\theta_g\)? Why do R1 and R2 pick up cube roots of unity
-  on tetrahedral inputs, while R4 picks up signs? Can a recipe be chosen to make \(f\) itself
-  invariant when a symmetric phase coloring matters?
-- How should phases be compared across rotations of the solid? The phase depends on the chart.
-- When an edge's foot falls off the edge, should the point fall back to the midpoint, at the cost
-  of duality?
-- What about solids beyond this corpus: non-simple solids with many small faces, or near-regular
-  solids close to several transitions at once?
-- **Prior work.** No literature review has been done, so nothing here claims novelty.
+The questions below are unresolved within this project. Some concern the application of
+established theory; others concern the behavior of the particular encoding recipes.
+
+- **Transitions and convergence.** Under which geometric assumptions do the unreduced recipes
+  converge through vertex truncation, edge beveling, and face subdivision? Distinguish convergence
+  of divisors, functions away from collision points, and the resulting relief surfaces. In
+  particular, supporting-line edge feet need not approach a vertex when an edge collapses.
+- **Continuity within a specified recipe class.** Can a nonconstant, rotation-covariant recipe
+  with integer multiplicities preserve exact polar duality while remaining continuous through a
+  specified set of transitions? Which placement rules and notions of convergence make these
+  requirements compatible?
+- **Symmetry and multiplicity reduction.** Use finite-group character theory to classify the
+  rotational phase factors of each recipe, before and after gcd reduction. What is the minimum
+  degree increase needed to obtain rotational invariance, and how does it affect phase
+  readability? Treat orientation-reversing symmetries separately, including their dependence on
+  the phase convention.
+- **Phase alignment.** How should functions generated in different orientations be compared
+  modulo a global phase? Develop a stable alignment method and identify where a symmetry prevents
+  a unique orientation-independent phase choice.
+- **Placement outside the represented cell.** When a perpendicular foot lies outside an edge
+  segment, compare supporting-line placement, midpoint placement, nearest-point placement, and
+  continuous alternatives. Quantify their effects on duality, continuity, and visual
+  correspondence.
+- **Geometric robustness.** Test additional high-valence, strongly oblique, and near-degenerate
+  inputs, including simultaneous transitions. What geometric conditions control zero–pole
+  separation and the appearance of narrow features?
+
+A focused literature review ([Background and
+acknowledgments](../about.md#background-and-acknowledgments)) connects the project to classical
+polyhedral invariants, relative invariants of finite Möbius groups, spherical potential theory, and
+complex-function visualization. The specific incidence-based recipes and their comparative behavior
+require further investigation before any claim of novelty.
