@@ -9,11 +9,14 @@
 //   data-relief ("1" adds the slider).
 //
 // Every function is a divisor, from assets/explorer/primer.json (docs/hooks/explorer.py, from
-// polyhedral_functions.viewer_data). The evaluation follows polyhedral_functions.evaluation:
+// polyhedral_functions.viewer_data). The evaluation, in viewer-core.js, follows
+// polyhedral_functions.evaluation:
 //   log|f(x)| = sum m log chi(x, a)   (chordal distance; the site's normalization),
 //   arg f(z)  = sum over finite a of m arg(z - a)   (the chart's phase, constant C > 0).
 // The chart is the site's: z = 0 is the south pole, z = infinity the north pole.
-import { THREE, createStage } from "./viewer-core.js";
+import {
+  THREE, createStage, divisorOf, paletteIndex, toChart, unitSphere, weldNormals, whileVisible,
+} from "./viewer-core.js";
 
 const DATA_URL = new URL("../assets/explorer/primer.json", import.meta.url);
 const ZERO = 0x2a5ea6;
@@ -49,17 +52,6 @@ function slider(label, { min, max, step, value }) {
 
 // --- the chart --------------------------------------------------------------------------------
 
-// Unit vector -> chart coordinate [re, im], or null at the north pole (infinity).
-function toChart([x, y, h]) {
-  if (h > 1 - 1e-9) return null;
-  // Near the north pole 1 - h cancels; use w (1 + h) / |w|^2 there (as chart.to_chart does).
-  if (h > 0) {
-    const s = (1 + h) / (x * x + y * y);
-    return [x * s, y * s];
-  }
-  return [x / (1 - h), y / (1 - h)];
-}
-
 function toSphere(re, im) {
   const r2 = re * re + im * im;
   const d = 1 + r2;
@@ -80,39 +72,7 @@ function formatComplex(c, digits = 2) {
   return `${formatNumber(re, digits)} ${im < 0 ? "−" : "+"} ${imText}`;
 }
 
-// --- a function, from its divisor -------------------------------------------------------------
-
-function divisorOf(entry) {
-  const points = [
-    ...entry.zeros.map((m) => ({ ...m, m: m.order, kind: "zero" })),
-    ...entry.poles.map((m) => ({ ...m, m: -m.order, kind: "pole" })),
-  ];
-  for (const a of points) a.z = toChart(a.p);
-  const finite = points.filter((a) => a.z);
-  return {
-    points,
-    logModulus([x, y, h]) {
-      let sum = 0;
-      for (const a of points) {
-        const dx = x - a.p[0];
-        const dy = y - a.p[1];
-        const dh = h - a.p[2];
-        sum += a.m * 0.5 * Math.log(dx * dx + dy * dy + dh * dh);
-      }
-      return sum;
-    },
-    phase(re, im) {
-      let sum = 0;
-      for (const a of finite) sum += a.m * Math.atan2(im - a.z[1], re - a.z[0]);
-      return sum;
-    },
-  };
-}
-
-function paletteIndex(phase, size) {
-  const turns = (phase + Math.PI) / (2 * Math.PI);
-  return Math.floor((turns - Math.floor(turns)) * size) % size;
-}
+// --- describing a divisor ----------------------------------------------------------------------
 
 const CELL_PLURAL = { vertex: "vertices", face: "faces", edge: "edges" };
 
@@ -135,33 +95,6 @@ function describePoints(divisor) {
     const [kind, order, cell] = key.split("|");
     return `${plural(n, kind)} of order ${order} at the ${CELL_PLURAL[cell] || `${cell}s`}`;
   }).join("; ");
-}
-
-// Render only while on screen: several WebGL figures share the page.
-function whileVisible(target, frame) {
-  let visible = true;
-  let running = false;
-  function loop() {
-    if (!visible) {
-      running = false;
-      return;
-    }
-    frame();
-    requestAnimationFrame(loop);
-  }
-  function start() {
-    if (!running) {
-      running = true;
-      requestAnimationFrame(loop);
-    }
-  }
-  if ("IntersectionObserver" in window) {
-    new IntersectionObserver((entries) => {
-      visible = entries.some((e) => e.isIntersecting);
-      if (visible) start();
-    }).observe(target);
-  }
-  start();
 }
 
 function label(text) {
@@ -195,13 +128,6 @@ function ball(radius, color) {
     new THREE.SphereGeometry(radius, 24, 16),
     new THREE.MeshStandardMaterial({ color, roughness: 0.4, metalness: 0.1 }),
   );
-}
-
-// SphereGeometry, turned so its poles lie on the z axis (the chart's south and north poles).
-function unitSphere(widthSegments, heightSegments) {
-  const geometry = new THREE.SphereGeometry(1, widthSegments, heightSegments);
-  geometry.rotateX(Math.PI / 2);
-  return geometry;
 }
 
 // --- figure 1: stereographic projection ------------------------------------------------------
@@ -474,24 +400,6 @@ function drawPlane(canvas, divisor, data) {
   }
 }
 
-// After computeVertexNormals, SphereGeometry's seam column and the pole rows are separate
-// vertices at the same point; give each group one averaged normal so no crease shows.
-function weldNormals(geometry) {
-  const normal = geometry.attributes.normal;
-  const row = SPHERE_W + 1;
-  const v = new THREE.Vector3();
-  const w = new THREE.Vector3();
-  const average = (indices) => {
-    v.set(0, 0, 0);
-    for (const i of indices) v.add(w.fromBufferAttribute(normal, i));
-    v.normalize();
-    for (const i of indices) normal.setXYZ(i, v.x, v.y, v.z);
-  };
-  for (let iy = 1; iy < SPHERE_H; iy++) average([iy * row, iy * row + SPHERE_W]);
-  for (const iy of [0, SPHERE_H]) average(Array.from({ length: row }, (_, ix) => iy * row + ix));
-  normal.needsUpdate = true;
-}
-
 async function mountSphereDemo(container) {
   let data;
   try {
@@ -598,7 +506,7 @@ async function mountSphereDemo(container) {
     }
     pos.needsUpdate = true;
     surface.geometry.computeVertexNormals();
-    weldNormals(surface.geometry);
+    weldNormals(surface.geometry, SPHERE_W, SPHERE_H);
     surface.geometry.computeBoundingSphere();
     // The markers belong to the plain sphere. Once the relief starts, the spikes and pits show
     // the points themselves, and a marker would float off a spike's tip (the mesh only reaches

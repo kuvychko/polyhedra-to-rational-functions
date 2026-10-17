@@ -213,3 +213,106 @@ export function createView(stage, { ariaLabel, view, aspect = 0.8 }) {
 
   return { camera, controls, canvas, show, resetCamera, render };
 }
+
+// --- functions on the sphere, shared with riemann-primer.js and stellation-viewer.js -------------
+//
+// A function is its divisor (zeros and poles as markers {p, order}). The evaluation follows
+// polyhedral_functions.evaluation:
+//   log|f(x)| = sum m log chi(x, a)   (chordal distance; the site's normalization),
+//   arg f(z)  = sum over finite a of m arg(z - a)   (the chart's phase, constant C > 0).
+// The chart is the site's: z = 0 is the south pole, z = infinity the north pole.
+
+// Unit vector -> chart coordinate [re, im], or null at the north pole (infinity).
+export function toChart([x, y, h]) {
+  if (h > 1 - 1e-9) return null;
+  // Near the north pole 1 - h cancels; use w (1 + h) / |w|^2 there (as chart.to_chart does).
+  if (h > 0) {
+    const s = (1 + h) / (x * x + y * y);
+    return [x * s, y * s];
+  }
+  return [x / (1 - h), y / (1 - h)];
+}
+
+export function divisorOf(entry) {
+  const points = [
+    ...entry.zeros.map((m) => ({ ...m, m: m.order, kind: "zero" })),
+    ...entry.poles.map((m) => ({ ...m, m: -m.order, kind: "pole" })),
+  ];
+  for (const a of points) a.z = toChart(a.p);
+  const finite = points.filter((a) => a.z);
+  return {
+    points,
+    logModulus([x, y, h]) {
+      let sum = 0;
+      for (const a of points) {
+        const dx = x - a.p[0];
+        const dy = y - a.p[1];
+        const dh = h - a.p[2];
+        sum += a.m * 0.5 * Math.log(dx * dx + dy * dy + dh * dh);
+      }
+      return sum;
+    },
+    phase(re, im) {
+      let sum = 0;
+      for (const a of finite) sum += a.m * Math.atan2(im - a.z[1], re - a.z[0]);
+      return sum;
+    },
+  };
+}
+
+export function paletteIndex(phase, size) {
+  const turns = (phase + Math.PI) / (2 * Math.PI);
+  return Math.floor((turns - Math.floor(turns)) * size) % size;
+}
+
+// SphereGeometry, turned so its poles lie on the z axis (the chart's south and north poles).
+export function unitSphere(widthSegments, heightSegments) {
+  const geometry = new THREE.SphereGeometry(1, widthSegments, heightSegments);
+  geometry.rotateX(Math.PI / 2);
+  return geometry;
+}
+
+// After computeVertexNormals, SphereGeometry's seam column and the pole rows are separate
+// vertices at the same point; give each group one averaged normal so no crease shows.
+export function weldNormals(geometry, widthSegments, heightSegments) {
+  const normal = geometry.attributes.normal;
+  const row = widthSegments + 1;
+  const v = new THREE.Vector3();
+  const w = new THREE.Vector3();
+  const average = (indices) => {
+    v.set(0, 0, 0);
+    for (const i of indices) v.add(w.fromBufferAttribute(normal, i));
+    v.normalize();
+    for (const i of indices) normal.setXYZ(i, v.x, v.y, v.z);
+  };
+  for (let iy = 1; iy < heightSegments; iy++) average([iy * row, iy * row + widthSegments]);
+  for (const iy of [0, heightSegments]) average(Array.from({ length: row }, (_, ix) => iy * row + ix));
+  normal.needsUpdate = true;
+}
+
+// Render only while on screen: several WebGL figures share the page.
+export function whileVisible(target, frame) {
+  let visible = true;
+  let running = false;
+  function loop() {
+    if (!visible) {
+      running = false;
+      return;
+    }
+    frame();
+    requestAnimationFrame(loop);
+  }
+  function start() {
+    if (!running) {
+      running = true;
+      requestAnimationFrame(loop);
+    }
+  }
+  if ("IntersectionObserver" in window) {
+    new IntersectionObserver((entries) => {
+      visible = entries.some((e) => e.isIntersecting);
+      if (visible) start();
+    }).observe(target);
+  }
+  start();
+}
