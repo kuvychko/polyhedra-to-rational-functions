@@ -8,6 +8,8 @@ Two viewers use it:
   ``docs/hooks/explorer.py``): every fixture under every preset recipe;
 - the introduction page (``assets/explorer/primer.json``, from the same hook): a few textbook
   functions, written as divisors, and one recipe divisor.
+- the stellation page (``assets/explorer/stellation.json``, from the same hook): the octahedron
+  and its polar dual the cube, each under R2, with its stellation if it has one.
 
 Solids are scaled to circumradius 1, and markers are unit directions; the viewers draw them just
 outside the unit sphere. Nothing here renders, so the data and the mathematics cannot drift
@@ -158,3 +160,56 @@ def primer_data() -> dict:
         **markers(d),
     }
     return {"functions": functions}
+
+
+# --- the stellation page (research/stellation.md) ----------------------------------------------
+
+
+def stella_octangula() -> list[Polyhedron]:
+    """The octahedron's only stellation: two tetrahedra on alternate vertices of the cube.
+
+    For the octahedron with vertices at ``±e_i``, the face planes ``±x ± y ± z = 1`` meet three at
+    a time at ``(±1, ±1, ±1)``: the tips, along the octahedron's face normals.
+    """
+    corners = np.array([[1, 1, 1], [1, -1, -1], [-1, 1, -1], [-1, -1, 1]], dtype=float)
+    return [
+        Polyhedron.from_points(corners, "tetrahedron"),
+        Polyhedron.from_points(-corners, "tetrahedron"),
+    ]
+
+
+def compound(polys: list[Polyhedron], name: str) -> dict:
+    """Several solids as one `solid` record, scaled together to circumradius 1."""
+    scale = max(poly.scale for poly in polys)
+    vertices, faces = [], []
+    for poly in polys:
+        offset = len(vertices)
+        vertices += [_round(v) for v in poly.vertices / scale]
+        faces += [[offset + i for i in f] for f in poly.faces]
+    return {"name": name, "vertices": vertices, "faces": faces}
+
+
+#: The page's two solids, a polar pair, each with its stellation (``None``: it has none).
+STELLATION_SOLIDS = {
+    "octahedron": lambda: compound(stella_octangula(), "stella octangula"),
+    "cube": lambda: None,
+}
+
+
+def stellation_data() -> dict:
+    """Each solid with its R2 markers (unreduced) and its stellation, if any.
+
+    The stellation is drawn with the R2 poles, whose directions its tips share (the octahedron)
+    or would have (the cube). The display settings are added by the site hook.
+    """
+    solids = {}
+    for fixture_id, stellation in STELLATION_SOLIDS.items():
+        poly = fixtures.load(fixture_id)
+        d = apply(PRESETS["R2"], poly).unreduced
+        solids[fixture_id] = {
+            **solid(poly),
+            "degree": int(d.degree),
+            "stellation": stellation(),
+            **markers(d),
+        }
+    return {"solids": solids}

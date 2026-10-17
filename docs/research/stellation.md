@@ -34,6 +34,10 @@ spikes there, and six pits at the octahedron's own vertices. The octahedron has 
 stellation, the **stella octangula**, a compound of two tetrahedra. Its eight outer tips are at
 the same cube vertices, where three extended face planes meet **[D]**.
 
+<div class="stellation-viewer" data-solid="octahedron" markdown>
+<div class="stellation-viewer__fallback" markdown>
+*The interactive figure needs JavaScript and WebGL. Here it is as still images, from one view.*
+
 <div class="grid" markdown>
 <figure markdown>
 ![The regular octahedron inside the unit sphere, with blue markers at its 6 vertices and red markers at its 8 face normals](../assets/stellation/octahedron.jpg){ width="100%" }
@@ -49,10 +53,17 @@ normals.</figcaption>
 <figcaption>The R2 relief: a spike in each of the same 8 directions.</figcaption>
 </figure>
 </div>
+</div>
+</div>
 
-All three are drawn from one view. The tips agree; the surfaces do not. The stella octangula is
-made of flat triangles in the octahedron's face planes. The relief is curved everywhere and
-sinks in at the octahedron's vertices, which the stellation leaves alone.
+<p class="geometry-viewer__legend"><span class="dot dot--zero"></span> zeros (pits)
+<span class="dot dot--pole"></span> poles (spikes). Drag any view to turn all three; scroll or
+pinch to zoom. Hover over or tap a marker to see its order. Switch the solid to the cube to see a
+solid with no stellation.</p>
+
+The tips agree; the surfaces do not. The stella octangula is made of flat triangles in the
+octahedron's face planes. The relief is curved everywhere and sinks in at the octahedron's
+vertices, which the stellation leaves alone.
 
 ## The cube: no stellation, same spikes
 

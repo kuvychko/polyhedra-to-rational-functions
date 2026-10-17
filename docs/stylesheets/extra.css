@@ -334,3 +334,67 @@
   margin: 0.5rem 0 0;
   min-height: 2.4em;
 }
+
+/* Stellation comparison (javascripts/stellation-viewer.js): three linked views, stacked on
+   narrow screens. */
+.stellation-viewer {
+  margin: 1rem 0 1.5rem;
+}
+
+.stellation-viewer__fallback[hidden] {
+  display: none;
+}
+
+.stellation-viewer__toolbar {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 0.75rem;
+  gap: 0.4rem 1.2rem;
+  margin-bottom: 0.6rem;
+}
+
+.stellation-viewer__toolbar label {
+  align-items: center;
+  display: flex;
+  gap: 0.3rem;
+}
+
+.stellation-viewer__toolbar select {
+  background: var(--md-default-bg-color);
+  border: 1px solid var(--md-default-fg-color--lighter);
+  border-radius: 0.2rem;
+  color: var(--md-default-fg-color);
+  font: inherit;
+  padding: 0.15rem 0.3rem;
+}
+
+.stellation-viewer__toolbar .md-button {
+  font-size: 0.7rem;
+  margin-left: auto;
+  padding: 0.25em 0.9em;
+}
+
+.stellation-viewer__panels {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: 1fr;
+}
+
+@media screen and (min-width: 45em) {
+  .stellation-viewer__panels {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+.stellation-viewer__panel {
+  margin: 0;
+  min-width: 0;
+}
+
+.stellation-viewer__panel figcaption {
+  color: var(--md-default-fg-color--light);
+  font-size: 0.7rem;
+  margin: 0.4rem 0 0;
+  text-align: left;
+}

@@ -20,11 +20,9 @@ from __future__ import annotations
 
 from datetime import UTC, datetime
 
-import numpy as np
 from PIL import Image
 
 from polyhedral_functions import fixtures
-from polyhedral_functions.geometry import Polyhedron
 from polyhedral_functions.manifests import REPO_ROOT, git_state, relative, sha256, write_json
 from polyhedral_functions.recipes import R2, apply
 from polyhedral_functions.rendering import (
@@ -33,21 +31,11 @@ from polyhedral_functions.rendering import (
     render_relief,
     render_solids,
 )
+from polyhedral_functions.viewer_data import stella_octangula
 
 OUT = REPO_ROOT / "docs" / "assets" / "stellation"
 VIEW = (3.0, 1.3, 0.8)  # oblique, so no tip points straight at the viewer
 WIDTH = 480
-
-
-def stella_octangula() -> list[Polyhedron]:
-    """The octahedron's only stellation: two tetrahedra on alternate vertices of the cube. For
-    the octahedron with vertices at ``±e_i``, its face planes ``±x ± y ± z = 1`` meet three at a
-    time at ``(±1, ±1, ±1)``."""
-    corners = np.array([[1, 1, 1], [1, -1, -1], [-1, 1, -1], [-1, -1, 1]], dtype=float)
-    return [
-        Polyhedron.from_points(corners, "tetrahedron"),
-        Polyhedron.from_points(-corners, "tetrahedron"),
-    ]
 
 
 def main() -> None:

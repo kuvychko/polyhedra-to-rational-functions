@@ -6,6 +6,9 @@
   (`viewer_data.primer_data`), plus the display settings the page draws them with: the site's
   phase palette, sampled from complexplorer, and the relief transfer's depth and order-tuned
   sharpness (`rendering.DisplaySettings`).
+- ``assets/explorer/stellation.json`` (``research/stellation.md``): the octahedron and the cube
+  under R2, with the octahedron's stellation (`viewer_data.stellation_data`), plus the same
+  display settings.
 
 Applying a recipe takes milliseconds, so the data is computed from the package on every build
 rather than committed: it cannot go stale.
@@ -27,6 +30,7 @@ log = logging.getLogger("mkdocs.hooks.explorer")
 
 PATH = "assets/explorer/recipes.json"
 PRIMER_PATH = "assets/explorer/primer.json"
+STELLATION_PATH = "assets/explorer/stellation.json"
 SITE_CONFIG = REPO_ROOT / "configs" / "site" / "piece-assets.json"
 PALETTE_SIZE = 256
 
@@ -57,6 +61,19 @@ def primer_json() -> dict:
     return data
 
 
+def stellation_json() -> dict:
+    data = viewer_data.stellation_data()
+    config = json.loads(SITE_CONFIG.read_text(encoding="utf-8"))
+    base = DisplaySettings()
+    for entry in data["solids"].values():
+        # Order-tuned, as in the primer. A polar pair has the same orders with signs swapped, so
+        # both get the same sharpness and their reliefs are reflections of each other.
+        divisor = viewer_data.unreduced_from_markers(entry)
+        entry["sharpness"] = base.tuned_for(divisor).sharpness
+    data["display"] = {"depth": base.depth, "palette": phase_palette(config["phase_sectors"])}
+    return data
+
+
 def on_files(files, config):
     # Imported here, not at the top: the tests call primer_json() without the docs dependencies.
     from mkdocs.structure.files import File
@@ -71,4 +88,8 @@ def on_files(files, config):
     content = json.dumps(primer, separators=(",", ":")) + "\n"
     files.append(File.generated(config, PRIMER_PATH, content=content))
     log.info("explorer: %d introduction functions -> %s", len(primer["functions"]), PRIMER_PATH)
+    stellation = stellation_json()
+    content = json.dumps(stellation, separators=(",", ":")) + "\n"
+    files.append(File.generated(config, STELLATION_PATH, content=content))
+    log.info("explorer: %d stellation solids -> %s", len(stellation["solids"]), STELLATION_PATH)
     return files

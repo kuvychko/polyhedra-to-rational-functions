@@ -114,3 +114,39 @@ def test_primer_inverse_is_the_negated_divisor():
 def test_primer_cube_is_the_explorer_entry():
     assert PRIMER["cube-R2"]["zeros"] == EXPLORER["solids"]["cube"]["recipes"]["R2"]["zeros"]
     assert PRIMER["cube-R2"]["poles"] == EXPLORER["solids"]["cube"]["recipes"]["R2"]["poles"]
+
+
+# --- the stellation page (docs/hooks/explorer.py) ----------------------------------------------
+
+STELLATION = viewer_data.stellation_data()["solids"]
+
+
+@pytest.mark.parametrize("solid", list(viewer_data.STELLATION_SOLIDS))
+def test_stellation_markers_are_the_r2_divisor(solid):
+    entry = STELLATION[solid]
+    expected = apply(PRESETS["R2"], fixtures.load(solid)).unreduced
+    assert viewer_data.unreduced_from_markers(entry).same_as(expected, tol=1e-5)
+    assert entry["degree"] == expected.degree
+    assert np.isclose(np.linalg.norm(entry["vertices"], axis=1).max(), 1.0)
+
+
+def test_stella_octangula_tips_are_the_octahedrons_poles():
+    stella = STELLATION["octahedron"]["stellation"]
+    tips = np.array(stella["vertices"])
+    assert np.allclose(np.linalg.norm(tips, axis=1), 1.0)
+    poles = np.array([m["p"] for m in STELLATION["octahedron"]["poles"]])
+    gaps = np.linalg.norm(tips[:, None, :] - poles[None, :, :], axis=-1)
+    assert len(tips) == len(poles) == 8 and np.all(gaps.min(axis=1) < 1e-5)
+    assert len(stella["faces"]) == 8
+    assert STELLATION["cube"]["stellation"] is None
+
+
+def test_stellation_display_is_shared_by_the_polar_pair():
+    import sys
+
+    sys.path.insert(0, str(DOCS / "hooks"))
+    import explorer
+
+    data = explorer.stellation_json()
+    assert data["solids"]["octahedron"]["sharpness"] == data["solids"]["cube"]["sharpness"] == 8
+    assert data["display"]["depth"] == 0.2

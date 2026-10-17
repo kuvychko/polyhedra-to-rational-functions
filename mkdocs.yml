@@ -87,6 +87,8 @@ extra_javascript:
     type: module
   - path: javascripts/riemann-primer.js
     type: module
+  - path: javascripts/stellation-viewer.js
+    type: module
   - https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js
 
 nav:
