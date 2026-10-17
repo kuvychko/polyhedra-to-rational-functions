@@ -67,6 +67,8 @@ markdown_extensions:
       generic: true
   - admonition
   - pymdownx.details
+  - pymdownx.tabbed:
+      alternate_style: true
   - toc:
       permalink: true
       title: On this page
@@ -95,6 +97,7 @@ nav:
       - research/index.md
       - "Start here: the Riemann sphere": research/primer.md
       - The recipes: research/recipes.md
+      - Related to stellation?: research/stellation.md
       - Compare recipes: research/compare.md
       - The exploration: research/narrative.md
       - Experiments: research/experiments.md

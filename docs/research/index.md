@@ -41,6 +41,9 @@ Labels: **[D]** derived here, **[N]** numerical observation, as in
   zeros and poles, stereographic projection and the reliefs.
 - **[The recipes](recipes.md):** the construction in brief, the selected default (R2), its
   alternative (R4), and a complete worked example.
+- **[Related to stellation?](stellation.md):** what the reliefs share with stellated solids
+  (some tip directions), what they do not (the construction), and the exact link with the polar
+  dual.
 - **[Compare recipes](compare.md):** an interactive 3D comparison of where each recipe puts its
   zeros and poles, for any two solids and recipes side by side.
 - **[The exploration](narrative.md):** the full account. It covers how the question was set up

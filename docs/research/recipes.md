@@ -74,3 +74,7 @@ print(d.summary())  # 6 zeros of order 4, 8 poles of order 3, degree 24
 On the Platonic solids R2 reproduces Klein's classical invariants. The interesting cases are
 the solids beyond them, where recipes that agree on Platonic inputs come apart. That story, and
 the evidence for choosing R2 and keeping R4, is in [the exploration](narrative.md).
+
+The R2 reliefs look like stellated solids. [Related to stellation?](stellation.md) shows where
+that resemblance holds (shared tip directions on the octahedron), where it fails (the cube has no
+stellation), and the exact link the construction does have, with the polar dual.
